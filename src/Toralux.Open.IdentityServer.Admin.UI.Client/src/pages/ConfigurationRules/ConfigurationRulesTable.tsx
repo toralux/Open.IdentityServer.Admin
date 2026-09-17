@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { DataTable } from "@/components/DataTable/DataTable";
-import { client } from "@skoruba/duende.identityserver.admin.api.client";
+import { client } from "@toralux/open.identityserver.admin.api.client";
 import { Button } from "@/components/ui/button";
 import { Edit, Trash2 } from "lucide-react";
 import { Switch } from "@/components/ui/switch";

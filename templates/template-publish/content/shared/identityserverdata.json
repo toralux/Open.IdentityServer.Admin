@@ -54,58 +54,58 @@
     ],
     "ApiScopes": [
       {
-        "Name": "skoruba_identity_admin_api",
-        "DisplayName": "skoruba_identity_admin_api",
+        "Name": "toralux_identity_admin_api",
+        "DisplayName": "toralux_identity_admin_api",
         "Required": true,
         "UserClaims": ["role", "name"]
       }
     ],
     "ApiResources": [
       {
-        "Name": "skoruba_identity_admin_api",
-        "Scopes": ["skoruba_identity_admin_api"]
+        "Name": "toralux_identity_admin_api",
+        "Scopes": ["toralux_identity_admin_api"]
       }
     ],
     "Clients": [
       {
-        "ClientId": "skoruba_identity_admin_v3",
-        "ClientName": "skoruba_identity_admin_v3",
-        "ClientUri": "https://admin.skoruba.local",
+        "ClientId": "toralux_identity_admin_v3",
+        "ClientName": "toralux_identity_admin_v3",
+        "ClientUri": "https://admin.toralux.local",
         "AllowedGrantTypes": ["authorization_code"],
         "RequireConsent": false,
         "RequirePkce": true,
         "ClientSecrets": [
           {
-            "Value": "skoruba_admin_client_secret"
+            "Value": "toralux_admin_client_secret"
           }
         ],
-        "RedirectUris": ["https://admin.skoruba.local/signin-oidc"],
-        "FrontChannelLogoutUri": "https://admin.skoruba.local/signout-oidc",
+        "RedirectUris": ["https://admin.toralux.local/signin-oidc"],
+        "FrontChannelLogoutUri": "https://admin.toralux.local/signout-oidc",
         "PostLogoutRedirectUris": [
-          "https://admin.skoruba.local/signout-callback-oidc"
+          "https://admin.toralux.local/signout-callback-oidc"
         ],
-        "AllowedCorsOrigins": ["https://admin.skoruba.local"],
+        "AllowedCorsOrigins": ["https://admin.toralux.local"],
         "AllowOfflineAccess": true,
         "AllowedScopes": [
           "openid",
           "email",
           "profile",
           "roles",
-          "skoruba_identity_admin_api"
+          "toralux_identity_admin_api"
         ],
         "RequirePushedAuthorization": true
       },
       {
-        "ClientId": "skoruba_identity_admin_api_swaggerui",
-        "ClientName": "skoruba_identity_admin_api_swaggerui",
+        "ClientId": "toralux_identity_admin_api_swaggerui",
+        "ClientName": "toralux_identity_admin_api_swaggerui",
         "AllowedGrantTypes": ["authorization_code"],
         "RequireClientSecret": false,
         "RequirePkce": true,
         "RedirectUris": [
-          "https://admin-api.skoruba.local/swagger/oauth2-redirect.html"
+          "https://admin-api.toralux.local/swagger/oauth2-redirect.html"
         ],
-        "AllowedScopes": ["skoruba_identity_admin_api"],
-        "AllowedCorsOrigins": ["https://admin-api.skoruba.local"]
+        "AllowedScopes": ["toralux_identity_admin_api"],
+        "AllowedCorsOrigins": ["https://admin-api.toralux.local"]
       }
     ]
   }

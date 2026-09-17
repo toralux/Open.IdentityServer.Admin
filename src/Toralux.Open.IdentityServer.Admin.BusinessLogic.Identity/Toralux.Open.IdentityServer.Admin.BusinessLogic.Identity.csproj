@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<TargetFramework>net10.0</TargetFramework>
-		<Description>Business Logic layer for the administration of the Asp.Net Core Identity and Duende IdentityServer</Description>
+		<Description>Business Logic layer for the administration of the Asp.Net Core Identity and Open IdentityServer</Description>
 	</PropertyGroup>
 
 	<ItemGroup>

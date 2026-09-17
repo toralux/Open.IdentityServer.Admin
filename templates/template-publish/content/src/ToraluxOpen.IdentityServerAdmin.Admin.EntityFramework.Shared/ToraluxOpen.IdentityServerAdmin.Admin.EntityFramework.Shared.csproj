@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net10.0</TargetFramework>
+		<Description>DbContexts and Identity entities for the administration of the Open IdentityServer and Asp.Net Core Identity</Description>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.DataProtection.EntityFrameworkCore" Version="10.0.10" />
+		<PackageReference Include="Skoruba.AuditLogging.EntityFramework" Version="3.0.0" />
+		<PackageReference Include="Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage" Version="3.0.0" />
+		<PackageReference Include="Toralux.Open.IdentityServer.Admin.EntityFramework.Configuration" Version="3.0.0" />
+	</ItemGroup>
+</Project>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,5 +1,5 @@
 import ApiHelper from "@/helpers/ApiHelper";
-import { client } from "@skoruba/duende.identityserver.admin.api.client";
+import { client } from "@toralux/open.identityserver.admin.api.client";
 
 const apiClient = new client.ConfigurationRulesClient(
   ApiHelper.getApiBaseUrl()

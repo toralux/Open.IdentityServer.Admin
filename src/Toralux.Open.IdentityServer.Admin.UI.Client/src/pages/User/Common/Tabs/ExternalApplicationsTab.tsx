@@ -11,7 +11,7 @@ import { useState } from "react";
 import DeleteDialog from "@/components/DeleteDialog/DeleteDialog";
 import Loading from "@/components/Loading/Loading";
 import { CardWrapper } from "@/components/CardWrapper/CardWrapper";
-import { client } from "@skoruba/duende.identityserver.admin.api.client";
+import { client } from "@toralux/open.identityserver.admin.api.client";
 
 type Props = {
   userId: string;

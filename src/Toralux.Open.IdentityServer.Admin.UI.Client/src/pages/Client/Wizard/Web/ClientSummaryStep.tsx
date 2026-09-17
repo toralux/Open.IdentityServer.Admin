@@ -9,7 +9,7 @@ import { toast } from "@/components/ui/use-toast";
 import { useCreateClient } from "@/services/ClientServices";
 import Loading from "@/components/Loading/Loading";
 import { mapFormDataToCreateClient } from "../../ClientSchema";
-import { client } from "@skoruba/duende.identityserver.admin.api.client";
+import { client } from "@toralux/open.identityserver.admin.api.client";
 import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
 import { Card, CardContent, CardFooter } from "@/components/Card/Card";
 import ClientWebSummaryTree from "./ClientSummaryTree";

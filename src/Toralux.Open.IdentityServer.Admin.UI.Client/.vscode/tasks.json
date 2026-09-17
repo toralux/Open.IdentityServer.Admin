@@ -13,7 +13,7 @@
     {
       "label": "Admin UI API",
       "type": "shell",
-      "command": "dotnet run --project ../../../Duende.IdentityServer.Admin/src/Toralux.Open.IdentityServer.Admin.Api/Toralux.Open.IdentityServer.Admin.Api.csproj",
+      "command": "dotnet run --project ../../../Open.IdentityServer.Admin/src/Toralux.Open.IdentityServer.Admin.Api/Toralux.Open.IdentityServer.Admin.Api.csproj",
       "problemMatcher": [],
       "presentation": {
         "reveal": "always"
@@ -22,7 +22,7 @@
     {
       "label": "STS",
       "type": "shell",
-      "command": "dotnet run --project ../../../Duende.IdentityServer.Admin/src/Toralux.Open.IdentityServer.STS.Identity/Toralux.Open.IdentityServer.STS.Identity.csproj",
+      "command": "dotnet run --project ../../../Open.IdentityServer.Admin/src/Toralux.Open.IdentityServer.STS.Identity/Toralux.Open.IdentityServer.STS.Identity.csproj",
       "problemMatcher": [],
       "presentation": {
         "reveal": "always"
@@ -31,7 +31,7 @@
     {
       "label": "Admin UI MVC",
       "type": "shell",
-      "command": "dotnet run --project ../../../Duende.IdentityServer.Admin/src/Toralux.Open.IdentityServer.Admin/Toralux.Open.IdentityServer.Admin.csproj",
+      "command": "dotnet run --project ../../../Open.IdentityServer.Admin/src/Toralux.Open.IdentityServer.Admin/Toralux.Open.IdentityServer.Admin.csproj",
       "problemMatcher": [],
       "presentation": {
         "reveal": "always"

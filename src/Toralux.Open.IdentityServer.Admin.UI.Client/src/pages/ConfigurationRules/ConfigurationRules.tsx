@@ -10,7 +10,7 @@ import ConfigurationRulesTable from "./ConfigurationRulesTable";
 import ConfigurationRuleModal from "./ConfigurationRuleModal";
 import { queryKeys } from "@/services/QueryKeys";
 import { getConfigurationRules } from "@/services/ConfigurationRulesService";
-import { client } from "@skoruba/duende.identityserver.admin.api.client";
+import { client } from "@toralux/open.identityserver.admin.api.client";
 
 const ConfigurationRules: React.FC = () => {
   const { isOpen, closeModal, openModal } = useModal();

@@ -1,0 +1,21 @@
+{
+  "name": "toralux-open-identityserver-admin-ui-client-integrationtests",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Playwright UI integration tests for Toralux Open IdentityServer Admin",
+  "type": "module",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "test:list": "playwright test --list",
+    "report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^10.4.0",
+    "@playwright/test": "^1.54.2",
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2"
+  }
+}

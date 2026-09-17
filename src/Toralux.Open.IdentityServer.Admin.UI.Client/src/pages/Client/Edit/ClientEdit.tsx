@@ -8,7 +8,7 @@ import { ClientsUrl } from "@/routing/Urls";
 import ClientEditForm from "./ClientEditForm";
 import { Breadcrumbs } from "@/components/Breadcrumbs/Breadcrumbs";
 import { Laptop } from "lucide-react";
-import { client } from "@skoruba/duende.identityserver.admin.api.client";
+import { client } from "@toralux/open.identityserver.admin.api.client";
 import ResourceConfigurationIssues from "@/components/ConfigurationIssues/ResourceConfigurationIssues";
 
 const ClientEdit = () => {

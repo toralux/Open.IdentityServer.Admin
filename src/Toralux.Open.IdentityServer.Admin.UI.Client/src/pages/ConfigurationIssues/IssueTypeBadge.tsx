@@ -1,7 +1,7 @@
 import React from "react";
 import { AlertTriangle, Info, XCircle } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { client } from "@skoruba/duende.identityserver.admin.api.client";
+import { client } from "@toralux/open.identityserver.admin.api.client";
 
 type Props = {
   type: client.ConfigurationIssueTypeView;

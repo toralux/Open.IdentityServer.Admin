@@ -3,10 +3,10 @@
   <PropertyGroup>    
     <Version>3.0.0</Version>
     <Authors>Jan Škoruba</Authors>
-    <PackageTags>Duende IdentityServer Admin OpenIDConnect OAuth2 Identity</PackageTags>
+    <PackageTags>Open IdentityServer Admin OpenIDConnect OAuth2 Identity</PackageTags>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageIcon>nuget-icon.png</PackageIcon>
-    <PackageProjectUrl>https://github.com/skoruba/Duende.IdentityServer.Admin</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/toralux/Open.IdentityServer.Admin</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 

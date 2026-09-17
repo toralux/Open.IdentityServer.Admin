@@ -1,8 +1,8 @@
 ![Logo](docs/Images/logo.svg)
 
-# Skoruba.Duende.IdentityServer.Admin 🚀
+# Toralux.Open.IdentityServer.Admin 🚀
 
-> Admin UI for Duende IdentityServer and ASP.NET Core Identity
+> Admin UI for Open IdentityServer and ASP.NET Core Identity
 
 ## Project Status
 
@@ -12,7 +12,7 @@
 
 If you are looking for the latest stable production version, you can find it here:
 
-➡️ [Skoruba.Duende.IdentityServer.Admin v2.7.0 (release branch)](https://github.com/skoruba/Duende.IdentityServer.Admin/tree/release/2.7.0)
+➡️ [Toralux.Open.IdentityServer.Admin v2.7.0 (release branch)](https://github.com/skoruba/Duende.IdentityServer.Admin/tree/release/2.7.0)
 
 ## New release v3 is coming! 🎉
 
@@ -31,13 +31,13 @@ This application uses a modern **React** frontend (TypeScript, [Tailwind CSS](ht
 ### 1. Install the template
 
 ```sh
-dotnet new install Skoruba.Duende.IdentityServer.Admin.Templates::3.0.0-preview.7
+dotnet new install Toralux.Open.IdentityServer.Admin.Templates::3.0.0-preview.7
 ```
 
 ### 2. Create a new project
 
 ```sh
-dotnet new skoruba.duende.isadmin \
+dotnet new toralux.open-isadmin \
   --name MyProject \
   --title MyProject \
   --adminemail "admin@example.com" \
@@ -58,10 +58,10 @@ dotnet new skoruba.duende.isadmin \
 | `--adminemail`                 | Admin email                                                                                                                                                                                                                                                                                                                                                                              |
 | `--title`                      | Title and footer for the admin UI                                                                                                                                                                                                                                                                                                                                                        |
 | `--adminrole`                  | Name of the admin role used for authorization                                                                                                                                                                                                                                                                                                                                            |
-| `--adminclientid`              | Client ID used in Duende IdentityServer configuration for the admin client                                                                                                                                                                                                                                                                                                               |
-| `--adminclientsecret`          | Client secret used in Duende IdentityServer configuration for the admin client                                                                                                                                                                                                                                                                                                           |
+| `--adminclientid`              | Client ID used in Open IdentityServer configuration for the admin client                                                                                                                                                                                                                                                                                                               |
+| `--adminclientsecret`          | Client secret used in Open IdentityServer configuration for the admin client                                                                                                                                                                                                                                                                                                           |
 | `--dockersupport`              | Include Docker support (`true` / `false`)                                                                                                                                                                                                                                                                                                                                                |
-| `--requirepushedauthorization` | Require Pushed Authorization Requests (PAR) for the admin client (`true` / `false`). Default: `true`. **Licensing note:** PAR is available in **Duende IdentityServer Business Edition or higher**. If you have a license lower than Business, set `--requirepushedauthorization` to `false`. More details about PAR [here](https://docs.duendesoftware.com/identityserver/tokens/par/). |
+| `--requirepushedauthorization` | Require Pushed Authorization Requests (PAR) for the admin client (`true` / `false`). Default: `true`. **Licensing note:** PAR is available in **Open IdentityServer Business Edition or higher**. If you have a license lower than Business, set `--requirepushedauthorization` to `false`. More details about PAR [here](https://docs.duendesoftware.com/identityserver/tokens/par/). |
 
 ## Administration UI preview
 
@@ -94,7 +94,7 @@ dotnet new skoruba.duende.isadmin \
 ## Cloning
 
 ```sh
-git clone https://github.com/skoruba/Duende.IdentityServer.Admin
+git clone https://github.com/toralux/Open.IdentityServer.Admin
 ```
 
 ## Running via Docker
@@ -105,8 +105,8 @@ git clone https://github.com/skoruba/Duende.IdentityServer.Admin
 
 #### DNS
 
-You need local domain resolution for the project to work. This setup uses the domain `skoruba.local` (a fully qualified domain name, FQDN).  
-Make sure `skoruba.local` resolves to your Docker host. For local-only usage, update your hosts file:
+You need local domain resolution for the project to work. This setup uses the domain `toralux.local` (a fully qualified domain name, FQDN).  
+Make sure `toralux.local` resolves to your Docker host. For local-only usage, update your hosts file:
 
 - **Linux:** `/etc/hosts`
 - **Windows:** `C:\Windows\System32\drivers\etc\hosts`
@@ -114,10 +114,10 @@ Make sure `skoruba.local` resolves to your Docker host. For local-only usage, up
 Add the following entry:
 
 ```custom
-127.0.0.1 skoruba.local sts.skoruba.local admin.skoruba.local admin-api.skoruba.local
+127.0.0.1 toralux.local sts.toralux.local admin.toralux.local admin-api.toralux.local
 ```
 
-This allows your host machine to resolve `skoruba.local` and its subdomains to itself.
+This allows your host machine to resolve `toralux.local` and its subdomains to itself.
 
 #### Certificates
 
@@ -137,14 +137,14 @@ copy $env:LOCALAPPDATA\mkcert\rootCA-key.pem ./cacerts.pem
 copy $env:LOCALAPPDATA\mkcert\rootCA.pem ./cacerts.crt
 ```
 
-##### Create the `skoruba.local` certificates
+##### Create the `toralux.local` certificates
 
-Generate a wildcard certificate for `skoruba.local` and subdomains. The certificate file names must match the domain names for nginx-proxy to work correctly. Both crt-key and pfx versions are needed:
+Generate a wildcard certificate for `toralux.local` and subdomains. The certificate file names must match the domain names for nginx-proxy to work correctly. Both crt-key and pfx versions are needed:
 
 ```bash
 cd shared/nginx/certs
-mkcert -cert-file skoruba.local.crt -key-file skoruba.local.key skoruba.local *.skoruba.local
-mkcert -pkcs12 skoruba.local.pfx skoruba.local *.skoruba.local
+mkcert -cert-file toralux.local.crt -key-file toralux.local.key toralux.local *.toralux.local
+mkcert -pkcs12 toralux.local.pfx toralux.local *.toralux.local
 ```
 
 > This Docker setup is based on [bravecobra's repository](https://github.com/bravecobra/identityserver-ui) – thanks to [bravecobra](https://github.com/bravecobra)! 😊
@@ -224,14 +224,14 @@ server=localhost;database=DuendeIdentityServerAdmin;user=root;password=#
 ### Seed data
 
 - In `Program.cs` → `Main`, uncomment `DbMigrationHelpers.EnsureSeedData(host)`, or use the dotnet CLI (`dotnet run /seed`), or set `SeedConfiguration` in `appsettings.json`.
-- The `Clients` and `Resources` sections in `identityserverdata.json` (section: `IdentityServerData`) contain initial data based on the Duende IdentityServer sample.
+- The `Clients` and `Resources` sections in `identityserverdata.json` (section: `IdentityServerData`) contain initial data based on the Open IdentityServer sample.
 - The `Users` section in `identitydata.json` (section: `IdentityData`) contains the default admin username and password for first login.
 
 ## Authentication and Authorization
 
 - Change the specific URLs and names for the IdentityServer and Authentication settings in `appsettings.json`
 - In the controllers is used the policy which name is stored in - `AuthorizationConsts.AdministrationPolicy`. In the policy - `AuthorizationConsts.AdministrationPolicy` is defined required role stored in - `appsettings.json` - `AdministrationRole`.
-- With the default configuration, it is necessary to configure and run instance of Duende IdentityServer. It is possible to use initial migration for creating the client as it mentioned above
+- With the default configuration, it is necessary to configure and run instance of Open IdentityServer. It is possible to use initial migration for creating the client as it mentioned above
 
 ## Azure Key Vault
 
@@ -396,7 +396,7 @@ In `appsettings.json`:
 }
 ```
 
-The `Skoruba.Duende.IdentityServer.Admin.BusinessLogic` layer contains a folder called `Events` for audit logging.  
+The `Toralux.Open.IdentityServer.Admin.BusinessLogic` layer contains a folder called `Events` for audit logging.  
 In each service method, `LogEventAsync` is called, for example:
 
 ```csharp
@@ -409,7 +409,7 @@ The final audit log is available in the table `dbo.AuditLog`.
 
 ## Login Configuration
 
-In `Skoruba.Duende.IdentityServer.STS.Identity/appsettings.json` you can specify which column will be used for login (`Username` or `Email`):
+In `Toralux.Open.IdentityServer.STS.Identity/appsettings.json` you can specify which column will be used for login (`Username` or `Email`):
 
 ```json
 "LoginConfiguration": {
@@ -429,7 +429,7 @@ or
 
 ## Register Configuration
 
-In `Skoruba.Duende.IdentityServer.STS.Identity/appsettings.json` you can disable user registration (`default: true`):
+In `Toralux.Open.IdentityServer.STS.Identity/appsettings.json` you can disable user registration (`default: true`):
 
 ```json
 "RegisterConfiguration": {
@@ -447,8 +447,8 @@ In `Skoruba.Duende.IdentityServer.STS.Identity/appsettings.json` you can disable
 ```json
 "AdminApiConfiguration": {
   "IdentityServerBaseUrl": "https://localhost:44310",
-  "OidcSwaggerUIClientId": "skoruba_identity_admin_api_swaggerui",
-  "OidcApiName": "skoruba_identity_admin_api"
+  "OidcSwaggerUIClientId": "toralux_identity_admin_api_swaggerui",
+  "OidcApiName": "toralux_identity_admin_api"
 }
 ```
 
@@ -456,7 +456,7 @@ In `Skoruba.Duende.IdentityServer.STS.Identity/appsettings.json` you can disable
 
 ## How to configure an external provider in STS
 
-In `Skoruba.Duende.IdentityServer.STS.Identity/Helpers/StartupHelpers.cs`, the method `AddExternalProviders` contains examples for configuring providers like GitHub and AzureAD via `appsettings.json`:
+In `Toralux.Open.IdentityServer.STS.Identity/Helpers/StartupHelpers.cs`, the method `AddExternalProviders` contains examples for configuring providers like GitHub and AzureAD via `appsettings.json`:
 
 ```json
 "ExternalProvidersConfiguration": {
@@ -540,47 +540,47 @@ In the STS project (`appsettings.json`):
 
 - STS:
 
-  - `Skoruba.Duende.IdentityServer.STS.Identity` - project that contains the instance of Duende.IdentityServer and combine these samples - [Quickstart UI for the Duende.IdentityServer with Asp.Net Core Identitye](https://github.com/DuendeSoftware/IdentityServer/tree/main/hosts/AspNetIdentity) and [Quickstart UI for the Duende.IdentityServer with EF Core storage](https://github.com/DuendeSoftware/IdentityServer/tree/main/hosts/EntityFramework) and [damienbod - IdentityServer4 and Identity template](https://github.com/damienbod/IdentityServer4AspNetCoreIdentityTemplate)
+  - `Toralux.Open.IdentityServer.STS.Identity` - project that contains the instance of Open.IdentityServer and combine these samples - [Quickstart UI for the Open.IdentityServer with Asp.Net Core Identitye](https://github.com/DuendeSoftware/IdentityServer/tree/main/hosts/AspNetIdentity) and [Quickstart UI for the Open.IdentityServer with EF Core storage](https://github.com/DuendeSoftware/IdentityServer/tree/main/hosts/EntityFramework) and [damienbod - IdentityServer4 and Identity template](https://github.com/damienbod/IdentityServer4AspNetCoreIdentityTemplate)
 
 ## Admin UI API
 
-- `Skoruba.Duende.IdentityServer.Admin.Api` – Provides a REST API for managing Duende IdentityServer and ASP.NET Core Identity data, with integrated Swagger support.
+- `Toralux.Open.IdentityServer.Admin.Api` – Provides a REST API for managing Open IdentityServer and ASP.NET Core Identity data, with integrated Swagger support.
 
 ## Admin UI
 
-- `Skoruba.Duende.IdentityServer.Admin` – Main .NET project that references the SPA and UI packages.
-- `Skoruba.Duende.IdentityServer.Admin.UI` – Provides services and configuration for the Admin UI application.
-- `Skoruba.Duende.IdentityServer.Admin.UI.Spa` – Contains precompiled Admin UI assets.
+- `Toralux.Open.IdentityServer.Admin` – Main .NET project that references the SPA and UI packages.
+- `Toralux.Open.IdentityServer.Admin.UI` – Provides services and configuration for the Admin UI application.
+- `Toralux.Open.IdentityServer.Admin.UI.Spa` – Contains precompiled Admin UI assets.
 
 ## Business Logic
 
-- `Skoruba.Duende.IdentityServer.Admin.BusinessLogic` – Contains DTOs, repositories, services, and mappers for Duende IdentityServer.
-- `Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity` – Contains DTOs, repositories, services, and mappers for ASP.NET Core Identity.
-- `Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Shared` – Contains shared DTOs and exception handling for Duende IdentityServer and ASP.NET Core Identity.
+- `Toralux.Open.IdentityServer.Admin.BusinessLogic` – Contains DTOs, repositories, services, and mappers for Open IdentityServer.
+- `Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity` – Contains DTOs, repositories, services, and mappers for ASP.NET Core Identity.
+- `Toralux.Open.IdentityServer.Admin.BusinessLogic.Shared` – Contains shared DTOs and exception handling for Open IdentityServer and ASP.NET Core Identity.
 
 ## Shared
 
-- `Skoruba.Duende.IdentityServer.Shared` – Provides shared Identity DTOs for the Admin UI, Admin UI API, and STS.
-- `Skoruba.Duende.IdentityServer.Shared.Configuration` – Provides shared configuration for the Admin UI, Admin UI API, and STS.
+- `Toralux.Open.IdentityServer.Shared` – Provides shared Identity DTOs for the Admin UI, Admin UI API, and STS.
+- `Toralux.Open.IdentityServer.Shared.Configuration` – Provides shared configuration for the Admin UI, Admin UI API, and STS.
 
 ## Entity Framework
 
-- `Skoruba.Duende.IdentityServer.Admin.EntityFramework` – EF Core data layer containing entities for Duende IdentityServer.
-- `Skoruba.Duende.IdentityServer.Admin.EntityFramework.Configuration` – EF Core data layer containing entity configurations.
-- `Skoruba.Duende.IdentityServer.Admin.EntityFramework.Identity` – EF Core data layer containing repositories for ASP.NET Core Identity.
-- `Skoruba.Duende.IdentityServer.Admin.EntityFramework.Extensions` – Provides extensions related to Entity Framework.
-- `Skoruba.Duende.IdentityServer.Admin.EntityFramework.Shared` – Provides DbContexts for Duende IdentityServer, logging, and ASP.NET Core Identity, including shared Identity entities.
-- `Skoruba.Duende.IdentityServer.Admin.EntityFramework.SqlServer` – Contains database migrations for SQL Server.
-- `Skoruba.Duende.IdentityServer.Admin.EntityFramework.MySql` – Contains database migrations for MySQL.
-- `Skoruba.Duende.IdentityServer.Admin.EntityFramework.PostgreSQL` – Contains database migrations for PostgreSQL.
+- `Toralux.Open.IdentityServer.Admin.EntityFramework` – EF Core data layer containing entities for Open IdentityServer.
+- `Toralux.Open.IdentityServer.Admin.EntityFramework.Configuration` – EF Core data layer containing entity configurations.
+- `Toralux.Open.IdentityServer.Admin.EntityFramework.Identity` – EF Core data layer containing repositories for ASP.NET Core Identity.
+- `Toralux.Open.IdentityServer.Admin.EntityFramework.Extensions` – Provides extensions related to Entity Framework.
+- `Toralux.Open.IdentityServer.Admin.EntityFramework.Shared` – Provides DbContexts for Open IdentityServer, logging, and ASP.NET Core Identity, including shared Identity entities.
+- `Toralux.Open.IdentityServer.Admin.EntityFramework.SqlServer` – Contains database migrations for SQL Server.
+- `Toralux.Open.IdentityServer.Admin.EntityFramework.MySql` – Contains database migrations for MySQL.
+- `Toralux.Open.IdentityServer.Admin.EntityFramework.PostgreSQL` – Contains database migrations for PostgreSQL.
 
 ## Tests
 
-- `Skoruba.Duende.IdentityServer.Admin.Api.IntegrationTests` – xUnit project providing integration tests for the Admin UI API.
-- `Skoruba.Duende.IdentityServer.Admin.UnitTests` – xUnit project providing unit tests for the Admin UI.
-- `Skoruba.Duende.IdentityServer.STS.IntegrationTests` – xUnit project providing integration tests for the STS.
+- `Toralux.Open.IdentityServer.Admin.Api.IntegrationTests` – xUnit project providing integration tests for the Admin UI API.
+- `Toralux.Open.IdentityServer.Admin.UnitTests` – xUnit project providing unit tests for the Admin UI.
+- `Toralux.Open.IdentityServer.STS.IntegrationTests` – xUnit project providing integration tests for the STS.
 
-## Duende.IdentityServer
+## Open.IdentityServer
 
 **Clients**
 
@@ -634,7 +634,7 @@ It is possible to define the configuration according the client type - by defaul
 
 - [x] Create the Business Logic & EF layers - available as a nuget package
 - [x] Create a project template using dotnet CLI - `dotnet new template`
-  - [x] First template: The administration of the Duende.IdentityServer and Asp.Net Core Identity
+  - [x] First template: The administration of the Open.IdentityServer and Asp.Net Core Identity
 - [x] Add logging into
   - [x] Database
   - [x] File
@@ -657,7 +657,7 @@ It is possible to define the configuration according the client type - by defaul
 - [x] Email service
   - [x] SendGrid
 - [x] Add API
-  - [x] Duende.IdentityServer
+  - [x] Open.IdentityServer
   - [x] Asp.Net Core Identity
   - [x] Add swagger support
 - [x] Add audit logs to track changes ([#61](https://github.com/skoruba/IdentityServer4.Admin/issues/61))
@@ -667,18 +667,18 @@ It is possible to define the configuration according the client type - by defaul
 - [x] Simplify Admin Identity middleware ([#430](https://github.com/skoruba/IdentityServer4.Admin/issues/430))
 - [x] Add support for loading signing key from Azure Key Vault ([#533](https://github.com/skoruba/IdentityServer4.Admin/issues/533))
 - [x] Protect keys for dataprotection from Azure Key Vault ([#715](https://github.com/skoruba/IdentityServer4.Admin/pull/715))
-- [x] Update to Duende.IdentityServer version 4 ([#633](https://github.com/skoruba/IdentityServer4.Admin/issues/633))
+- [x] Update to Open.IdentityServer version 4 ([#633](https://github.com/skoruba/IdentityServer4.Admin/issues/633))
 - [x] Add support for themes ([#725](https://github.com/skoruba/IdentityServer4.Admin/issues/725))
 - [x] Extract UI part into nuget package ([#770](https://github.com/skoruba/IdentityServer4.Admin/issues/770), [#409](https://github.com/skoruba/IdentityServer4.Admin/issues/409), [#55](https://github.com/skoruba/IdentityServer4.Admin/issues/55), [#322](https://github.com/skoruba/IdentityServer4.Admin/issues/322), [#28](https://github.com/skoruba/IdentityServer4.Admin/issues/28), [#133](https://github.com/skoruba/IdentityServer4.Admin/issues/133))
 
 ### 1.1.0
 
 - [x] Update to .NET 6
-- [x] Update to Duende IdentityServer v6
+- [x] Update to Open IdentityServer v6
 
 ### 1.2.0
 
-- [x] Update to Duende IdentityServer 6.2.1
+- [x] Update to Open IdentityServer 6.2.1
 - [x] Add support for Dynamic Identity Providers
 
 ### 2.0.0
@@ -700,7 +700,7 @@ It is possible to define the configuration according the client type - by defaul
 
 ### 2.2.2
 
-- [x] Create a New Project `Skoruba.Duende.IdentityServer.Admin.UI.Api` to be Shipped as a NuGet Package
+- [x] Create a New Project `Toralux.Open.IdentityServer.Admin.UI.Api` to be Shipped as a NuGet Package
 - [x] Fix DockerFile for All Projects for Multiplatform Builds `(linux/amd64, linux/arm64)` ([#194](https://github.com/skoruba/Duende.IdentityServer.Admin/issues/194))
 - [x] Add a New API Endpoint for Dashboard View
 - [x] Fix Import of dayjs for NSwag TypeScript Definition
@@ -708,16 +708,16 @@ It is possible to define the configuration according the client type - by defaul
 ### 2.3.0
 
 - [x] Fix Dashboard endpoint for getting Identity data
-- [x] Update solution to the latest version of all nuget packages, including `Duende.IdentityServer` version `7.0.5`
+- [x] Update solution to the latest version of all nuget packages, including `Open.IdentityServer` version `7.0.5`
 
 ### 2.4.0
 
 - [x] Method CanInsert..Property of the controllers always return true ([#235](https://github.com/skoruba/Duende.IdentityServer.Admin/issues/235))
-- [x] Skoruba.Duende.IdentityServer.Shared.Configuration - replace deprecated Microsoft.Extensions.Configuration.AzureKeyVault package with Azure.Extensions.AspNetCore.Configuration.Secrets ([#234](https://github.com/skoruba/Duende.IdentityServer.Admin/issues/234))
+- [x] Toralux.Open.IdentityServer.Shared.Configuration - replace deprecated Microsoft.Extensions.Configuration.AzureKeyVault package with Azure.Extensions.AspNetCore.Configuration.Secrets ([#234](https://github.com/skoruba/Duende.IdentityServer.Admin/issues/234))
 - [x] Can't update client because "Client Id _clientId_ already exists" ([#227](https://github.com/skoruba/Duende.IdentityServer.Admin/issues/227))
 - [x] Migrate from Microsoft.Azure.KeyVault to the new Azure Key Vault API ([#224](https://github.com/skoruba/Duende.IdentityServer.Admin/issues/224))
 - [x] Docker Compose NGINX targeting wrong port ([#222](https://github.com/skoruba/Duende.IdentityServer.Admin/issues/222))
-- [x] Update all nuget packages to the latest versions, including Duende IdentityServer version 7.0.7. (fixed [CVE-2024-39694](https://github.com/advisories/GHSA-ff4q-64jc-gx98)) - ([#236](https://github.com/skoruba/Duende.IdentityServer.Admin/issues/236))
+- [x] Update all nuget packages to the latest versions, including Open IdentityServer version 7.0.7. (fixed [CVE-2024-39694](https://github.com/advisories/GHSA-ff4q-64jc-gx98)) - ([#236](https://github.com/skoruba/Duende.IdentityServer.Admin/issues/236))
 
 ### 2.5.0
 
@@ -725,7 +725,7 @@ It is possible to define the configuration according the client type - by defaul
 
 ### 2.6.0
 
-- [x] Update to .NET 9 and the latest version of Duende IdentityServer 7.2.1 ([#250](https://github.com/skoruba/Duende.IdentityServer.Admin/issues/250))
+- [x] Update to .NET 9 and the latest version of Open IdentityServer 7.2.1 ([#250](https://github.com/skoruba/Duende.IdentityServer.Admin/issues/250))
 
 ### 3.0.0
 
@@ -753,11 +753,11 @@ It is possible to define the configuration according the client type - by defaul
 
 This repository is licensed under the terms of the [**Apache License 2.0**](LICENSE).
 
-### Duende.IdentityServer License 🔑
+### Open.IdentityServer License 🔑
 
-**Duende.IdentityServer** is available under both a **FOSS (RPL) and a commercial** license.
+**Open.IdentityServer** is available under both a **FOSS (RPL) and a commercial** license.
 
-For the production environment is necessary to get the specific license. For more information about licensing of Duende.IdentityServer - please check [this link](https://duendesoftware.com/products/identityserver#pricing).
+For the production environment is necessary to get the specific license. For more information about licensing of Open.IdentityServer - please check [this link](https://duendesoftware.com/products/identityserver#pricing).
 
 This repository uses the source code from https://github.com/DuendeSoftware/IdentityServer.Quickstart.UI which is under the terms of the following
 [**license**](https://github.com/DuendeSoftware/IdentityServer.Quickstart.UI/blob/main/LICENSE).
@@ -766,7 +766,7 @@ This repository uses the source code from https://github.com/DuendeSoftware/Iden
 
 Thanks to [Tomáš Hübelbauer](https://github.com/TomasHubelbauer) for the initial code review.
 
-Thanks to [Dominick Baier](https://github.com/leastprivilege) and [Brock Allen](https://github.com/brockallen) - the creators of Duende.IdentityServer.
+Thanks to [Dominick Baier](https://github.com/leastprivilege) and [Brock Allen](https://github.com/brockallen) - the creators of Open.IdentityServer.
 
 ## Contributors
 
@@ -776,7 +776,7 @@ Contributions of any kind are welcome!
 
 ## Contact and Suggestion
 
-I am happy to share my implementation of the administration for Duende.IdentityServer and ASP.NET Core Identity.
+I am happy to share my implementation of the administration for Open.IdentityServer and ASP.NET Core Identity.
 
 Any feedback is welcome - feel free to create an issue or send me an email - [jan@skoruba.com](mailto:jan@skoruba.com). Thank you ☺️
 

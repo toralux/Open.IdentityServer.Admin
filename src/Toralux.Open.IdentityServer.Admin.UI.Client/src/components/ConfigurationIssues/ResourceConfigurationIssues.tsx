@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import { client } from "@skoruba/duende.identityserver.admin.api.client";
+import { client } from "@toralux/open.identityserver.admin.api.client";
 import { IssueTypeBadge } from "@/pages/ConfigurationIssues/IssueTypeBadge";
 import { useConfigurationIssuesForResource } from "@/services/DashboardService";
 import { Button } from "@/components/ui/button";

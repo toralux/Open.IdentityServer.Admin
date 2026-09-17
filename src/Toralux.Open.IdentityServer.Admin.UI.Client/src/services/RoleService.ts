@@ -1,5 +1,5 @@
 import ApiHelper from "@/helpers/ApiHelper";
-import { client } from "@skoruba/duende.identityserver.admin.api.client";
+import { client } from "@toralux/open.identityserver.admin.api.client";
 import { RoleData, RolesData, RoleFormData } from "@/models/Roles/RoleModels";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { INT_MAX } from "@/helpers/NumberHelper";

@@ -12,7 +12,7 @@ import DeleteApiScopeDialog from "../Common/DeleteApiScopeDialog";
 import useModal from "@/hooks/modalHooks";
 import { useCallback, useState } from "react";
 import { ShieldCheck } from "lucide-react";
-import { client } from "@skoruba/duende.identityserver.admin.api.client";
+import { client } from "@toralux/open.identityserver.admin.api.client";
 import ResourceConfigurationIssues from "@/components/ConfigurationIssues/ResourceConfigurationIssues";
 
 export enum ApiScopeFormMode {

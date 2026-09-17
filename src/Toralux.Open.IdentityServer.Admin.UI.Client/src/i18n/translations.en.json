@@ -1,7 +1,7 @@
 {
   "Home": {
-    "Title": "Skoruba Duende IdentityServer Admin",
-    "SubTitle": "Admin UI offers a set of features to manage your Duende IdentityServer, Users and Roles",
+    "Title": "Toralux Open IdentityServer Admin",
+    "SubTitle": "Admin UI offers a set of features to manage your Open IdentityServer, Users and Roles",
     "Clients": "Clients",
     "ClientsDescription": "Manage your clients",
     "ApiResources": "Api Resources",

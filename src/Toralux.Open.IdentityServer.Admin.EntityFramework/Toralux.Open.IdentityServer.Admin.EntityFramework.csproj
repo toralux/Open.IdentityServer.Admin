@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<TargetFramework>net10.0</TargetFramework>
-		<Description>Entity Framework layer for the administration of the Duende IdentityServer</Description>
+		<Description>Entity Framework layer for the administration of the Open IdentityServer</Description>
 	</PropertyGroup>
 
 	<ItemGroup>

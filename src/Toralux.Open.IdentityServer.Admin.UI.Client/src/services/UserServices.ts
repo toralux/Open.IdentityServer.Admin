@@ -1,7 +1,7 @@
 import ApiHelper from "@/helpers/ApiHelper";
 import { PersistedGrant, UserData, UsersData } from "@/models/Users/UserModels";
 import { UserFormData } from "@/pages/User/Common/UserSchema";
-import { client } from "@skoruba/duende.identityserver.admin.api.client";
+import { client } from "@toralux/open.identityserver.admin.api.client";
 import {
   useMutation,
   useQuery,

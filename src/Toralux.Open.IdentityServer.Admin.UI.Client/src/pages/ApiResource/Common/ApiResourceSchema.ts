@@ -1,4 +1,4 @@
-import { IApiResourceApiDto } from "@skoruba/duende.identityserver.admin.api.client/dist/types/client";
+import { IApiResourceApiDto } from "@toralux/open.identityserver.admin.api.client/dist/types/client";
 import { TFunction } from "i18next";
 import { z } from "zod";
 

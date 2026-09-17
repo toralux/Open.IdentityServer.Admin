@@ -1,5 +1,5 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { client } from "@skoruba/duende.identityserver.admin.api.client";
+import { client } from "@toralux/open.identityserver.admin.api.client";
 import { toast } from "@/components/ui/use-toast";
 import ApiHelper from "@/helpers/ApiHelper";
 import { KeysApiDto } from "@/models/Keys/KeysModel";

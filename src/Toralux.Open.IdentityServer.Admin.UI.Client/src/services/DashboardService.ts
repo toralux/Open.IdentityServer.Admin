@@ -7,7 +7,7 @@ import {
   ClientEditUrl,
   IdentityResourceEditUrl,
 } from "@/routing/Urls";
-import { client } from "@skoruba/duende.identityserver.admin.api.client";
+import { client } from "@toralux/open.identityserver.admin.api.client";
 import { useQuery } from "@tanstack/react-query";
 import { queryKeys, queryWithoutCache } from "./QueryKeys";
 import i18next from "@/i18n/config";

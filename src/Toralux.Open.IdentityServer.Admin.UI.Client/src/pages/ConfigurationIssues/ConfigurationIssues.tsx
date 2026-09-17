@@ -5,7 +5,7 @@ import {
 } from "@/services/DashboardService";
 import { DataTable } from "@/components/DataTable/DataTable";
 import Loading from "@/components/Loading/Loading";
-import { client } from "@skoruba/duende.identityserver.admin.api.client";
+import { client } from "@toralux/open.identityserver.admin.api.client";
 import Page from "@/components/Page/Page";
 import { Link } from "react-router-dom";
 import { Hammer, Cog, Settings, Search, Filter, X } from "lucide-react";

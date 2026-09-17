@@ -366,7 +366,7 @@ namespace Toralux.Open.IdentityServer.STS.Identity.Helpers
         }
 
         /// <summary>
-        /// Add services for authentication, including Identity model, Duende IdentityServer and external providers
+        /// Add services for authentication, including Identity model, Open IdentityServer and external providers
         /// </summary>
         /// <typeparam name="TIdentityDbContext">DbContext for Identity</typeparam>
         /// <typeparam name="TUserIdentity">User Identity class</typeparam>
@@ -456,7 +456,7 @@ namespace Toralux.Open.IdentityServer.STS.Identity.Helpers
         }
 
         /// <summary>
-        /// Add configuration for Duende IdentityServer
+        /// Add configuration for Open IdentityServer
         /// </summary>
         /// <typeparam name="TUserIdentity"></typeparam>
         /// <typeparam name="TConfigurationDbContext"></typeparam>

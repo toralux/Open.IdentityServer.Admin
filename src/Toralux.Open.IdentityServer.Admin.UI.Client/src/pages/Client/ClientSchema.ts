@@ -1,8 +1,8 @@
 import {
   ClientApiDto,
   IClientApiDto,
-} from "@skoruba/duende.identityserver.admin.api.client/dist/types/client";
-import { client } from "@skoruba/duende.identityserver.admin.api.client";
+} from "@toralux/open.identityserver.admin.api.client/dist/types/client";
+import { client } from "@toralux/open.identityserver.admin.api.client";
 import { z } from "zod";
 import { ClientWizardFormSummaryData } from "./Wizard/Web/ClientSummaryStep";
 import { DPoPMode, GrantType } from "@/models/Clients/ClientModels";

@@ -54,29 +54,29 @@
     ],
     "ApiScopes": [
       {
-        "Name": "skoruba_identity_admin_api",
-        "DisplayName": "skoruba_identity_admin_api",
+        "Name": "toralux_identity_admin_api",
+        "DisplayName": "toralux_identity_admin_api",
         "Required": true,
         "UserClaims": ["role", "name"]
       }
     ],
     "ApiResources": [
       {
-        "Name": "skoruba_identity_admin_api",
-        "Scopes": ["skoruba_identity_admin_api"]
+        "Name": "toralux_identity_admin_api",
+        "Scopes": ["toralux_identity_admin_api"]
       }
     ],
     "Clients": [
       {
-        "ClientId": "skoruba_identity_admin_v3",
-        "ClientName": "skoruba_identity_admin_v3",
+        "ClientId": "toralux_identity_admin_v3",
+        "ClientName": "toralux_identity_admin_v3",
         "ClientUri": "https://localhost:50445",
         "AllowedGrantTypes": ["authorization_code"],
         "RequireConsent": false,
         "RequirePkce": true,
         "ClientSecrets": [
           {
-            "Value": "skoruba_admin_client_secret"
+            "Value": "toralux_admin_client_secret"
           }
         ],
         "RedirectUris": ["https://localhost:50445/signin-oidc"],
@@ -91,20 +91,20 @@
           "email",
           "profile",
           "roles",
-          "skoruba_identity_admin_api"
+          "toralux_identity_admin_api"
         ],
         "RequirePushedAuthorization": true
       },
       {
-        "ClientId": "skoruba_identity_admin_api_swaggerui",
-        "ClientName": "skoruba_identity_admin_api_swaggerui",
+        "ClientId": "toralux_identity_admin_api_swaggerui",
+        "ClientName": "toralux_identity_admin_api_swaggerui",
         "AllowedGrantTypes": ["authorization_code"],
         "RequireClientSecret": false,
         "RequirePkce": true,
         "RedirectUris": [
           "https://localhost:44302/swagger/oauth2-redirect.html"
         ],
-        "AllowedScopes": ["skoruba_identity_admin_api"],
+        "AllowedScopes": ["toralux_identity_admin_api"],
         "AllowedCorsOrigins": ["https://localhost:44302"]
       }
     ]

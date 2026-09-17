@@ -1,6 +1,6 @@
 import { TFunction } from "i18next";
 import { z } from "zod";
-import { client } from "@skoruba/duende.identityserver.admin.api.client";
+import { client } from "@toralux/open.identityserver.admin.api.client";
 
 const DualListTypeSchema = z.object({
   id: z.string(),

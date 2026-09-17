@@ -12,7 +12,7 @@ import { useCallback, useState } from "react";
 import DeleteApiResourceDialog from "../Common/DeleteApiResourceDialog";
 import useModal from "@/hooks/modalHooks";
 import { Cable } from "lucide-react";
-import { client } from "@skoruba/duende.identityserver.admin.api.client";
+import { client } from "@toralux/open.identityserver.admin.api.client";
 import ResourceConfigurationIssues from "@/components/ConfigurationIssues/ResourceConfigurationIssues";
 
 const ApiResourceEdit = () => {

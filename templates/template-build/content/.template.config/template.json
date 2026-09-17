@@ -1,45 +1,45 @@
 {
   "$schema": "http://json.schemastore.org/template",
   "author": "Jan Skoruba",
-  "classifications": ["Web", "Duende.IdentityServer", "Admin"],
-  "name": "Skoruba Duende IdentityServer Admin",
-  "identity": "Skoruba.Duende.IdentityServer.Admin",
-  "groupIdentity": "Skoruba.Duende.IdentityServer.Admin",
-  "shortName": "skoruba.duende.isadmin",
+  "classifications": ["Web", "Open.IdentityServer", "Admin"],
+  "name": "Toralux Open IdentityServer Admin",
+  "identity": "Toralux.Open.IdentityServer.Admin",
+  "groupIdentity": "Toralux.Open.IdentityServer.Admin",
+  "shortName": "toralux.open-isadmin",
   "tags": {
     "language": "C#",
     "type": "project"
   },
-  "sourceName": "Skoruba.Duende.IdentityServer",
+  "sourceName": "Toralux.Open.IdentityServer",
   "preferNameDirectory": true,
   "symbols": {
     "title": {
       "type": "parameter",
-      "defaultValue": "Skoruba Duende IdentityServer Admin",
-      "replaces": "Skoruba Duende IdentityServer Admin",
+      "defaultValue": "Toralux Open IdentityServer Admin",
+      "replaces": "Toralux Open IdentityServer Admin",
       "isRequired": true,
       "description": "The title and footer of the administration"
     },
     "adminrole": {
       "type": "parameter",
-      "defaultValue": "SkorubaIdentityAdminAdministrator",
-      "replaces": "SkorubaIdentityAdminAdministrator",
+      "defaultValue": "ToraluxIdentityAdminAdministrator",
+      "replaces": "ToraluxIdentityAdminAdministrator",
       "isRequired": true,
       "description": "The name of admin role, that is used to authorize the administration (for example: MyAdminRole)."
     },
     "adminclientid": {
       "type": "parameter",
-      "defaultValue": "skoruba_identity_admin_v3",
-      "replaces": "skoruba_identity_admin_v3",
+      "defaultValue": "toralux_identity_admin_v3",
+      "replaces": "toralux_identity_admin_v3",
       "isRequired": true,
-      "description": "The name of client, that is be used in the Duende IdentityServer"
+      "description": "The name of client, that is be used in the Open IdentityServer"
     },
     "adminclientsecret": {
       "type": "parameter",
-      "defaultValue": "skoruba_admin_client_secret",
-      "replaces": "skoruba_admin_client_secret",
+      "defaultValue": "toralux_admin_client_secret",
+      "replaces": "toralux_admin_client_secret",
       "isRequired": true,
-      "description": "The value of client secret, that is be used in the Duende IdentityServer"
+      "description": "The value of client secret, that is be used in the Open IdentityServer"
     },
     "requirepushedauthorization": {
       "type": "parameter",
@@ -56,25 +56,25 @@
   },
   "primaryOutputs": [
     {
-      "path": "src/Skoruba.Duende.IdentityServer.Admin/Skoruba.Duende.IdentityServer.Admin.csproj"
+      "path": "src/Toralux.Open.IdentityServer.Admin/Toralux.Open.IdentityServer.Admin.csproj"
     },
     {
-      "path": "src/Skoruba.Duende.IdentityServer.STS.Identity/Skoruba.Duende.IdentityServer.STS.Identity.csproj"
+      "path": "src/Toralux.Open.IdentityServer.STS.Identity/Toralux.Open.IdentityServer.STS.Identity.csproj"
     },
     {
-      "path": "src/Skoruba.Duende.IdentityServer.Admin.Api/Skoruba.Duende.IdentityServer.Admin.Api.csproj"
+      "path": "src/Toralux.Open.IdentityServer.Admin.Api/Toralux.Open.IdentityServer.Admin.Api.csproj"
     },
     {
-      "path": "src/Skoruba.Duende.IdentityServer.Admin.EntityFramework.Shared/Skoruba.Duende.IdentityServer.Admin.EntityFramework.Shared.csproj"
+      "path": "src/Toralux.Open.IdentityServer.Admin.EntityFramework.Shared/Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.csproj"
     },
     {
-      "path": "src/Skoruba.Duende.IdentityServer.Admin.EntityFramework.PostgreSQL/Skoruba.Duende.IdentityServer.Admin.EntityFramework.PostgreSQL.csproj"
+      "path": "src/Toralux.Open.IdentityServer.Admin.EntityFramework.PostgreSQL/Toralux.Open.IdentityServer.Admin.EntityFramework.PostgreSQL.csproj"
     },
     {
-      "path": "src/Skoruba.Duende.IdentityServer.Admin.EntityFramework.SqlServer/Skoruba.Duende.IdentityServer.Admin.EntityFramework.SqlServer.csproj"
+      "path": "src/Toralux.Open.IdentityServer.Admin.EntityFramework.SqlServer/Toralux.Open.IdentityServer.Admin.EntityFramework.SqlServer.csproj"
     },
     {
-      "path": "src/Skoruba.Duende.IdentityServer.Shared/Skoruba.Duende.IdentityServer.Shared.csproj"
+      "path": "src/Toralux.Open.IdentityServer.Shared/Toralux.Open.IdentityServer.Shared.csproj"
     }
   ],
   "postActions": [

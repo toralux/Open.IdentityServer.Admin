@@ -9,7 +9,7 @@ import {
   ClientSecretsData,
 } from "@/models/Clients/ClientModels";
 import { SecretsFormData } from "@/components/SecretForm/SecretForm";
-import { client } from "@skoruba/duende.identityserver.admin.api.client";
+import { client } from "@toralux/open.identityserver.admin.api.client";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { INT_MAX } from "@/helpers/NumberHelper";
 import { queryKeys, queryWithoutCache } from "./QueryKeys";

@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<TargetFramework>net10.0</TargetFramework>
-		<Description>Entity Framework configuration for the administration of the Duende IdentityServer and Asp.Net Core Identity</Description>
+		<Description>Entity Framework configuration for the administration of the Open IdentityServer and Asp.Net Core Identity</Description>
 	</PropertyGroup>
 
 	<ItemGroup>

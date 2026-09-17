@@ -23,12 +23,12 @@ else {
     Write-Warning "Source icon not found: $sourceIcon"
 }
 
-$templateNuspecPath = "template-publish/Skoruba.Duende.IdentityServer.Admin.Templates.nuspec"
+$templateNuspecPath = "template-publish/Toralux.Open.IdentityServer.Admin.Templates.nuspec"
 nuget pack $templateNuspecPath -NoDefaultExcludes
 
-dotnet new --uninstall Skoruba.Duende.IdentityServer.Admin.Templates
+dotnet new --uninstall Toralux.Open.IdentityServer.Admin.Templates
 
-$templateLocalName = "Skoruba.Duende.IdentityServer.Admin.Templates.$packagesVersions.nupkg"
+$templateLocalName = "Toralux.Open.IdentityServer.Admin.Templates.$packagesVersions.nupkg"
 dotnet new -i $templateLocalName
 
-dotnet new skoruba.duende.isadmin --name MyProject --title MyProject --adminemail 'admin@skoruba.com' --adminpassword 'Passw0rd-123' --adminrole SkorubaIdentityAdminAdministrator --adminclientid skoruba_identity_admin_v3 --adminclientsecret skoruba_admin_client_secret --dockersupport true --requirepushedauthorization true
+dotnet new toralux.open-isadmin --name MyProject --title MyProject --adminemail 'admin@example.com' --adminpassword 'Passw0rd-123' --adminrole ToraluxIdentityAdminAdministrator --adminclientid toralux_identity_admin_v3 --adminclientsecret toralux_admin_client_secret --dockersupport true --requirepushedauthorization true

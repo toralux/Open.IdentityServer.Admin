@@ -3,7 +3,7 @@ import {
   AuditLogData,
   AuditLogsData,
 } from "@/models/AuditLogs/AuditLogsModels";
-import { client } from "@skoruba/duende.identityserver.admin.api.client";
+import { client } from "@toralux/open.identityserver.admin.api.client";
 import { format } from "date-fns";
 
 export const getAuditLogs = async (

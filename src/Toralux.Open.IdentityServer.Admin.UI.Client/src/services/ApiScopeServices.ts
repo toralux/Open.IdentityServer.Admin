@@ -1,5 +1,5 @@
 import ApiHelper from "@/helpers/ApiHelper";
-import { client } from "@skoruba/duende.identityserver.admin.api.client";
+import { client } from "@toralux/open.identityserver.admin.api.client";
 import { ApiScopeData, ApiScopesData } from "@/models/ApiScopes/ApiScopeModels";
 import { PropertyData, PropertiesData } from "@/models/Common/CommonModels";
 import { ApiScopeFormData } from "@/pages/ApiScope/Common/ApiScopeSchema";
