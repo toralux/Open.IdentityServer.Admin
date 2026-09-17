@@ -6,7 +6,10 @@ using System.Security.Cryptography.X509Certificates;
 using Open.IdentityServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+<<<<<<< HEAD
 using Microsoft.IdentityModel.Tokens;
+=======
+>>>>>>> 9c995bd0 (fix: repair namespaces mangled by swap-before-rename ordering)
 using Toralux.Open.IdentityServer.Shared.Configuration.Configuration.Common;
 using Toralux.Open.IdentityServer.Shared.Configuration.Helpers;
 
