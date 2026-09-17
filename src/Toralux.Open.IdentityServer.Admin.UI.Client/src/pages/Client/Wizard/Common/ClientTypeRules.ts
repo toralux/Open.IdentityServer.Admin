@@ -70,7 +70,7 @@ export const clientTypeRules: Record<ClientType, ClientTypeRuleSet> = {
     enforcedValues: {
       requirePkce: true,
       requireDPoP: true,
-      requirePushedAuthorization: true,
+      requirePushedAuthorization: false,
       allowOfflineAccess: true,
       requireClientSecret: true,
       authorizationCodeLifetime: 60,

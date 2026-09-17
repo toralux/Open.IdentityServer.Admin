@@ -472,43 +472,20 @@ namespace Toralux.Open.IdentityServer.STS.Identity.Helpers
         {
             var configurationSection = configuration.GetSection(nameof(IdentityServerOptions));
 
-            var identityServerOptions = configurationSection.Get<IdentityServerOptions>();
-
             var builder = services.AddIdentityServer(options =>
                 {
                     configurationSection.Bind(options);
-
-                    options.DynamicProviders.SignInScheme = IdentityConstants.ExternalScheme;
-                    options.DynamicProviders.SignOutScheme = IdentityConstants.ApplicationScheme;
                 })
                 .AddConfigurationStore<TConfigurationDbContext>()
                 .AddOperationalStore<TPersistedGrantDbContext>()
                 .AddAspNetIdentity<TUserIdentity>();
 
-            services.ConfigureOptions<OpenIdClaimsMappingConfig>();
-
-            if (!identityServerOptions.KeyManagement.Enabled)
-            {
-                builder.AddCustomSigningCredential(configuration);
-                builder.AddCustomValidationKey(configuration);
-            }
+            // Open.IdentityServer has no automatic key management: signing and validation
+            // keys always come from configuration (cert store, PFX file, Azure KeyVault or dev tempkey).
+            builder.AddCustomSigningCredential(configuration);
+            builder.AddCustomValidationKey(configuration);
 
             builder.AddExtensionGrantValidator<DelegationGrantValidator>();
-
-            // Check if server-side sessions should be enabled from configuration
-            var serverSideSessionsConfig = configuration.GetSection(Configuration.ServerSideSessionsConfiguration.SectionName).Get<Configuration.ServerSideSessionsConfiguration>() ?? new Configuration.ServerSideSessionsConfiguration();
-            var serverSideSessionsEnabled = serverSideSessionsConfig.Enabled;
-
-            if (serverSideSessionsEnabled)
-            {
-                builder.AddServerSideSessions();
-                services.Configure<IdentityServerOptions>(options =>
-                {
-                    options.ServerSideSessions.UserDisplayNameClaimType = JwtClaimTypes.Name;
-                    options.ServerSideSessions.RemoveExpiredSessions = true;
-                    options.ServerSideSessions.ExpiredSessionsTriggerBackchannelLogout = true;
-                });
-            }
 
             return builder;
         }
