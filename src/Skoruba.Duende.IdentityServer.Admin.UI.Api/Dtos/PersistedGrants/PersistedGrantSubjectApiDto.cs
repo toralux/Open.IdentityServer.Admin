@@ -3,7 +3,7 @@
 
 using System;
 
-namespace Skoruba.Duende.IdentityServer.Admin.UI.Api.Dtos.PersistedGrants
+namespace Skoruba.Open.IdentityServer.Admin.UI.Api.Dtos.PersistedGrants
 {
     public class PersistedGrantSubjectApiDto
     {

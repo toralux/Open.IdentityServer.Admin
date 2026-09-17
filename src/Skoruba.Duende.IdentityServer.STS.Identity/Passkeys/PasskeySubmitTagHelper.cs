@@ -14,7 +14,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Skoruba.Duende.IdentityServer.STS.Identity.Passkeys
+namespace Skoruba.Open.IdentityServer.STS.Identity.Passkeys
 {
     [HtmlTargetElement("passkey-submit")]
 public class PasskeySubmitTagHelper : TagHelper

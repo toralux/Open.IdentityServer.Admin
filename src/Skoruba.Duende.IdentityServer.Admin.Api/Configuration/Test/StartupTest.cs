@@ -7,14 +7,14 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Configuration.Configuration;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Shared.DbContexts;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity;
-using Skoruba.Duende.IdentityServer.Admin.UI.Api.Helpers;
-using Skoruba.Duende.IdentityServer.Admin.UI.Api.Middlewares;
-using Skoruba.Duende.IdentityServer.Shared.Configuration.Constants;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Configuration.Configuration;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.DbContexts;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity;
+using Skoruba.Open.IdentityServer.Admin.UI.Api.Helpers;
+using Skoruba.Open.IdentityServer.Admin.UI.Api.Middlewares;
+using Skoruba.Open.IdentityServer.Shared.Configuration.Constants;
 
-namespace Skoruba.Duende.IdentityServer.Admin.Api.Configuration.Test
+namespace Skoruba.Open.IdentityServer.Admin.Api.Configuration.Test
 {
     public class StartupTest : Startup
     {

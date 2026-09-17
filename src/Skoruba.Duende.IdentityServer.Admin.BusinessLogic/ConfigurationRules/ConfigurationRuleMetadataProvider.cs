@@ -2,10 +2,10 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System.Collections.Generic;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Dtos.Configuration;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Admin.Storage.Entities;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Configuration;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Entities;
 
-namespace Skoruba.Duende.IdentityServer.Admin.BusinessLogic.ConfigurationRules;
+namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.ConfigurationRules;
 
 /// <summary>
 /// Provides metadata and schema information for configuration rules

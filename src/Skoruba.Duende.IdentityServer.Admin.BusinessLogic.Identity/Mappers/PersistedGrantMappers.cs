@@ -2,13 +2,13 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System.Linq;
-using Duende.IdentityServer.EntityFramework.Entities;
+using Open.IdentityServer.EntityFramework.Entities;
 using Riok.Mapperly.Abstractions;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Grant;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Entities;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Extensions.Common;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Grant;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Entities;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Extensions.Common;
 
-namespace Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Mappers
+namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Mappers
 {
     [Mapper(RequiredMappingStrategy = RequiredMappingStrategy.None)]
     internal static partial class PersistedGrantMapper

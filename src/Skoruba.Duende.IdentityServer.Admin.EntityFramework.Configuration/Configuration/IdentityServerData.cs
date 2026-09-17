@@ -2,10 +2,10 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System.Collections.Generic;
-using Duende.IdentityServer.Models;
-using Client = Skoruba.Duende.IdentityServer.Admin.EntityFramework.Configuration.Configuration.IdentityServer.Client;
+using Open.IdentityServer.Models;
+using Client = Skoruba.Open.IdentityServer.Admin.EntityFramework.Configuration.Configuration.IdentityServer.Client;
 
-namespace Skoruba.Duende.IdentityServer.Admin.EntityFramework.Configuration.Configuration
+namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Configuration.Configuration
 {
     public class IdentityServerData
     {

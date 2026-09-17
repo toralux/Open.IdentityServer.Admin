@@ -1,7 +1,7 @@
 ﻿// Copyright (c) Jan Škoruba. All Rights Reserved.
 // Licensed under the Apache License, Version 2.0.
 
-namespace Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Dtos.Enums
+namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Enums
 {
     public enum SavedStatus
     {

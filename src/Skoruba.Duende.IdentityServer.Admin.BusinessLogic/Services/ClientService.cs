@@ -5,21 +5,21 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Duende.IdentityServer.Models;
+using Open.IdentityServer.Models;
 using Skoruba.AuditLogging.Services;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Dtos.Configuration;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Dtos.Enums;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Events.Client;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Helpers;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Mappers;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Resources;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Services.Interfaces;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Shared.Dtos.Common;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Shared.ExceptionHandling;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Helpers;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Repositories.Interfaces;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Configuration;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Enums;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Events.Client;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Helpers;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Mappers;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Resources;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Services.Interfaces;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Shared.Dtos.Common;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Shared.ExceptionHandling;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Helpers;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Repositories.Interfaces;
 
-namespace Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Services
+namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Services
 {
     public class ClientService : IClientService
     {

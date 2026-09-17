@@ -1,11 +1,11 @@
 ﻿// Copyright (c) Jan Škoruba. All Rights Reserved.
 // Licensed under the Apache License, Version 2.0.
 
-using Duende.IdentityServer.EntityFramework.Entities;
-using Duende.IdentityServer.EntityFramework.Interfaces;
+using Open.IdentityServer.EntityFramework.Entities;
+using Open.IdentityServer.EntityFramework.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
-namespace Skoruba.Duende.IdentityServer.Admin.EntityFramework.Interfaces
+namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Interfaces
 {
     public interface IAdminConfigurationDbContext : IConfigurationDbContext
     {

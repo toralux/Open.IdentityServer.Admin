@@ -2,11 +2,11 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System.Threading.Tasks;
-using Duende.IdentityServer.EntityFramework.Entities;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Entities;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Extensions.Common;
+using Open.IdentityServer.EntityFramework.Entities;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Entities;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Extensions.Common;
 
-namespace Skoruba.Duende.IdentityServer.Admin.EntityFramework.Identity.Repositories.Interfaces
+namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Identity.Repositories.Interfaces
 {
 	public interface IPersistedGrantAspNetIdentityRepository
     {

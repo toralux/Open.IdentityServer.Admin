@@ -1,8 +1,8 @@
 ﻿using System;
 using Microsoft.Extensions.DependencyInjection;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Shared.Configuration.Schema;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.Configuration.Schema;
 
-namespace Skoruba.Duende.IdentityServer.Admin.EntityFramework.Shared.Extensions
+namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.Extensions
 {
     public static class ConfigurationSchemaServicesExtensions
     {

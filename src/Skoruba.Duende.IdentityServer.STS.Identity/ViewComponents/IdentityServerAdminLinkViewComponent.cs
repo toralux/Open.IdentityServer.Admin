@@ -2,9 +2,9 @@
 // Licensed under the Apache License, Version 2.0.
 
 using Microsoft.AspNetCore.Mvc;
-using Skoruba.Duende.IdentityServer.STS.Identity.Configuration.Interfaces;
+using Skoruba.Open.IdentityServer.STS.Identity.Configuration.Interfaces;
 
-namespace Skoruba.Duende.IdentityServer.STS.Identity.ViewComponents
+namespace Skoruba.Open.IdentityServer.STS.Identity.ViewComponents
 {
     public class IdentityServerAdminLinkViewComponent : ViewComponent
     {

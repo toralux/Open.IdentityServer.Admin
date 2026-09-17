@@ -4,7 +4,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Skoruba.Duende.IdentityServer.Admin.UI.Api.Dtos.Clients
+namespace Skoruba.Open.IdentityServer.Admin.UI.Api.Dtos.Clients
 {
     public class ClientSecretApiDto
     {

@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Antiforgery;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Skoruba.Duende.IdentityServer.Admin.UI.Services.AntiForgeryProtection;
+using Skoruba.Open.IdentityServer.Admin.UI.Services.AntiForgeryProtection;
 
-namespace Skoruba.Duende.IdentityServer.Admin.Controllers;
+namespace Skoruba.Open.IdentityServer.Admin.Controllers;
 
 public class CsrfController(IAntiforgery antiforgery) : Controller
 {

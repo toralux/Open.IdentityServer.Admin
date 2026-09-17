@@ -2,9 +2,9 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System.Collections.Generic;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Configuration.Configuration.Identity;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Configuration.Configuration.Identity;
 
-namespace Skoruba.Duende.IdentityServer.Admin.EntityFramework.Configuration.Configuration
+namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Configuration.Configuration
 {
 	public class IdentityData
     {

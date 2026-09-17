@@ -1,7 +1,7 @@
 using System;
 using Microsoft.AspNetCore.Identity;
 
-namespace Skoruba.Duende.IdentityServer.Shared.Configuration.Constants
+namespace Skoruba.Open.IdentityServer.Shared.Configuration.Constants
 {
     public static class IdentityStoreDefaults
     {

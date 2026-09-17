@@ -3,7 +3,7 @@
 
 using System.Collections.Generic;
 
-namespace Skoruba.Duende.IdentityServer.Admin.EntityFramework.Admin.Storage.Dtos;
+namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Dtos;
 
 public class ConfigurationIssuesPagedDto
 {

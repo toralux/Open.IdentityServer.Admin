@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
-namespace Skoruba.Duende.IdentityServer.Admin.EntityFramework.PostgreSQL.Migrations.DataProtection
+namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.PostgreSQL.Migrations.DataProtection
 {
     public partial class AddDataProtection : Migration
     {

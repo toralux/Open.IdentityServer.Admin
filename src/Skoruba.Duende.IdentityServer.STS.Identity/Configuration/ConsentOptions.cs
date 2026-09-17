@@ -4,7 +4,7 @@
 // Original file: https://github.com/DuendeSoftware/IdentityServer.Quickstart.UI
 // Modified by Jan Škoruba
 
-namespace Skoruba.Duende.IdentityServer.STS.Identity.Configuration
+namespace Skoruba.Open.IdentityServer.STS.Identity.Configuration
 {
     public class ConsentOptions
     {

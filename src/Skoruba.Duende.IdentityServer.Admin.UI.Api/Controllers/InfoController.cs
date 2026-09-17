@@ -4,12 +4,12 @@
 using System.Reflection;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Skoruba.Duende.IdentityServer.Admin.UI.Api.Configuration;
-using Skoruba.Duende.IdentityServer.Admin.UI.Api.Configuration.Constants;
-using Skoruba.Duende.IdentityServer.Admin.UI.Api.ExceptionHandling;
-using Skoruba.Duende.IdentityServer.Admin.UI.Api.Helpers;
+using Skoruba.Open.IdentityServer.Admin.UI.Api.Configuration;
+using Skoruba.Open.IdentityServer.Admin.UI.Api.Configuration.Constants;
+using Skoruba.Open.IdentityServer.Admin.UI.Api.ExceptionHandling;
+using Skoruba.Open.IdentityServer.Admin.UI.Api.Helpers;
 
-namespace Skoruba.Duende.IdentityServer.Admin.UI.Api.Controllers
+namespace Skoruba.Open.IdentityServer.Admin.UI.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

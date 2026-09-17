@@ -3,7 +3,7 @@
 
 using System.Collections.Generic;
 
-namespace Skoruba.Duende.IdentityServer.Admin.UI.Api.Dtos.Clients
+namespace Skoruba.Open.IdentityServer.Admin.UI.Api.Dtos.Clients
 {
     public class ClientsApiDto
     {

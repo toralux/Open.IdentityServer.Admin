@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Skoruba.AuditLogging.EntityFramework.DbContexts;
 using Skoruba.AuditLogging.EntityFramework.Entities;
 
-namespace Skoruba.Duende.IdentityServer.Admin.EntityFramework.Shared.DbContexts
+namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.DbContexts
 {
     public class AdminAuditLogDbContext : DbContext, IAuditLoggingDbContext<AuditLog>
     {

@@ -8,19 +8,19 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Skoruba.AuditLogging.Services;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Events.Identity;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Helpers;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Mappers;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Mappers.Customization;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Resources;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Services.Interfaces;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Shared.Dtos.Common;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Shared.ExceptionHandling;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Extensions.Common;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Identity.Repositories.Interfaces;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Events.Identity;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Helpers;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Mappers;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Mappers.Customization;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Resources;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Services.Interfaces;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Shared.Dtos.Common;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Shared.ExceptionHandling;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Extensions.Common;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Identity.Repositories.Interfaces;
 
-namespace Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Services
+namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Services
 {
     public class IdentityService<TUserDto, TRoleDto, TUser, TRole, TKey, TUserClaim, TUserRole,
         TUserLogin, TRoleClaim, TUserToken,

@@ -6,20 +6,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using Duende.IdentityServer.EntityFramework.Entities;
-using Duende.IdentityServer.Models;
+using Open.IdentityServer.EntityFramework.Entities;
+using Open.IdentityServer.Models;
 using Microsoft.EntityFrameworkCore;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Constants;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Extensions.Common;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Extensions.Enums;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Extensions.Extensions;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Helpers;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Interfaces;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Repositories.Interfaces;
-using Client = Duende.IdentityServer.EntityFramework.Entities.Client;
-using ClientClaim = Duende.IdentityServer.EntityFramework.Entities.ClientClaim;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Constants;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Extensions.Common;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Extensions.Enums;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Extensions.Extensions;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Helpers;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Interfaces;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Repositories.Interfaces;
+using Client = Open.IdentityServer.EntityFramework.Entities.Client;
+using ClientClaim = Open.IdentityServer.EntityFramework.Entities.ClientClaim;
 
-namespace Skoruba.Duende.IdentityServer.Admin.EntityFramework.Repositories
+namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Repositories
 {
     public class ClientRepository<TDbContext> : IClientRepository
     where TDbContext : DbContext, IAdminConfigurationDbContext

@@ -3,7 +3,7 @@
 
 using Skoruba.AuditLogging.Events;
 
-namespace Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Events.Log
+namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Events.Log
 {
     public class LogsRequestedEvent : AuditEvent
     {

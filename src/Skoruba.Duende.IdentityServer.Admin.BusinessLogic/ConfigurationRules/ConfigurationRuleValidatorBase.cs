@@ -5,9 +5,9 @@ using System;
 using System.Collections.Generic;
 using System.Text.Json;
 using Microsoft.Extensions.Logging;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Admin.Storage.ConfigurationRules;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.ConfigurationRules;
 
-namespace Skoruba.Duende.IdentityServer.Admin.BusinessLogic.ConfigurationRules;
+namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.ConfigurationRules;
 
 public abstract class ConfigurationRuleValidatorBase
 {

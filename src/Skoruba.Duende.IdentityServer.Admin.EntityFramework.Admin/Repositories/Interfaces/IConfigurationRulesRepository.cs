@@ -3,9 +3,9 @@
 
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Admin.Storage.Entities;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Entities;
 
-namespace Skoruba.Duende.IdentityServer.Admin.EntityFramework.Admin.Repositories.Interfaces;
+namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Repositories.Interfaces;
 
 public interface IConfigurationRulesRepository
 {

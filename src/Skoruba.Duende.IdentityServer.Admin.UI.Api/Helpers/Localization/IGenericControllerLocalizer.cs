@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Microsoft.Extensions.Localization;
 
-namespace Skoruba.Duende.IdentityServer.Admin.UI.Api.Helpers.Localization
+namespace Skoruba.Open.IdentityServer.Admin.UI.Api.Helpers.Localization
 {
     public interface IGenericControllerLocalizer<out T>
     {

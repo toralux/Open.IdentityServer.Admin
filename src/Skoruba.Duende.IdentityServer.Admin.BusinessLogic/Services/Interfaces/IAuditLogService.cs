@@ -5,10 +5,10 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Dtos.Dashboard;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Dtos.Log;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Dashboard;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Log;
 
-namespace Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Services.Interfaces
+namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Services.Interfaces
 {
     public interface IAuditLogService
     {

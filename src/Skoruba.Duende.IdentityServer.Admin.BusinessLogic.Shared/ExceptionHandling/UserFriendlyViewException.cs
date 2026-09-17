@@ -4,7 +4,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Shared.ExceptionHandling
+namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Shared.ExceptionHandling
 {
     public class UserFriendlyViewException : Exception
     {

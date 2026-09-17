@@ -2,9 +2,9 @@
 // Licensed under the Apache License, Version 2.0.
 
 using Microsoft.Extensions.Configuration;
-using Skoruba.Duende.IdentityServer.Shared.Configuration.Configuration.Common;
+using Skoruba.Open.IdentityServer.Shared.Configuration.Configuration.Common;
 
-namespace Skoruba.Duende.IdentityServer.Shared.Configuration.Helpers
+namespace Skoruba.Open.IdentityServer.Shared.Configuration.Helpers
 {
     public static class DockerHelpers
     {

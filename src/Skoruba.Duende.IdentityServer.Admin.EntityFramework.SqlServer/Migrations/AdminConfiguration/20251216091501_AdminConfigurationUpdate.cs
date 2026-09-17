@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
-namespace Skoruba.Duende.IdentityServer.Admin.EntityFramework.SqlServer.Migrations.AdminConfiguration
+namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.SqlServer.Migrations.AdminConfiguration
 {
     /// <inheritdoc />
     public partial class AdminConfigurationUpdate : Migration

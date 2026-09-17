@@ -3,10 +3,10 @@
 
 using System;
 using System.Threading.Tasks;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Entities;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Extensions.Common;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Entities;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Extensions.Common;
 
-namespace Skoruba.Duende.IdentityServer.Admin.EntityFramework.Repositories.Interfaces
+namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Repositories.Interfaces
 {
     public interface ILogRepository
     {

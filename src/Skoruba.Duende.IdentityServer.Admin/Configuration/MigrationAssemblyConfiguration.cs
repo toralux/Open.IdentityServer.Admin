@@ -1,9 +1,9 @@
 using System.Reflection;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Configuration.Configuration;
-using SqlMigrationAssembly = Skoruba.Duende.IdentityServer.Admin.EntityFramework.SqlServer.Helpers.MigrationAssembly;
-using PostgreSQLMigrationAssembly = Skoruba.Duende.IdentityServer.Admin.EntityFramework.PostgreSQL.Helpers.MigrationAssembly;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Configuration.Configuration;
+using SqlMigrationAssembly = Skoruba.Open.IdentityServer.Admin.EntityFramework.SqlServer.Helpers.MigrationAssembly;
+using PostgreSQLMigrationAssembly = Skoruba.Open.IdentityServer.Admin.EntityFramework.PostgreSQL.Helpers.MigrationAssembly;
 
-namespace Skoruba.Duende.IdentityServer.Admin.Configuration;
+namespace Skoruba.Open.IdentityServer.Admin.Configuration;
 
 public static class MigrationAssemblyConfiguration
 {

@@ -8,9 +8,9 @@ using System.Security.Claims;
 using IdentityModel;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Skoruba.Duende.IdentityServer.STS.Identity.Configuration.Constants;
+using Skoruba.Open.IdentityServer.STS.Identity.Configuration.Constants;
 
-namespace Skoruba.Duende.IdentityServer.STS.Identity.Helpers
+namespace Skoruba.Open.IdentityServer.STS.Identity.Helpers
 {
     public static class OpenIdClaimHelpers
     {

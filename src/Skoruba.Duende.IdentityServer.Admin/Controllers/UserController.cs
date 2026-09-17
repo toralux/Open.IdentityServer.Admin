@@ -1,10 +1,10 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Skoruba.Duende.IdentityServer.Admin.UI.Services;
-using Skoruba.Duende.IdentityServer.Admin.UI.Services.AntiForgeryProtection;
-using Skoruba.Duende.IdentityServer.Admin.UI.Services.User;
+using Skoruba.Open.IdentityServer.Admin.UI.Services;
+using Skoruba.Open.IdentityServer.Admin.UI.Services.AntiForgeryProtection;
+using Skoruba.Open.IdentityServer.Admin.UI.Services.User;
 
-namespace Skoruba.Duende.IdentityServer.Admin.Controllers;
+namespace Skoruba.Open.IdentityServer.Admin.Controllers;
 
 [ApiController]
 [Route("[controller]")]

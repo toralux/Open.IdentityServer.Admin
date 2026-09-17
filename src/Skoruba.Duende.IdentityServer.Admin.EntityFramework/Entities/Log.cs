@@ -5,7 +5,7 @@ using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Xml.Linq;
 
-namespace Skoruba.Duende.IdentityServer.Admin.EntityFramework.Entities
+namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Entities
 {    
     public class Log
     {

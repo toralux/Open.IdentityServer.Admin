@@ -1,8 +1,8 @@
 using System.Threading;
 using System.Threading.Tasks;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Entities;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Entities;
 
-namespace Skoruba.Duende.IdentityServer.Admin.EntityFramework.Repositories.Interfaces;
+namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Repositories.Interfaces;
 
 public interface IDashboardRepository
 {

@@ -4,9 +4,9 @@
 // Original file: https://github.com/DuendeSoftware/IdentityServer.Quickstart.UI
 // Modified by Jan Škoruba
 
-using Duende.IdentityServer.Models;
+using Open.IdentityServer.Models;
 
-namespace Skoruba.Duende.IdentityServer.STS.Identity.ViewModels.Home
+namespace Skoruba.Open.IdentityServer.STS.Identity.ViewModels.Home
 {
     public class ErrorViewModel
     {

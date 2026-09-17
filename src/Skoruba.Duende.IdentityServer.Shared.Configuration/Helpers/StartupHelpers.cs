@@ -10,12 +10,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SendGrid;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Configuration.Configuration;
-using Skoruba.Duende.IdentityServer.Shared.Configuration.Configuration.Common;
-using Skoruba.Duende.IdentityServer.Shared.Configuration.Configuration.Email;
-using Skoruba.Duende.IdentityServer.Shared.Configuration.Email;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Configuration.Configuration;
+using Skoruba.Open.IdentityServer.Shared.Configuration.Configuration.Common;
+using Skoruba.Open.IdentityServer.Shared.Configuration.Configuration.Email;
+using Skoruba.Open.IdentityServer.Shared.Configuration.Email;
 
-namespace Skoruba.Duende.IdentityServer.Shared.Configuration.Helpers
+namespace Skoruba.Open.IdentityServer.Shared.Configuration.Helpers
 {
     public static class StartupHelpers
     {
@@ -56,7 +56,7 @@ namespace Skoruba.Duende.IdentityServer.Shared.Configuration.Helpers
             }
         }
         
-        public const string DefaultDataProtectionAppName = "Skoruba.Duende.IdentityServer";
+        public const string DefaultDataProtectionAppName = "Skoruba.Open.IdentityServer";
         public static void AddDataProtection<TDbContext>(this IServiceCollection services, IConfiguration configuration, string applicationName = DefaultDataProtectionAppName)
                     where TDbContext : DbContext, IDataProtectionKeyContext
         {

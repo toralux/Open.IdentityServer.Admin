@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Reflection;
 using NetIPNetwork = System.Net.IPNetwork;
-using Duende.IdentityServer.EntityFramework.Options;
+using Open.IdentityServer.EntityFramework.Options;
 using IdentityModel;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -23,32 +23,32 @@ using Skoruba.AuditLogging.EntityFramework.Entities;
 using Skoruba.AuditLogging.EntityFramework.Extensions;
 using Skoruba.AuditLogging.EntityFramework.Repositories;
 using Skoruba.AuditLogging.EntityFramework.Services;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Extensions;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Extensions;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Services;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Services.Interfaces;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Admin.Storage.Interfaces;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Configuration.Configuration;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Configuration.PostgreSQL;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Configuration.SqlServer;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Helpers;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Interfaces;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Repositories;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Repositories.Interfaces;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Shared.Extensions;
-using Skoruba.Duende.IdentityServer.Admin.UI.Api.Configuration;
-using Skoruba.Duende.IdentityServer.Admin.UI.Api.Configuration.ApplicationParts;
-using Skoruba.Duende.IdentityServer.Admin.UI.Api.Configuration.AuditLogging;
-using Skoruba.Duende.IdentityServer.Admin.UI.Api.Configuration.Constants;
-using Skoruba.Duende.IdentityServer.Admin.UI.Api.ExceptionHandling;
-using Skoruba.Duende.IdentityServer.Admin.UI.Api.Helpers.Localization;
-using Skoruba.Duende.IdentityServer.Admin.UI.Api.Mappers;
-using Skoruba.Duende.IdentityServer.Admin.UI.Api.Resources;
-using Skoruba.Duende.IdentityServer.Shared.Configuration.Helpers;
-using Skoruba.Duende.IdentityServer.Shared.Configuration.Constants;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Extensions;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Extensions;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Services;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Services.Interfaces;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Interfaces;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Configuration.Configuration;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Configuration.PostgreSQL;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Configuration.SqlServer;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Helpers;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Interfaces;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Repositories;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Repositories.Interfaces;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.Extensions;
+using Skoruba.Open.IdentityServer.Admin.UI.Api.Configuration;
+using Skoruba.Open.IdentityServer.Admin.UI.Api.Configuration.ApplicationParts;
+using Skoruba.Open.IdentityServer.Admin.UI.Api.Configuration.AuditLogging;
+using Skoruba.Open.IdentityServer.Admin.UI.Api.Configuration.Constants;
+using Skoruba.Open.IdentityServer.Admin.UI.Api.ExceptionHandling;
+using Skoruba.Open.IdentityServer.Admin.UI.Api.Helpers.Localization;
+using Skoruba.Open.IdentityServer.Admin.UI.Api.Mappers;
+using Skoruba.Open.IdentityServer.Admin.UI.Api.Resources;
+using Skoruba.Open.IdentityServer.Shared.Configuration.Helpers;
+using Skoruba.Open.IdentityServer.Shared.Configuration.Constants;
 
-namespace Skoruba.Duende.IdentityServer.Admin.UI.Api.Helpers
+namespace Skoruba.Open.IdentityServer.Admin.UI.Api.Helpers
 {
     public static class StartupHelpers
     {
@@ -362,8 +362,8 @@ namespace Skoruba.Duende.IdentityServer.Admin.UI.Api.Helpers
         public static void AddForwardHeaders(this IApplicationBuilder app, IConfiguration configuration)
         {
             var forwardedHeadersConfig = configuration.GetSection("ForwardedHeadersConfiguration")
-                .Get<Skoruba.Duende.IdentityServer.Shared.Configuration.Configuration.ForwardedHeadersConfiguration>()
-                ?? new Skoruba.Duende.IdentityServer.Shared.Configuration.Configuration.ForwardedHeadersConfiguration();
+                .Get<Skoruba.Open.IdentityServer.Shared.Configuration.Configuration.ForwardedHeadersConfiguration>()
+                ?? new Skoruba.Open.IdentityServer.Shared.Configuration.Configuration.ForwardedHeadersConfiguration();
 
             if (forwardedHeadersConfig.Enabled)
             {

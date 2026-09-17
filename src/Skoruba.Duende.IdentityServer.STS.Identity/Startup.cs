@@ -7,18 +7,18 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using IdentityModel;
-using Duende.IdentityServer;
-using Duende.IdentityServer.Configuration;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Shared.DbContexts;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity;
-using Skoruba.Duende.IdentityServer.Shared.Configuration.Helpers;
-using Skoruba.Duende.IdentityServer.STS.Identity.Configuration;
-using Skoruba.Duende.IdentityServer.STS.Identity.Configuration.Constants;
-using Skoruba.Duende.IdentityServer.STS.Identity.Configuration.Interfaces;
-using Skoruba.Duende.IdentityServer.STS.Identity.Helpers;
-using Skoruba.Duende.IdentityServer.STS.Identity.Passkeys;
+using Open.IdentityServer;
+using Open.IdentityServer.Configuration;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.DbContexts;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity;
+using Skoruba.Open.IdentityServer.Shared.Configuration.Helpers;
+using Skoruba.Open.IdentityServer.STS.Identity.Configuration;
+using Skoruba.Open.IdentityServer.STS.Identity.Configuration.Constants;
+using Skoruba.Open.IdentityServer.STS.Identity.Configuration.Interfaces;
+using Skoruba.Open.IdentityServer.STS.Identity.Helpers;
+using Skoruba.Open.IdentityServer.STS.Identity.Passkeys;
 
-namespace Skoruba.Duende.IdentityServer.STS.Identity
+namespace Skoruba.Open.IdentityServer.STS.Identity
 {
     public class Startup
     {

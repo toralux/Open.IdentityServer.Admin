@@ -2,9 +2,9 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System.Threading.Tasks;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Dtos.IdentityProvider;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.IdentityProvider;
 
-namespace Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Services.Interfaces
+namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Services.Interfaces
 {
     public interface IIdentityProviderService
     {

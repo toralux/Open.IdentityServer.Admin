@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Resources {
+namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Resources {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Resources.IdentityServiceRes" +
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Resources.IdentityServiceRes" +
                             "ource", typeof(IdentityServiceResource).Assembly);
                     resourceMan = temp;
                 }

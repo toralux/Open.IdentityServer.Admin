@@ -1,11 +1,11 @@
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Dtos.Dashboard;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Services.Interfaces;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Repositories.Interfaces;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Dashboard;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Services.Interfaces;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Repositories.Interfaces;
 
-namespace Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Services;
+namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Services;
 
 public class DashboardService : IDashboardService
 {

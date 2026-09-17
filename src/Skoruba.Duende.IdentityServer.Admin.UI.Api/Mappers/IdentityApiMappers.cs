@@ -3,13 +3,13 @@
 
 using System;
 using System.Linq;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity.Base;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Mappers;
-using Skoruba.Duende.IdentityServer.Admin.UI.Api.Dtos.Roles;
-using Skoruba.Duende.IdentityServer.Admin.UI.Api.Dtos.Users;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity.Base;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Mappers;
+using Skoruba.Open.IdentityServer.Admin.UI.Api.Dtos.Roles;
+using Skoruba.Open.IdentityServer.Admin.UI.Api.Dtos.Users;
 
-namespace Skoruba.Duende.IdentityServer.Admin.UI.Api.Mappers
+namespace Skoruba.Open.IdentityServer.Admin.UI.Api.Mappers
 {
     public static class IdentityApiMappers
     {

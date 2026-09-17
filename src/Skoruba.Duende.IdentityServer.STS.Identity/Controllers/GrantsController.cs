@@ -7,16 +7,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Duende.IdentityServer.Events;
-using Duende.IdentityServer.Extensions;
-using Duende.IdentityServer.Services;
-using Duende.IdentityServer.Stores;
+using Open.IdentityServer.Events;
+using Open.IdentityServer.Extensions;
+using Open.IdentityServer.Services;
+using Open.IdentityServer.Stores;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Skoruba.Duende.IdentityServer.STS.Identity.Helpers;
-using Skoruba.Duende.IdentityServer.STS.Identity.ViewModels.Grants;
+using Skoruba.Open.IdentityServer.STS.Identity.Helpers;
+using Skoruba.Open.IdentityServer.STS.Identity.ViewModels.Grants;
 
-namespace Skoruba.Duende.IdentityServer.STS.Identity.Controllers
+namespace Skoruba.Open.IdentityServer.STS.Identity.Controllers
 {
     /// <summary>
     /// This sample controller allows a user to revoke grants given to clients

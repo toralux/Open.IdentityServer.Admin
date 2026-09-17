@@ -2,15 +2,15 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.ConfigurationRules.ApiResourceRules;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.ConfigurationRules.ApiScopeRules;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.ConfigurationRules.ClientRules;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.ConfigurationRules.IdentityResourceRules;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.ConfigurationRules.SecurityRules;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Admin.Storage.Entities;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Admin.Storage.ConfigurationRules;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.ConfigurationRules.ApiResourceRules;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.ConfigurationRules.ApiScopeRules;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.ConfigurationRules.ClientRules;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.ConfigurationRules.IdentityResourceRules;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.ConfigurationRules.SecurityRules;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Entities;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.ConfigurationRules;
 
-namespace Skoruba.Duende.IdentityServer.Admin.BusinessLogic.ConfigurationRules;
+namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.ConfigurationRules;
 
 public class ConfigurationRuleValidatorFactory : IConfigurationRuleValidatorFactory
 {

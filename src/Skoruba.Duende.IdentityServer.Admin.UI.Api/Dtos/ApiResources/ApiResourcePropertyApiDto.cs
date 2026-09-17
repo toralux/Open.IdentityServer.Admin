@@ -1,7 +1,7 @@
 ﻿// Copyright (c) Jan Škoruba. All Rights Reserved.
 // Licensed under the Apache License, Version 2.0.
 
-namespace Skoruba.Duende.IdentityServer.Admin.UI.Api.Dtos.ApiResources
+namespace Skoruba.Open.IdentityServer.Admin.UI.Api.Dtos.ApiResources
 {
     public class ApiResourcePropertyApiDto
     {

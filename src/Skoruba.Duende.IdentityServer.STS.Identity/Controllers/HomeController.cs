@@ -6,15 +6,15 @@
 
 using System;
 using System.Threading.Tasks;
-using Duende.IdentityServer.Services;
+using Open.IdentityServer.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
-using Skoruba.Duende.IdentityServer.Shared.Configuration.Helpers;
-using Skoruba.Duende.IdentityServer.STS.Identity.Helpers;
-using Skoruba.Duende.IdentityServer.STS.Identity.ViewModels.Home;
+using Skoruba.Open.IdentityServer.Shared.Configuration.Helpers;
+using Skoruba.Open.IdentityServer.STS.Identity.Helpers;
+using Skoruba.Open.IdentityServer.STS.Identity.ViewModels.Home;
 
-namespace Skoruba.Duende.IdentityServer.STS.Identity.Controllers
+namespace Skoruba.Open.IdentityServer.STS.Identity.Controllers
 {
     [SecurityHeaders]
     public class HomeController : Controller

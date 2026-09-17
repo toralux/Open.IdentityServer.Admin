@@ -1,4 +1,4 @@
-namespace Skoruba.Duende.IdentityServer.Admin.UI.Services;
+namespace Skoruba.Open.IdentityServer.Admin.UI.Services;
 
 internal static class BasePathHelper
 {

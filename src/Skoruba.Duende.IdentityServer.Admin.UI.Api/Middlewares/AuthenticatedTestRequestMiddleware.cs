@@ -9,7 +9,7 @@ using IdentityModel;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Http;
 
-namespace Skoruba.Duende.IdentityServer.Admin.UI.Api.Middlewares
+namespace Skoruba.Open.IdentityServer.Admin.UI.Api.Middlewares
 {
     public class AuthenticatedTestRequestMiddleware
     {

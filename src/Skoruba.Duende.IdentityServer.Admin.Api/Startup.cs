@@ -11,18 +11,18 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using NSwag.AspNetCore;
 using Skoruba.AuditLogging.EntityFramework.Entities;
-using Skoruba.Duende.IdentityServer.Admin.Api.Configuration;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Configuration.Configuration;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Shared.DbContexts;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity;
-using Skoruba.Duende.IdentityServer.Admin.UI.Api.Configuration;
-using Skoruba.Duende.IdentityServer.Admin.UI.Api.Helpers;
-using Skoruba.Duende.IdentityServer.Shared.Configuration.Helpers;
-using Skoruba.Duende.IdentityServer.Shared.Dtos;
-using Skoruba.Duende.IdentityServer.Shared.Dtos.Identity;
-using StartupHelpers = Skoruba.Duende.IdentityServer.Shared.Configuration.Helpers.StartupHelpers;
+using Skoruba.Open.IdentityServer.Admin.Api.Configuration;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Configuration.Configuration;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.DbContexts;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity;
+using Skoruba.Open.IdentityServer.Admin.UI.Api.Configuration;
+using Skoruba.Open.IdentityServer.Admin.UI.Api.Helpers;
+using Skoruba.Open.IdentityServer.Shared.Configuration.Helpers;
+using Skoruba.Open.IdentityServer.Shared.Dtos;
+using Skoruba.Open.IdentityServer.Shared.Dtos.Identity;
+using StartupHelpers = Skoruba.Open.IdentityServer.Shared.Configuration.Helpers.StartupHelpers;
 
-namespace Skoruba.Duende.IdentityServer.Admin.Api
+namespace Skoruba.Open.IdentityServer.Admin.Api
 {
     public class Startup
     {

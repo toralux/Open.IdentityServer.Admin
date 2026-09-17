@@ -2,13 +2,13 @@
 // Licensed under the Apache License, Version 2.0.
 
 using Riok.Mapperly.Abstractions;
-using Skoruba.Duende.IdentityServer.Admin.UI.Api.Dtos.PersistedGrants;
-using ConfigPersistedGrantDto = Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Dtos.Grant.PersistedGrantDto;
-using ConfigPersistedGrantsDto = Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Dtos.Grant.PersistedGrantsDto;
-using IdentityPersistedGrantDto = Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Grant.PersistedGrantDto;
-using IdentityPersistedGrantsDto = Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Grant.PersistedGrantsDto;
+using Skoruba.Open.IdentityServer.Admin.UI.Api.Dtos.PersistedGrants;
+using ConfigPersistedGrantDto = Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Grant.PersistedGrantDto;
+using ConfigPersistedGrantsDto = Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Grant.PersistedGrantsDto;
+using IdentityPersistedGrantDto = Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Grant.PersistedGrantDto;
+using IdentityPersistedGrantsDto = Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Grant.PersistedGrantsDto;
 
-namespace Skoruba.Duende.IdentityServer.Admin.UI.Api.Mappers
+namespace Skoruba.Open.IdentityServer.Admin.UI.Api.Mappers
 {
     [Mapper(RequiredMappingStrategy = RequiredMappingStrategy.Target)]
     internal static partial class PersistedGrantApiMapper

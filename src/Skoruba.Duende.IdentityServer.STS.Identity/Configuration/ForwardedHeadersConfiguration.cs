@@ -3,7 +3,7 @@
 
 using System.Collections.Generic;
 
-namespace Skoruba.Duende.IdentityServer.STS.Identity.Configuration
+namespace Skoruba.Open.IdentityServer.STS.Identity.Configuration
 {
     public class ForwardedHeadersConfiguration
     {

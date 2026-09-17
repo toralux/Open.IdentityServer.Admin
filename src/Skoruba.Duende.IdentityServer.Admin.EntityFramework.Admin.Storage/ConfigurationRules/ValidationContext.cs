@@ -2,9 +2,9 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System.Collections.Generic;
-using Duende.IdentityServer.EntityFramework.Entities;
+using Open.IdentityServer.EntityFramework.Entities;
 
-namespace Skoruba.Duende.IdentityServer.Admin.EntityFramework.Admin.Storage.ConfigurationRules;
+namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.ConfigurationRules;
 
 /// <summary>
 /// Contains all pre-loaded data needed by validators to avoid N+1 queries

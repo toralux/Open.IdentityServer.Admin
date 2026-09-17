@@ -6,10 +6,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Text.Json;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Grant;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Grant;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity;
 
-namespace Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Helpers
+namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Helpers
 {
     public static class AuditEventDataSanitizer
     {

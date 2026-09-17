@@ -3,10 +3,10 @@
 
 using System.Threading;
 using System.Threading.Tasks;
-using Duende.IdentityServer.EntityFramework.Entities;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Extensions.Common;
+using Open.IdentityServer.EntityFramework.Entities;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Extensions.Common;
 
-namespace Skoruba.Duende.IdentityServer.Admin.EntityFramework.Repositories.Interfaces
+namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Repositories.Interfaces
 {
     public interface IKeyRepository
     {

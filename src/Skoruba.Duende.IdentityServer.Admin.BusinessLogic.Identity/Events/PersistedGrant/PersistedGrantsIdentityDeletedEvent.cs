@@ -3,7 +3,7 @@
 
 using Skoruba.AuditLogging.Events;
 
-namespace Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Events.PersistedGrant
+namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Events.PersistedGrant
 {
     public class PersistedGrantsIdentityDeletedEvent : AuditEvent
     {

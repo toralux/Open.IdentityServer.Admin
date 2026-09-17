@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using Microsoft.Extensions.Localization;
 
-namespace Skoruba.Duende.IdentityServer.STS.Identity.Helpers.Localization
+namespace Skoruba.Open.IdentityServer.STS.Identity.Helpers.Localization
 {
     public class GenericControllerLocalizer<TResourceSource> : IGenericControllerLocalizer<TResourceSource>
     {

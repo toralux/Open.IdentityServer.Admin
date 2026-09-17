@@ -1,4 +1,4 @@
-namespace Skoruba.Duende.IdentityServer.Admin.UI.Services.User;
+namespace Skoruba.Open.IdentityServer.Admin.UI.Services.User;
 
 public class UserClaimDto
 {

@@ -3,17 +3,17 @@
 
 using System;
 using System.Reflection;
-using Duende.IdentityServer.EntityFramework.Storage;
+using Open.IdentityServer.EntityFramework.Storage;
 using Microsoft.AspNetCore.DataProtection.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Skoruba.AuditLogging.EntityFramework.DbContexts;
 using Skoruba.AuditLogging.EntityFramework.Entities;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Admin.Storage.Interfaces;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Configuration.Configuration;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Interfaces;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Interfaces;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Configuration.Configuration;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Interfaces;
 
-namespace Skoruba.Duende.IdentityServer.Admin.EntityFramework.Configuration.PostgreSQL
+namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Configuration.PostgreSQL
 {
     public static class DatabaseExtensions
     {

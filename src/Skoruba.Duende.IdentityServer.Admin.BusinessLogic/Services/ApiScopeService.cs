@@ -3,19 +3,19 @@
 
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Duende.IdentityServer.EntityFramework.Entities;
+using Open.IdentityServer.EntityFramework.Entities;
 using Skoruba.AuditLogging.Services;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Dtos.Configuration;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Events.ApiScope;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Helpers;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Mappers;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Resources;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Services.Interfaces;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Shared.ExceptionHandling;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Extensions.Common;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Repositories.Interfaces;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Configuration;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Events.ApiScope;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Helpers;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Mappers;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Resources;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Services.Interfaces;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Shared.ExceptionHandling;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Extensions.Common;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Repositories.Interfaces;
 
-namespace Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Services
+namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Services
 {
     public class ApiScopeService : IApiScopeService
     {

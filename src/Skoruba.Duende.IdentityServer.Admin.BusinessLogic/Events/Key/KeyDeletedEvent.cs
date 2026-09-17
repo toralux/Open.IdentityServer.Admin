@@ -2,10 +2,10 @@
 // Licensed under the Apache License, Version 2.0.
 
 using Skoruba.AuditLogging.Events;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Dtos.Grant;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Dtos.Key;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Grant;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Key;
 
-namespace Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Events.Key
+namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Events.Key
 {
     public class KeyDeletedEvent : AuditEvent
     {

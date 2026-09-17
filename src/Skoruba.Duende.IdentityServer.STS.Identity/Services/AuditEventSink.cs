@@ -2,11 +2,11 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System.Threading.Tasks;
-using Duende.IdentityServer.Events;
-using Duende.IdentityServer.Services;
+using Open.IdentityServer.Events;
+using Open.IdentityServer.Services;
 using Microsoft.Extensions.Logging;
 
-namespace Skoruba.Duende.IdentityServer.STS.Identity.Services
+namespace Skoruba.Open.IdentityServer.STS.Identity.Services
 {
     public class AuditEventSink : DefaultEventSink
     {

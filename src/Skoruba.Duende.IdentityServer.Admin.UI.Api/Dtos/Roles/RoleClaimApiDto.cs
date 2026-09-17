@@ -3,7 +3,7 @@
 
 using System.ComponentModel.DataAnnotations;
 
-namespace Skoruba.Duende.IdentityServer.Admin.UI.Api.Dtos.Roles
+namespace Skoruba.Open.IdentityServer.Admin.UI.Api.Dtos.Roles
 {
     public class RoleClaimApiDto<TKey>
     {

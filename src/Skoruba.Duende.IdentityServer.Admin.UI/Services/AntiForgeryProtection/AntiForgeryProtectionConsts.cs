@@ -1,4 +1,4 @@
-namespace Skoruba.Duende.IdentityServer.Admin.UI.Services.AntiForgeryProtection;
+namespace Skoruba.Open.IdentityServer.Admin.UI.Services.AntiForgeryProtection;
 
 public class AntiForgeryProtectionConsts
 {

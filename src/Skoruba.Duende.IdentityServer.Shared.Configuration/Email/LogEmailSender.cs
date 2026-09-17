@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.Extensions.Logging;
 
-namespace Skoruba.Duende.IdentityServer.Shared.Configuration.Email
+namespace Skoruba.Open.IdentityServer.Shared.Configuration.Email
 {
     public class LogEmailSender : IEmailSender
     {

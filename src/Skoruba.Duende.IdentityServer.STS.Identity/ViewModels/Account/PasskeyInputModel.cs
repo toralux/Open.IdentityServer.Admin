@@ -2,7 +2,7 @@
 // Licensed under the MIT License. See LICENSE in the project root for license information.
 // Modified by Jan Skoruba
 
-namespace Skoruba.Duende.IdentityServer.STS.Identity.ViewModels.Account
+namespace Skoruba.Open.IdentityServer.STS.Identity.ViewModels.Account
 {
     public class PasskeyInputModel
     {

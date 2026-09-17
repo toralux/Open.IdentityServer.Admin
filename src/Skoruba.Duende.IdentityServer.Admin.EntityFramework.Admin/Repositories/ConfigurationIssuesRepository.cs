@@ -7,15 +7,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Admin.Storage.Dtos;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Admin.Storage.Mappers;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Admin.Storage.ConfigurationRules;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Admin.Repositories.Interfaces;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Admin.Storage.Entities;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Admin.Storage.Interfaces;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Interfaces;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Dtos;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Mappers;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.ConfigurationRules;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Repositories.Interfaces;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Entities;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Interfaces;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Interfaces;
 
-namespace Skoruba.Duende.IdentityServer.Admin.EntityFramework.Admin.Repositories;
+namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Repositories;
 
 public class ConfigurationIssuesRepository<TDbContext, TRulesDbContext> : IConfigurationIssuesRepository
     where TDbContext : DbContext, IAdminConfigurationDbContext

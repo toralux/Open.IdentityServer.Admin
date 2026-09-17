@@ -4,7 +4,7 @@
 // Original file: https://github.com/DuendeSoftware/IdentityServer.Quickstart.UI
 // Modified by Jan Škoruba
 
-namespace Skoruba.Duende.IdentityServer.STS.Identity.ViewModels.Consent
+namespace Skoruba.Open.IdentityServer.STS.Identity.ViewModels.Consent
 {
     public class ScopeViewModel
     {

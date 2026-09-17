@@ -2,12 +2,12 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System.Linq;
-using Duende.IdentityServer.EntityFramework.Entities;
+using Open.IdentityServer.EntityFramework.Entities;
 using Riok.Mapperly.Abstractions;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Dtos.Key;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Extensions.Common;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Key;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Extensions.Common;
 
-namespace Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Mappers
+namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Mappers
 {
     [Mapper(RequiredMappingStrategy = RequiredMappingStrategy.Target)]
     internal static partial class KeyMapper

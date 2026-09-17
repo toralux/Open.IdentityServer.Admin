@@ -6,7 +6,7 @@ using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Skoruba.Duende.IdentityServer.Admin.EntityFramework.Helpers
+namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Helpers
 {
     public static class DbContextHelpers
     {

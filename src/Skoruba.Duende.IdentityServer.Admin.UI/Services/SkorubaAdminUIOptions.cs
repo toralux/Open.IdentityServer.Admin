@@ -1,6 +1,6 @@
-using Skoruba.Duende.IdentityServer.Admin.UI.Services.Configurations;
+using Skoruba.Open.IdentityServer.Admin.UI.Services.Configurations;
 
-namespace Skoruba.Duende.IdentityServer.Admin.UI.Services;
+namespace Skoruba.Open.IdentityServer.Admin.UI.Services;
 
 public class SkorubaAdminUIOptions
 {

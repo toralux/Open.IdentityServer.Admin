@@ -1,7 +1,7 @@
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Dtos.Configuration;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Admin.Storage.Entities;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Configuration;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Entities;
 
-namespace Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Mappers;
+namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Mappers;
 
 public static class ConfigurationIssuesMapper
 {

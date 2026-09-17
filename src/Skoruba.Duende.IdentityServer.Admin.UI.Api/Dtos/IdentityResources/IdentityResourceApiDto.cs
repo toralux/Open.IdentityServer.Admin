@@ -4,7 +4,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Skoruba.Duende.IdentityServer.Admin.UI.Api.Dtos.IdentityResources
+namespace Skoruba.Open.IdentityServer.Admin.UI.Api.Dtos.IdentityResources
 {
     public class IdentityResourceApiDto
     {

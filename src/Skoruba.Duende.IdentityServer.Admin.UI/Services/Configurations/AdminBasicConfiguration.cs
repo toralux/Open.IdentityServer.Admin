@@ -1,4 +1,4 @@
-namespace Skoruba.Duende.IdentityServer.Admin.UI.Services.Configurations;
+namespace Skoruba.Open.IdentityServer.Admin.UI.Services.Configurations;
 
 public class AdminBasicConfiguration
 {

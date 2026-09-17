@@ -4,10 +4,10 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Dtos.Enums;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Shared.Dtos.Common;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Enums;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Shared.Dtos.Common;
 
-namespace Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Dtos.Configuration
+namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Configuration
 {
     public class ClientDto
     {

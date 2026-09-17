@@ -8,9 +8,9 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using NetIPNetwork = System.Net.IPNetwork;
-using Duende.IdentityServer;
-using Duende.IdentityServer.Configuration;
-using Duende.IdentityServer.EntityFramework.Storage;
+using Open.IdentityServer;
+using Open.IdentityServer.Configuration;
+using Open.IdentityServer.EntityFramework.Storage;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.DataProtection.EntityFrameworkCore;
@@ -27,24 +27,24 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Options;
 using Microsoft.Identity.Web;
 using Microsoft.IdentityModel.Tokens;
-using Skoruba.Duende.IdentityServer.Shared.Configuration.Constants;
+using Skoruba.Open.IdentityServer.Shared.Configuration.Constants;
 using System.IO;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Configuration.Configuration;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Configuration.PostgreSQL;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Configuration.SqlServer;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Helpers;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Interfaces;
-using Skoruba.Duende.IdentityServer.Shared.Configuration.Authentication;
-using Skoruba.Duende.IdentityServer.Shared.Configuration.Configuration.Identity;
-using Skoruba.Duende.IdentityServer.STS.Identity.Configuration;
-using Skoruba.Duende.IdentityServer.STS.Identity.Configuration.ApplicationParts;
-using Skoruba.Duende.IdentityServer.STS.Identity.Configuration.Constants;
-using Skoruba.Duende.IdentityServer.STS.Identity.Configuration.Interfaces;
-using Configuration = Skoruba.Duende.IdentityServer.STS.Identity.Configuration;
-using Skoruba.Duende.IdentityServer.STS.Identity.Helpers.Localization;
-using Skoruba.Duende.IdentityServer.STS.Identity.Services;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Configuration.Configuration;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Configuration.PostgreSQL;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Configuration.SqlServer;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Helpers;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Interfaces;
+using Skoruba.Open.IdentityServer.Shared.Configuration.Authentication;
+using Skoruba.Open.IdentityServer.Shared.Configuration.Configuration.Identity;
+using Skoruba.Open.IdentityServer.STS.Identity.Configuration;
+using Skoruba.Open.IdentityServer.STS.Identity.Configuration.ApplicationParts;
+using Skoruba.Open.IdentityServer.STS.Identity.Configuration.Constants;
+using Skoruba.Open.IdentityServer.STS.Identity.Configuration.Interfaces;
+using Configuration = Skoruba.Open.IdentityServer.STS.Identity.Configuration;
+using Skoruba.Open.IdentityServer.STS.Identity.Helpers.Localization;
+using Skoruba.Open.IdentityServer.STS.Identity.Services;
 
-namespace Skoruba.Duende.IdentityServer.STS.Identity.Helpers
+namespace Skoruba.Open.IdentityServer.STS.Identity.Helpers
 {
     public static class StartupHelpers
     {

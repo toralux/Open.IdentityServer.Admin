@@ -4,7 +4,7 @@
 using System;
 using Skoruba.AuditLogging.Events;
 
-namespace Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Events.ApiResource
+namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Events.ApiResource
 {
     public class ApiSecretAddedEvent : AuditEvent
     {

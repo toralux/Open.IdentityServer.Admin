@@ -4,7 +4,7 @@
 using System.Diagnostics;
 using System.IO;
 
-namespace Skoruba.Duende.IdentityServer.Shared.Configuration.Helpers
+namespace Skoruba.Open.IdentityServer.Shared.Configuration.Helpers
 {
     public static class ShellHelpers
     {

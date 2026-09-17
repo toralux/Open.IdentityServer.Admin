@@ -5,7 +5,7 @@ using System;
 using System.Globalization;
 using Microsoft.AspNetCore.Identity;
 
-namespace Skoruba.Duende.IdentityServer.Admin.EntityFramework.Identity.Resources
+namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Identity.Resources
 {
     internal static class IdentityRepositoryErrors
     {

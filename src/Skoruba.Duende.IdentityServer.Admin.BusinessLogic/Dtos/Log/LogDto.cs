@@ -4,7 +4,7 @@
 using System;
 using System.Xml.Linq;
 
-namespace Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Dtos.Log
+namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Log
 {
     public class LogDto
     {

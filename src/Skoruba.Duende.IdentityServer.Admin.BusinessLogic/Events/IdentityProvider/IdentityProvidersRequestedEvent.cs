@@ -1,8 +1,8 @@
 ﻿using Skoruba.AuditLogging.Events;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Dtos.IdentityProvider;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Helpers;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.IdentityProvider;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Helpers;
 
-namespace Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Events.IdentityProvider
+namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Events.IdentityProvider
 {
     public class IdentityProvidersRequestedEvent : AuditEvent
     {

@@ -2,9 +2,9 @@
 // Licensed under the Apache License, Version 2.0.
 
 using Skoruba.AuditLogging.Events;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Helpers;
+using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Helpers;
 
-namespace Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Events.Identity
+namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Events.Identity
 {
     public class UsersRequestedEvent<TUsersDto> : AuditEvent
     {

@@ -6,14 +6,14 @@
 
 using System;
 using System.Threading.Tasks;
-using Duende.IdentityServer.Models;
+using Open.IdentityServer.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
-using Skoruba.Duende.IdentityServer.STS.Identity.ViewModels.Account;
+using Skoruba.Open.IdentityServer.STS.Identity.ViewModels.Account;
 
-namespace Skoruba.Duende.IdentityServer.STS.Identity.Helpers
+namespace Skoruba.Open.IdentityServer.STS.Identity.Helpers
 {
     public static class Extensions
     {

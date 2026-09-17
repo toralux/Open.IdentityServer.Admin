@@ -3,7 +3,7 @@
 
 using System;
 
-namespace Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Mappers
+namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Mappers
 {
     public static class MapperInstanceFactory
     {

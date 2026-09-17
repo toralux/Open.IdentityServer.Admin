@@ -11,9 +11,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.DependencyInjection;
-using Skoruba.Duende.IdentityServer.STS.Identity.Helpers;
+using Skoruba.Open.IdentityServer.STS.Identity.Helpers;
 
-namespace Skoruba.Duende.IdentityServer.STS.Identity.Passkeys
+namespace Skoruba.Open.IdentityServer.STS.Identity.Passkeys
 {
     public static class PasskeyEndpointRouteBuilderExtensions
     {

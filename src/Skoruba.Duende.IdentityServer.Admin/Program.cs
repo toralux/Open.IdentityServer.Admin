@@ -1,8 +1,8 @@
 using Serilog;
-using Skoruba.Duende.IdentityServer.Admin.Services;
-using Skoruba.Duende.IdentityServer.Admin.UI.Services;
-using Skoruba.Duende.IdentityServer.Admin.UI.Services.Configurations;
-using Skoruba.Duende.IdentityServer.Shared.Configuration.Helpers;
+using Skoruba.Open.IdentityServer.Admin.Services;
+using Skoruba.Open.IdentityServer.Admin.UI.Services;
+using Skoruba.Open.IdentityServer.Admin.UI.Services.Configurations;
+using Skoruba.Open.IdentityServer.Shared.Configuration.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
 

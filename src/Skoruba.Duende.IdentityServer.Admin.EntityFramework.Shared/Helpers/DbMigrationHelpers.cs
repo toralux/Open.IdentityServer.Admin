@@ -4,9 +4,8 @@
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using Duende.IdentityServer.EntityFramework.Mappers;
-using Duende.IdentityServer.Models;
-using Duende.IdentityModel;
+using Open.IdentityServer.EntityFramework.Mappers;
+using Open.IdentityServer.Models;
 using Microsoft.AspNetCore.DataProtection.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -14,17 +13,17 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Skoruba.AuditLogging.EntityFramework.DbContexts;
 using Skoruba.AuditLogging.EntityFramework.Entities;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Admin.Storage.Interfaces;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Configuration.Configuration;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Interfaces;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Interfaces;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Configuration.Configuration;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Interfaces;
 
-namespace Skoruba.Duende.IdentityServer.Admin.EntityFramework.Shared.Helpers
+namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.Helpers
 {
     public static class DbMigrationHelpers
     {
         /// <summary>
         /// Generate migrations before running this method, you can use these steps bellow:
-        /// https://github.com/skoruba/Duende.IdentityServer.Admin#ef-core--data-access
+        /// https://github.com/skoruba/Open.IdentityServer.Admin#ef-core--data-access
         /// </summary>
         /// <param name="host"></param>
         /// <param name="applyDbMigrationWithDataSeedFromProgramArguments"></param>

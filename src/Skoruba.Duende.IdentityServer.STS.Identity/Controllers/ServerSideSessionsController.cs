@@ -2,21 +2,21 @@
 
 using System.Linq;
 using System.Threading.Tasks;
-using Duende.IdentityServer;
-using Duende.IdentityServer.EntityFramework.Entities;
-using Duende.IdentityServer.Services;
+using Open.IdentityServer;
+using Open.IdentityServer.EntityFramework.Entities;
+using Open.IdentityServer.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Shared.DbContexts;
-using Skoruba.Duende.IdentityServer.STS.Identity.Configuration.Constants;
-using Skoruba.Duende.IdentityServer.STS.Identity.Models.ViewModels;
-using Skoruba.Duende.IdentityServer.STS.Identity.Configuration;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.DbContexts;
+using Skoruba.Open.IdentityServer.STS.Identity.Configuration.Constants;
+using Skoruba.Open.IdentityServer.STS.Identity.Models.ViewModels;
+using Skoruba.Open.IdentityServer.STS.Identity.Configuration;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Logging;
 
-namespace Skoruba.Duende.IdentityServer.STS.Identity.Controllers;
+namespace Skoruba.Open.IdentityServer.STS.Identity.Controllers;
 
 [Authorize(Policy = AuthorizationConsts.AdministrationPolicy)]
 public class ServerSideSessionsController : Controller

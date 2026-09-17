@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Dtos.Dashboard;
+namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Dashboard;
 
 public class DashboardDto
 {

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Skoruba.Duende.IdentityServer.STS.Identity.ViewModels.Manage
+namespace Skoruba.Open.IdentityServer.STS.Identity.ViewModels.Manage
 {
     public class IndexViewModel
     {

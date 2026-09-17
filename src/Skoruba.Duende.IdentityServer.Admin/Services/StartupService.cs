@@ -4,15 +4,15 @@ using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.DataProtection.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
-using Skoruba.Duende.IdentityServer.Admin.Configuration;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Configuration.Configuration;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Configuration.PostgreSQL;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Configuration.SqlServer;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Shared.DbContexts;
-using Skoruba.Duende.IdentityServer.Admin.UI.Services.Configurations;
-using Skoruba.Duende.IdentityServer.Shared.Configuration.Helpers;
+using Skoruba.Open.IdentityServer.Admin.Configuration;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Configuration.Configuration;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Configuration.PostgreSQL;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Configuration.SqlServer;
+using Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.DbContexts;
+using Skoruba.Open.IdentityServer.Admin.UI.Services.Configurations;
+using Skoruba.Open.IdentityServer.Shared.Configuration.Helpers;
 
-namespace Skoruba.Duende.IdentityServer.Admin.Services;
+namespace Skoruba.Open.IdentityServer.Admin.Services;
 
 public static class StartupService
 {

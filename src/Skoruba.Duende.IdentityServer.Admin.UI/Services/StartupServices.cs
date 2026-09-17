@@ -3,9 +3,9 @@ using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.Extensions.Configuration;
 using System.Net;
 using NetIPNetwork = System.Net.IPNetwork;
-using Skoruba.Duende.IdentityServer.Shared.Configuration.Configuration;
+using Skoruba.Open.IdentityServer.Shared.Configuration.Configuration;
 
-namespace Skoruba.Duende.IdentityServer.Admin.UI.Services;
+namespace Skoruba.Open.IdentityServer.Admin.UI.Services;
 
 public static class StartupServices
 {
