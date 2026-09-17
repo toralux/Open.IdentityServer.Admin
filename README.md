@@ -164,7 +164,7 @@ Define and track configuration rules for clients, API resources, and identity re
 ### 1. Install the template
 
 ```sh
-dotnet new install Toralux.Open.IdentityServer.Admin.Templates::3.0.0
+dotnet new install Toralux.Open.IdentityServer.Admin.Templates::0.1.0
 ```
 
 ### 2. Create a new project
