@@ -2,9 +2,7 @@ import {
   Activity,
   Cable,
   Cog,
-  FileLock2,
   Fingerprint,
-  KeyRound,
   Laptop,
   Lock,
   Settings,
@@ -30,10 +28,6 @@ import {
   RolesUrl,
   RoleEditUrl,
   RoleCreateUrl,
-  IdentityProvidersUrl,
-  IdentityProviderEditUrl,
-  IdentityProviderCreateUrl,
-  KeysUrl,
   AuditLogsUrl,
   ConfigurationIssuesUrl,
   ConfigurationRulesUrl,
@@ -125,27 +119,6 @@ export const identityItems: NavItem[] = [
     ],
     icon: Lock,
     kind: "identity",
-  },
-];
-
-export const providersKeysItems: NavItem[] = [
-  {
-    translationKey: "Home.IdentityProviders",
-    href: IdentityProvidersUrl,
-    activeBasePaths: [
-      IdentityProvidersUrl,
-      getBasePath(IdentityProviderEditUrl),
-      getBasePath(IdentityProviderCreateUrl),
-    ],
-    icon: KeyRound,
-    kind: "providers",
-  },
-  {
-    translationKey: "Home.Keys",
-    href: KeysUrl,
-    activeBasePaths: [KeysUrl],
-    icon: FileLock2,
-    kind: "providers",
   },
 ];
 

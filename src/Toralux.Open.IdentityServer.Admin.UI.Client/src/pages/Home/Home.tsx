@@ -13,7 +13,6 @@ import SystemStatus from "./SystemStatus";
 import {
   ClientsResourcesCard,
   IdentityCard,
-  ProvidersKeysCard,
 } from "./ResourceSections";
 
 const Home = () => {
@@ -58,12 +57,10 @@ const Home = () => {
         {identityManagementEnabled ? (
           <>
             <IdentityCard className="lg:col-span-4" />
-            <ProvidersKeysCard className="lg:col-span-4" />
             <AuditLogs className="md:col-span-2 lg:col-span-4" />
           </>
         ) : (
           <>
-            <ProvidersKeysCard className="md:col-span-2 lg:col-span-6" />
             <AuditLogs className="md:col-span-2 lg:col-span-6" />
           </>
         )}

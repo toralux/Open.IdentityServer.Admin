@@ -25,7 +25,6 @@ import {
 import {
   clientsResourcesItems,
   identityItems,
-  providersKeysItems,
   monitoringItems,
   IconType,
 } from "@/components/MainNav/navItems";
@@ -37,7 +36,6 @@ import {
   ClientEditUrl,
   ClientsUrl,
   HomeUrl,
-  IdentityProviderCreateUrl,
   IdentityResourceCreateUrl,
   RoleCreateUrl,
   UserCreateUrl,
@@ -182,7 +180,6 @@ export function CommandPalette() {
               ["QuickActions.NewRole", RoleCreateUrl],
             ]
           : []),
-        ["QuickActions.NewIdentityProvider", IdentityProviderCreateUrl],
       ].map(([key, url]) => ({
         id: key,
         label: translate(key),
@@ -204,7 +201,6 @@ export function CommandPalette() {
       ...[
         ...clientsResourcesItems,
         ...(identityManagementEnabled ? identityItems : []),
-        ...providersKeysItems,
         ...monitoringItems,
       ].map((item) => ({
         id: item.href,

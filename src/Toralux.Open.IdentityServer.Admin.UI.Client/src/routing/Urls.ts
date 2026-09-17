@@ -27,12 +27,6 @@ export const RoleCreateUrl = "/role";
 export const RolesUrl = "/roles";
 export const RoleUsersUrl = "/role/:roleId/users";
 
-export const IdentityProviderEditUrl = "/identity-provider/:providerId";
-export const IdentityProviderCreateUrl = "/identity-provider";
-export const IdentityProvidersUrl = "/identity-providers";
-
-export const KeysUrl = "/keys";
-
 export const ConfigurationIssuesUrl = "/configuration-issues";
 export const ConfigurationRulesUrl = "/configuration-rules";
 export const AuditLogsUrl = "/audit-logs";
