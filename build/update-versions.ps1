@@ -27,6 +27,11 @@ $targets = @(
         Path = Join-Path $root "src/Toralux.Open.IdentityServer.STS.Identity/package.json"
         Pattern = '(?m)^(\s*)"version"\s*:\s*"[^"]+"'
         Replacement = "$1`"version`": `"$new`""
+    },
+    @{
+        Path = Join-Path $root "src/Toralux.Open.IdentityServer.Admin.Api/TypescriptClient/package.json"
+        Pattern = '(?m)^(\s*)"version"\s*:\s*"[^"]+"'
+        Replacement = "$1`"version`": `"$new`""
     }
 )
 
