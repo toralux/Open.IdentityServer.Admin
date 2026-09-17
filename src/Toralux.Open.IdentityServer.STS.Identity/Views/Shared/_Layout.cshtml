@@ -8,7 +8,6 @@
 @using Microsoft.Extensions.Options
 @inject IRootConfiguration RootConfiguration
 @inject IViewLocalizer Localizer
-@inject IOptions<ServerSideSessionsConfiguration> ServerSideSessionsOptions
 @{
     string name = null;
     if (!true.Equals(ViewData["signed-out"]))
@@ -115,16 +114,6 @@
                                         @Localizer["Grants"]
                                     </span>
                                 </a>
-                                @if (ServerSideSessionsOptions.Value.Enabled)
-                                {
-                                    <a class="block rounded-md px-3 py-2 text-sm hover:bg-accent hover:text-accent-foreground"
-                                           asp-controller="ServerSideSessions" asp-action="Index">
-                                        <span class="inline-flex items-center gap-2">
-                                            <lucideicon name="box" class="h-4 w-4" />
-                                            @Localizer["ServerSessionsMenu"]
-                                        </span>
-                                    </a>
-                                }
                                 <div class="my-1 h-px bg-border"></div>
                                 <a class="block rounded-md px-3 py-2 text-sm hover:bg-accent hover:text-accent-foreground"
                                        asp-action="Logout" asp-controller="Account">
@@ -189,11 +178,6 @@
                            asp-controller="Manage" asp-action="ChangePassword">@Localizer["ChangePassword"]</a>
                         <a class="block rounded-md px-3 py-2 text-sm hover:bg-accent hover:text-accent-foreground"
                            asp-controller="Grants" asp-action="Index">@Localizer["Grants"]</a>
-                        @if (ServerSideSessionsOptions.Value.Enabled)
-                        {
-                            <a class="block rounded-md px-3 py-2 text-sm hover:bg-accent hover:text-accent-foreground"
-                               asp-controller="ServerSideSessions" asp-action="Index">@Localizer["ServerSessionsMenu"]</a>
-                        }
                         <a class="block rounded-md px-3 py-2 text-sm hover:bg-accent hover:text-accent-foreground"
                            asp-action="Logout" asp-controller="Account">@Localizer["Signout"]</a>
                     }
