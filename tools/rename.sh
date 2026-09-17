@@ -93,6 +93,10 @@ s|skoruba_identity_admin|toralux_identity_admin|g
 s|skoruba_admin_client_secret|toralux_admin_client_secret|g
 s|skoruba-icon|toralux-icon|g
 s|"infoTitle": "Skoruba"|"infoTitle": "Toralux"|g
+# Seed admin login default (template defaultValue/replaces + identitydata.json).
+# Deliberately NOT jan@skoruba.com — package.json author fields are upstream
+# attribution and must survive every replay.
+s|admin@skoruba\.com|admin@example.com|g
 s|@@ATTR_ISSUES@@|github.com/skoruba/Duende.IdentityServer.Admin/issues|g
 s|@@ATTR_PULL@@|github.com/skoruba/Duende.IdentityServer.Admin/pull|g
 s|@@ATTR_GRAPHS@@|github.com/skoruba/Duende.IdentityServer.Admin/graphs|g
@@ -102,12 +106,14 @@ SED
 
 # Grep alternation used to select only files that actually contain a token.
 read -r -d '' TOKEN_RE <<'GREP' || true
-skoruba/Duende\.IdentityServer\.Admin|SkorubaDuende\.IdentityServer|Skoruba\.Duende\.IdentityServer|Duende\.IdentityServer|SkorubaIdentityAdminAdministrator|Skoruba Duende IdentityServer|Duende IdentityServer|@skoruba/duende\.identityserver|skoruba-duende-identity-server-admin|skoruba-duende-identityserver|skoruba\.duende\.identityserver|skoruba\.duende\.isadmin|skoruba\.local|skoruba_identity_admin|skoruba_admin_client_secret|skoruba-icon|"infoTitle": "Skoruba"
+skoruba/Duende\.IdentityServer\.Admin|SkorubaDuende\.IdentityServer|Skoruba\.Duende\.IdentityServer|Duende\.IdentityServer|SkorubaIdentityAdminAdministrator|Skoruba Duende IdentityServer|Duende IdentityServer|@skoruba/duende\.identityserver|skoruba-duende-identity-server-admin|skoruba-duende-identityserver|skoruba\.duende\.identityserver|skoruba\.duende\.isadmin|skoruba\.local|skoruba_identity_admin|skoruba_admin_client_secret|skoruba-icon|admin@skoruba\.com|"infoTitle": "Skoruba"
 GREP
 
-# Files never rewritten (history / vendored):
-#   CHANGELOG.md — upstream release history keeps original package names.
-EXCLUDE_PATHSPEC=(':(exclude)CHANGELOG.md')
+# Files never rewritten:
+#   CHANGELOG.md      — upstream release history keeps original package names.
+#   tools/rename.sh   — the script itself carries the LHS patterns; rewriting
+#                       them would destroy the map (self-exclusion).
+EXCLUDE_PATHSPEC=(':(exclude)CHANGELOG.md' ':(exclude)tools/rename.sh')
 
 # ── pass 1: file contents ──────────────────────────────────────────────────
 CONTENT_HITS=0
@@ -146,9 +152,9 @@ RENAMED=$(grep -c '^  rename:' /tmp/rename-sh-moves.$$ || true)
 cat /tmp/rename-sh-moves.$$
 rm -f /tmp/rename-sh-moves.$$
 
-# Remove now-empty directories left behind by the renames.
-find . -path ./.git -prune -o -type d -empty -print0 2>/dev/null \
-    | xargs -0 -r rmdir 2>/dev/null || true
+# Remove now-empty directories left behind by the renames (-depth handles
+# nested empty husks bottom-up; .git is pruned).
+find . -path ./.git -prune -o -depth -type d -empty -exec rmdir {} + 2>/dev/null || true
 
 # ── summary ────────────────────────────────────────────────────────────────
 cat <<SUMMARY
