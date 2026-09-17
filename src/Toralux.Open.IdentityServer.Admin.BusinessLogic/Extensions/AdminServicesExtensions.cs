@@ -39,8 +39,6 @@ namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Extensions
             services.AddTransient<IApiResourceRepository, ApiResourceRepository<TConfigurationDbContext>>();
             services.AddTransient<IApiScopeRepository, ApiScopeRepository<TConfigurationDbContext>>();
             services.AddTransient<IPersistedGrantRepository, PersistedGrantRepository<TPersistedGrantDbContext>>();
-            services.AddTransient<IIdentityProviderRepository, IdentityProviderRepository<TConfigurationDbContext>>();
-            services.AddTransient<IKeyRepository, KeyRepository<TPersistedGrantDbContext>>();
             services.AddTransient<ILogRepository, LogRepository<TLogDbContext>>();
             services.AddTransient<IDashboardRepository, DashboardRepository<TConfigurationDbContext>>();
             services.AddTransient<IConfigurationIssuesRepository, ConfigurationIssuesRepository<TConfigurationDbContext, TAdminConfigurationDbContext>>();
@@ -55,9 +53,7 @@ namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Extensions
             services.AddTransient<IApiResourceService, ApiResourceService>();
             services.AddTransient<IApiScopeService, ApiScopeService>();
             services.AddTransient<IIdentityResourceService, IdentityResourceService>();
-            services.AddTransient<IIdentityProviderService, IdentityProviderService>();
             services.AddTransient<IPersistedGrantService, PersistedGrantService>();
-            services.AddTransient<IKeyService, KeyService>();
             services.AddTransient<ILogService, LogService>();
             services.AddTransient<IDashboardService, DashboardService>();
             services.AddTransient<IConfigurationIssuesService, ConfigurationIssuesService>();
@@ -68,9 +64,7 @@ namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Extensions
             services.AddScoped<IApiScopeServiceResources, ApiScopeServiceResources>();
             services.AddScoped<IClientServiceResources, ClientServiceResources>();
             services.AddScoped<IIdentityResourceServiceResources, IdentityResourceServiceResources>();
-            services.AddScoped<IIdentityProviderServiceResources, IdentityProviderServiceResources>();
             services.AddScoped<IPersistedGrantServiceResources, PersistedGrantServiceResources>();
-            services.AddScoped<IKeyServiceResources, KeyServiceResources>();
 
             return services;
         }

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Open.IdentityServer.EntityFramework.Mappers;
 using Open.IdentityServer.Models;
+using Duende.IdentityModel;
 using Microsoft.AspNetCore.DataProtection.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;

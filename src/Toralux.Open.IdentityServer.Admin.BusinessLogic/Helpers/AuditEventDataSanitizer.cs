@@ -4,7 +4,6 @@
 using System.Text.Json;
 using Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.Configuration;
 using Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.Grant;
-using Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.IdentityProvider;
 
 namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Helpers
 {
@@ -104,25 +103,6 @@ namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Helpers
             return sanitizedGrants;
         }
 
-        public static IdentityProviderDto Sanitize(IdentityProviderDto identityProvider)
-        {
-            var sanitizedIdentityProvider = Clone(identityProvider);
-            if (sanitizedIdentityProvider?.Properties == null)
-            {
-                return sanitizedIdentityProvider;
-            }
-
-            foreach (var property in sanitizedIdentityProvider.Properties.Values)
-            {
-                if (property != null)
-                {
-                    property.Value = null;
-                }
-            }
-
-            return sanitizedIdentityProvider;
-        }
-
         public static ApiSecretsDto Sanitize(ApiSecretsDto apiSecrets)
         {
             var sanitizedApiSecrets = Clone(apiSecrets);
@@ -147,33 +127,6 @@ namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Helpers
             }
 
             return sanitizedApiSecrets;
-        }
-
-        public static IdentityProvidersDto Sanitize(IdentityProvidersDto identityProviders)
-        {
-            var sanitizedIdentityProviders = Clone(identityProviders);
-            if (sanitizedIdentityProviders?.IdentityProviders == null)
-            {
-                return sanitizedIdentityProviders;
-            }
-
-            foreach (var identityProvider in sanitizedIdentityProviders.IdentityProviders)
-            {
-                if (identityProvider?.Properties == null)
-                {
-                    continue;
-                }
-
-                foreach (var property in identityProvider.Properties.Values)
-                {
-                    if (property != null)
-                    {
-                        property.Value = null;
-                    }
-                }
-            }
-
-            return sanitizedIdentityProviders;
         }
 
         public static ApiScopeDto Sanitize(ApiScopeDto apiScope)

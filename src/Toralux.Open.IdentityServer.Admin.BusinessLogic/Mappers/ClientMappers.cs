@@ -9,7 +9,7 @@ using Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.Configuration;
 using Toralux.Open.IdentityServer.Admin.BusinessLogic.Mappers.Converters;
 using Toralux.Open.IdentityServer.Admin.BusinessLogic.Shared.Dtos.Common;
 using Toralux.Open.IdentityServer.Admin.EntityFramework.Extensions.Common;
-using DPoPTokenExpirationValidationMode = Open.IdentityServer.Models.DPoPTokenExpirationValidationMode;
+using DPoPTokenExpirationValidationMode = Toralux.Open.IdentityServer.Admin.EntityFramework.Constants.DPoPTokenExpirationValidationMode;
 
 namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Mappers
 {

@@ -291,3 +291,5 @@ appsettings.*.json
 
 # macOS Finder metadata
 .DS_Store
+obj\\Debug/
+bin\\Debug/
