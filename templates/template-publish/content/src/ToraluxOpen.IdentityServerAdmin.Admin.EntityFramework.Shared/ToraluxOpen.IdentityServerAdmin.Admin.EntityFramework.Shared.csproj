@@ -8,8 +8,9 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.AspNetCore.DataProtection.EntityFrameworkCore" Version="10.0.12" />
 		<PackageReference Include="Skoruba.AuditLogging.EntityFramework" Version="3.0.0" />
-		<PackageReference Include="Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage" Version="3.1.0" />
-		<PackageReference Include="Toralux.Open.IdentityServer.Admin.EntityFramework.Configuration" Version="3.1.0" />
+		<PackageReference Include="Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage" Version="0.1.0" />
+		<PackageReference Include="Toralux.Open.IdentityServer.Admin.EntityFramework.Configuration" Version="0.1.0" />
+		<PackageReference Include="Duende.IdentityModel" Version="8.1.0" />
 	</ItemGroup>
 </Project>
 

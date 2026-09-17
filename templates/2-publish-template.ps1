@@ -31,4 +31,4 @@ dotnet new --uninstall Toralux.Open.IdentityServer.Admin.Templates
 $templateLocalName = "Toralux.Open.IdentityServer.Admin.Templates.$packagesVersions.nupkg"
 dotnet new -i $templateLocalName
 
-dotnet new toralux.open-isadmin --name MyProject --title MyProject --adminemail 'admin@example.com' --adminpassword 'Passw0rd-123' --adminrole ToraluxIdentityAdminAdministrator --adminclientid toralux_identity_admin_v3 --adminclientsecret toralux_admin_client_secret --dockersupport true --requirepushedauthorization true
+dotnet new toralux.open-isadmin --name MyProject --title MyProject --adminemail 'admin@example.com' --adminpassword 'Passw0rd-123' --adminrole ToraluxIdentityAdminAdministrator --adminclientid toralux_identity_admin_v3 --adminclientsecret toralux_admin_client_secret --dockersupport true --requirepushedauthorization false
