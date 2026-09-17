@@ -76,8 +76,10 @@ s|github\.com/skoruba/Duende\.IdentityServer\.Admin/blob|@@ATTR_BLOB@@|g
 s|github\.com/skoruba/Duende\.IdentityServer\.Admin/tree|@@ATTR_TREE@@|g
 s|skoruba/Duende\.IdentityServer\.Admin|toralux/Open.IdentityServer.Admin|g
 s|SkorubaDuende\.IdentityServerAdmin|ToraluxOpen.IdentityServerAdmin|g
+s|skorubaduende\.identityserveradmin|toraluxopen.identityserveradmin|g
 s|SkorubaDuende\.IdentityServer|ToraluxOpen.IdentityServer|g
 s|Skoruba\.Duende\.IdentityServer|Toralux.Open.IdentityServer|g
+s|Skoruba Duende\.IdentityServer|Toralux Open.IdentityServer|g
 s|Duende\.IdentityServer|Open.IdentityServer|g
 s|SkorubaIdentityAdminAdministrator|ToraluxIdentityAdminAdministrator|g
 s|Skoruba Duende IdentityServer Admin|Toralux Open IdentityServer Admin|g
@@ -106,7 +108,7 @@ SED
 
 # Grep alternation used to select only files that actually contain a token.
 read -r -d '' TOKEN_RE <<'GREP' || true
-skoruba/Duende\.IdentityServer\.Admin|SkorubaDuende\.IdentityServer|Skoruba\.Duende\.IdentityServer|Duende\.IdentityServer|SkorubaIdentityAdminAdministrator|Skoruba Duende IdentityServer|Duende IdentityServer|@skoruba/duende\.identityserver|skoruba-duende-identity-server-admin|skoruba-duende-identityserver|skoruba\.duende\.identityserver|skoruba\.duende\.isadmin|skoruba\.local|skoruba_identity_admin|skoruba_admin_client_secret|skoruba-icon|admin@skoruba\.com|"infoTitle": "Skoruba"
+skoruba/Duende\.IdentityServer\.Admin|SkorubaDuende\.IdentityServer|skorubaduende\.identityserveradmin|Skoruba\.Duende\.IdentityServer|Duende\.IdentityServer|SkorubaIdentityAdminAdministrator|Skoruba Duende IdentityServer|Skoruba Duende\.IdentityServer|Duende IdentityServer|@skoruba/duende\.identityserver|skoruba-duende-identity-server-admin|skoruba-duende-identityserver|skoruba\.duende\.identityserver|skoruba\.duende\.isadmin|skoruba\.local|skoruba_identity_admin|skoruba_admin_client_secret|skoruba-icon|admin@skoruba\.com|"infoTitle": "Skoruba"
 GREP
 
 # Files never rewritten:
