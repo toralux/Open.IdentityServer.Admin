@@ -3,6 +3,7 @@
 
 using Open.IdentityServer.EntityFramework.DbContexts;
 using Open.IdentityServer.EntityFramework.Entities;
+using Open.IdentityServer.EntityFramework.Options;
 using Microsoft.EntityFrameworkCore;
 using Toralux.Open.IdentityServer.Admin.EntityFramework.Interfaces;
 
@@ -10,8 +11,8 @@ namespace ToraluxOpen.IdentityServerAdmin.Admin.EntityFramework.Shared.DbContext
 {
     public class IdentityServerConfigurationDbContext : ConfigurationDbContext<IdentityServerConfigurationDbContext>, IAdminConfigurationDbContext
     {
-        public IdentityServerConfigurationDbContext(DbContextOptions<IdentityServerConfigurationDbContext> options)
-            : base(options)
+        public IdentityServerConfigurationDbContext(DbContextOptions<IdentityServerConfigurationDbContext> options, ConfigurationStoreOptions storeOptions)
+            : base(options, storeOptions)
         {
         }
 
