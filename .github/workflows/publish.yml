@@ -1,0 +1,49 @@
+name: publish
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET 10
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: src/Toralux.Open.IdentityServer.Admin.UI.Client/package-lock.json
+
+      - name: Build SPA (vite + copy to UI.Spa wwwroot)
+        working-directory: src/Toralux.Open.IdentityServer.Admin.UI.Client
+        run: |
+          npm ci
+          npm run build:spa
+
+      - name: Pack the 14 library packages
+        shell: pwsh
+        run: ./build/create-packages.ps1
+
+      - name: Pack the dotnet new template package
+        shell: pwsh
+        run: |
+          Copy-Item README.md templates/template-publish/README.md -Force
+          Copy-Item docs/Images/nuget-icon.png templates/template-publish/nuget-icon.png -Force
+          nuget pack templates/template-publish/Toralux.Open.IdentityServer.Admin.Templates.nuspec -NoDefaultExcludes -OutputDirectory build/packages
+
+      - name: Push all packages to NuGet.org
+        shell: pwsh
+        run: dotnet nuget push 'build/packages/*.nupkg' --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }} --skip-duplicate
