@@ -293,3 +293,6 @@ appsettings.*.json
 .DS_Store
 obj\\Debug/
 bin\\Debug/
+
+# dev signing key - generated per-install, never commit
+tempkey.jwk
