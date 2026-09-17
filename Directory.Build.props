@@ -1,12 +1,14 @@
 <Project>
 
   <PropertyGroup>    
-    <Version>3.0.0</Version>
-    <Authors>Jan Škoruba</Authors>
+    <Version>0.1.0</Version>
+    <Authors>Toralux</Authors>
     <PackageTags>Open IdentityServer Admin OpenIDConnect OAuth2 Identity</PackageTags>
-    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageIcon>nuget-icon.png</PackageIcon>
     <PackageProjectUrl>https://github.com/toralux/Open.IdentityServer.Admin</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/toralux/Open.IdentityServer.Admin</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
