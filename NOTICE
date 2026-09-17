@@ -1,0 +1,27 @@
+Toralux Open IdentityServer Admin
+Copyright Tor Anders Johansen (Toralux)
+
+Modifications and original work Copyright 2026 Tor Anders Johansen.
+
+This project includes substantial portions of software developed by
+Jan Škoruba and contributors:
+
+    skoruba/Duende.IdentityServer.Admin
+    https://github.com/skoruba/Duende.IdentityServer.Admin
+    Copyright (c) Jan Škoruba. All Rights Reserved.
+    Licensed under the Apache License, Version 2.0.
+
+This repository is a fork of the above project at v3.0.0
+(commit 45da4dc4), retargeted to Open IdentityServer. Original
+copyright notices are preserved in source files per Apache License 2.0,
+section 4(c); modifications carry an additional Toralux copyright line.
+
+It also depends on the following third-party open-source projects:
+
+    Open IdentityServer (https://github.com/toralux/Open.IdentityServer)
+    Skoruba.AuditLogging (https://github.com/skoruba/AuditLogging)
+    Duende.IdentityModel (https://github.com/DuendeSoftware/IdentityModel)
+    .NET / ASP.NET Core (https://dotnet.microsoft.com)
+    React (https://react.dev)
+
+Each is licensed under its own terms; see the respective projects.

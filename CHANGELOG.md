@@ -1,5 +1,41 @@
 # Changelog
 
+## [0.1.0] - 2026-09-17
+
+### Fork point
+
+Toralux Open IdentityServer Admin **0.1.0** is forked from
+[skoruba/Duende.IdentityServer.Admin](https://github.com/skoruba/Duende.IdentityServer.Admin)
+**v3.0.0** (commit `45da4dc4`). This is the first Toralux release; upstream
+history follows below. Not affiliated with or endorsed by Rock Solid Knowledge /
+IdentityServer.com.
+
+### Added
+
+- `tools/rename.sh` + `patches/` replay mechanism for upstream syncs
+- Toralux package metadata (Authors, Repository, Apache-2.0 license expression, package icon)
+- NOTICE file with upstream attribution
+- README fork-lineage, disclaimer, connection-string (×7), and secret-hashing migration notes
+
+### Changed
+
+- Retargeted from Duende IdentityServer 7.4.7 to **Open IdentityServer 2.0.0**
+  (namespaces `Duende.IdentityServer` → `Open.IdentityServer`; `Duende.IdentityModel`
+  and `Duende.AccessTokenManagement.*` kept)
+- Package IDs rebranded `Skoruba.*`/`Duende.*` → `Toralux.Open.IdentityServer.Admin.*` (14 packages), versioned **0.1.0**
+- `dotnet new` template renamed to `toralux.open-isadmin`; template package
+  `Toralux.Open.IdentityServer.Admin.Templates` 0.1.0; `--requirepushedauthorization` now defaults to `false`
+- npm packages rebranded (`toralux-open-identityserver-admin`, `@toralux/open-identityserver.admin.api.client`)
+- Seed identifiers renamed: clients `toralux_identity_admin_*`, admin `admin@example.com`,
+  role `ToraluxIdentityAdminAdministrator`
+- UI.Spa packaging now builds SPA assets (`npm run build:spa`) before `dotnet pack`
+
+### Removed
+
+- IdentityProvider and Keys administration pages (endpoints absent in Open IdentityServer)
+- Dynamic providers / server-side sessions wiring (returns when Open IdentityServer ships them)
+- PAR enforcement in generated projects (unsupported by Open IdentityServer)
+
 ## [3.1.0] - 2026-09-19
 
 This release moves the solution to **Duende IdentityServer 8** and adds a way to get
