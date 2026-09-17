@@ -7,6 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+<<<<<<< HEAD
 using Microsoft.Extensions.DependencyInjection;
 using Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.Dashboard;
 using Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.Log;
@@ -14,6 +15,12 @@ using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.DashboardIde
 using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Services.Interfaces;
 using Toralux.Open.IdentityServer.Admin.BusinessLogic.Services.Interfaces;
 using Toralux.Open.IdentityServer.Admin.UI.Api.Configuration;
+=======
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.Dashboard;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.DashboardIdentity;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Services.Interfaces;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Services.Interfaces;
+>>>>>>> 9c995bd0 (fix: repair namespaces mangled by swap-before-rename ordering)
 using Toralux.Open.IdentityServer.Admin.UI.Api.Configuration.Constants;
 using Toralux.Open.IdentityServer.Admin.UI.Api.ExceptionHandling;
 
