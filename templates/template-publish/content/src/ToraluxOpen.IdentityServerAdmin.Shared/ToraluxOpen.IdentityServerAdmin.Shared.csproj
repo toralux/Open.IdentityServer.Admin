@@ -13,7 +13,7 @@
 		<PackageReference Include="Microsoft.AspNetCore.DataProtection.EntityFrameworkCore" Version="10.0.10" />
 		<PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="10.0.10" />
 		<PackageReference Include="Sendgrid" Version="9.29.3" />
-		<PackageReference Include="Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity" Version="3.0.0" />
+		<PackageReference Include="Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity" Version="0.1.0" />
 	</ItemGroup>
 
 </Project>

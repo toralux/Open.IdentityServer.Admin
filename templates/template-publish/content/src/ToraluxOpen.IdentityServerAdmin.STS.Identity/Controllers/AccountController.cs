@@ -17,6 +17,10 @@ using Open.IdentityServer.Models;
 using Open.IdentityServer.Services;
 using Open.IdentityServer.Stores;
 using IdentityModel;
+
+// resolve to the IdentityModel package's constants (as before the Open.IdentityServer migration,
+// which vendors its own JwtClaimTypes that would otherwise be ambiguous with the one below)
+using JwtClaimTypes = IdentityModel.JwtClaimTypes;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -51,7 +55,6 @@ namespace ToraluxOpen.IdentityServerAdmin.STS.Identity.Controllers
         private readonly RegisterConfiguration _registerConfiguration;
         private readonly IdentityOptions _identityOptions;
         private readonly ILogger<AccountController<TUser, TKey>> _logger;
-        private readonly IIdentityProviderStore _identityProviderStore;
 
         public AccountController(
             UserResolver<TUser> userResolver,
@@ -66,8 +69,7 @@ namespace ToraluxOpen.IdentityServerAdmin.STS.Identity.Controllers
             LoginConfiguration loginConfiguration,
             RegisterConfiguration registerConfiguration,
             IdentityOptions identityOptions,
-            ILogger<AccountController<TUser, TKey>> logger,
-            IIdentityProviderStore identityProviderStore)
+            ILogger<AccountController<TUser, TKey>> logger)
         {
             _userResolver = userResolver;
             _userManager = userManager;
@@ -82,7 +84,6 @@ namespace ToraluxOpen.IdentityServerAdmin.STS.Identity.Controllers
             _registerConfiguration = registerConfiguration;
             _identityOptions = identityOptions;
             _logger = logger;
-            _identityProviderStore = identityProviderStore;
         }
 
         /// <summary>
@@ -778,16 +779,6 @@ namespace ToraluxOpen.IdentityServerAdmin.STS.Identity.Controllers
                     AuthenticationScheme = x.Name
                 }).ToList();
 
-            var dynamicSchemes = (await _identityProviderStore.GetAllSchemeNamesAsync())
-                .Where(x => x.Enabled)
-                .Select(x => new ExternalProvider
-                {
-                    AuthenticationScheme = x.Scheme,
-                    DisplayName = x.DisplayName
-                });
-
-            providers.AddRange(dynamicSchemes);
-
             var allowLocal = true;
             if (context?.Client.ClientId != null)
             {
@@ -864,7 +855,9 @@ namespace ToraluxOpen.IdentityServerAdmin.STS.Identity.Controllers
                 var idp = User.FindFirst(JwtClaimTypes.IdentityProvider)?.Value;
                 if (idp != null && idp != IdentityServerConstants.LocalIdentityProvider)
                 {
-                    var providerSupportsSignout = await HttpContext.GetSchemeSupportsSignOutAsync(idp);
+                    // static call: Open.IdentityServer.Extensions ships an identical extension,
+                    // which would make the extension-method call ambiguous with the local helper
+                    var providerSupportsSignout = await Extensions.GetSchemeSupportsSignOutAsync(HttpContext, idp);
                     if (providerSupportsSignout)
                     {
                         if (vm.LogoutId == null)

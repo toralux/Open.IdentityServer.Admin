@@ -36,9 +36,6 @@ namespace ToraluxOpen.IdentityServerAdmin.STS.Identity
             var rootConfiguration = CreateRootConfiguration();
             services.AddSingleton(rootConfiguration);
 
-            // Configure ServerSideSessions
-            services.Configure<ServerSideSessionsConfiguration>(Configuration.GetSection(ServerSideSessionsConfiguration.SectionName));
-
             // Register DbContexts for IdentityServer and Identity
             RegisterDbContexts(services);
 

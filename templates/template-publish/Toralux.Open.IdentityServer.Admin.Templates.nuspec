@@ -2,11 +2,14 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>Toralux.Open.IdentityServer.Admin.Templates</id>
-    <version>3.0.0</version>
-    <authors>Jan Škoruba</authors>
+    <version>0.1.0</version>
+    <authors>Toralux</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="expression">Apache-2.0</license>
     <projectUrl>https://github.com/toralux/Open.IdentityServer.Admin</projectUrl>
+    <repository type="git" url="https://github.com/toralux/Open.IdentityServer.Admin" />
+    <icon>nuget-icon.png</icon>
+    <readme>README.md</readme>
     <icon>nuget-icon.png</icon>
     <readme>README.md</readme>
     <description>Templates for the administration of the Open IdentityServer and Asp.Net Core Identity</description>
