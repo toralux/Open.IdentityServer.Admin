@@ -294,3 +294,5 @@ appsettings.*.json
 
 # Local sample apps consuming the configured clients - not published yet
 /samples/
+obj\\Debug/
+bin\\Debug/
