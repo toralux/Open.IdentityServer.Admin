@@ -193,9 +193,9 @@ The solution contains **three runnable services**:
 
 | Service       | Project                                      | Purpose                         |
 | ------------- | -------------------------------------------- | ------------------------------- |
-| **STS**       | `Skoruba.Duende.IdentityServer.STS.Identity` | IdentityServer + authentication |
-| **Admin API** | `Skoruba.Duende.IdentityServer.Admin.Api`    | REST API backend                |
-| **Admin UI**  | `Skoruba.Duende.IdentityServer.Admin`        | SPA host                        |
+| **STS**       | `Toralux.Open.IdentityServer.STS.Identity` | IdentityServer + authentication |
+| **Admin API** | `Toralux.Open.IdentityServer.Admin.Api`    | REST API backend                |
+| **Admin UI**  | `Toralux.Open.IdentityServer.Admin`        | SPA host                        |
 
 ### 1. Clone the repository
 
@@ -207,7 +207,7 @@ cd Duende.IdentityServer.Admin
 ### 2. Install React dependencies (first run only)
 
 ```sh
-cd src/Skoruba.Duende.IdentityServer.Admin.UI.Client
+cd src/Toralux.Open.IdentityServer.Admin.UI.Client
 npm install
 cd ../..
 ```
@@ -218,15 +218,15 @@ Open three terminals and run:
 
 ```sh
 # Terminal 1: STS (IdentityServer)
-cd src/Skoruba.Duende.IdentityServer.STS.Identity
+cd src/Toralux.Open.IdentityServer.STS.Identity
 dotnet run
 
 # Terminal 2: Admin API
-cd src/Skoruba.Duende.IdentityServer.Admin.Api
+cd src/Toralux.Open.IdentityServer.Admin.Api
 dotnet run
 
 # Terminal 3: Admin UI Host
-cd src/Skoruba.Duende.IdentityServer.Admin
+cd src/Toralux.Open.IdentityServer.Admin
 dotnet run
 ```
 
@@ -650,7 +650,7 @@ Enable or disable user registration:
 
 ## 🧩 Identity Mapping Customization
 
-Identity DTO/entity mapping in `Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity` is handled by `IdentityDataMapper`.
+Identity DTO/entity mapping in `Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity` is handled by `IdentityDataMapper`.
 
 By default:
 
@@ -700,57 +700,57 @@ The solution contains **unit and integration tests** for all major components.
 
 ### STS
 
-`Skoruba.Duende.IdentityServer.STS.Identity` – IdentityServer with ASP.NET Core Identity
+`Toralux.Open.IdentityServer.STS.Identity` – IdentityServer with ASP.NET Core Identity
 
 ### Admin API
 
-`Skoruba.Duende.IdentityServer.Admin.Api` – REST API with Swagger
+`Toralux.Open.IdentityServer.Admin.Api` – REST API with Swagger
 
 ### Admin UI
 
-- `Skoruba.Duende.IdentityServer.Admin` – .NET host
-- `Skoruba.Duende.IdentityServer.Admin.UI` – UI services
-- `Skoruba.Duende.IdentityServer.Admin.UI.Spa` – Precompiled React assets
-- `Skoruba.Duende.IdentityServer.Admin.UI.Client` – React source code
+- `Toralux.Open.IdentityServer.Admin` – .NET host
+- `Toralux.Open.IdentityServer.Admin.UI` – UI services
+- `Toralux.Open.IdentityServer.Admin.UI.Spa` – Precompiled React assets
+- `Toralux.Open.IdentityServer.Admin.UI.Client` – React source code
 
 ### Business Logic
 
-- `Skoruba.Duende.IdentityServer.Admin.BusinessLogic` – IdentityServer DTOs, services, repositories
-- `Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity` – Identity DTOs, services, repositories
-- `Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Shared` – Shared logic
+- `Toralux.Open.IdentityServer.Admin.BusinessLogic` – IdentityServer DTOs, services, repositories
+- `Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity` – Identity DTOs, services, repositories
+- `Toralux.Open.IdentityServer.Admin.BusinessLogic.Shared` – Shared logic
 
 ### Entity Framework
 
-- `Skoruba.Duende.IdentityServer.Admin.EntityFramework` – Core EF entities
-- `Skoruba.Duende.IdentityServer.Admin.EntityFramework.Configuration` – Entity configurations
-- `Skoruba.Duende.IdentityServer.Admin.EntityFramework.Extensions` – EF extensions
-- `Skoruba.Duende.IdentityServer.Admin.EntityFramework.Identity` – Identity repositories
-- `Skoruba.Duende.IdentityServer.Admin.EntityFramework.Shared` – DbContexts
-- `Skoruba.Duende.IdentityServer.Admin.EntityFramework.SqlServer` – SQL Server migrations
-- `Skoruba.Duende.IdentityServer.Admin.EntityFramework.PostgreSQL` – PostgreSQL migrations
+- `Toralux.Open.IdentityServer.Admin.EntityFramework` – Core EF entities
+- `Toralux.Open.IdentityServer.Admin.EntityFramework.Configuration` – Entity configurations
+- `Toralux.Open.IdentityServer.Admin.EntityFramework.Extensions` – EF extensions
+- `Toralux.Open.IdentityServer.Admin.EntityFramework.Identity` – Identity repositories
+- `Toralux.Open.IdentityServer.Admin.EntityFramework.Shared` – DbContexts
+- `Toralux.Open.IdentityServer.Admin.EntityFramework.SqlServer` – SQL Server migrations
+- `Toralux.Open.IdentityServer.Admin.EntityFramework.PostgreSQL` – PostgreSQL migrations
 
 ### Shared
 
-- `Skoruba.Duende.IdentityServer.Shared` – Shared DTOs
-- `Skoruba.Duende.IdentityServer.Shared.Configuration` – Shared configuration
+- `Toralux.Open.IdentityServer.Shared` – Shared DTOs
+- `Toralux.Open.IdentityServer.Shared.Configuration` – Shared configuration
 
 ### Tests
 
-- `Skoruba.Duende.IdentityServer.Admin.UnitTests` – Unit tests
-- `Skoruba.Duende.IdentityServer.Admin.Api.IntegrationTests` – API integration tests
-- `Skoruba.Duende.IdentityServer.STS.IntegrationTests` – STS integration tests
-- `Skoruba.Duende.IdentityServer.Admin.UI.Client.IntegrationTests` – Playwright UI integration tests (OIDC login flow + Admin UI assertions)
+- `Toralux.Open.IdentityServer.Admin.UnitTests` – Unit tests
+- `Toralux.Open.IdentityServer.Admin.Api.IntegrationTests` – API integration tests
+- `Toralux.Open.IdentityServer.STS.IntegrationTests` – STS integration tests
+- `Toralux.Open.IdentityServer.Admin.UI.Client.IntegrationTests` – Playwright UI integration tests (OIDC login flow + Admin UI assertions)
 
 ### UI Integration Tests (Playwright)
 
 The UI E2E test project is located in:
 
-- `tests/Skoruba.Duende.IdentityServer.Admin.UI.Client.IntegrationTests`
+- `tests/Toralux.Open.IdentityServer.Admin.UI.Client.IntegrationTests`
 
 To run it:
 
 ```sh
-cd tests/Skoruba.Duende.IdentityServer.Admin.UI.Client.IntegrationTests
+cd tests/Toralux.Open.IdentityServer.Admin.UI.Client.IntegrationTests
 npm install
 npx playwright install chromium
 npm test
@@ -765,7 +765,7 @@ Default expected runtime services:
   - Vite dev server / default `E2E_ADMIN_URL` for Playwright: `https://localhost:50445`
 
 > **Important:** The seeded OIDC client redirect URIs and CORS origins in
-> `src/Skoruba.Duende.IdentityServer.Admin.Api/identityserverdata.json` use
+> `src/Toralux.Open.IdentityServer.Admin.Api/identityserverdata.json` use
 > `https://localhost:50445` by default. If you run the Admin UI on
 > `https://localhost:7127` instead, update the client configuration (or the
 > Playwright `E2E_ADMIN_URL`) so redirects and CORS validation continue to
@@ -773,8 +773,8 @@ Default expected runtime services:
 
 The tests load credentials and expected client data from seed files:
 
-- `src/Skoruba.Duende.IdentityServer.Admin.Api/identitydata.json`
-- `src/Skoruba.Duende.IdentityServer.Admin.Api/identityserverdata.json`
+- `src/Toralux.Open.IdentityServer.Admin.Api/identitydata.json`
+- `src/Toralux.Open.IdentityServer.Admin.Api/identityserverdata.json`
 
 ---
 

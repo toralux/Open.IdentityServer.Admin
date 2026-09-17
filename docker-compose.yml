@@ -22,7 +22,7 @@ services:
     image: '${DOCKER_REGISTRY-}skoruba-duende-identityserver-admin'
     build:
       context: .
-      dockerfile: src/Skoruba.Duende.IdentityServer.Admin/Dockerfile
+      dockerfile: src/Toralux.Open.IdentityServer.Admin/Dockerfile
     container_name: skoruba-duende-identityserver-admin
     environment:
       - VIRTUAL_PORT=8080
@@ -49,7 +49,7 @@ services:
     image: '${DOCKER_REGISTRY-}skoruba-duende-identityserver-admin-api'
     build:
       context: .
-      dockerfile: src/Skoruba.Duende.IdentityServer.Admin.Api/Dockerfile
+      dockerfile: src/Toralux.Open.IdentityServer.Admin.Api/Dockerfile
     container_name: skoruba-duende-identityserver-admin-api
     environment:
       - VIRTUAL_PORT=8080
@@ -89,7 +89,7 @@ services:
     image: '${DOCKER_REGISTRY-}skoruba-duende-identityserver-sts-identity'
     build:
       context: .
-      dockerfile: src/Skoruba.Duende.IdentityServer.STS.Identity/Dockerfile
+      dockerfile: src/Toralux.Open.IdentityServer.STS.Identity/Dockerfile
     container_name: skoruba-duende-identityserver-sts-identity
     environment:
       - VIRTUAL_PORT=8080

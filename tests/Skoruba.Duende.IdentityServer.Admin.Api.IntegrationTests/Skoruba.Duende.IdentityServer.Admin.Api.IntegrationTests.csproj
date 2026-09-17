@@ -24,14 +24,14 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\src\Skoruba.Duende.IdentityServer.Admin.Api\Skoruba.Duende.IdentityServer.Admin.Api.csproj" />
+      <ProjectReference Include="..\..\src\Toralux.Open.IdentityServer.Admin.Api\Toralux.Open.IdentityServer.Admin.Api.csproj" />
     </ItemGroup>
     
     <ItemGroup>
-      <Compile Include="..\Skoruba.Duende.IdentityServer.Admin.Api.UnitTests\Mocks\ClientDtoApiMock.cs" Link="Mocks\ClientDtoApiMock.cs" />
-      <Compile Include="..\Skoruba.Duende.IdentityServer.Admin.Api.UnitTests\Mocks\ApiResourceApiDtoMock.cs" Link="Mocks\ApiResourceApiDtoMock.cs" />
-      <Compile Include="..\Skoruba.Duende.IdentityServer.Admin.Api.UnitTests\Mocks\IdentityResourceApiDtoMock.cs" Link="Mocks\IdentityResourceApiDtoMock.cs" />
-      <Compile Include="..\Skoruba.Duende.IdentityServer.Admin.Api.UnitTests\Mocks\ApiScopeApiDtoMock.cs" Link="Mocks\ApiScopeApiDtoMock.cs" />
+      <Compile Include="..\Toralux.Open.IdentityServer.Admin.Api.UnitTests\Mocks\ClientDtoApiMock.cs" Link="Mocks\ClientDtoApiMock.cs" />
+      <Compile Include="..\Toralux.Open.IdentityServer.Admin.Api.UnitTests\Mocks\ApiResourceApiDtoMock.cs" Link="Mocks\ApiResourceApiDtoMock.cs" />
+      <Compile Include="..\Toralux.Open.IdentityServer.Admin.Api.UnitTests\Mocks\IdentityResourceApiDtoMock.cs" Link="Mocks\IdentityResourceApiDtoMock.cs" />
+      <Compile Include="..\Toralux.Open.IdentityServer.Admin.Api.UnitTests\Mocks\ApiScopeApiDtoMock.cs" Link="Mocks\ApiScopeApiDtoMock.cs" />
     </ItemGroup>
 
 </Project>

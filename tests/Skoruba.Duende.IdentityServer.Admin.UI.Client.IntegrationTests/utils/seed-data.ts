@@ -70,7 +70,7 @@ function findRepoRoot(startDirectory: string = process.cwd()): string {
   while (true) {
     if (
       fs.existsSync(
-        path.join(currentDirectory, "Skoruba.Duende.IdentityServer.Admin.sln")
+        path.join(currentDirectory, "Toralux.Open.IdentityServer.Admin.sln")
       )
     ) {
       return currentDirectory;
@@ -79,7 +79,7 @@ function findRepoRoot(startDirectory: string = process.cwd()): string {
     const parentDirectory = path.dirname(currentDirectory);
     if (parentDirectory === currentDirectory) {
       throw new Error(
-        `Repository root not found from '${startDirectory}'. Expected to find 'Skoruba.Duende.IdentityServer.Admin.sln'.`
+        `Repository root not found from '${startDirectory}'. Expected to find 'Toralux.Open.IdentityServer.Admin.sln'.`
       );
     }
 
@@ -112,8 +112,8 @@ function resolveIdentityDataPath(repoRoot: string): string {
 
   return resolveFirstExistingPath(
     [
-      path.join(repoRoot, "src/Skoruba.Duende.IdentityServer.Admin.Api/identity.json"),
-      path.join(repoRoot, "src/Skoruba.Duende.IdentityServer.Admin.Api/identitydata.json"),
+      path.join(repoRoot, "src/Toralux.Open.IdentityServer.Admin.Api/identity.json"),
+      path.join(repoRoot, "src/Toralux.Open.IdentityServer.Admin.Api/identitydata.json"),
       path.join(repoRoot, "shared/identity.json"),
       path.join(repoRoot, "shared/identitydata.json"),
     ],
@@ -128,8 +128,8 @@ function resolveIdentityServerDataPath(repoRoot: string): string {
 
   return resolveFirstExistingPath(
     [
-      path.join(repoRoot, "src/Skoruba.Duende.IdentityServer.Admin.Api/identityserver.json"),
-      path.join(repoRoot, "src/Skoruba.Duende.IdentityServer.Admin.Api/identityserverdata.json"),
+      path.join(repoRoot, "src/Toralux.Open.IdentityServer.Admin.Api/identityserver.json"),
+      path.join(repoRoot, "src/Toralux.Open.IdentityServer.Admin.Api/identityserverdata.json"),
       path.join(repoRoot, "shared/identityserver.json"),
       path.join(repoRoot, "shared/identityserverdata.json"),
     ],

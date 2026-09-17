@@ -14,22 +14,22 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Moq;
 using Skoruba.AuditLogging.Services;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Events.Identity;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Mappers;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Mappers.Customization;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Resources;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Services;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Services.Interfaces;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Identity.Repositories;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Identity.Repositories.Interfaces;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Shared.DbContexts;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity;
-using Skoruba.Duende.IdentityServer.Admin.UnitTests.Mocks;
-using Skoruba.Duende.IdentityServer.Shared.Configuration.Constants;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Events.Identity;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Mappers;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Mappers.Customization;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Resources;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Services;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Services.Interfaces;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Identity.Repositories;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Identity.Repositories.Interfaces;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.DbContexts;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity;
+using Toralux.Open.IdentityServer.Admin.UnitTests.Mocks;
+using Toralux.Open.IdentityServer.Shared.Configuration.Constants;
 using Xunit;
 
-namespace Skoruba.Duende.IdentityServer.Admin.UnitTests.Services
+namespace Toralux.Open.IdentityServer.Admin.UnitTests.Services
 {
     public class IdentityServiceTests
     {

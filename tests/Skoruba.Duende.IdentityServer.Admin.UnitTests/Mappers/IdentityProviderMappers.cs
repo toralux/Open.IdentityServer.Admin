@@ -4,12 +4,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using FluentAssertions;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Dtos.IdentityProvider;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Mappers;
-using Skoruba.Duende.IdentityServer.Admin.UnitTests.Mocks;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.IdentityProvider;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Mappers;
+using Toralux.Open.IdentityServer.Admin.UnitTests.Mocks;
 using Xunit;
 
-namespace Skoruba.Duende.IdentityServer.Admin.UnitTests.Mappers
+namespace Toralux.Open.IdentityServer.Admin.UnitTests.Mappers
 {
     public class IdentityProviderMappers
     {

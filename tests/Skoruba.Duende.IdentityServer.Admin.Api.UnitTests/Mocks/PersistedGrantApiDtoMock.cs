@@ -4,10 +4,10 @@
 using System;
 using System.Collections.Generic;
 using Bogus;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Grant;
-using Skoruba.Duende.IdentityServer.Admin.UI.Api.Dtos.PersistedGrants;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Grant;
+using Toralux.Open.IdentityServer.Admin.UI.Api.Dtos.PersistedGrants;
 
-namespace Skoruba.Duende.IdentityServer.Admin.Api.UnitTests.Mocks
+namespace Toralux.Open.IdentityServer.Admin.Api.UnitTests.Mocks
 {
     public class PersistedGrantApiDtoMock
     {

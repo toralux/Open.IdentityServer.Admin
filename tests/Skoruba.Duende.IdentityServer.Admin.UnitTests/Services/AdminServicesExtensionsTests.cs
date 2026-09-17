@@ -4,12 +4,12 @@
 using FluentAssertions;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Extensions;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Mappers.Customization;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Extensions;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Mappers.Customization;
 using Xunit;
 
-namespace Skoruba.Duende.IdentityServer.Admin.UnitTests.Services
+namespace Toralux.Open.IdentityServer.Admin.UnitTests.Services
 {
     public class AdminServicesExtensionsTests
     {

@@ -8,12 +8,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FluentAssertions;
-using Skoruba.Duende.IdentityServer.Admin.Api.IntegrationTests.Tests.Base;
-using Skoruba.Duende.IdentityServer.Admin.Api.UnitTests.Mocks;
-using Skoruba.Duende.IdentityServer.Admin.UI.Api.Dtos.IdentityResources;
+using Toralux.Open.IdentityServer.Admin.Api.IntegrationTests.Tests.Base;
+using Toralux.Open.IdentityServer.Admin.Api.UnitTests.Mocks;
+using Toralux.Open.IdentityServer.Admin.UI.Api.Dtos.IdentityResources;
 using Xunit;
 
-namespace Skoruba.Duende.IdentityServer.Admin.Api.IntegrationTests.Tests
+namespace Toralux.Open.IdentityServer.Admin.Api.IntegrationTests.Tests
 {
     public class IdentityResourcesControllerTests : AdminApiTestBase
     {

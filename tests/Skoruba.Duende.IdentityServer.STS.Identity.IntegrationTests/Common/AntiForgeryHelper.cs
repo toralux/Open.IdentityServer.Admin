@@ -6,7 +6,7 @@ using System.Net.Http;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace Skoruba.Duende.IdentityServer.STS.Identity.IntegrationTests.Common
+namespace Toralux.Open.IdentityServer.STS.Identity.IntegrationTests.Common
 {
     public static class AntiForgeryHelper
     {

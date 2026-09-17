@@ -7,7 +7,7 @@ using System.Linq;
 using Bogus;
 using Duende.IdentityServer.EntityFramework.Entities;
 
-namespace Skoruba.Duende.IdentityServer.Admin.UnitTests.Mocks
+namespace Toralux.Open.IdentityServer.Admin.UnitTests.Mocks
 {
     public static class ApiResourceMock
     {

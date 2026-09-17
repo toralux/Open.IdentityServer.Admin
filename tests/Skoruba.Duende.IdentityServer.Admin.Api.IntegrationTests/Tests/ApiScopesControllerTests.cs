@@ -8,12 +8,12 @@ using System.Net;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 using FluentAssertions;
-using Skoruba.Duende.IdentityServer.Admin.Api.IntegrationTests.Tests.Base;
-using Skoruba.Duende.IdentityServer.Admin.Api.UnitTests.Mocks;
-using Skoruba.Duende.IdentityServer.Admin.UI.Api.Dtos.ApiScopes;
+using Toralux.Open.IdentityServer.Admin.Api.IntegrationTests.Tests.Base;
+using Toralux.Open.IdentityServer.Admin.Api.UnitTests.Mocks;
+using Toralux.Open.IdentityServer.Admin.UI.Api.Dtos.ApiScopes;
 using Xunit;
 
-namespace Skoruba.Duende.IdentityServer.Admin.Api.IntegrationTests.Tests
+namespace Toralux.Open.IdentityServer.Admin.Api.IntegrationTests.Tests
 {
     public class ApiScopesControllerTests : AdminApiTestBase
     {

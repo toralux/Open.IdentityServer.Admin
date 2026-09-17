@@ -3,16 +3,16 @@
 
 using System.Collections.Generic;
 using FluentAssertions;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Dtos.Configuration;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Events.ApiResource;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Events.ApiScope;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Events.Client;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Events.IdentityResource;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Events.Identity;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.Configuration;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Events.ApiResource;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Events.ApiScope;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Events.Client;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Events.IdentityResource;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Events.Identity;
 using Xunit;
 
-namespace Skoruba.Duende.IdentityServer.Admin.UnitTests
+namespace Toralux.Open.IdentityServer.Admin.UnitTests
 {
     public class AuditEventSecurityTests
     {

@@ -5,9 +5,9 @@ using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Skoruba.Duende.IdentityServer.STS.Identity.IntegrationTests.Common;
+using Toralux.Open.IdentityServer.STS.Identity.IntegrationTests.Common;
 
-namespace Skoruba.Duende.IdentityServer.STS.Identity.IntegrationTests.Mocks
+namespace Toralux.Open.IdentityServer.STS.Identity.IntegrationTests.Mocks
 {
     public static class UserMocks
     {

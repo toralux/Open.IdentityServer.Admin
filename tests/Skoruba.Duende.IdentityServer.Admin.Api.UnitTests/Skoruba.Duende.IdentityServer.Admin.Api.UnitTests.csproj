@@ -20,8 +20,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\src\Skoruba.Duende.IdentityServer.Admin.Api\Skoruba.Duende.IdentityServer.Admin.Api.csproj" />
-      <ProjectReference Include="..\Skoruba.Duende.IdentityServer.Admin.UnitTests\Skoruba.Duende.IdentityServer.Admin.UnitTests.csproj" />
+      <ProjectReference Include="..\..\src\Toralux.Open.IdentityServer.Admin.Api\Toralux.Open.IdentityServer.Admin.Api.csproj" />
+      <ProjectReference Include="..\Toralux.Open.IdentityServer.Admin.UnitTests\Toralux.Open.IdentityServer.Admin.UnitTests.csproj" />
     </ItemGroup>
 
 </Project>

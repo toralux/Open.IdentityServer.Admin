@@ -7,9 +7,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using Skoruba.Duende.IdentityServer.STS.Identity.Configuration.Test;
+using Toralux.Open.IdentityServer.STS.Identity.Configuration.Test;
 
-namespace Skoruba.Duende.IdentityServer.STS.Identity.IntegrationTests.Tests.Base
+namespace Toralux.Open.IdentityServer.STS.Identity.IntegrationTests.Tests.Base
 {
     public class TestFixture : IDisposable
     {

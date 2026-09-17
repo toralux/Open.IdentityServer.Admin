@@ -10,17 +10,17 @@ using Duende.IdentityServer.EntityFramework.Entities;
 using FluentAssertions;
 using Moq;
 using Skoruba.AuditLogging.Services;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Dtos.IdentityProvider;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Events.IdentityProvider;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Services;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Services.Interfaces;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Resources;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Extensions.Common;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Repositories.Interfaces;
-using Skoruba.Duende.IdentityServer.Admin.UnitTests.Mocks;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.IdentityProvider;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Events.IdentityProvider;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Services;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Services.Interfaces;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Resources;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Extensions.Common;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Repositories.Interfaces;
+using Toralux.Open.IdentityServer.Admin.UnitTests.Mocks;
 using Xunit;
 
-namespace Skoruba.Duende.IdentityServer.Admin.UnitTests.Services
+namespace Toralux.Open.IdentityServer.Admin.UnitTests.Services
 {
     public class IdentityProviderServiceTests
     {

@@ -5,7 +5,7 @@ using System.Net.Http;
 using Microsoft.AspNetCore.TestHost;
 using Xunit;
 
-namespace Skoruba.Duende.IdentityServer.STS.Identity.IntegrationTests.Tests.Base
+namespace Toralux.Open.IdentityServer.STS.Identity.IntegrationTests.Tests.Base
 {
     public class BaseClassFixture : IClassFixture<TestFixture>
     {

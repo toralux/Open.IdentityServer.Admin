@@ -3,7 +3,7 @@
 
 using System.Collections.Generic;
 
-namespace Skoruba.Duende.IdentityServer.STS.Identity.IntegrationTests.Common
+namespace Toralux.Open.IdentityServer.STS.Identity.IntegrationTests.Common
 {
     public static class RoutesConstants
     {

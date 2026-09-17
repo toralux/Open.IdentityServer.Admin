@@ -16,7 +16,7 @@ function resolvePasskeySubmitScriptPath() {
     const candidate = path.join(
       repoRoot,
       "src",
-      "Skoruba.Duende.IdentityServer.STS.Identity",
+      "Toralux.Open.IdentityServer.STS.Identity",
       "wwwroot",
       "js",
       "passkey-submit.js",

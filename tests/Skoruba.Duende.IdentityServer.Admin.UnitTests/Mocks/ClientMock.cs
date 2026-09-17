@@ -7,11 +7,11 @@ using System.Linq;
 using Bogus;
 using Duende.IdentityServer.EntityFramework.Entities;
 using Duende.IdentityServer.Models;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Constants;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Constants;
 using Client = Duende.IdentityServer.EntityFramework.Entities.Client;
 using ClientClaim = Duende.IdentityServer.EntityFramework.Entities.ClientClaim;
 
-namespace Skoruba.Duende.IdentityServer.Admin.UnitTests.Mocks
+namespace Toralux.Open.IdentityServer.Admin.UnitTests.Mocks
 {
     public static class ClientMock
     {

@@ -4,9 +4,9 @@
 using System;
 using System.Collections.Generic;
 using Bogus;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Dtos.Grant;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.Grant;
 
-namespace Skoruba.Duende.IdentityServer.Admin.UnitTests.Mocks
+namespace Toralux.Open.IdentityServer.Admin.UnitTests.Mocks
 {
     public class PersistedGrantDtoMock
     {

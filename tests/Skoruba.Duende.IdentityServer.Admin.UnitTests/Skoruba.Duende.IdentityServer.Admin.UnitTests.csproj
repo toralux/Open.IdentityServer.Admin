@@ -25,9 +25,9 @@
 	</ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity\Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.csproj" />
-    <ProjectReference Include="..\..\src\Skoruba.Duende.IdentityServer.Admin.BusinessLogic\Skoruba.Duende.IdentityServer.Admin.BusinessLogic.csproj" />
-    <ProjectReference Include="..\..\src\Skoruba.Duende.IdentityServer.Shared.Configuration\Skoruba.Duende.IdentityServer.Shared.Configuration.csproj" />
+    <ProjectReference Include="..\..\src\Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity\Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.csproj" />
+    <ProjectReference Include="..\..\src\Toralux.Open.IdentityServer.Admin.BusinessLogic\Toralux.Open.IdentityServer.Admin.BusinessLogic.csproj" />
+    <ProjectReference Include="..\..\src\Toralux.Open.IdentityServer.Shared.Configuration\Toralux.Open.IdentityServer.Shared.Configuration.csproj" />
   </ItemGroup>
 
 </Project>

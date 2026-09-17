@@ -9,17 +9,17 @@ $targets = @(
         Replacement = "<Version>$new</Version>"
     },
     @{
-        Path = Join-Path $root "templates/template-build/Skoruba.Duende.IdentityServer.Admin.Templates.nuspec"
+        Path = Join-Path $root "templates/template-build/Toralux.Open.IdentityServer.Admin.Templates.nuspec"
         Pattern = "<version>[^<]+</version>"
         Replacement = "<version>$new</version>"
     },
     @{
-        Path = Join-Path $root "templates/template-publish/Skoruba.Duende.IdentityServer.Admin.Templates.nuspec"
+        Path = Join-Path $root "templates/template-publish/Toralux.Open.IdentityServer.Admin.Templates.nuspec"
         Pattern = "<version>[^<]+</version>"
         Replacement = "<version>$new</version>"
     },
     @{
-        Path = Join-Path $root "src/Skoruba.Duende.IdentityServer.Admin.UI.Client/package.json"
+        Path = Join-Path $root "src/Toralux.Open.IdentityServer.Admin.UI.Client/package.json"
         Pattern = '(?m)^(\s*)"version"\s*:\s*"[^"]+"'
         Replacement = "$1`"version`": `"$new`""
     }

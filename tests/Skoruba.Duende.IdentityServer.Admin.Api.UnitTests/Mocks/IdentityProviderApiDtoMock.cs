@@ -4,10 +4,10 @@
 using System;
 using System.Linq;
 using Bogus;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Constants;
-using Skoruba.Duende.IdentityServer.Admin.UI.Api.Dtos.IdentityProvider;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Constants;
+using Toralux.Open.IdentityServer.Admin.UI.Api.Dtos.IdentityProvider;
 
-namespace Skoruba.Duende.IdentityServer.Admin.Api.UnitTests.Mocks
+namespace Toralux.Open.IdentityServer.Admin.Api.UnitTests.Mocks
 {
     public static class IdentityProviderApiDtoMock
     {

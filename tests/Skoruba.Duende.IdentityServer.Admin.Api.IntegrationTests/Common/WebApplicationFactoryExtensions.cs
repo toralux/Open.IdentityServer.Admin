@@ -5,9 +5,9 @@ using System.Net.Http;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.AspNetCore.TestHost;
-using Skoruba.Duende.IdentityServer.Admin.Api.Configuration.Test;
+using Toralux.Open.IdentityServer.Admin.Api.Configuration.Test;
 
-namespace Skoruba.Duende.IdentityServer.Admin.Api.IntegrationTests.Common
+namespace Toralux.Open.IdentityServer.Admin.Api.IntegrationTests.Common
 {
     public static class WebApplicationFactoryExtensions
     {

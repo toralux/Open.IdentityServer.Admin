@@ -3,14 +3,14 @@
 
 using System;
 using FluentAssertions;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity;
-using Skoruba.Duende.IdentityServer.Admin.UI.Api.Dtos.Roles;
-using Skoruba.Duende.IdentityServer.Admin.UI.Api.Dtos.Users;
-using Skoruba.Duende.IdentityServer.Admin.UI.Api.Mappers;
-using Skoruba.Duende.IdentityServer.Admin.UnitTests.Mocks;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity;
+using Toralux.Open.IdentityServer.Admin.UI.Api.Dtos.Roles;
+using Toralux.Open.IdentityServer.Admin.UI.Api.Dtos.Users;
+using Toralux.Open.IdentityServer.Admin.UI.Api.Mappers;
+using Toralux.Open.IdentityServer.Admin.UnitTests.Mocks;
 using Xunit;
 
-namespace Skoruba.Duende.IdentityServer.Admin.Api.UnitTests.Mappers
+namespace Toralux.Open.IdentityServer.Admin.Api.UnitTests.Mappers
 {
     public class IdentityApiMappers
     {

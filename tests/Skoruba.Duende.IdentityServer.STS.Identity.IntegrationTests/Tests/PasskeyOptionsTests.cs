@@ -9,10 +9,10 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
-using Skoruba.Duende.IdentityServer.STS.Identity.Helpers;
+using Toralux.Open.IdentityServer.STS.Identity.Helpers;
 using Xunit;
 
-namespace Skoruba.Duende.IdentityServer.STS.Identity.IntegrationTests.Tests
+namespace Toralux.Open.IdentityServer.STS.Identity.IntegrationTests.Tests
 {
     public class PasskeyOptionsTests
     {

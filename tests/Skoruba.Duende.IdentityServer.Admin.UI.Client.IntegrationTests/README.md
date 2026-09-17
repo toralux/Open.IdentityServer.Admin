@@ -1,6 +1,6 @@
 # UI Integration Tests (Playwright)
 
-This project contains end-to-end UI tests for the React admin client in `Skoruba.Duende.IdentityServer.Admin`.
+This project contains end-to-end UI tests for the React admin client in `Toralux.Open.IdentityServer.Admin`.
 
 ## Scope
 
@@ -48,8 +48,8 @@ The suite covers:
 
 The tests read credentials and expected resources from seed files:
 
-- `src/Skoruba.Duende.IdentityServer.Admin.Api/identitydata.json`
-- `src/Skoruba.Duende.IdentityServer.Admin.Api/identityserverdata.json`
+- `src/Toralux.Open.IdentityServer.Admin.Api/identitydata.json`
+- `src/Toralux.Open.IdentityServer.Admin.Api/identityserverdata.json`
 
 It also supports alternative names (`identity.json`, `identityserver.json`) and env overrides.
 
@@ -57,13 +57,13 @@ It also supports alternative names (`identity.json`, `identityserver.json`) and 
 
 Run these services before executing tests:
 
-- `Skoruba.Duende.IdentityServer.STS.Identity`
-- `Skoruba.Duende.IdentityServer.Admin.Api`
-- `Skoruba.Duende.IdentityServer.Admin`
+- `Toralux.Open.IdentityServer.STS.Identity`
+- `Toralux.Open.IdentityServer.Admin.Api`
+- `Toralux.Open.IdentityServer.Admin`
 
 Default URLs used during local test runs:
 
-- Admin backend (`Skoruba.Duende.IdentityServer.Admin`): `https://localhost:7127`
+- Admin backend (`Toralux.Open.IdentityServer.Admin`): `https://localhost:7127`
 - Admin UI under test (`E2E_ADMIN_URL`, Vite dev server): `https://localhost:50445`
 - STS: `https://localhost:44310`
 - Admin API: `https://localhost:44302`
@@ -76,7 +76,7 @@ Default URLs used during local test runs:
 ## Install
 
 ```bash
-cd tests/Skoruba.Duende.IdentityServer.Admin.UI.Client.IntegrationTests
+cd tests/Toralux.Open.IdentityServer.Admin.UI.Client.IntegrationTests
 npm install
 npx playwright install chromium
 ```

@@ -10,11 +10,11 @@ using System.Net.Http.Json;
 using System.Threading.Tasks;
 using Bogus;
 using FluentAssertions;
-using Skoruba.Duende.IdentityServer.Admin.UI.Api.Dtos.Roles;
-using Skoruba.Duende.IdentityServer.Admin.UI.Api.Dtos.Users;
-using Skoruba.Duende.IdentityServer.Shared.Dtos.Identity;
+using Toralux.Open.IdentityServer.Admin.UI.Api.Dtos.Roles;
+using Toralux.Open.IdentityServer.Admin.UI.Api.Dtos.Users;
+using Toralux.Open.IdentityServer.Shared.Dtos.Identity;
 
-namespace Skoruba.Duende.IdentityServer.Admin.Api.IntegrationTests.Tests.Base
+namespace Toralux.Open.IdentityServer.Admin.Api.IntegrationTests.Tests.Base
 {
     public abstract class AdminApiTestBase : BaseClassFixture
     {

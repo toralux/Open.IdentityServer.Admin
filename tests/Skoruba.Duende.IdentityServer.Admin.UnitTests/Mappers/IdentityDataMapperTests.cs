@@ -6,13 +6,13 @@ using System.Collections.Generic;
 using Bogus;
 using FluentAssertions;
 using Microsoft.AspNetCore.Identity;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Mappers;
-using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Mappers.Customization;
-using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Extensions.Common;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Mappers;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Mappers.Customization;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Extensions.Common;
 using Xunit;
 
-namespace Skoruba.Duende.IdentityServer.Admin.UnitTests.Mappers
+namespace Toralux.Open.IdentityServer.Admin.UnitTests.Mappers
 {
     public class IdentityDataMapperTests
     {

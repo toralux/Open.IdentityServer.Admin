@@ -1,8 +1,8 @@
 ﻿using System;
 using Bogus;
-using Skoruba.Duende.IdentityServer.Admin.UI.Api.Dtos.Key;
+using Toralux.Open.IdentityServer.Admin.UI.Api.Dtos.Key;
 
-namespace Skoruba.Duende.IdentityServer.Admin.Api.UnitTests.Mocks
+namespace Toralux.Open.IdentityServer.Admin.Api.UnitTests.Mocks
 {
     public class KeyApiDtoMock
     {
