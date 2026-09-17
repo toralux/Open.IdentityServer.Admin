@@ -9,13 +9,13 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Serilog;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Configuration.Configuration;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.DbContexts;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.Helpers;
-using Skoruba.Open.IdentityServer.Shared.Configuration.Helpers;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Configuration.Configuration;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.DbContexts;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.Helpers;
+using Toralux.Open.IdentityServer.Shared.Configuration.Helpers;
 
-namespace Skoruba.Open.IdentityServer.Admin.Api
+namespace Toralux.Open.IdentityServer.Admin.Api
 {
     public class Program
     {

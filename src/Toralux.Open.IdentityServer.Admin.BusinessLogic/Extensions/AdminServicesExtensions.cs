@@ -3,19 +3,19 @@
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.ConfigurationRules;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Resources;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Services;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Services.Interfaces;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Interfaces;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.ConfigurationRules;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Repositories;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Repositories.Interfaces;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Interfaces;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Repositories;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Repositories.Interfaces;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.ConfigurationRules;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Resources;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Services;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Services.Interfaces;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Interfaces;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.ConfigurationRules;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Repositories;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Repositories.Interfaces;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Interfaces;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Repositories;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Repositories.Interfaces;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Extensions
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Extensions
 {
     public static class AdminServicesExtensions
     {

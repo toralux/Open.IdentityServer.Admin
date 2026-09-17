@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Dashboard;
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.Dashboard;
 
 public class DashboardDto
 {

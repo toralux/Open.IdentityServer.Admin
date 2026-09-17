@@ -4,9 +4,9 @@
 
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Identity;
-using Skoruba.Open.IdentityServer.STS.Identity.ViewModels.Account;
+using Toralux.Open.IdentityServer.STS.Identity.ViewModels.Account;
 
-namespace Skoruba.Open.IdentityServer.STS.Identity.ViewModels.Manage
+namespace Toralux.Open.IdentityServer.STS.Identity.ViewModels.Manage
 {
     public class PasskeysViewModel
     {

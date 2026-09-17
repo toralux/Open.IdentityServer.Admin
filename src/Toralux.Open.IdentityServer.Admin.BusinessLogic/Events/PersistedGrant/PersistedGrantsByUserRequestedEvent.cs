@@ -2,10 +2,10 @@
 // Licensed under the Apache License, Version 2.0.
 
 using Skoruba.AuditLogging.Events;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Grant;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Helpers;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.Grant;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Helpers;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Events.PersistedGrant
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Events.PersistedGrant
 {
     public class PersistedGrantsByUserRequestedEvent : AuditEvent
     {

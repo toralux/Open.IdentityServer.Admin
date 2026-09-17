@@ -5,12 +5,12 @@ using Open.IdentityServer.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Http;
-using Skoruba.Open.IdentityServer.STS.Identity.Helpers;
+using Toralux.Open.IdentityServer.STS.Identity.Helpers;
 using System.Security.Claims;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 
-namespace Skoruba.Open.IdentityServer.STS.Identity.Services;
+namespace Toralux.Open.IdentityServer.STS.Identity.Services;
 
 public class OpenIdClaimsMappingConfig : ConfigureAuthenticationOptions<OpenIdConnectOptions, OidcProvider>
 {

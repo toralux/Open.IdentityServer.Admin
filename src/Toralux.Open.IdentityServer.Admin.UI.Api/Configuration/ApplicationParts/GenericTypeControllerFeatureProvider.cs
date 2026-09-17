@@ -9,9 +9,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
 using Microsoft.AspNetCore.Mvc.Controllers;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity;
 
-namespace Skoruba.Open.IdentityServer.Admin.UI.Api.Configuration.ApplicationParts
+namespace Toralux.Open.IdentityServer.Admin.UI.Api.Configuration.ApplicationParts
 {
     public class GenericTypeControllerFeatureProvider<TUserDto, TRoleDto, TUser, TRole, TKey, TUserClaim, TUserRole, TUserLogin, TRoleClaim, TUserToken,
         TUsersDto, TRolesDto, TUserRolesDto, TUserClaimsDto,

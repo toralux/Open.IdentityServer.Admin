@@ -5,16 +5,16 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Configuration;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Services.Interfaces;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Shared.Dtos.Common;
-using Skoruba.Open.IdentityServer.Admin.UI.Api.Configuration.Constants;
-using Skoruba.Open.IdentityServer.Admin.UI.Api.Dtos.Clients;
-using Skoruba.Open.IdentityServer.Admin.UI.Api.ExceptionHandling;
-using Skoruba.Open.IdentityServer.Admin.UI.Api.Mappers;
-using Skoruba.Open.IdentityServer.Admin.UI.Api.Resources;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.Configuration;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Services.Interfaces;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Shared.Dtos.Common;
+using Toralux.Open.IdentityServer.Admin.UI.Api.Configuration.Constants;
+using Toralux.Open.IdentityServer.Admin.UI.Api.Dtos.Clients;
+using Toralux.Open.IdentityServer.Admin.UI.Api.ExceptionHandling;
+using Toralux.Open.IdentityServer.Admin.UI.Api.Mappers;
+using Toralux.Open.IdentityServer.Admin.UI.Api.Resources;
 
-namespace Skoruba.Open.IdentityServer.Admin.UI.Api.Controllers
+namespace Toralux.Open.IdentityServer.Admin.UI.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

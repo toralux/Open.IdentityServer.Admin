@@ -4,7 +4,7 @@
 using Microsoft.AspNetCore.DataProtection.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.DbContexts
+namespace Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.DbContexts
 {
     public class IdentityServerDataProtectionDbContext : DbContext, IDataProtectionKeyContext
     {

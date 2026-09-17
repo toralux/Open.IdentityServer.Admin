@@ -4,10 +4,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using Riok.Mapperly.Abstractions;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.IdentityProvider;
-using Skoruba.Open.IdentityServer.Admin.UI.Api.Dtos.IdentityProvider;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.IdentityProvider;
+using Toralux.Open.IdentityServer.Admin.UI.Api.Dtos.IdentityProvider;
 
-namespace Skoruba.Open.IdentityServer.Admin.UI.Api.Mappers
+namespace Toralux.Open.IdentityServer.Admin.UI.Api.Mappers
 {
     [Mapper(RequiredMappingStrategy = RequiredMappingStrategy.Target)]
     internal static partial class IdentityProviderApiMapper

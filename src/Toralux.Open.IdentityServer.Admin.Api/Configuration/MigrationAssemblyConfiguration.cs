@@ -1,10 +1,10 @@
 using System;
 using System.Reflection;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Configuration.Configuration;
-using SqlMigrationAssembly = Skoruba.Open.IdentityServer.Admin.EntityFramework.SqlServer.Helpers.MigrationAssembly;
-using PostgreSQLMigrationAssembly = Skoruba.Open.IdentityServer.Admin.EntityFramework.PostgreSQL.Helpers.MigrationAssembly;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Configuration.Configuration;
+using SqlMigrationAssembly = Toralux.Open.IdentityServer.Admin.EntityFramework.SqlServer.Helpers.MigrationAssembly;
+using PostgreSQLMigrationAssembly = Toralux.Open.IdentityServer.Admin.EntityFramework.PostgreSQL.Helpers.MigrationAssembly;
 
-namespace Skoruba.Open.IdentityServer.Admin.Api.Configuration;
+namespace Toralux.Open.IdentityServer.Admin.Api.Configuration;
 
 public static class MigrationAssemblyConfiguration
 {

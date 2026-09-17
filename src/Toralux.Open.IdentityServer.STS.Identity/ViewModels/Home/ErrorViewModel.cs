@@ -6,7 +6,7 @@
 
 using Open.IdentityServer.Models;
 
-namespace Skoruba.Open.IdentityServer.STS.Identity.ViewModels.Home
+namespace Toralux.Open.IdentityServer.STS.Identity.ViewModels.Home
 {
     public class ErrorViewModel
     {

@@ -3,7 +3,7 @@
 
 using System.Collections.Generic;
 
-namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Configuration.Configuration.Identity
+namespace Toralux.Open.IdentityServer.Admin.EntityFramework.Configuration.Configuration.Identity
 {
     public class Role
     {

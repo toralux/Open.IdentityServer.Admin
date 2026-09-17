@@ -1,10 +1,10 @@
 using System.Threading;
 using System.Threading.Tasks;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.DashboardIdentity;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Services.Interfaces;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Identity.Repositories.Interfaces;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.DashboardIdentity;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Services.Interfaces;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Identity.Repositories.Interfaces;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Services;
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Services;
 
 public class DashboardIdentityService : IDashboardIdentityService
 {

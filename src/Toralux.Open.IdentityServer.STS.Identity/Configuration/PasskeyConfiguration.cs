@@ -3,7 +3,7 @@
 
 using System.Collections.Generic;
 
-namespace Skoruba.Open.IdentityServer.STS.Identity.Configuration
+namespace Toralux.Open.IdentityServer.STS.Identity.Configuration
 {
     public class PasskeyConfiguration
     {

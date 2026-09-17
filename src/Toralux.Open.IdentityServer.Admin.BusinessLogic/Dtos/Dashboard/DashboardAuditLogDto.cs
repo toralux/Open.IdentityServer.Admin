@@ -1,6 +1,6 @@
 using System;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Dashboard;
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.Dashboard;
 
 public class DashboardAuditLogDto
 {

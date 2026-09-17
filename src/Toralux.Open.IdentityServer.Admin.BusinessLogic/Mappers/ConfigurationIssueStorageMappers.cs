@@ -2,14 +2,14 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System.Linq;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Configuration;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Dtos;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.Configuration;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Dtos;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Mappers;
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Mappers;
 
 public static class ConfigurationIssueMappers
 {
-    public static BusinessLogic.Dtos.Configuration.ConfigurationIssueDto ToBusinessDto(this Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Dtos.ConfigurationIssueDto storageDto)
+    public static BusinessLogic.Dtos.Configuration.ConfigurationIssueDto ToBusinessDto(this Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Dtos.ConfigurationIssueDto storageDto)
     {
         return new BusinessLogic.Dtos.Configuration.ConfigurationIssueDto
         {
@@ -23,7 +23,7 @@ public static class ConfigurationIssueMappers
         };
     }
 
-    public static BusinessLogic.Dtos.Configuration.ConfigurationIssuesPagedDto ToBusinessDto(this Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Dtos.ConfigurationIssuesPagedDto storageDto)
+    public static BusinessLogic.Dtos.Configuration.ConfigurationIssuesPagedDto ToBusinessDto(this Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Dtos.ConfigurationIssuesPagedDto storageDto)
     {
         return new BusinessLogic.Dtos.Configuration.ConfigurationIssuesPagedDto
         {
@@ -37,9 +37,9 @@ public static class ConfigurationIssueMappers
         };
     }
 
-    public static Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Dtos.ConfigurationIssuesFilterDto ToStorageDto(this BusinessLogic.Dtos.Configuration.ConfigurationIssuesFilterDto businessDto)
+    public static Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Dtos.ConfigurationIssuesFilterDto ToStorageDto(this BusinessLogic.Dtos.Configuration.ConfigurationIssuesFilterDto businessDto)
     {
-        return new Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Dtos.ConfigurationIssuesFilterDto
+        return new Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Dtos.ConfigurationIssuesFilterDto
         {
             SearchTerm = businessDto.SearchTerm,
             ResourceType = businessDto.ResourceType,

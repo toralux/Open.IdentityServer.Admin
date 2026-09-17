@@ -4,7 +4,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Helpers
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Helpers
 {
 	public static class ComboBoxHelpers
 	{

@@ -2,11 +2,11 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System.Text.Json;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Configuration;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Grant;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.IdentityProvider;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.Configuration;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.Grant;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.IdentityProvider;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Helpers
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Helpers
 {
     public static class AuditEventDataSanitizer
     {

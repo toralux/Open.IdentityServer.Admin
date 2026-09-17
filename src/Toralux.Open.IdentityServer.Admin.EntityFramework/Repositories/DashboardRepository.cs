@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Skoruba.AuditLogging.EntityFramework.DbContexts;
 using Skoruba.AuditLogging.EntityFramework.Entities;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Entities;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Interfaces;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Repositories.Interfaces;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Entities;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Interfaces;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Repositories.Interfaces;
 
-namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Repositories;
+namespace Toralux.Open.IdentityServer.Admin.EntityFramework.Repositories;
 
 public class DashboardRepository<TDbContext> : IDashboardRepository
     where TDbContext : DbContext, IAdminConfigurationDbContext

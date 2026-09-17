@@ -8,19 +8,19 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Skoruba.AuditLogging.Services;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Events.Identity;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Helpers;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Mappers;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Mappers.Customization;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Resources;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Services.Interfaces;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Shared.Dtos.Common;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Shared.ExceptionHandling;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Extensions.Common;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Identity.Repositories.Interfaces;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Events.Identity;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Helpers;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Mappers;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Mappers.Customization;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Resources;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Services.Interfaces;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Shared.Dtos.Common;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Shared.ExceptionHandling;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Extensions.Common;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Identity.Repositories.Interfaces;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Services
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Services
 {
     public class IdentityService<TUserDto, TRoleDto, TUser, TRole, TKey, TUserClaim, TUserRole,
         TUserLogin, TRoleClaim, TUserToken,

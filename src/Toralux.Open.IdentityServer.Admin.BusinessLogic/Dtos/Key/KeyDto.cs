@@ -3,7 +3,7 @@
 
 using System;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Key
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.Key
 {
     public class KeyDto
     {

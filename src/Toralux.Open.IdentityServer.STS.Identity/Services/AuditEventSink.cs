@@ -6,7 +6,7 @@ using Open.IdentityServer.Events;
 using Open.IdentityServer.Services;
 using Microsoft.Extensions.Logging;
 
-namespace Skoruba.Open.IdentityServer.STS.Identity.Services
+namespace Toralux.Open.IdentityServer.STS.Identity.Services
 {
     public class AuditEventSink : DefaultEventSink
     {

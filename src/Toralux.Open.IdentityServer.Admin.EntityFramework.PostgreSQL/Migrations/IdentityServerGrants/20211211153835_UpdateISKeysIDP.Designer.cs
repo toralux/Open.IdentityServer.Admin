@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.DbContexts;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.DbContexts;
 
-namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.PostgreSQL.Migrations.IdentityServerGrants
+namespace Toralux.Open.IdentityServer.Admin.EntityFramework.PostgreSQL.Migrations.IdentityServerGrants
 {
     [DbContext(typeof(IdentityServerPersistedGrantDbContext))]
     [Migration("20211211153835_UpdateISKeysIDP")]

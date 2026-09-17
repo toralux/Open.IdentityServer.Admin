@@ -6,7 +6,7 @@
 
 using System;
 
-namespace Skoruba.Open.IdentityServer.STS.Identity.Configuration
+namespace Toralux.Open.IdentityServer.STS.Identity.Configuration
 {
     public class AccountOptions
     {

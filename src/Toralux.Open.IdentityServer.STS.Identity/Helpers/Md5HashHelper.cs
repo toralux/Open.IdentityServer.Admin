@@ -4,7 +4,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Skoruba.Open.IdentityServer.STS.Identity.Helpers
+namespace Toralux.Open.IdentityServer.STS.Identity.Helpers
 {
 
     /// <summary>

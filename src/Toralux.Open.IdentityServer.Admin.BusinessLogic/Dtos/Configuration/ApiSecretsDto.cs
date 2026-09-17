@@ -4,10 +4,10 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Shared.Dtos.Common;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Helpers;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Shared.Dtos.Common;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Helpers;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Configuration
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.Configuration
 {
 	public class ApiSecretsDto
 	{

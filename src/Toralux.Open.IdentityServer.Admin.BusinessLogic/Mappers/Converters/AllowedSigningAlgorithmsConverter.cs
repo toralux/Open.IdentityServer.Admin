@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Mappers.Converters
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Mappers.Converters
 {
     public class AllowedSigningAlgorithmsConverter
     {

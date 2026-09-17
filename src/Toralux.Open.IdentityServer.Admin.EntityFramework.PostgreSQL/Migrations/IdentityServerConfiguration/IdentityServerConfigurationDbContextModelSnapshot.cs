@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.DbContexts;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.DbContexts;
 
 #nullable disable
 
-namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.PostgreSQL.Migrations.IdentityServerConfiguration
+namespace Toralux.Open.IdentityServer.Admin.EntityFramework.PostgreSQL.Migrations.IdentityServerConfiguration
 {
     [DbContext(typeof(IdentityServerConfigurationDbContext))]
     partial class IdentityServerConfigurationDbContextModelSnapshot : ModelSnapshot

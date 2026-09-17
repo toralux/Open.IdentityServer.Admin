@@ -1,11 +1,11 @@
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.DbContexts;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.DbContexts;
 
 #nullable disable
 
-namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.SqlServer.Migrations.Identity
+namespace Toralux.Open.IdentityServer.Admin.EntityFramework.SqlServer.Migrations.Identity
 {
     [DbContext(typeof(AdminIdentityDbContext))]
     [Migration("20260223162000_AddUserPasskeys")]

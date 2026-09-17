@@ -3,7 +3,7 @@
 
 using System;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Log
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.Log
 {
     public class AuditLogDto
     {

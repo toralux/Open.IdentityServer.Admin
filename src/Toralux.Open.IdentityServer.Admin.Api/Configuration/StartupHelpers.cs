@@ -2,10 +2,10 @@ using System.Collections.Generic;
 using Microsoft.Extensions.DependencyInjection;
 using NSwag;
 using NSwag.Generation.Processors.Security;
-using Skoruba.Open.IdentityServer.Admin.UI.Api.Configuration;
-using Skoruba.Open.IdentityServer.Admin.UI.Api.Configuration.Authorization;
+using Toralux.Open.IdentityServer.Admin.UI.Api.Configuration;
+using Toralux.Open.IdentityServer.Admin.UI.Api.Configuration.Authorization;
 
-namespace Skoruba.Open.IdentityServer.Admin.Api.Configuration;
+namespace Toralux.Open.IdentityServer.Admin.Api.Configuration;
 
 public static class StartupHelpers
 {

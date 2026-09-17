@@ -3,7 +3,7 @@
 
 using System;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity.Interfaces
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity.Interfaces
 {
     public interface IUserDto : IBaseUserDto
     {

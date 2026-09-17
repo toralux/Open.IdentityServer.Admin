@@ -1,4 +1,4 @@
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.DashboardIdentity;
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.DashboardIdentity;
 
 public class DashboardIdentityDto
 {

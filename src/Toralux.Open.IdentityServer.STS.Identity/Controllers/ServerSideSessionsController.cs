@@ -8,15 +8,15 @@ using Open.IdentityServer.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.DbContexts;
-using Skoruba.Open.IdentityServer.STS.Identity.Configuration.Constants;
-using Skoruba.Open.IdentityServer.STS.Identity.Models.ViewModels;
-using Skoruba.Open.IdentityServer.STS.Identity.Configuration;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.DbContexts;
+using Toralux.Open.IdentityServer.STS.Identity.Configuration.Constants;
+using Toralux.Open.IdentityServer.STS.Identity.Models.ViewModels;
+using Toralux.Open.IdentityServer.STS.Identity.Configuration;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Logging;
 
-namespace Skoruba.Open.IdentityServer.STS.Identity.Controllers;
+namespace Toralux.Open.IdentityServer.STS.Identity.Controllers;
 
 [Authorize(Policy = AuthorizationConsts.AdministrationPolicy)]
 public class ServerSideSessionsController : Controller

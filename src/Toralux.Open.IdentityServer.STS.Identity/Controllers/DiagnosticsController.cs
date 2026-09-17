@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Skoruba.Open.IdentityServer.STS.Identity.Helpers;
-using Skoruba.Open.IdentityServer.STS.Identity.ViewModels.Diagnostics;
+using Toralux.Open.IdentityServer.STS.Identity.Helpers;
+using Toralux.Open.IdentityServer.STS.Identity.ViewModels.Diagnostics;
 
-namespace Skoruba.Open.IdentityServer.STS.Identity.Controllers
+namespace Toralux.Open.IdentityServer.STS.Identity.Controllers
 {
     [SecurityHeaders]
     [Authorize]

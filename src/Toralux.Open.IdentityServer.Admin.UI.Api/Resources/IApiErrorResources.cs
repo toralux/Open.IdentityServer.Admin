@@ -1,9 +1,9 @@
 ﻿// Copyright (c) Jan Škoruba. All Rights Reserved.
 // Licensed under the Apache License, Version 2.0.
 
-using Skoruba.Open.IdentityServer.Admin.UI.Api.ExceptionHandling;
+using Toralux.Open.IdentityServer.Admin.UI.Api.ExceptionHandling;
 
-namespace Skoruba.Open.IdentityServer.Admin.UI.Api.Resources
+namespace Toralux.Open.IdentityServer.Admin.UI.Api.Resources
 {
     public interface IApiErrorResources
     {

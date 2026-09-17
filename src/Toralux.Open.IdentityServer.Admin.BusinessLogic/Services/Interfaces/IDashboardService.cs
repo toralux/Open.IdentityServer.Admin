@@ -1,8 +1,8 @@
 using System.Threading;
 using System.Threading.Tasks;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Dashboard;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.Dashboard;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Services.Interfaces;
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Services.Interfaces;
 
 public interface IDashboardService
 {

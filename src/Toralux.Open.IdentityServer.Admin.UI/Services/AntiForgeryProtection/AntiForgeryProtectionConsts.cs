@@ -1,4 +1,4 @@
-namespace Skoruba.Open.IdentityServer.Admin.UI.Services.AntiForgeryProtection;
+namespace Toralux.Open.IdentityServer.Admin.UI.Services.AntiForgeryProtection;
 
 public class AntiForgeryProtectionConsts
 {

@@ -3,10 +3,10 @@
 
 using System;
 using System.ComponentModel.DataAnnotations;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity.Base;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity.Interfaces;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity.Base;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity.Interfaces;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity
 {
     public class UserDto<TKey> : BaseUserDto<TKey>, IUserDto
     {        

@@ -3,10 +3,10 @@
 
 using System.Threading;
 using System.Threading.Tasks;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Grant;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Key;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.Grant;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.Key;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Services.Interfaces
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Services.Interfaces
 {
     public interface IKeyService
     {

@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 
-namespace Skoruba.Open.IdentityServer.STS.Identity.Helpers.TagHelpers;
+namespace Toralux.Open.IdentityServer.STS.Identity.Helpers.TagHelpers;
 
 [HtmlTargetElement("label", Attributes = "asp-for,tw-validation", TagStructure = TagStructure.NormalOrSelfClosing)]
 public class TwValidationLabelTagHelper : TagHelper

@@ -3,10 +3,10 @@ using System.IO;
 using System.Security.Cryptography.X509Certificates;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Skoruba.Open.IdentityServer.Shared.Configuration.Configuration.Common;
-using Skoruba.Open.IdentityServer.Shared.Configuration.Helpers;
+using Toralux.Open.IdentityServer.Shared.Configuration.Configuration.Common;
+using Toralux.Open.IdentityServer.Shared.Configuration.Helpers;
 
-namespace Skoruba.Open.IdentityServer.STS.Identity.Helpers
+namespace Toralux.Open.IdentityServer.STS.Identity.Helpers
 {
     public static class IdentityServerBuilderExtensions
     {

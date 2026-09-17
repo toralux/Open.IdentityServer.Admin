@@ -3,11 +3,11 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity.Base;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity.Interfaces;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Shared.Dtos.Common;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity.Base;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity.Interfaces;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Shared.Dtos.Common;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity
 {
     public class UserRolesDto<TRoleDto, TKey> : BaseUserRolesDto<TKey>, IUserRolesDto
         where TRoleDto : RoleDto<TKey>

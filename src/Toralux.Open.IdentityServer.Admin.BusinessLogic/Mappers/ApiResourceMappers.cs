@@ -5,11 +5,11 @@ using System.Collections.Generic;
 using System.Linq;
 using Open.IdentityServer.EntityFramework.Entities;
 using Riok.Mapperly.Abstractions;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Configuration;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Mappers.Converters;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Extensions.Common;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.Configuration;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Mappers.Converters;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Extensions.Common;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Mappers
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Mappers
 {
     [Mapper(RequiredMappingStrategy = RequiredMappingStrategy.None)]
     internal static partial class ApiResourceMapper

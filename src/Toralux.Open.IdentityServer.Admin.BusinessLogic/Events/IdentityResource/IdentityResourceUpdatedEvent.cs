@@ -2,9 +2,9 @@
 // Licensed under the Apache License, Version 2.0.
 
 using Skoruba.AuditLogging.Events;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Configuration;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.Configuration;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Events.IdentityResource
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Events.IdentityResource
 {
     public class IdentityResourceUpdatedEvent : AuditEvent
     {

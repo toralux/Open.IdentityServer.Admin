@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.DbContexts;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.DbContexts;
 
 #nullable disable
 
-namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.PostgreSQL.Migrations.AdminConfiguration
+namespace Toralux.Open.IdentityServer.Admin.EntityFramework.PostgreSQL.Migrations.AdminConfiguration
 {
     [DbContext(typeof(AdminConfigurationDbContext))]
     [Migration("20251216091509_AdminConfigurationUpdate")]
@@ -25,7 +25,7 @@ namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.PostgreSQL.Migration
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Entities.ConfigurationRule", b =>
+            modelBuilder.Entity("Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Entities.ConfigurationRule", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

@@ -1,8 +1,8 @@
 using Serilog;
-using Skoruba.Open.IdentityServer.Admin.Services;
-using Skoruba.Open.IdentityServer.Admin.UI.Services;
-using Skoruba.Open.IdentityServer.Admin.UI.Services.Configurations;
-using Skoruba.Open.IdentityServer.Shared.Configuration.Helpers;
+using Toralux.Open.IdentityServer.Admin.Services;
+using Toralux.Open.IdentityServer.Admin.UI.Services;
+using Toralux.Open.IdentityServer.Admin.UI.Services.Configurations;
+using Toralux.Open.IdentityServer.Shared.Configuration.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
 

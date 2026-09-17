@@ -13,10 +13,10 @@ using Open.IdentityServer.Services;
 using Open.IdentityServer.Stores;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Skoruba.Open.IdentityServer.STS.Identity.Helpers;
-using Skoruba.Open.IdentityServer.STS.Identity.ViewModels.Grants;
+using Toralux.Open.IdentityServer.STS.Identity.Helpers;
+using Toralux.Open.IdentityServer.STS.Identity.ViewModels.Grants;
 
-namespace Skoruba.Open.IdentityServer.STS.Identity.Controllers
+namespace Toralux.Open.IdentityServer.STS.Identity.Controllers
 {
     /// <summary>
     /// This sample controller allows a user to revoke grants given to clients

@@ -6,11 +6,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Interfaces;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Repositories.Interfaces;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Entities;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Interfaces;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Repositories.Interfaces;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Entities;
 
-namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Repositories;
+namespace Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Repositories;
 
 public class ConfigurationRulesRepository<TDbContext>(TDbContext dbContext) : IConfigurationRulesRepository
     where TDbContext : DbContext, IAdminConfigurationStoreDbContext

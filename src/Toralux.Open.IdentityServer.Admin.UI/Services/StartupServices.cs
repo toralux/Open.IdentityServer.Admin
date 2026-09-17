@@ -3,9 +3,9 @@ using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.Extensions.Configuration;
 using System.Net;
 using NetIPNetwork = System.Net.IPNetwork;
-using Skoruba.Open.IdentityServer.Shared.Configuration.Configuration;
+using Toralux.Open.IdentityServer.Shared.Configuration.Configuration;
 
-namespace Skoruba.Open.IdentityServer.Admin.UI.Services;
+namespace Toralux.Open.IdentityServer.Admin.UI.Services;
 
 public static class StartupServices
 {

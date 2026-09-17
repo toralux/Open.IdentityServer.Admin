@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace Skoruba.Open.IdentityServer.STS.Identity.Helpers
+namespace Toralux.Open.IdentityServer.STS.Identity.Helpers
 {
     public class SecurityHeadersAttribute : ActionFilterAttribute
     {

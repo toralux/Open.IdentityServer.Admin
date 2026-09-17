@@ -3,10 +3,10 @@
 
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
-using Skoruba.Open.IdentityServer.Shared.Configuration.Configuration.Common;
-using Skoruba.Open.IdentityServer.Shared.Configuration.Services;
+using Toralux.Open.IdentityServer.Shared.Configuration.Configuration.Common;
+using Toralux.Open.IdentityServer.Shared.Configuration.Services;
 
-namespace Skoruba.Open.IdentityServer.Shared.Configuration.Helpers
+namespace Toralux.Open.IdentityServer.Shared.Configuration.Helpers
 {
     public class AzureKeyVaultHelpers
     {

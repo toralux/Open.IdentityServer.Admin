@@ -3,7 +3,7 @@
 
 using System.Collections.Generic;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Grant
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.Grant
 {
 	public class PersistedGrantsDto
 	{

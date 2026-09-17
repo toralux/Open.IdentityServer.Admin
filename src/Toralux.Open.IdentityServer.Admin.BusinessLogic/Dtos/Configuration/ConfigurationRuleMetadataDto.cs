@@ -3,7 +3,7 @@
 
 using System.Collections.Generic;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Configuration;
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.Configuration;
 
 /// <summary>
 /// Metadata about a configuration rule type including its configuration schema

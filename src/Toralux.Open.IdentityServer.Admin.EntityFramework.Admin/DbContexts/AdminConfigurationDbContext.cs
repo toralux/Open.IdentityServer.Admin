@@ -3,10 +3,10 @@
 
 using System;
 using Microsoft.EntityFrameworkCore;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Interfaces;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Entities;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Interfaces;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Entities;
 
-namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.DbContexts;
+namespace Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.DbContexts;
 
 public class AdminConfigurationDbContext : DbContext, IAdminConfigurationStoreDbContext
 {

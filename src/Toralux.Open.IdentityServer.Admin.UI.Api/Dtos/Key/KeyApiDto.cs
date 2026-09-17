@@ -3,7 +3,7 @@
 
 using System;
 
-namespace Skoruba.Open.IdentityServer.Admin.UI.Api.Dtos.Key
+namespace Toralux.Open.IdentityServer.Admin.UI.Api.Dtos.Key
 {
     public class KeyApiDto
     {

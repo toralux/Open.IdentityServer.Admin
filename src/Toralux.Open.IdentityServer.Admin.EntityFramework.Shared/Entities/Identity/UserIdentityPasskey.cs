@@ -3,7 +3,7 @@
 
 using Microsoft.AspNetCore.Identity;
 
-namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity
+namespace Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity
 {
     public class UserIdentityPasskey : IdentityUserPasskey<string>
     {

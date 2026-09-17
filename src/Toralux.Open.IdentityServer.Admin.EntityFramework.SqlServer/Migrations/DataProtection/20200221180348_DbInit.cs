@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.SqlServer.Migrations.DataProtection
+namespace Toralux.Open.IdentityServer.Admin.EntityFramework.SqlServer.Migrations.DataProtection
 {
     public partial class DbInit : Migration
     {

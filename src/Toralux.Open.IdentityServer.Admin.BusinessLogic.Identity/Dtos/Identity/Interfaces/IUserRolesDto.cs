@@ -2,9 +2,9 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System.Collections.Generic;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Shared.Dtos.Common;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Shared.Dtos.Common;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity.Interfaces
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity.Interfaces
 {
     public interface IUserRolesDto : IBaseUserRolesDto
     {

@@ -4,9 +4,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Extensions.Common;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Extensions.Common;
 
-namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Helpers
+namespace Toralux.Open.IdentityServer.Admin.EntityFramework.Helpers
 {
 	public class EnumHelpers
 	{

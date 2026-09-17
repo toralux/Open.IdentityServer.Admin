@@ -7,12 +7,12 @@ using System.Collections.Concurrent;
 using System.Linq;
 using System.Reflection;
 using Microsoft.AspNetCore.Identity;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Helpers;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Mappers.Customization;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Extensions.Common;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Helpers;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Mappers.Customization;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Extensions.Common;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Mappers
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Mappers
 {
     public class IdentityDataMapper<TUserDto, TRoleDto, TUser, TRole, TKey, TUserClaim, TUserLogin, TRoleClaim,
         TUsersDto, TRolesDto, TUserRolesDto, TUserClaimsDto, TUserProviderDto, TUserProvidersDto, TRoleClaimsDto,

@@ -3,11 +3,11 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.ConfigurationRules;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Entities;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Interfaces;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.ConfigurationRules;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Entities;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Interfaces;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.ConfigurationRules.ApiScopeRules;
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.ConfigurationRules.ApiScopeRules;
 
 public class ApiScopeMustHaveDisplayNameRule : ConfigurationRuleValidatorBase, IConfigurationRuleValidator
 {

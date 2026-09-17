@@ -11,13 +11,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Extensions.Common;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Extensions.Enums;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Extensions.Extensions;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Identity.Repositories.Interfaces;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Identity.Resources;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Extensions.Common;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Extensions.Enums;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Extensions.Extensions;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Identity.Repositories.Interfaces;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Identity.Resources;
 
-namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Identity.Repositories
+namespace Toralux.Open.IdentityServer.Admin.EntityFramework.Identity.Repositories
 {
     public class IdentityRepository<TIdentityDbContext, TUser, TRole, TKey, TUserClaim, TUserRole, TUserLogin, TRoleClaim, TUserToken, TUserPasskey>
         : IIdentityRepository<TUser, TRole, TKey, TUserClaim, TUserRole, TUserLogin, TRoleClaim, TUserToken>

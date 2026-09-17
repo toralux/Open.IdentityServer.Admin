@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Helpers
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Helpers
 {
     public static class EnumerableExtensions
     {

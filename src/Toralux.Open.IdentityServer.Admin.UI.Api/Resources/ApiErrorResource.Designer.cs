@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Skoruba.Open.IdentityServer.Admin.UI.Api.Resources {
+namespace Toralux.Open.IdentityServer.Admin.UI.Api.Resources {
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -36,7 +36,7 @@ namespace Skoruba.Open.IdentityServer.Admin.UI.Api.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Skoruba.Open.IdentityServer.Admin.UI.Api.Resources.ApiErrorResource", typeof(ApiErrorResource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Toralux.Open.IdentityServer.Admin.UI.Api.Resources.ApiErrorResource", typeof(ApiErrorResource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

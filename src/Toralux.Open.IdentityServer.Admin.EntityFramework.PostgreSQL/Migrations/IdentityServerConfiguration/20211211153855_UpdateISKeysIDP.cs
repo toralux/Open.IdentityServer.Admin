@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
-namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.PostgreSQL.Migrations.IdentityServerConfiguration
+namespace Toralux.Open.IdentityServer.Admin.EntityFramework.PostgreSQL.Migrations.IdentityServerConfiguration
 {
     public partial class UpdateISKeysIDP : Migration
     {

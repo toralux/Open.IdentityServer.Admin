@@ -13,13 +13,13 @@ using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.DbContexts;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity;
-using Skoruba.Open.IdentityServer.STS.Identity.Helpers;
-using Skoruba.Open.IdentityServer.STS.Identity.Helpers.Localization;
-using Skoruba.Open.IdentityServer.STS.Identity.ViewModels.Manage;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.DbContexts;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity;
+using Toralux.Open.IdentityServer.STS.Identity.Helpers;
+using Toralux.Open.IdentityServer.STS.Identity.Helpers.Localization;
+using Toralux.Open.IdentityServer.STS.Identity.ViewModels.Manage;
 
-namespace Skoruba.Open.IdentityServer.STS.Identity.Controllers
+namespace Toralux.Open.IdentityServer.STS.Identity.Controllers
 {    
     [Authorize]
     public class ManageController<TUser, TKey> : Controller
@@ -912,7 +912,7 @@ namespace Skoruba.Open.IdentityServer.STS.Identity.Controllers
         {
             return string.Format(
                 AuthenticatorUriFormat,
-                _urlEncoder.Encode("Skoruba.Open.IdentityServer.STS.Identity"),
+                _urlEncoder.Encode("Toralux.Open.IdentityServer.STS.Identity"),
                 _urlEncoder.Encode(email),
                 unformattedKey);
         }

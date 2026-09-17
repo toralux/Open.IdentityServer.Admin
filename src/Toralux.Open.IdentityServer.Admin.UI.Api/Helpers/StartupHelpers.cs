@@ -23,32 +23,32 @@ using Skoruba.AuditLogging.EntityFramework.Entities;
 using Skoruba.AuditLogging.EntityFramework.Extensions;
 using Skoruba.AuditLogging.EntityFramework.Repositories;
 using Skoruba.AuditLogging.EntityFramework.Services;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Extensions;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Extensions;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Services;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Services.Interfaces;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Interfaces;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Configuration.Configuration;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Configuration.PostgreSQL;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Configuration.SqlServer;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Helpers;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Interfaces;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Repositories;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Repositories.Interfaces;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.Extensions;
-using Skoruba.Open.IdentityServer.Admin.UI.Api.Configuration;
-using Skoruba.Open.IdentityServer.Admin.UI.Api.Configuration.ApplicationParts;
-using Skoruba.Open.IdentityServer.Admin.UI.Api.Configuration.AuditLogging;
-using Skoruba.Open.IdentityServer.Admin.UI.Api.Configuration.Constants;
-using Skoruba.Open.IdentityServer.Admin.UI.Api.ExceptionHandling;
-using Skoruba.Open.IdentityServer.Admin.UI.Api.Helpers.Localization;
-using Skoruba.Open.IdentityServer.Admin.UI.Api.Mappers;
-using Skoruba.Open.IdentityServer.Admin.UI.Api.Resources;
-using Skoruba.Open.IdentityServer.Shared.Configuration.Helpers;
-using Skoruba.Open.IdentityServer.Shared.Configuration.Constants;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Extensions;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Extensions;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Services;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Services.Interfaces;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Interfaces;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Configuration.Configuration;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Configuration.PostgreSQL;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Configuration.SqlServer;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Helpers;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Interfaces;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Repositories;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Repositories.Interfaces;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.Extensions;
+using Toralux.Open.IdentityServer.Admin.UI.Api.Configuration;
+using Toralux.Open.IdentityServer.Admin.UI.Api.Configuration.ApplicationParts;
+using Toralux.Open.IdentityServer.Admin.UI.Api.Configuration.AuditLogging;
+using Toralux.Open.IdentityServer.Admin.UI.Api.Configuration.Constants;
+using Toralux.Open.IdentityServer.Admin.UI.Api.ExceptionHandling;
+using Toralux.Open.IdentityServer.Admin.UI.Api.Helpers.Localization;
+using Toralux.Open.IdentityServer.Admin.UI.Api.Mappers;
+using Toralux.Open.IdentityServer.Admin.UI.Api.Resources;
+using Toralux.Open.IdentityServer.Shared.Configuration.Helpers;
+using Toralux.Open.IdentityServer.Shared.Configuration.Constants;
 
-namespace Skoruba.Open.IdentityServer.Admin.UI.Api.Helpers
+namespace Toralux.Open.IdentityServer.Admin.UI.Api.Helpers
 {
     public static class StartupHelpers
     {
@@ -362,8 +362,8 @@ namespace Skoruba.Open.IdentityServer.Admin.UI.Api.Helpers
         public static void AddForwardHeaders(this IApplicationBuilder app, IConfiguration configuration)
         {
             var forwardedHeadersConfig = configuration.GetSection("ForwardedHeadersConfiguration")
-                .Get<Skoruba.Open.IdentityServer.Shared.Configuration.Configuration.ForwardedHeadersConfiguration>()
-                ?? new Skoruba.Open.IdentityServer.Shared.Configuration.Configuration.ForwardedHeadersConfiguration();
+                .Get<Toralux.Open.IdentityServer.Shared.Configuration.Configuration.ForwardedHeadersConfiguration>()
+                ?? new Toralux.Open.IdentityServer.Shared.Configuration.Configuration.ForwardedHeadersConfiguration();
 
             if (forwardedHeadersConfig.Enabled)
             {

@@ -2,9 +2,9 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System.Threading.Tasks;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Grant;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Grant;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Services.Interfaces
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Services.Interfaces
 {
     public interface IPersistedGrantAspNetIdentityService
     {

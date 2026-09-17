@@ -16,11 +16,11 @@ using Open.IdentityServer.Validation;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Skoruba.Open.IdentityServer.STS.Identity.Configuration;
-using Skoruba.Open.IdentityServer.STS.Identity.Helpers;
-using Skoruba.Open.IdentityServer.STS.Identity.ViewModels.Consent;
+using Toralux.Open.IdentityServer.STS.Identity.Configuration;
+using Toralux.Open.IdentityServer.STS.Identity.Helpers;
+using Toralux.Open.IdentityServer.STS.Identity.ViewModels.Consent;
 
-namespace Skoruba.Open.IdentityServer.STS.Identity.Controllers
+namespace Toralux.Open.IdentityServer.STS.Identity.Controllers
 {
     /// <summary>
     /// This controller processes the consent UI

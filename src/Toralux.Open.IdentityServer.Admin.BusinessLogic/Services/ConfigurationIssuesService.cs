@@ -4,12 +4,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Configuration;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Mappers;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Services.Interfaces;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Repositories.Interfaces;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.Configuration;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Mappers;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Services.Interfaces;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Repositories.Interfaces;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Services;
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Services;
 
 public class ConfigurationIssuesService(IConfigurationIssuesRepository repository) : IConfigurationIssuesService
 {

@@ -1,4 +1,4 @@
-namespace Skoruba.Open.IdentityServer.Admin.UI.Services.User;
+namespace Toralux.Open.IdentityServer.Admin.UI.Services.User;
 
 public class UserClaimsDto
 {

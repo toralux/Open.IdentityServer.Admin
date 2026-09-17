@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.PostgreSQL.Migrations.IdentityServerConfiguration
+namespace Toralux.Open.IdentityServer.Admin.EntityFramework.PostgreSQL.Migrations.IdentityServerConfiguration
 {
     public partial class UpdateToIS61 : Migration
     {

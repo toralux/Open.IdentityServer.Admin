@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.SqlServer.Migrations.IdentityServerConfiguration
+namespace Toralux.Open.IdentityServer.Admin.EntityFramework.SqlServer.Migrations.IdentityServerConfiguration
 {
     /// <inheritdoc />
     public partial class IdentityServerV7 : Migration

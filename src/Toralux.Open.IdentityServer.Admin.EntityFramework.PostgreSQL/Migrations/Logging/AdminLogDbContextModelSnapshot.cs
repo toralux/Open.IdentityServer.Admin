@@ -4,9 +4,9 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.DbContexts;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.DbContexts;
 
-namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.PostgreSQL.Migrations.Logging
+namespace Toralux.Open.IdentityServer.Admin.EntityFramework.PostgreSQL.Migrations.Logging
 {
     [DbContext(typeof(AdminLogDbContext))]
     partial class AdminLogDbContextModelSnapshot : ModelSnapshot
@@ -19,7 +19,7 @@ namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.PostgreSQL.Migration
                 .HasAnnotation("ProductVersion", "3.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
-            modelBuilder.Entity("Skoruba.Open.IdentityServer.Admin.EntityFramework.Entities.Log", b =>
+            modelBuilder.Entity("Toralux.Open.IdentityServer.Admin.EntityFramework.Entities.Log", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()

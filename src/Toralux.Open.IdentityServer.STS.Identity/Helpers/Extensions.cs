@@ -11,9 +11,9 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
-using Skoruba.Open.IdentityServer.STS.Identity.ViewModels.Account;
+using Toralux.Open.IdentityServer.STS.Identity.ViewModels.Account;
 
-namespace Skoruba.Open.IdentityServer.STS.Identity.Helpers
+namespace Toralux.Open.IdentityServer.STS.Identity.Helpers
 {
     public static class Extensions
     {

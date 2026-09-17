@@ -3,10 +3,10 @@
 
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Configuration;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Shared.Dtos.Common;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.Configuration;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Shared.Dtos.Common;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Services.Interfaces
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Services.Interfaces
 {
     public interface IClientService
     {

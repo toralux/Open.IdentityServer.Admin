@@ -7,7 +7,7 @@ using NSwag;
 using NSwag.Generation.Processors;
 using NSwag.Generation.Processors.Contexts;
 
-namespace Skoruba.Open.IdentityServer.Admin.UI.Api.Configuration.Authorization
+namespace Toralux.Open.IdentityServer.Admin.UI.Api.Configuration.Authorization
 {
     public class AuthorizeCheckOperationProcessor : IOperationProcessor
     {

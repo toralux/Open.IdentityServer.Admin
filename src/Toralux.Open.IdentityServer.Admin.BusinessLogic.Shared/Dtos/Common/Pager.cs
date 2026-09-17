@@ -3,7 +3,7 @@
 
 using System.Collections.Generic;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Shared.Dtos.Common
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Shared.Dtos.Common
 {
 	public class Pager
 	{

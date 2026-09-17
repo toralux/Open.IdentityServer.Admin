@@ -3,9 +3,9 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity.Interfaces;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity.Interfaces;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity
 {
     public class UserClaimsDto<TUserClaimDto, TKey> : UserClaimDto<TKey>, IUserClaimsDto
        where TUserClaimDto : UserClaimDto<TKey>

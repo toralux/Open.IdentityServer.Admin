@@ -7,9 +7,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Skoruba.Open.IdentityServer.Shared.Configuration.Configuration.Identity;
+using Toralux.Open.IdentityServer.Shared.Configuration.Configuration.Identity;
 
-namespace Skoruba.Open.IdentityServer.STS.Identity.ViewModels.Account
+namespace Toralux.Open.IdentityServer.STS.Identity.ViewModels.Account
 {
     public class LoginViewModel : LoginInputModel
     {

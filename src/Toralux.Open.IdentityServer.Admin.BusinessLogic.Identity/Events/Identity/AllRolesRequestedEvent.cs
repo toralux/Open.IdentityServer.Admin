@@ -4,7 +4,7 @@
 using System.Collections.Generic;
 using Skoruba.AuditLogging.Events;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Events.Identity
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Events.Identity
 {
     public class AllRolesRequestedEvent<TRoleDto> : AuditEvent
     {

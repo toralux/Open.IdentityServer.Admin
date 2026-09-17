@@ -6,14 +6,14 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Entities;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Extensions.Common;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Extensions.Enums;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Extensions.Extensions;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Interfaces;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Repositories.Interfaces;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Entities;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Extensions.Common;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Extensions.Enums;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Extensions.Extensions;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Interfaces;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Repositories.Interfaces;
 
-namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Repositories
+namespace Toralux.Open.IdentityServer.Admin.EntityFramework.Repositories
 {
     public class LogRepository<TDbContext> : ILogRepository
         where TDbContext : DbContext, IAdminLogDbContext

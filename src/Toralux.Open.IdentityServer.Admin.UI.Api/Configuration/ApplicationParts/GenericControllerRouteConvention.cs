@@ -3,7 +3,7 @@
 
 using Microsoft.AspNetCore.Mvc.ApplicationModels;
 
-namespace Skoruba.Open.IdentityServer.Admin.UI.Api.Configuration.ApplicationParts
+namespace Toralux.Open.IdentityServer.Admin.UI.Api.Configuration.ApplicationParts
 {
     public class GenericControllerRouteConvention : IControllerModelConvention
     {

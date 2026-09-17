@@ -3,11 +3,11 @@
 
 using System;
 using Microsoft.EntityFrameworkCore;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Interfaces;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Entities;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Helpers;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Interfaces;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Entities;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Helpers;
 
-namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.DbContexts;
+namespace Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.DbContexts;
 
 public class AdminConfigurationDbContext : DbContext, IAdminConfigurationStoreDbContext
 {
@@ -47,7 +47,7 @@ public class AdminConfigurationDbContext : DbContext, IAdminConfigurationStoreDb
     private void SeedDefaultRules(ModelBuilder modelBuilder)
     {
         // Use ConfigurationRuleSeedHelper for consistent seed data across all providers
-        var configurationRules = Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Helpers.ConfigurationRuleSeedHelper.GetSeedData();
+        var configurationRules = Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Helpers.ConfigurationRuleSeedHelper.GetSeedData();
 
         modelBuilder.Entity<ConfigurationRule>().HasData(configurationRules);
     }

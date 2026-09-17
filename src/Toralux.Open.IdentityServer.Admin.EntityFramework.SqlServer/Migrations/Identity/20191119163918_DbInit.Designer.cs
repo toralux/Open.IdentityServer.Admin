@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.DbContexts;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.DbContexts;
 
-namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.SqlServer.Migrations.Identity
+namespace Toralux.Open.IdentityServer.Admin.EntityFramework.SqlServer.Migrations.Identity
 {
     [DbContext(typeof(AdminIdentityDbContext))]
     [Migration("20191119163918_DbInit")]
@@ -21,7 +21,7 @@ namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.SqlServer.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity.UserIdentity", b =>
+            modelBuilder.Entity("Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity.UserIdentity", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -86,7 +86,7 @@ namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.SqlServer.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity.UserIdentityRole", b =>
+            modelBuilder.Entity("Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity.UserIdentityRole", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -113,7 +113,7 @@ namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.SqlServer.Migrations
                     b.ToTable("Roles");
                 });
 
-            modelBuilder.Entity("Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity.UserIdentityRoleClaim", b =>
+            modelBuilder.Entity("Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity.UserIdentityRoleClaim", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -137,7 +137,7 @@ namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.SqlServer.Migrations
                     b.ToTable("RoleClaims");
                 });
 
-            modelBuilder.Entity("Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity.UserIdentityUserClaim", b =>
+            modelBuilder.Entity("Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity.UserIdentityUserClaim", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -161,7 +161,7 @@ namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.SqlServer.Migrations
                     b.ToTable("UserClaims");
                 });
 
-            modelBuilder.Entity("Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity.UserIdentityUserLogin", b =>
+            modelBuilder.Entity("Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity.UserIdentityUserLogin", b =>
                 {
                     b.Property<string>("LoginProvider")
                         .HasColumnType("nvarchar(450)");
@@ -183,7 +183,7 @@ namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.SqlServer.Migrations
                     b.ToTable("UserLogins");
                 });
 
-            modelBuilder.Entity("Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity.UserIdentityUserRole", b =>
+            modelBuilder.Entity("Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity.UserIdentityUserRole", b =>
                 {
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
@@ -198,7 +198,7 @@ namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.SqlServer.Migrations
                     b.ToTable("UserRoles");
                 });
 
-            modelBuilder.Entity("Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity.UserIdentityUserToken", b =>
+            modelBuilder.Entity("Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity.UserIdentityUserToken", b =>
                 {
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
@@ -217,51 +217,51 @@ namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.SqlServer.Migrations
                     b.ToTable("UserTokens");
                 });
 
-            modelBuilder.Entity("Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity.UserIdentityRoleClaim", b =>
+            modelBuilder.Entity("Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity.UserIdentityRoleClaim", b =>
                 {
-                    b.HasOne("Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity.UserIdentityRole", null)
+                    b.HasOne("Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity.UserIdentityRole", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity.UserIdentityUserClaim", b =>
+            modelBuilder.Entity("Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity.UserIdentityUserClaim", b =>
                 {
-                    b.HasOne("Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity.UserIdentity", null)
+                    b.HasOne("Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity.UserIdentity", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity.UserIdentityUserLogin", b =>
+            modelBuilder.Entity("Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity.UserIdentityUserLogin", b =>
                 {
-                    b.HasOne("Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity.UserIdentity", null)
+                    b.HasOne("Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity.UserIdentity", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity.UserIdentityUserRole", b =>
+            modelBuilder.Entity("Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity.UserIdentityUserRole", b =>
                 {
-                    b.HasOne("Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity.UserIdentityRole", null)
+                    b.HasOne("Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity.UserIdentityRole", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity.UserIdentity", null)
+                    b.HasOne("Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity.UserIdentity", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity.UserIdentityUserToken", b =>
+            modelBuilder.Entity("Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity.UserIdentityUserToken", b =>
                 {
-                    b.HasOne("Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity.UserIdentity", null)
+                    b.HasOne("Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity.UserIdentity", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)

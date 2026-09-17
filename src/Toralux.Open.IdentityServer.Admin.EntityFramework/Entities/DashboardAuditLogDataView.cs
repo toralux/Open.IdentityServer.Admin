@@ -1,6 +1,6 @@
 using System;
 
-namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Entities;
+namespace Toralux.Open.IdentityServer.Admin.EntityFramework.Entities;
 
 public class DashboardAuditLogDataView
 {

@@ -3,13 +3,13 @@
 
 using System;
 using System.Linq;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity.Base;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Mappers;
-using Skoruba.Open.IdentityServer.Admin.UI.Api.Dtos.Roles;
-using Skoruba.Open.IdentityServer.Admin.UI.Api.Dtos.Users;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity.Base;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Mappers;
+using Toralux.Open.IdentityServer.Admin.UI.Api.Dtos.Roles;
+using Toralux.Open.IdentityServer.Admin.UI.Api.Dtos.Users;
 
-namespace Skoruba.Open.IdentityServer.Admin.UI.Api.Mappers
+namespace Toralux.Open.IdentityServer.Admin.UI.Api.Mappers
 {
     public static class IdentityApiMappers
     {

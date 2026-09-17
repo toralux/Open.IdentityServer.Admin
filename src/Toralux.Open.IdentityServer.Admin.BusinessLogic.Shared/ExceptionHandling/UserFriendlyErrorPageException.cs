@@ -3,7 +3,7 @@
 
 using System;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Shared.ExceptionHandling
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Shared.ExceptionHandling
 {
     public class UserFriendlyErrorPageException : Exception
     {

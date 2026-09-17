@@ -6,12 +6,12 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.JsonWebTokens;
-using Skoruba.Open.IdentityServer.Admin.UI.Services.AntiForgeryProtection;
-using Skoruba.Open.IdentityServer.Admin.UI.Services.Configurations;
+using Toralux.Open.IdentityServer.Admin.UI.Services.AntiForgeryProtection;
+using Toralux.Open.IdentityServer.Admin.UI.Services.Configurations;
 using Yarp.ReverseProxy.Configuration;
 using Yarp.ReverseProxy.Transforms;
 
-namespace Skoruba.Open.IdentityServer.Admin.UI.Services;
+namespace Toralux.Open.IdentityServer.Admin.UI.Services;
 
 public static class IdentityServices
 {

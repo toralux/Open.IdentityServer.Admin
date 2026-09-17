@@ -3,7 +3,7 @@
 
 using Skoruba.AuditLogging.Events;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Events.Client
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Events.Client
 {
     public class ClientSecretDeletedEvent : AuditEvent
     {

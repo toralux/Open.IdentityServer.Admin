@@ -3,7 +3,7 @@
 
 using System.Collections.Generic;
 
-namespace Skoruba.Open.IdentityServer.Admin.UI.Api.Dtos.Roles
+namespace Toralux.Open.IdentityServer.Admin.UI.Api.Dtos.Roles
 {
     public class RoleClaimsApiDto<TKey>
     {

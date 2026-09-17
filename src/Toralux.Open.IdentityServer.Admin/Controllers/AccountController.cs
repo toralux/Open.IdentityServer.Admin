@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 
-namespace Skoruba.Open.IdentityServer.Admin.Controllers;
+namespace Toralux.Open.IdentityServer.Admin.Controllers;
 
 [Authorize]
 public class AccountController(IAntiforgery antiforgery, IOptions<AuthenticationOptions> authOptions)

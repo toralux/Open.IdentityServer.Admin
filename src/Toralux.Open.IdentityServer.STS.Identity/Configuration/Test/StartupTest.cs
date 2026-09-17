@@ -4,10 +4,10 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.DbContexts;
-using Skoruba.Open.IdentityServer.STS.Identity.Helpers;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.DbContexts;
+using Toralux.Open.IdentityServer.STS.Identity.Helpers;
 
-namespace Skoruba.Open.IdentityServer.STS.Identity.Configuration.Test
+namespace Toralux.Open.IdentityServer.STS.Identity.Configuration.Test
 {
     public class StartupTest : Startup
     {

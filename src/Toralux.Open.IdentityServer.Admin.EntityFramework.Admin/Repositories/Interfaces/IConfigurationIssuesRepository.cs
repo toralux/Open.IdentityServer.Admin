@@ -3,10 +3,10 @@
 
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Dtos;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Entities;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Dtos;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Entities;
 
-namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Repositories.Interfaces;
+namespace Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Repositories.Interfaces;
 
 public interface IConfigurationIssuesRepository
 {

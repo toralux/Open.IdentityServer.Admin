@@ -1,7 +1,7 @@
 ﻿// Copyright (c) Jan Škoruba. All Rights Reserved.
 // Licensed under the Apache License, Version 2.0.
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Helpers
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Helpers
 {
     public class ResourceMessage
     {

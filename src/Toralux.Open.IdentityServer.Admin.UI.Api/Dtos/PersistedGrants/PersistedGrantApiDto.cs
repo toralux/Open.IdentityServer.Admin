@@ -3,7 +3,7 @@
 
 using System;
 
-namespace Skoruba.Open.IdentityServer.Admin.UI.Api.Dtos.PersistedGrants
+namespace Toralux.Open.IdentityServer.Admin.UI.Api.Dtos.PersistedGrants
 {
     public class PersistedGrantApiDto
     {

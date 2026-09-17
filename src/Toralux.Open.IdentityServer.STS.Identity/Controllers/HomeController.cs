@@ -10,11 +10,11 @@ using Open.IdentityServer.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
-using Skoruba.Open.IdentityServer.Shared.Configuration.Helpers;
-using Skoruba.Open.IdentityServer.STS.Identity.Helpers;
-using Skoruba.Open.IdentityServer.STS.Identity.ViewModels.Home;
+using Toralux.Open.IdentityServer.Shared.Configuration.Helpers;
+using Toralux.Open.IdentityServer.STS.Identity.Helpers;
+using Toralux.Open.IdentityServer.STS.Identity.ViewModels.Home;
 
-namespace Skoruba.Open.IdentityServer.STS.Identity.Controllers
+namespace Toralux.Open.IdentityServer.STS.Identity.Controllers
 {
     [SecurityHeaders]
     public class HomeController : Controller

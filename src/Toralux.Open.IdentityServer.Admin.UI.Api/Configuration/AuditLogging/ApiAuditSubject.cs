@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Skoruba.AuditLogging.Constants;
 using Skoruba.AuditLogging.Events;
 
-namespace Skoruba.Open.IdentityServer.Admin.UI.Api.Configuration.AuditLogging
+namespace Toralux.Open.IdentityServer.Admin.UI.Api.Configuration.AuditLogging
 {
     public class ApiAuditSubject : IAuditSubject
     {

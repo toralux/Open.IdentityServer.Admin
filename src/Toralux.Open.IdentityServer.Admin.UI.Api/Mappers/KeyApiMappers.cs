@@ -2,10 +2,10 @@
 // Licensed under the Apache License, Version 2.0.
 
 using Riok.Mapperly.Abstractions;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Key;
-using Skoruba.Open.IdentityServer.Admin.UI.Api.Dtos.Key;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.Key;
+using Toralux.Open.IdentityServer.Admin.UI.Api.Dtos.Key;
 
-namespace Skoruba.Open.IdentityServer.Admin.UI.Api.Mappers
+namespace Toralux.Open.IdentityServer.Admin.UI.Api.Mappers
 {
     [Mapper(RequiredMappingStrategy = RequiredMappingStrategy.Target)]
     internal static partial class KeyApiMapper

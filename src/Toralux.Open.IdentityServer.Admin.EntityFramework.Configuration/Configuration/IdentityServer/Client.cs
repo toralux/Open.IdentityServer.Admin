@@ -2,9 +2,9 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System.Collections.Generic;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Configuration.Configuration.Identity;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Configuration.Configuration.Identity;
 
-namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Configuration.Configuration.IdentityServer
+namespace Toralux.Open.IdentityServer.Admin.EntityFramework.Configuration.Configuration.IdentityServer
 {
     public class Client : global::Open.IdentityServer.Models.Client
     {

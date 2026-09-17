@@ -4,7 +4,7 @@
 
 using Microsoft.AspNetCore.Http;
 
-namespace Skoruba.Open.IdentityServer.Shared.Configuration.Authentication
+namespace Toralux.Open.IdentityServer.Shared.Configuration.Authentication
 {
     public static class AuthenticationHelpers
     {

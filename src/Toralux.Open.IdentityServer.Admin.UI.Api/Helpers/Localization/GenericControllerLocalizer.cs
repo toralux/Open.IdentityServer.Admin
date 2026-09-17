@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using Microsoft.Extensions.Localization;
 
-namespace Skoruba.Open.IdentityServer.Admin.UI.Api.Helpers.Localization
+namespace Toralux.Open.IdentityServer.Admin.UI.Api.Helpers.Localization
 {
     public class GenericControllerLocalizer<TResourceSource> : IGenericControllerLocalizer<TResourceSource>
     {

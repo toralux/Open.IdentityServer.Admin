@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.DbContexts;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.DbContexts;
 
 #nullable disable
 
-namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.SqlServer.Migrations.AdminConfiguration
+namespace Toralux.Open.IdentityServer.Admin.EntityFramework.SqlServer.Migrations.AdminConfiguration
 {
     [DbContext(typeof(AdminConfigurationDbContext))]
     partial class AdminConfigurationDbContextModelSnapshot : ModelSnapshot
@@ -22,7 +22,7 @@ namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.SqlServer.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Entities.ConfigurationRule", b =>
+            modelBuilder.Entity("Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Entities.ConfigurationRule", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

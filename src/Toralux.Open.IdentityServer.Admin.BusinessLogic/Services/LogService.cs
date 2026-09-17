@@ -4,13 +4,13 @@
 using System;
 using System.Threading.Tasks;
 using Skoruba.AuditLogging.Services;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Log;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Events.Log;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Mappers;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Services.Interfaces;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Repositories.Interfaces;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.Log;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Events.Log;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Mappers;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Services.Interfaces;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Repositories.Interfaces;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Services
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Services
 {
     public class LogService : ILogService
     {

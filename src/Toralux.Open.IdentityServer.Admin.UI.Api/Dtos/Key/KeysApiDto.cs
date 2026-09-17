@@ -3,7 +3,7 @@
 
 using System.Collections.Generic;
 
-namespace Skoruba.Open.IdentityServer.Admin.UI.Api.Dtos.Key
+namespace Toralux.Open.IdentityServer.Admin.UI.Api.Dtos.Key
 {
     public class KeysApiDto
     {

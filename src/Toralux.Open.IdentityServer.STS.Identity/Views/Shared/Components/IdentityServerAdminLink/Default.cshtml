@@ -2,7 +2,7 @@
 @model string
 @inject IViewLocalizer Localizer
 @using Microsoft.AspNetCore.Authorization
-@using Skoruba.Open.IdentityServer.STS.Identity.Configuration.Constants
+@using Toralux.Open.IdentityServer.STS.Identity.Configuration.Constants
 @inject IAuthorizationService AuthorizationService
 
 @if ((await AuthorizationService.AuthorizeAsync(User, AuthorizationConsts.AdministrationPolicy)).Succeeded)

@@ -7,15 +7,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Dtos;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Mappers;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.ConfigurationRules;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Repositories.Interfaces;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Entities;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Interfaces;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Interfaces;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Dtos;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Mappers;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.ConfigurationRules;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Repositories.Interfaces;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Entities;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Interfaces;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Interfaces;
 
-namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Repositories;
+namespace Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Repositories;
 
 public class ConfigurationIssuesRepository<TDbContext, TRulesDbContext> : IConfigurationIssuesRepository
     where TDbContext : DbContext, IAdminConfigurationDbContext

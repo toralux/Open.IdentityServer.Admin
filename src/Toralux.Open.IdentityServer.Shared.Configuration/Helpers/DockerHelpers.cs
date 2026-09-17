@@ -2,9 +2,9 @@
 // Licensed under the Apache License, Version 2.0.
 
 using Microsoft.Extensions.Configuration;
-using Skoruba.Open.IdentityServer.Shared.Configuration.Configuration.Common;
+using Toralux.Open.IdentityServer.Shared.Configuration.Configuration.Common;
 
-namespace Skoruba.Open.IdentityServer.Shared.Configuration.Helpers
+namespace Toralux.Open.IdentityServer.Shared.Configuration.Helpers
 {
     public static class DockerHelpers
     {

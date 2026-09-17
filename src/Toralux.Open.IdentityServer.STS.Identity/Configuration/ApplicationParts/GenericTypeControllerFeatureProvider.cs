@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
 using Microsoft.AspNetCore.Mvc.Controllers;
 
-namespace Skoruba.Open.IdentityServer.STS.Identity.Configuration.ApplicationParts
+namespace Toralux.Open.IdentityServer.STS.Identity.Configuration.ApplicationParts
 {
     public class GenericTypeControllerFeatureProvider<TUser, TKey> : IApplicationFeatureProvider<ControllerFeature>
         where TUser : IdentityUser<TKey>        

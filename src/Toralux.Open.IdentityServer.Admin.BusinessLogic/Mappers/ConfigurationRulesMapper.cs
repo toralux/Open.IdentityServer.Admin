@@ -1,10 +1,10 @@
 // Copyright (c) Jan Škoruba. All Rights Reserved.
 // Licensed under the Apache License, Version 2.0.
 
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Configuration;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Entities;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.Configuration;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Entities;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Mappers;
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Mappers;
 
 public static class ConfigurationRulesMapper
 {

@@ -6,7 +6,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
-namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.PostgreSQL.Migrations.AdminConfiguration
+namespace Toralux.Open.IdentityServer.Admin.EntityFramework.PostgreSQL.Migrations.AdminConfiguration
 {
     /// <inheritdoc />
     public partial class AdminConfigurationUpdate : Migration

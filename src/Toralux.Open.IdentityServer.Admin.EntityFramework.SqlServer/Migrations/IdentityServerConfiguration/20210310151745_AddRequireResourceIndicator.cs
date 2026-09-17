@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.SqlServer.Migrations.IdentityServerConfiguration
+namespace Toralux.Open.IdentityServer.Admin.EntityFramework.SqlServer.Migrations.IdentityServerConfiguration
 {
     public partial class AddRequireResourceIndicator : Migration
     {

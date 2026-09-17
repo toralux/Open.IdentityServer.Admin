@@ -1,4 +1,4 @@
-﻿namespace Skoruba.Open.IdentityServer.STS.Identity.ViewModels.Manage
+﻿namespace Toralux.Open.IdentityServer.STS.Identity.ViewModels.Manage
 {
     public class TwoFactorAuthenticationViewModel
     {

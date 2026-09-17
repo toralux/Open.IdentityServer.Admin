@@ -3,7 +3,7 @@
 
 using System.Collections.Generic;
 
-namespace Skoruba.Open.IdentityServer.Shared.Configuration.Helpers
+namespace Toralux.Open.IdentityServer.Shared.Configuration.Helpers
 {
     public static class ThemeHelpers
     {

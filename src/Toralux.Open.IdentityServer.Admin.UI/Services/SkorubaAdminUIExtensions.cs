@@ -1,9 +1,9 @@
 using Duende.AccessTokenManagement.OpenIdConnect;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
-using Skoruba.Open.IdentityServer.Admin.UI.Services.Configurations;
+using Toralux.Open.IdentityServer.Admin.UI.Services.Configurations;
 
-namespace Skoruba.Open.IdentityServer.Admin.UI.Services
+namespace Toralux.Open.IdentityServer.Admin.UI.Services
 {
     public static class SkorubaAdminUIExtensions
     {

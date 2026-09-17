@@ -24,13 +24,13 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
-using Skoruba.Open.IdentityServer.Shared.Configuration.Configuration.Identity;
-using Skoruba.Open.IdentityServer.STS.Identity.Configuration;
-using Skoruba.Open.IdentityServer.STS.Identity.Helpers;
-using Skoruba.Open.IdentityServer.STS.Identity.Helpers.Localization;
-using Skoruba.Open.IdentityServer.STS.Identity.ViewModels.Account;
+using Toralux.Open.IdentityServer.Shared.Configuration.Configuration.Identity;
+using Toralux.Open.IdentityServer.STS.Identity.Configuration;
+using Toralux.Open.IdentityServer.STS.Identity.Helpers;
+using Toralux.Open.IdentityServer.STS.Identity.Helpers.Localization;
+using Toralux.Open.IdentityServer.STS.Identity.ViewModels.Account;
 
-namespace Skoruba.Open.IdentityServer.STS.Identity.Controllers
+namespace Toralux.Open.IdentityServer.STS.Identity.Controllers
 {
     [SecurityHeaders]
     [Authorize]

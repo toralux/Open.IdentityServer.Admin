@@ -1,8 +1,8 @@
 ﻿using System;
 using Microsoft.Extensions.DependencyInjection;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.Configuration.Schema;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.Configuration.Schema;
 
-namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.Extensions
+namespace Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.Extensions
 {
     public static class ConfigurationSchemaServicesExtensions
     {

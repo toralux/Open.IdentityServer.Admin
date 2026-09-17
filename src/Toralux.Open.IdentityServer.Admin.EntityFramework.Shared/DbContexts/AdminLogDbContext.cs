@@ -2,11 +2,11 @@
 // Licensed under the Apache License, Version 2.0.
 
 using Microsoft.EntityFrameworkCore;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Constants;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Entities;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Interfaces;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Constants;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Entities;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Interfaces;
 
-namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.DbContexts
+namespace Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.DbContexts
 {
     public class AdminLogDbContext : DbContext, IAdminLogDbContext
     {

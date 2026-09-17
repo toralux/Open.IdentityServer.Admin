@@ -27,24 +27,24 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Options;
 using Microsoft.Identity.Web;
 using Microsoft.IdentityModel.Tokens;
-using Skoruba.Open.IdentityServer.Shared.Configuration.Constants;
+using Toralux.Open.IdentityServer.Shared.Configuration.Constants;
 using System.IO;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Configuration.Configuration;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Configuration.PostgreSQL;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Configuration.SqlServer;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Helpers;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Interfaces;
-using Skoruba.Open.IdentityServer.Shared.Configuration.Authentication;
-using Skoruba.Open.IdentityServer.Shared.Configuration.Configuration.Identity;
-using Skoruba.Open.IdentityServer.STS.Identity.Configuration;
-using Skoruba.Open.IdentityServer.STS.Identity.Configuration.ApplicationParts;
-using Skoruba.Open.IdentityServer.STS.Identity.Configuration.Constants;
-using Skoruba.Open.IdentityServer.STS.Identity.Configuration.Interfaces;
-using Configuration = Skoruba.Open.IdentityServer.STS.Identity.Configuration;
-using Skoruba.Open.IdentityServer.STS.Identity.Helpers.Localization;
-using Skoruba.Open.IdentityServer.STS.Identity.Services;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Configuration.Configuration;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Configuration.PostgreSQL;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Configuration.SqlServer;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Helpers;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Interfaces;
+using Toralux.Open.IdentityServer.Shared.Configuration.Authentication;
+using Toralux.Open.IdentityServer.Shared.Configuration.Configuration.Identity;
+using Toralux.Open.IdentityServer.STS.Identity.Configuration;
+using Toralux.Open.IdentityServer.STS.Identity.Configuration.ApplicationParts;
+using Toralux.Open.IdentityServer.STS.Identity.Configuration.Constants;
+using Toralux.Open.IdentityServer.STS.Identity.Configuration.Interfaces;
+using Configuration = Toralux.Open.IdentityServer.STS.Identity.Configuration;
+using Toralux.Open.IdentityServer.STS.Identity.Helpers.Localization;
+using Toralux.Open.IdentityServer.STS.Identity.Services;
 
-namespace Skoruba.Open.IdentityServer.STS.Identity.Helpers
+namespace Toralux.Open.IdentityServer.STS.Identity.Helpers
 {
     public static class StartupHelpers
     {

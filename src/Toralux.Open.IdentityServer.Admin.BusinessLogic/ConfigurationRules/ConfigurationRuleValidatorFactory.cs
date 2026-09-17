@@ -2,15 +2,15 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.ConfigurationRules.ApiResourceRules;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.ConfigurationRules.ApiScopeRules;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.ConfigurationRules.ClientRules;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.ConfigurationRules.IdentityResourceRules;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.ConfigurationRules.SecurityRules;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Entities;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.ConfigurationRules;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.ConfigurationRules.ApiResourceRules;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.ConfigurationRules.ApiScopeRules;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.ConfigurationRules.ClientRules;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.ConfigurationRules.IdentityResourceRules;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.ConfigurationRules.SecurityRules;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Entities;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.ConfigurationRules;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.ConfigurationRules;
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.ConfigurationRules;
 
 public class ConfigurationRuleValidatorFactory : IConfigurationRuleValidatorFactory
 {

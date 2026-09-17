@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using Microsoft.Extensions.FileProviders;
 
-namespace Skoruba.Open.IdentityServer.STS.Identity.Helpers.TagHelpers
+namespace Toralux.Open.IdentityServer.STS.Identity.Helpers.TagHelpers
 {
     [HtmlTargetElement("lucideicon", TagStructure = TagStructure.WithoutEndTag)]
     public class LucideIconTagHelper : TagHelper

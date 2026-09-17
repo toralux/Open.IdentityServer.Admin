@@ -4,7 +4,7 @@
 using System;
 using Skoruba.AuditLogging.Events;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Events.Log
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Events.Log
 {
     public class LogsDeletedEvent : AuditEvent
     {

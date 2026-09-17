@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Identity.Resources {
+namespace Toralux.Open.IdentityServer.Admin.EntityFramework.Identity.Resources {
     using System;
 
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
@@ -27,7 +27,7 @@ namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Identity.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    var temp = new global::System.Resources.ResourceManager("Skoruba.Open.IdentityServer.Admin.EntityFramework.Identity.Resources.IdentityRepositoryResource", typeof(IdentityRepositoryResource).Assembly);
+                    var temp = new global::System.Resources.ResourceManager("Toralux.Open.IdentityServer.Admin.EntityFramework.Identity.Resources.IdentityRepositoryResource", typeof(IdentityRepositoryResource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

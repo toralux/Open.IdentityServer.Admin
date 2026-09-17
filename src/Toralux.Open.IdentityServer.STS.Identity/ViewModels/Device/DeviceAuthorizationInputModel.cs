@@ -4,9 +4,9 @@
 // Original file: https://github.com/DuendeSoftware/IdentityServer.Quickstart.UI
 // Modified by Jan Škoruba
 
-using Skoruba.Open.IdentityServer.STS.Identity.ViewModels.Consent;
+using Toralux.Open.IdentityServer.STS.Identity.ViewModels.Consent;
 
-namespace Skoruba.Open.IdentityServer.STS.Identity.ViewModels.Device
+namespace Toralux.Open.IdentityServer.STS.Identity.ViewModels.Device
 {
     public class DeviceAuthorizationInputModel : ConsentInputModel
     {

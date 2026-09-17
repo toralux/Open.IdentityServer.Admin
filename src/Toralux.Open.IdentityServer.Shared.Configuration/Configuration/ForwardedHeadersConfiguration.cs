@@ -3,7 +3,7 @@
 
 using System.Collections.Generic;
 
-namespace Skoruba.Open.IdentityServer.Shared.Configuration.Configuration
+namespace Toralux.Open.IdentityServer.Shared.Configuration.Configuration
 {
     public class ForwardedHeadersConfiguration
     {

@@ -3,16 +3,16 @@
 
 using System.Threading.Tasks;
 using Skoruba.AuditLogging.Services;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Configuration;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Events.IdentityResource;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Helpers;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Mappers;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Resources;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Services.Interfaces;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Shared.ExceptionHandling;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Repositories.Interfaces;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.Configuration;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Events.IdentityResource;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Helpers;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Mappers;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Resources;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Services.Interfaces;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Shared.ExceptionHandling;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Repositories.Interfaces;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Services
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Services
 {
     public class IdentityResourceService : IIdentityResourceService
     {

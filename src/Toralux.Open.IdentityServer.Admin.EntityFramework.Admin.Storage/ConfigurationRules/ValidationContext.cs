@@ -4,7 +4,7 @@
 using System.Collections.Generic;
 using Open.IdentityServer.EntityFramework.Entities;
 
-namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.ConfigurationRules;
+namespace Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.ConfigurationRules;
 
 /// <summary>
 /// Contains all pre-loaded data needed by validators to avoid N+1 queries

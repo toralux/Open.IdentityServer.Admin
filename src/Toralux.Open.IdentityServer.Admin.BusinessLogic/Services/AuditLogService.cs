@@ -7,13 +7,13 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Skoruba.AuditLogging.EntityFramework.Entities;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Dashboard;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Log;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Mappers;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Services.Interfaces;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Repositories.Interfaces;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.Dashboard;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.Log;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Mappers;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Services.Interfaces;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Repositories.Interfaces;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Services
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Services
 {
     public class AuditLogService<TAuditLog> : IAuditLogService
         where TAuditLog : AuditLog

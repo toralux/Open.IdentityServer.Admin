@@ -1,7 +1,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Identity.Repositories.Interfaces;
+namespace Toralux.Open.IdentityServer.Admin.EntityFramework.Identity.Repositories.Interfaces;
 
 public interface IDashboardIdentityRepository
 {

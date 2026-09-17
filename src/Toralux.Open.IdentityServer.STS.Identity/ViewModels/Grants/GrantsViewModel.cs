@@ -7,7 +7,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Skoruba.Open.IdentityServer.STS.Identity.ViewModels.Grants
+namespace Toralux.Open.IdentityServer.STS.Identity.ViewModels.Grants
 {
     public class GrantsViewModel
     {

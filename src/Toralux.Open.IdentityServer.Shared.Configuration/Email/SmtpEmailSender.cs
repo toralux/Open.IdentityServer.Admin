@@ -6,9 +6,9 @@ using System.Net.Mail;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.Extensions.Logging;
-using Skoruba.Open.IdentityServer.Shared.Configuration.Configuration.Email;
+using Toralux.Open.IdentityServer.Shared.Configuration.Configuration.Email;
 
-namespace Skoruba.Open.IdentityServer.Shared.Configuration.Email
+namespace Toralux.Open.IdentityServer.Shared.Configuration.Email
 {
     public class SmtpEmailSender : IEmailSender
     {

@@ -6,9 +6,9 @@ using System.Linq;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Shared.ExceptionHandling;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Shared.ExceptionHandling;
 
-namespace Skoruba.Open.IdentityServer.Admin.UI.Api.ExceptionHandling
+namespace Toralux.Open.IdentityServer.Admin.UI.Api.ExceptionHandling
 {
     public class ControllerExceptionFilterAttribute : ExceptionFilterAttribute
     {

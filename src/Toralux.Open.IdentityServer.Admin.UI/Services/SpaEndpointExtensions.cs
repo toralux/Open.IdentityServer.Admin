@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Skoruba.Open.IdentityServer.Admin.UI.Services;
+namespace Toralux.Open.IdentityServer.Admin.UI.Services;
 
 public static class SpaEndpointExtensions
 {

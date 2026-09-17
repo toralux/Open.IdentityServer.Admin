@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 
-namespace Skoruba.Open.IdentityServer.STS.Identity.ViewModels.Manage
+namespace Toralux.Open.IdentityServer.STS.Identity.ViewModels.Manage
 {
     public class EnableAuthenticatorViewModel
     {

@@ -5,7 +5,7 @@ using Open.IdentityServer.EntityFramework.Entities;
 using Open.IdentityServer.EntityFramework.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
-namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Interfaces
+namespace Toralux.Open.IdentityServer.Admin.EntityFramework.Interfaces
 {
     public interface IAdminConfigurationDbContext : IConfigurationDbContext
     {

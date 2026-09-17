@@ -3,7 +3,7 @@
 
 using System.Collections.Generic;
 
-namespace Skoruba.Open.IdentityServer.Admin.UI.Api.Dtos.ApiScopes
+namespace Toralux.Open.IdentityServer.Admin.UI.Api.Dtos.ApiScopes
 {
     public class ApiScopesApiDto
     {

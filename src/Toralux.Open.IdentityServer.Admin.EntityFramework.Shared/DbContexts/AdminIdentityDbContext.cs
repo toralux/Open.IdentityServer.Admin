@@ -4,10 +4,10 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.Configuration.Schema;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.Configuration.Schema;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity;
 
-namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.DbContexts
+namespace Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.DbContexts
 {
     public class AdminIdentityDbContext : IdentityDbContext<UserIdentity, UserIdentityRole, string, UserIdentityUserClaim, UserIdentityUserRole, UserIdentityUserLogin, UserIdentityRoleClaim, UserIdentityUserToken, UserIdentityPasskey>
     {

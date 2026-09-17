@@ -4,7 +4,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Configuration
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.Configuration
 {
     public class ClientSecretDto
     {

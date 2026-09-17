@@ -3,9 +3,9 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity.Interfaces;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity.Interfaces;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity
 {
     public class RolesDto<TRoleDto, TKey>: IRolesDto where TRoleDto : RoleDto<TKey>
     {

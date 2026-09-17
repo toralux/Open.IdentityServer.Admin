@@ -1,4 +1,4 @@
-﻿namespace Skoruba.Open.IdentityServer.STS.Identity.Helpers;
+﻿namespace Toralux.Open.IdentityServer.STS.Identity.Helpers;
 
 public class IdentityProvidersHelpers
 {

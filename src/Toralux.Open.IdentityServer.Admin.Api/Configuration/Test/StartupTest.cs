@@ -7,14 +7,14 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Configuration.Configuration;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.DbContexts;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity;
-using Skoruba.Open.IdentityServer.Admin.UI.Api.Helpers;
-using Skoruba.Open.IdentityServer.Admin.UI.Api.Middlewares;
-using Skoruba.Open.IdentityServer.Shared.Configuration.Constants;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Configuration.Configuration;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.DbContexts;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity;
+using Toralux.Open.IdentityServer.Admin.UI.Api.Helpers;
+using Toralux.Open.IdentityServer.Admin.UI.Api.Middlewares;
+using Toralux.Open.IdentityServer.Shared.Configuration.Constants;
 
-namespace Skoruba.Open.IdentityServer.Admin.Api.Configuration.Test
+namespace Toralux.Open.IdentityServer.Admin.Api.Configuration.Test
 {
     public class StartupTest : Startup
     {

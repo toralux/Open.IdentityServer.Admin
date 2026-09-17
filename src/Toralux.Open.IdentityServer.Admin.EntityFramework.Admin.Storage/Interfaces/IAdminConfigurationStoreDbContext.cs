@@ -4,9 +4,9 @@
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Entities;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Entities;
 
-namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Interfaces;
+namespace Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Interfaces;
 
 public interface IAdminConfigurationStoreDbContext
 {

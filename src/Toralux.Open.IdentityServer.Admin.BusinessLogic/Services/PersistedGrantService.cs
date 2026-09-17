@@ -3,15 +3,15 @@
 
 using System.Threading.Tasks;
 using Skoruba.AuditLogging.Services;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Grant;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Events.PersistedGrant;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Mappers;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Resources;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Services.Interfaces;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Shared.ExceptionHandling;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Repositories.Interfaces;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.Grant;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Events.PersistedGrant;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Mappers;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Resources;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Services.Interfaces;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Shared.ExceptionHandling;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Repositories.Interfaces;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Services
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Services
 {
     public class PersistedGrantService : IPersistedGrantService
     {

@@ -4,14 +4,14 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Services.Interfaces;
-using Skoruba.Open.IdentityServer.Admin.UI.Api.Configuration.Constants;
-using Skoruba.Open.IdentityServer.Admin.UI.Api.Dtos.PersistedGrants;
-using Skoruba.Open.IdentityServer.Admin.UI.Api.ExceptionHandling;
-using Skoruba.Open.IdentityServer.Admin.UI.Api.Helpers;
-using Skoruba.Open.IdentityServer.Admin.UI.Api.Mappers;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Services.Interfaces;
+using Toralux.Open.IdentityServer.Admin.UI.Api.Configuration.Constants;
+using Toralux.Open.IdentityServer.Admin.UI.Api.Dtos.PersistedGrants;
+using Toralux.Open.IdentityServer.Admin.UI.Api.ExceptionHandling;
+using Toralux.Open.IdentityServer.Admin.UI.Api.Helpers;
+using Toralux.Open.IdentityServer.Admin.UI.Api.Mappers;
 
-namespace Skoruba.Open.IdentityServer.Admin.UI.Api.Controllers
+namespace Toralux.Open.IdentityServer.Admin.UI.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

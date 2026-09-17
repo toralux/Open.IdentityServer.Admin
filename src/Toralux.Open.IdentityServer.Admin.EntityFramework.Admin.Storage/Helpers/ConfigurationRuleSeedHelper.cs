@@ -3,9 +3,9 @@
 
 using System;
 using System.Collections.Generic;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Entities;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Entities;
 
-namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Helpers;
+namespace Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Helpers;
 
 public static class ConfigurationRuleSeedHelper
 {

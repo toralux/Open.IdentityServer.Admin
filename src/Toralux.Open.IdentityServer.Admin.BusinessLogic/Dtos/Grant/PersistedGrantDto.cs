@@ -3,7 +3,7 @@
 
 using System;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Grant
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.Grant
 {
 	public class PersistedGrantDto
 	{

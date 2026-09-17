@@ -3,9 +3,9 @@
 
 using Open.IdentityServer.EntityFramework.DbContexts;
 using Microsoft.EntityFrameworkCore;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Interfaces;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Interfaces;
 
-namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.DbContexts
+namespace Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.DbContexts
 {
     public class IdentityServerPersistedGrantDbContext : PersistedGrantDbContext<IdentityServerPersistedGrantDbContext>, IAdminPersistedGrantDbContext
     {

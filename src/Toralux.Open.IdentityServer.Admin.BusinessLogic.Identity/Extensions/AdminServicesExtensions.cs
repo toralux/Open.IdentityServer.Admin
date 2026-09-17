@@ -7,19 +7,19 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Mappers;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Mappers.Customization;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Resources;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Services;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Services.Interfaces;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Identity.Repositories;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Identity.Repositories.Interfaces;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Interfaces;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.Configuration.Schema;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.Extensions;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Mappers;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Mappers.Customization;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Resources;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Services;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Services.Interfaces;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Identity.Repositories;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Identity.Repositories.Interfaces;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Interfaces;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.Configuration.Schema;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.Extensions;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Identity.Extensions
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Extensions
 {
     public static class AdminServicesExtensions
     {

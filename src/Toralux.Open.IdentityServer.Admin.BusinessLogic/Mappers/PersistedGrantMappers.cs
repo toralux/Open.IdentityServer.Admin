@@ -4,11 +4,11 @@
 using System.Linq;
 using Open.IdentityServer.EntityFramework.Entities;
 using Riok.Mapperly.Abstractions;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Grant;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Entities;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Extensions.Common;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.Grant;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Entities;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Extensions.Common;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Mappers
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Mappers
 {
     [Mapper(RequiredMappingStrategy = RequiredMappingStrategy.None)]
     internal static partial class PersistedGrantMapper

@@ -4,7 +4,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.IdentityProvider
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.IdentityProvider
 {
     public class IdentityProviderDto
     {

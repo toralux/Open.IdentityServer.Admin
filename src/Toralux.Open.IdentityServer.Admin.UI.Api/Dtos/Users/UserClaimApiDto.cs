@@ -3,7 +3,7 @@
 
 using System.ComponentModel.DataAnnotations;
 
-namespace Skoruba.Open.IdentityServer.Admin.UI.Api.Dtos.Users
+namespace Toralux.Open.IdentityServer.Admin.UI.Api.Dtos.Users
 {
     public class UserClaimApiDto<TKey>
     {

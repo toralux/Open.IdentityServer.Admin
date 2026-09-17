@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.SqlServer.Migrations.IdentityServerGrants
+namespace Toralux.Open.IdentityServer.Admin.EntityFramework.SqlServer.Migrations.IdentityServerGrants
 {
     public partial class AddIdentityServerKeys : Migration
     {

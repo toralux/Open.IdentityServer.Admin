@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Resources {
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Resources {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Skoruba.Open.IdentityServer.Admin.BusinessLogic.Resources.ApiResourceServiceRes" +
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Toralux.Open.IdentityServer.Admin.BusinessLogic.Resources.ApiResourceServiceRes" +
                             "ource", typeof(ApiResourceServiceResource).Assembly);
                     resourceMan = temp;
                 }

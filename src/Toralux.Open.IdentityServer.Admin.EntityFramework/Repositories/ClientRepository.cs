@@ -9,17 +9,17 @@ using System.Threading.Tasks;
 using Open.IdentityServer.EntityFramework.Entities;
 using Open.IdentityServer.Models;
 using Microsoft.EntityFrameworkCore;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Constants;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Extensions.Common;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Extensions.Enums;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Extensions.Extensions;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Helpers;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Interfaces;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Repositories.Interfaces;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Constants;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Extensions.Common;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Extensions.Enums;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Extensions.Extensions;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Helpers;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Interfaces;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Repositories.Interfaces;
 using Client = Open.IdentityServer.EntityFramework.Entities.Client;
 using ClientClaim = Open.IdentityServer.EntityFramework.Entities.ClientClaim;
 
-namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Repositories
+namespace Toralux.Open.IdentityServer.Admin.EntityFramework.Repositories
 {
     public class ClientRepository<TDbContext> : IClientRepository
     where TDbContext : DbContext, IAdminConfigurationDbContext

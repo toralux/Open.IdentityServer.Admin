@@ -1,10 +1,10 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Skoruba.Open.IdentityServer.Admin.UI.Services;
-using Skoruba.Open.IdentityServer.Admin.UI.Services.AntiForgeryProtection;
-using Skoruba.Open.IdentityServer.Admin.UI.Services.User;
+using Toralux.Open.IdentityServer.Admin.UI.Services;
+using Toralux.Open.IdentityServer.Admin.UI.Services.AntiForgeryProtection;
+using Toralux.Open.IdentityServer.Admin.UI.Services.User;
 
-namespace Skoruba.Open.IdentityServer.Admin.Controllers;
+namespace Toralux.Open.IdentityServer.Admin.Controllers;
 
 [ApiController]
 [Route("[controller]")]

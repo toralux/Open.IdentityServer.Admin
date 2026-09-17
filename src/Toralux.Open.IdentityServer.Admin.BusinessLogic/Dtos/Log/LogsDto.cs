@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Log
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.Log
 {
     public class LogsDto
     {

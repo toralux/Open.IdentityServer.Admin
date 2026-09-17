@@ -6,7 +6,7 @@
 
 using System.Collections.Generic;
 
-namespace Skoruba.Open.IdentityServer.STS.Identity.ViewModels.Consent
+namespace Toralux.Open.IdentityServer.STS.Identity.ViewModels.Consent
 {
     public class ConsentInputModel
     {

@@ -3,7 +3,7 @@
 
 using System.Collections.Generic;
 
-namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Extensions.Common
+namespace Toralux.Open.IdentityServer.Admin.EntityFramework.Extensions.Common
 {
     public class PagedList<T> where T : class 
     {

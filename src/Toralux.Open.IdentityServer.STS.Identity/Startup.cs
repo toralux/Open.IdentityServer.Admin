@@ -9,16 +9,16 @@ using Microsoft.Extensions.Hosting;
 using IdentityModel;
 using Open.IdentityServer;
 using Open.IdentityServer.Configuration;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.DbContexts;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity;
-using Skoruba.Open.IdentityServer.Shared.Configuration.Helpers;
-using Skoruba.Open.IdentityServer.STS.Identity.Configuration;
-using Skoruba.Open.IdentityServer.STS.Identity.Configuration.Constants;
-using Skoruba.Open.IdentityServer.STS.Identity.Configuration.Interfaces;
-using Skoruba.Open.IdentityServer.STS.Identity.Helpers;
-using Skoruba.Open.IdentityServer.STS.Identity.Passkeys;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.DbContexts;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity;
+using Toralux.Open.IdentityServer.Shared.Configuration.Helpers;
+using Toralux.Open.IdentityServer.STS.Identity.Configuration;
+using Toralux.Open.IdentityServer.STS.Identity.Configuration.Constants;
+using Toralux.Open.IdentityServer.STS.Identity.Configuration.Interfaces;
+using Toralux.Open.IdentityServer.STS.Identity.Helpers;
+using Toralux.Open.IdentityServer.STS.Identity.Passkeys;
 
-namespace Skoruba.Open.IdentityServer.STS.Identity
+namespace Toralux.Open.IdentityServer.STS.Identity
 {
     public class Startup
     {

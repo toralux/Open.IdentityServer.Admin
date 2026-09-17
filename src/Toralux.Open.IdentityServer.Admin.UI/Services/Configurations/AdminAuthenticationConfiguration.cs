@@ -1,4 +1,4 @@
-namespace Skoruba.Open.IdentityServer.Admin.UI.Services.Configurations;
+namespace Toralux.Open.IdentityServer.Admin.UI.Services.Configurations;
 
 public class AdminAuthenticationConfiguration
 {

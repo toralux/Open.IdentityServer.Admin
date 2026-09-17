@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.DbContexts;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.DbContexts;
 
-namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.SqlServer.Migrations.Logging
+namespace Toralux.Open.IdentityServer.Admin.EntityFramework.SqlServer.Migrations.Logging
 {
     [DbContext(typeof(AdminLogDbContext))]
     [Migration("20191119163936_DbInit")]
@@ -21,7 +21,7 @@ namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.SqlServer.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Skoruba.Open.IdentityServer.Admin.EntityFramework.Entities.Log", b =>
+            modelBuilder.Entity("Toralux.Open.IdentityServer.Admin.EntityFramework.Entities.Log", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()

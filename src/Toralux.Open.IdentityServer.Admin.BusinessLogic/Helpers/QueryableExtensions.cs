@@ -5,7 +5,7 @@ using System;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Helpers
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Helpers
 {
     public static class QueryableExtensions
     {

@@ -9,14 +9,14 @@ using Open.IdentityServer.EntityFramework.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Entities;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Extensions.Common;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Extensions.Enums;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Extensions.Extensions;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Identity.Repositories.Interfaces;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Interfaces;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Entities;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Extensions.Common;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Extensions.Enums;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Extensions.Extensions;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Identity.Repositories.Interfaces;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Interfaces;
 
-namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Identity.Repositories
+namespace Toralux.Open.IdentityServer.Admin.EntityFramework.Identity.Repositories
 {
     public class PersistedGrantAspNetIdentityRepository<TIdentityDbContext, TPersistedGrantDbContext, TUser, TRole, TKey, TUserClaim, TUserRole, TUserLogin, TRoleClaim, TUserToken, TUserPasskey> : IPersistedGrantAspNetIdentityRepository
         where TIdentityDbContext : IdentityDbContext<TUser, TRole, TKey, TUserClaim, TUserRole, TUserLogin, TRoleClaim, TUserToken, TUserPasskey>

@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Skoruba.Open.IdentityServer.STS.Identity.Models.ViewModels;
+namespace Toralux.Open.IdentityServer.STS.Identity.Models.ViewModels;
 
 public class ServerSideSessionsViewModel
 {

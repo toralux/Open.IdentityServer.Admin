@@ -3,7 +3,7 @@
 
 using Open.IdentityServer.EntityFramework.Interfaces;
 
-namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Interfaces
+namespace Toralux.Open.IdentityServer.Admin.EntityFramework.Interfaces
 {
     public interface IAdminPersistedGrantDbContext : IPersistedGrantDbContext
     {

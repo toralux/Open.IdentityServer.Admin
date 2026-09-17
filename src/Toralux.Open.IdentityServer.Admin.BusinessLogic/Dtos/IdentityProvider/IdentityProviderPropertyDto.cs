@@ -4,7 +4,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.IdentityProvider
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.IdentityProvider
 {
     public class IdentityProviderPropertyDto
     {

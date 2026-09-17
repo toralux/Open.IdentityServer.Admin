@@ -11,18 +11,18 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using NSwag.AspNetCore;
 using Skoruba.AuditLogging.EntityFramework.Entities;
-using Skoruba.Open.IdentityServer.Admin.Api.Configuration;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Configuration.Configuration;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.DbContexts;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity;
-using Skoruba.Open.IdentityServer.Admin.UI.Api.Configuration;
-using Skoruba.Open.IdentityServer.Admin.UI.Api.Helpers;
-using Skoruba.Open.IdentityServer.Shared.Configuration.Helpers;
-using Skoruba.Open.IdentityServer.Shared.Dtos;
-using Skoruba.Open.IdentityServer.Shared.Dtos.Identity;
-using StartupHelpers = Skoruba.Open.IdentityServer.Shared.Configuration.Helpers.StartupHelpers;
+using Toralux.Open.IdentityServer.Admin.Api.Configuration;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Configuration.Configuration;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.DbContexts;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.Entities.Identity;
+using Toralux.Open.IdentityServer.Admin.UI.Api.Configuration;
+using Toralux.Open.IdentityServer.Admin.UI.Api.Helpers;
+using Toralux.Open.IdentityServer.Shared.Configuration.Helpers;
+using Toralux.Open.IdentityServer.Shared.Dtos;
+using Toralux.Open.IdentityServer.Shared.Dtos.Identity;
+using StartupHelpers = Toralux.Open.IdentityServer.Shared.Configuration.Helpers.StartupHelpers;
 
-namespace Skoruba.Open.IdentityServer.Admin.Api
+namespace Toralux.Open.IdentityServer.Admin.Api
 {
     public class Startup
     {

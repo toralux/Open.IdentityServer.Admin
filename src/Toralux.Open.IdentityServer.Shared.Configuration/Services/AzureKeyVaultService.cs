@@ -10,9 +10,9 @@ using Azure.Core;
 using Azure.Identity;
 using Azure.Security.KeyVault.Certificates;
 using Azure.Security.KeyVault.Secrets;
-using Skoruba.Open.IdentityServer.Shared.Configuration.Configuration.Common;
+using Toralux.Open.IdentityServer.Shared.Configuration.Configuration.Common;
 
-namespace Skoruba.Open.IdentityServer.Shared.Configuration.Services
+namespace Toralux.Open.IdentityServer.Shared.Configuration.Services
 {
     public class AzureKeyVaultService
     {

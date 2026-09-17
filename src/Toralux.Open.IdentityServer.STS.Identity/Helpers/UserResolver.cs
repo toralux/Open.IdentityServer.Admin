@@ -3,9 +3,9 @@
 
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
-using Skoruba.Open.IdentityServer.Shared.Configuration.Configuration.Identity;
+using Toralux.Open.IdentityServer.Shared.Configuration.Configuration.Identity;
 
-namespace Skoruba.Open.IdentityServer.STS.Identity.Helpers
+namespace Toralux.Open.IdentityServer.STS.Identity.Helpers
 {
     public class UserResolver<TUser> where TUser : class
     {

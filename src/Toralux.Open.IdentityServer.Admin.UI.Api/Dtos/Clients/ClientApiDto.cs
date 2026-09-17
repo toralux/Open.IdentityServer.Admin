@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Skoruba.Open.IdentityServer.Admin.UI.Api.Dtos.Clients
+namespace Toralux.Open.IdentityServer.Admin.UI.Api.Dtos.Clients
 {
     public class ClientApiDto
     {

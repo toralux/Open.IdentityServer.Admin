@@ -3,9 +3,9 @@
 
 using System.Collections.Generic;
 using Open.IdentityServer.Models;
-using Client = Skoruba.Open.IdentityServer.Admin.EntityFramework.Configuration.Configuration.IdentityServer.Client;
+using Client = Toralux.Open.IdentityServer.Admin.EntityFramework.Configuration.Configuration.IdentityServer.Client;
 
-namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Configuration.Configuration
+namespace Toralux.Open.IdentityServer.Admin.EntityFramework.Configuration.Configuration
 {
     public class IdentityServerData
     {

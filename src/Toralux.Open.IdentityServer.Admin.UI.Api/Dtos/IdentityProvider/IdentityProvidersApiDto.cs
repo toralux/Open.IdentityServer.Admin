@@ -3,7 +3,7 @@
 
 using System.Collections.Generic;
 
-namespace Skoruba.Open.IdentityServer.Admin.UI.Api.Dtos.IdentityProvider
+namespace Toralux.Open.IdentityServer.Admin.UI.Api.Dtos.IdentityProvider
 {
 	public class IdentityProvidersApiDto
 	{

@@ -6,10 +6,10 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using Skoruba.AuditLogging.EntityFramework.Entities;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Entities;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Extensions.Common;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Entities;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Extensions.Common;
 
-namespace Skoruba.Open.IdentityServer.Admin.EntityFramework.Repositories.Interfaces
+namespace Toralux.Open.IdentityServer.Admin.EntityFramework.Repositories.Interfaces
 {
     public interface IAuditLogRepository<TAuditLog> where TAuditLog : AuditLog
     {

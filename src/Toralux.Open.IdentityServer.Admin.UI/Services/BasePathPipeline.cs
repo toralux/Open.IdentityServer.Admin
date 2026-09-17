@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 
-namespace Skoruba.Open.IdentityServer.Admin.UI.Services;
+namespace Toralux.Open.IdentityServer.Admin.UI.Services;
 
 internal static class BasePathPipeline
 {

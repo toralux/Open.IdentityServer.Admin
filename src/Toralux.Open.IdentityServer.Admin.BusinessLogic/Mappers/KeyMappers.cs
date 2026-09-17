@@ -4,10 +4,10 @@
 using System.Linq;
 using Open.IdentityServer.EntityFramework.Entities;
 using Riok.Mapperly.Abstractions;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Dtos.Key;
-using Skoruba.Open.IdentityServer.Admin.EntityFramework.Extensions.Common;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.Key;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Extensions.Common;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Mappers
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Mappers
 {
     [Mapper(RequiredMappingStrategy = RequiredMappingStrategy.Target)]
     internal static partial class KeyMapper

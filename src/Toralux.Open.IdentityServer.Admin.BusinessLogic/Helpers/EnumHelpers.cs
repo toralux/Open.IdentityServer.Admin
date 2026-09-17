@@ -4,9 +4,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Skoruba.Open.IdentityServer.Admin.BusinessLogic.Shared.Dtos.Common;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Shared.Dtos.Common;
 
-namespace Skoruba.Open.IdentityServer.Admin.BusinessLogic.Helpers
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Helpers
 {
 	public class EnumHelpers
 	{
