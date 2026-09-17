@@ -69,7 +69,7 @@ namespace Toralux.Open.IdentityServer.Admin.UnitTests.Mocks
                 .RuleFor(o => o.DPoPClockSkew, f => f.Date.Timespan())
                 .RuleFor(o => o.RequireDPoP, f => f.Random.Bool())
                 .RuleFor(o => o.InitiateLoginUri, f => f.Internet.Url())
-                .RuleFor(o => o.DPoPValidationMode, DPoPTokenExpirationValidationMode.Custom)
+                .RuleFor(o => o.DPoPValidationMode, (int)DPoPTokenExpirationValidationMode.Custom)
                 .RuleFor(o => o.PushedAuthorizationLifetime, f => f.Random.Int())
                 .RuleFor(o => o.RequirePushedAuthorization, f => f.Random.Bool())
                 .RuleFor(o => o.AllowRememberConsent, f => f.Random.Bool())
