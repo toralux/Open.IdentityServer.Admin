@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { client } from "@toralux/open.identityserver.admin.api.client";
 import { useTranslation } from "react-i18next";
-import { KeyRound, LayoutGrid, Plus, Users } from "lucide-react";
+import { LayoutGrid, Plus, Users } from "lucide-react";
 import { Card, CardContent } from "@/components/Card/Card";
 import { cn } from "@/lib/utils";
 import { formatCompactAge } from "@/lib/dates/compactAge";
@@ -10,7 +10,6 @@ import {
   NavItem,
   clientsResourcesItems,
   identityItems,
-  providersKeysItems,
 } from "@/components/MainNav/navItems";
 import {
   ApiResourceCreateUrl,
@@ -18,11 +17,8 @@ import {
   ApiScopeCreateUrl,
   ApiScopesUrl,
   ClientsUrl,
-  IdentityProviderCreateUrl,
-  IdentityProvidersUrl,
   IdentityResourceCreateUrl,
   IdentityResourcesUrl,
-  KeysUrl,
   RoleCreateUrl,
   RolesUrl,
   UserCreateUrl,
@@ -33,7 +29,6 @@ import {
   useConfigurationIssues,
   useDashboardIdentity,
   useDashboardIdentityServer,
-  useDashboardKeys,
 } from "@/services/DashboardService";
 import DashboardCardHeader, { DashboardCardTone } from "./DashboardCardHeader";
 import StatTile, { StatTileContext } from "./StatTile";
@@ -266,60 +261,3 @@ export const IdentityCard = ({ className }: { className?: string }) => {
   );
 };
 
-export const ProvidersKeysCard = ({ className }: { className?: string }) => {
-  const { t } = useTranslation();
-  const identityServer = useDashboardIdentityServer();
-  const keys = useDashboardKeys();
-  const newestKey = keys.data?.keys[0];
-
-  return (
-    <SectionCard
-      className={className}
-      icon={KeyRound}
-      tone="warning"
-      error={identityServer.error ?? keys.error}
-      title={t("Home.ProvidersAndKeys")}
-      description={t("Home.Sections.ProvidersKeysDescription")}
-      items={providersKeysItems}
-      columns="grid-cols-2"
-      stats={{
-        [IdentityProvidersUrl]: {
-          value: identityServer.data?.identityServerData.identityProvidersTotal,
-          isLoading: identityServer.isLoading,
-        },
-        [KeysUrl]: { value: keys.data?.totalCount, isLoading: keys.isLoading },
-      }}
-      actions={[
-        <QuickLink
-          key="identity-provider"
-          to={IdentityProviderCreateUrl}
-          label={t("QuickActions.Short.IdentityProvider")}
-          name={t("QuickActions.NewIdentityProvider")}
-        />,
-        newestKey ? (
-          <Link
-            key="newest-key"
-            to={KeysUrl}
-            title={`${t("Home.Sections.NewestKey")}: ${newestKey.created.toLocaleString()}`}
-            className={cn(quickActionClass, "gap-1.5 font-normal")}
-          >
-            <span className="shrink-0 font-mono font-medium text-foreground/80">
-              {newestKey.algorithm}
-            </span>
-            <span aria-hidden className="text-muted-foreground/50">
-              ·
-            </span>
-            <span className="truncate">
-              <span className="hidden 2xl:inline">
-                {t("Home.Sections.NewestKey")}{" "}
-              </span>
-              {t("Home.Sections.Ago", {
-                age: formatCompactAge(newestKey.created),
-              })}
-            </span>
-          </Link>
-        ) : null,
-      ]}
-    />
-  );
-};

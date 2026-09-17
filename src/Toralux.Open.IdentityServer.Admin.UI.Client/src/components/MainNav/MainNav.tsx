@@ -28,7 +28,6 @@ import {
   Activity,
   Cog,
   Home,
-  KeyRound,
   ShieldCheck,
   Users,
   LayoutGrid,
@@ -41,7 +40,6 @@ import {
   NavItem,
   clientsResourcesItems,
   identityItems,
-  providersKeysItems,
   monitoringItems,
 } from "./navItems";
 
@@ -195,16 +193,6 @@ export function MainNav() {
         </NavDropdown>
 
         <NavDropdown
-          active={isGroupActive(providersKeysItems)}
-          label={t("Home.ProvidersAndKeys")}
-          icon={<KeyRound className="h-4 w-4" />}
-        >
-          <div className="grid min-w-[360px] grid-cols-1 gap-2">
-            {providersKeysItems.map((it) => renderDropdownItem(it))}
-          </div>
-        </NavDropdown>
-
-        <NavDropdown
           active={isGroupActive(monitoringItems)}
           label={t("Home.Monitoring")}
           icon={<Activity className="h-4 w-4" />}
@@ -291,11 +279,6 @@ function MobileNav() {
       title: t("Home.IdentityManagement"),
       icon: <ShieldCheck className="h-4 w-4" />,
       items: identityItems,
-    },
-    {
-      title: t("Home.ProvidersAndKeys"),
-      icon: <ShieldCheck className="h-4 w-4" />,
-      items: providersKeysItems,
     },
     {
       title: t("Home.Monitoring"),

@@ -24,8 +24,6 @@
     "ConfigurationIssuesDescription": "Overview of configuration issues",
     "ConfigurationRules": "Configuration Rules",
     "ConfigurationRulesDescription": "Manage configuration validation rules",
-    "Keys": "Keys",
-    "KeysDescription": "Manage your keys",
     "ClientsResourcesManagement": "Clients & Resources Management",
     "IdentityManagement": "Identity Management",
     "ProvidersAndKeys": "Providers & Keys",
@@ -88,8 +86,6 @@
     "Sections": {
       "ClientsResourcesDescription": "Apps, APIs, scopes and identity data",
       "IdentityDescription": "People and their permissions",
-      "ProvidersKeysDescription": "External sign-in and token signing",
-      "NewestKey": "newest key",
       "LastDays": "last {{days}} days",
       "ViewAuditLogs": "View audit logs",
       "Ago": "{{age}} ago",
@@ -149,15 +145,13 @@
     "NewIdentityResource": "New identity resource",
     "NewUser": "New user",
     "NewRole": "New role",
-    "NewIdentityProvider": "New identity provider",
     "Short": {
       "Client": "Client",
       "ApiResource": "API resource",
       "ApiScope": "API scope",
       "IdentityResource": "Identity resource",
       "User": "User",
-      "Role": "Role",
-      "IdentityProvider": "Identity provider"
+      "Role": "Role"
     }
   },
   "Errors": {

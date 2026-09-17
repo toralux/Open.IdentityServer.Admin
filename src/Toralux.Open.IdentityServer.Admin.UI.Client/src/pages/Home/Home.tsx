@@ -12,7 +12,6 @@ import SystemStatus from "./SystemStatus";
 import {
   ClientsResourcesCard,
   IdentityCard,
-  ProvidersKeysCard,
 } from "./ResourceSections";
 
 const Home = () => {
@@ -54,7 +53,6 @@ const Home = () => {
         <ConfigurationIssuesSummary className="md:col-span-2 lg:col-span-5" />
 
         <IdentityCard className="lg:col-span-4" />
-        <ProvidersKeysCard className="lg:col-span-4" />
         <AuditLogs className="md:col-span-2 lg:col-span-4" />
 
         <RecentActivity className="md:col-span-2 lg:col-span-12" />
