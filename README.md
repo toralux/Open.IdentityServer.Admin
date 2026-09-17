@@ -38,10 +38,23 @@ configuration health, auditing, and security from one modern interface.
 
 > [!IMPORTANT]
 >
-> ## Version 3.0.0 is here 🚀
+> ## Toralux fork — v0.1.0
 >
-> **Version 3.0.0** is the stable release of **Toralux Open IdentityServer Admin**.
-> It delivers a completely redesigned administration experience built with
+> **Toralux Open IdentityServer Admin** is a fork of
+> [skoruba/Duende.IdentityServer.Admin](https://github.com/skoruba/Duende.IdentityServer.Admin)
+> at **v3.0.0** (commit `45da4dc4`), retargeted from Duende IdentityServer to
+> **Open IdentityServer**. Packages ship as `Toralux.Open.IdentityServer.Admin.*`
+> starting at **0.1.0**; upstream lineage is documented in
+> [CHANGELOG.md](CHANGELOG.md) and [NOTICE](NOTICE).
+>
+> **Not affiliated with or endorsed by Rock Solid Knowledge / IdentityServer.com.**
+> "Duende IdentityServer" is a trademark of Duende Software; "IdentityServer" is a
+> trademark of Rock Solid Knowledge Ltd. This project is an independent
+> administration UI for the open-source Open IdentityServer.
+
+> ## What's in this UI
+>
+> A completely redesigned administration experience built with
 > **React, TypeScript, Tailwind CSS, shadcn/ui, and .NET 10**.
 >
 > See the [roadmap and changelog](#-roadmap--changelog) for release history and upcoming features.
@@ -181,7 +194,7 @@ dotnet new toralux.open-isadmin \
 | `--adminclientid`              | Client ID for the Admin UI OIDC client                                                                                                                                                                            |
 | `--adminclientsecret`          | Client secret for the Admin UI OIDC client                                                                                                                                                                        |
 | `--dockersupport`              | Include Docker support (`true` / `false`)                                                                                                                                                                         |
-| `--requirepushedauthorization` | Require PAR for admin client (`true` / `false`, default `true`). **Note:** PAR requires Open IdentityServer Business Edition or higher. [More info](https://docs.duendesoftware.com/identityserver/tokens/par/) |
+| `--requirepushedauthorization` | Require PAR for admin client (`true` / `false`, default `false`). **Note:** Pushed Authorization Requests require Duende IdentityServer Business Edition upstream and are not used by Open IdentityServer. [More info](https://docs.duendesoftware.com/identityserver/tokens/par/) |
 
 ---
 
@@ -337,6 +350,16 @@ Switch providers in `appsettings.json`:
 
 ### Connection String Examples
 
+> [!WARNING]
+>
+> **Seven connection strings** are used. Beyond the six obvious ones
+> (`ConfigurationDbConnection`, `PersistedGrantDbConnection`, `IdentityDbConnection`,
+> `AdminLogDbConnection`, `AdminAuditLogDbConnection`, `DataProtectionDbConnection`),
+> hosts also read **`AdminConfigurationDbConnection`** (Admin UI configuration storage).
+> When overriding per environment (env vars like
+> `ConnectionStrings__AdminConfigurationDbConnection`, Key Vault, etc.),
+> override **all seven** — missing the seventh causes hard-to-diagnose startup failures.
+
 **SQL Server (LocalDB):**
 
 ```
@@ -365,6 +388,13 @@ Use the PowerShell script in `build/add-migrations.ps1`:
 - `--migrationProviderName` – Provider type (choices: `All`, `SqlServer`, `PostgreSQL`)
 
 ### Seed Data
+
+> [!NOTE]
+>
+> **Migrating from Skoruba/Duende Admin?** Open.IdentityServer seed secrets hash as
+> **BASE64** (`Duende.IdentityModel` `ToSha256`), **not** the IS4-style lowercase **hex**
+> SHA-256. Client secrets seeded or imported with hex hashes will not authenticate —
+> re-hash (BASE64) or re-seed them when moving data from a Skoruba/Duende database.
 
 Seed data is configured in:
 
