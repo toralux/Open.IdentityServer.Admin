@@ -10,8 +10,6 @@
     "ApiScopesDescription": "Manage your API scopes",
     "IdentityResources": "Identity Resources",
     "IdentityResourcesDescription": "Manage your identity resources",
-    "IdentityProviders": "Identity Providers",
-    "IdentityProvidersDescription": "Manage your external identity providers",
     "Users": "Users",
     "UsersDescription": "Manage your users",
     "Roles": "Roles",
@@ -24,14 +22,11 @@
     "ConfigurationIssuesDescription": "Overview of configuration issues",
     "ConfigurationRules": "Configuration Rules",
     "ConfigurationRulesDescription": "Manage configuration validation rules",
-    "Keys": "Keys",
-    "KeysDescription": "Manage your keys",
     "Overview": "Overview",
     "OverviewDescription": "Total count of Identity Server resources and clients",
     "TotalResources": "Total Resources",
     "ClientsResourcesManagement": "Clients & Resources Management",
     "IdentityManagement": "Identity Management",
-    "ProvidersAndKeys": "Providers & Keys",
     "Monitoring": "Monitoring",
     "Logout": "Logout",
     "ClientsChecker": {
@@ -664,7 +659,6 @@
       "UsersInRole": "Users in Role",
       "UsersInRoleShow": "View users in role"
     },
-
     "Actions": {
       "Deleted": "Role has been deleted successfully!",
       "Created": "Role has been created successfully!",
@@ -689,63 +683,6 @@
     "PageTitle": "Roles",
     "AddNewRole": "Add Role",
     "SearchPlaceholder": "Search by role name or ID"
-  },
-  "IdentityProviders": {
-    "PageTitle": "Identity Providers"
-  },
-  "IdentityProvider": {
-    "PageTitle": "Identity Provider",
-    "Search": "Search",
-    "Create": {
-      "PageTitle": "Identity Provider"
-    },
-    "Edit": {
-      "PageTitle": "Identity Provider"
-    },
-    "Tabs": {
-      "Basics": "Basics",
-      "BasicsDescription": "Basic settings for the identity provider, including its name, scheme, and whether it is enabled.",
-      "Properties": "Properties",
-      "PropertiesDescription": "Additional properties for the identity provider."
-    },
-    "Actions": {
-      "Created": "Identity Provider has been created successfully!",
-      "Updated": "Identity Provider has been updated successfully!",
-      "Add": "Add Identity Provider",
-      "Added": "The identity provider has been added successfully",
-      "Delete": "Delete Identity Provider",
-      "Deleted": "Identity Provider has been deleted successfully!",
-      "DeleteConfirmTitle": "Delete Identity Provider",
-      "DeleteConfirmDescription": "Are you sure you want to delete identity provider <strong>{{identityProviderName}}</strong>?"
-    },
-    "DeleteConfirmTitle": "Delete Identity Provider",
-    "DeleteConfirmDescription": "Are you sure you want to delete <strong>{{identityProviderName}}</strong>?",
-    "Section": {
-      "Label": {
-        "Enabled_Info": "Indicates if this identity provider is enabled and can be used. Defaults to true.",
-        "Enabled_Label": "Enabled",
-        "Scheme_Info": "This value will be used as the authentication scheme. This needs to be globally unique.",
-        "Scheme_Label": "Scheme",
-        "DisplayName_Info": "This value will be used to display the provider choice (e.g. on a login screen).",
-        "DisplayName_Label": "Display Name",
-        "ProtocolType_Info": "Indicates the protocol type for the identity provider (Duende only supports 'oidc' out of the box).",
-        "ProtocolType_Label": "Protocol Type"
-      }
-    }
-  },
-  "Keys": {
-    "PageTitle": "Keys",
-    "DeleteTitle": "Delete Key",
-    "DeleteDescription": "Are you sure you want to delete this key?",
-    "DeleteSuccess": "Key deleted successfully.",
-    "DeleteFailed": "Failed to delete key.",
-    "Section": {
-      "Label": {
-        "Algorithm_Label": "Algorithm",
-        "Use_Label": "Use",
-        "Created_Label": "Created"
-      }
-    }
   },
   "Users": {
     "PageTitle": "Users",

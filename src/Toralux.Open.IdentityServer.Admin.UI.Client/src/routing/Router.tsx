@@ -34,16 +34,6 @@ const RoleEdit = lazy(() => import("@/pages/Role/Edit/RoleEdit"));
 const RoleCreate = lazy(() => import("@/pages/Role/Create/RoleCreate"));
 const UserCreate = lazy(() => import("@/pages/User/Create/UserCreate"));
 const UserEdit = lazy(() => import("@/pages/User/Edit/UserEdit"));
-const IdentityProviders = lazy(
-  () => import("@/pages/IdentityProviders/IdentityProviders"),
-);
-const IdentityProviderCreate = lazy(
-  () => import("@/pages/IdentityProvider/Create/IdentityProviderCreate"),
-);
-const IdentityProviderEdit = lazy(
-  () => import("@/pages/IdentityProvider/Edit/IdentityProviderEdit"),
-);
-const Keys = lazy(() => import("@/pages/Keys/Keys"));
 const ConfigurationIssues = lazy(
   () => import("@/pages/ConfigurationIssues/ConfigurationIssues"),
 );
@@ -75,10 +65,6 @@ import {
   RolesUrl,
   RoleCreateUrl,
   RoleEditUrl,
-  IdentityProvidersUrl,
-  IdentityProviderCreateUrl,
-  IdentityProviderEditUrl,
-  KeysUrl,
   ConfigurationIssuesUrl,
   ConfigurationRulesUrl,
   AuditLogsUrl,
@@ -262,38 +248,6 @@ export const router = createBrowserRouter(
           element: (
             <RouteGuard>
               <RoleEdit />
-            </RouteGuard>
-          ),
-        },
-        {
-          path: IdentityProvidersUrl,
-          element: (
-            <RouteGuard>
-              <IdentityProviders />
-            </RouteGuard>
-          ),
-        },
-        {
-          path: IdentityProviderCreateUrl,
-          element: (
-            <RouteGuard>
-              <IdentityProviderCreate />
-            </RouteGuard>
-          ),
-        },
-        {
-          path: IdentityProviderEditUrl,
-          element: (
-            <RouteGuard>
-              <IdentityProviderEdit />
-            </RouteGuard>
-          ),
-        },
-        {
-          path: KeysUrl,
-          element: (
-            <RouteGuard>
-              <Keys />
             </RouteGuard>
           ),
         },

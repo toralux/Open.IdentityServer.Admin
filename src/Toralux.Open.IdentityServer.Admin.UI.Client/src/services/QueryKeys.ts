@@ -1,8 +1,6 @@
 export const queryKeys = {
   clients: "clients",
   client: "client",
-  identityProviders: "identityProviders",
-  identityProvider: "identityProvider",
   identityResourceProperties: "identityResourceProperties",
   users: "users",
   user: "user",
@@ -28,7 +26,6 @@ export const queryKeys = {
   clientSecrets: "clientSecrets",
   clientSecret: "clientSecret",
   auditLogs: "auditLogs",
-  keys: "keys",
   grantTypes: "grantTypes",
   standardClaims: "standardClaims",
   accessTokenTypes: "accessTokenTypes",

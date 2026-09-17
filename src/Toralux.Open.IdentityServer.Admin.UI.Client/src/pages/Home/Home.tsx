@@ -2,9 +2,7 @@ import {
   Activity,
   Cable,
   Cog,
-  FileLock2,
   Fingerprint,
-  KeyRound,
   Laptop,
   Lock,
   ShieldCheck,
@@ -18,11 +16,9 @@ import {
   ClientsUrl,
   ApiScopesUrl,
   IdentityResourcesUrl,
-  KeysUrl,
   UsersUrl,
   RolesUrl,
   ConfigurationIssuesUrl,
-  IdentityProvidersUrl,
   AuditLogsUrl,
 } from "@/routing/Urls";
 import { useApplicationInformation } from "@/services/InfoServices";
@@ -85,21 +81,6 @@ const Home = () => {
       description: t("Home.RolesDescription"),
       url: RolesUrl,
       kind: "identity",
-    },
-
-    {
-      icon: <KeyRound className="h-12 w-12 stroke-[1.75]" />,
-      title: t("Home.IdentityProviders"),
-      description: t("Home.IdentityProvidersDescription"),
-      url: IdentityProvidersUrl,
-      kind: "providers",
-    },
-    {
-      icon: <FileLock2 className="h-12 w-12 stroke-[1.75]" />,
-      title: t("Home.Keys"),
-      description: t("Home.KeysDescription"),
-      url: KeysUrl,
-      kind: "providers",
     },
 
     {

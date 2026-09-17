@@ -39,10 +39,6 @@ import {
   RolesUrl,
   RoleEditUrl,
   RoleCreateUrl,
-  IdentityProvidersUrl,
-  IdentityProviderEditUrl,
-  IdentityProviderCreateUrl,
-  KeysUrl,
   AuditLogsUrl,
   ConfigurationIssuesUrl,
   ConfigurationRulesUrl,
@@ -52,14 +48,12 @@ import {
   Activity,
   Cog,
   Home,
-  KeyRound,
   Laptop,
   Cable,
   ShieldCheck,
   Fingerprint,
   Users,
   Lock,
-  FileLock2,
   LayoutGrid,
   Menu,
   Loader2,
@@ -162,27 +156,6 @@ const identityItems: NavItem[] = [
     ],
     icon: Lock,
     kind: "identity",
-  },
-];
-
-const providersKeysItems: NavItem[] = [
-  {
-    translationKey: "Home.IdentityProviders",
-    href: IdentityProvidersUrl,
-    activeBasePaths: [
-      IdentityProvidersUrl,
-      getBasePath(IdentityProviderEditUrl),
-      getBasePath(IdentityProviderCreateUrl),
-    ],
-    icon: KeyRound,
-    kind: "providers",
-  },
-  {
-    translationKey: "Home.Keys",
-    href: KeysUrl,
-    activeBasePaths: [KeysUrl],
-    icon: FileLock2,
-    kind: "providers",
   },
 ];
 
@@ -329,15 +302,6 @@ export function MainNav() {
         </NavDropdown>
 
         <NavDropdown
-          label={t("Home.ProvidersAndKeys")}
-          icon={<KeyRound className="h-4 w-4" />}
-        >
-          <div className="grid min-w-[360px] grid-cols-1 gap-2">
-            {providersKeysItems.map((it) => renderDropdownItem(it))}
-          </div>
-        </NavDropdown>
-
-        <NavDropdown
           label={t("Home.Monitoring")}
           icon={<Activity className="h-4 w-4" />}
           badge={
@@ -415,11 +379,6 @@ function MobileNav() {
       title: t("Home.IdentityManagement"),
       icon: <ShieldCheck className="h-4 w-4" />,
       items: identityItems,
-    },
-    {
-      title: t("Home.ProvidersAndKeys"),
-      icon: <ShieldCheck className="h-4 w-4" />,
-      items: providersKeysItems,
     },
     {
       title: t("Home.Monitoring"),
