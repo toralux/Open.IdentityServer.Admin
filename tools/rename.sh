@@ -113,7 +113,10 @@ GREP
 #   CHANGELOG.md      — upstream release history keeps original package names.
 #   tools/rename.sh   — the script itself carries the LHS patterns; rewriting
 #                       them would destroy the map (self-exclusion).
-EXCLUDE_PATHSPEC=(':(exclude)CHANGELOG.md' ':(exclude)tools/rename.sh')
+#   CONTRIBUTING.md   — fork-authored (upstream has none); its upstream-sync
+#                       section deliberately names upstream repos and old
+#                       identifiers.
+EXCLUDE_PATHSPEC=(':(exclude)CHANGELOG.md' ':(exclude)tools/rename.sh' ':(exclude)CONTRIBUTING.md')
 
 # ── pass 1: file contents ──────────────────────────────────────────────────
 CONTENT_HITS=0

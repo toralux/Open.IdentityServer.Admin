@@ -40,7 +40,7 @@ npm install && npm run build                                # in src/Toralux.Ope
 tools/rename.sh && git status --porcelain                   # re-run must yield zero diff (idempotency)
 grep -rIE 'Skoruba\.Duende|skoruba-duende|@skoruba' . \
   --exclude-dir={.git,node_modules,bin,obj} \
-  --exclude=CHANGELOG.md --exclude=rename.sh               # only attribution matches may remain
+  --exclude={CHANGELOG.md,rename.sh,CONTRIBUTING.md}   # only attribution matches may remain
 
 # 5. Squash-merge or fast-forward per preference; tag the sync point:
 git tag sync/upstream-<upstream-version>
