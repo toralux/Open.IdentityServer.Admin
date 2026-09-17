@@ -296,3 +296,6 @@ appsettings.*.json
 /samples/
 obj\\Debug/
 bin\\Debug/
+
+# dev signing key - generated per-install, never commit
+tempkey.jwk
