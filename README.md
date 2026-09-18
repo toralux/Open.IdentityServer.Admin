@@ -1,22 +1,14 @@
-<div align="center">
-
-<img src="docs/Images/logo.svg" alt="Toralux Open IdentityServer Admin" width="150" />
-
-# Toralux Open IdentityServer Admin
+# Toralux Open.IdentityServer Admin
 
 ### Modern administration UI for Open IdentityServer and ASP.NET Core Identity
 
 Manage IdentityServer clients and resources, ASP.NET Core Identity users and roles,
 configuration health, auditing, and security from one modern interface.
 
-<br />
-
 [![.NET](https://img.shields.io/badge/.NET-10.0-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)](https://dotnet.microsoft.com/)
 [![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue?style=for-the-badge)](LICENSE)
 [![Discord](https://img.shields.io/badge/Discord-Skoruba-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/qTqQCSKWkX)
-
-<br />
 
 [**Installation**](#-installation-via-dotnet-new-template) ·
 [**Local Development**](#-quick-start--local-development) ·
@@ -24,17 +16,7 @@ configuration health, auditing, and security from one modern interface.
 [**Roadmap**](#-roadmap--changelog) ·
 [**Discord**](https://discord.gg/qTqQCSKWkX)
 
-</div>
-
-<br />
-
-<p align="center">
-  <img
-    src="docs/Images/light.png"
-    alt="Toralux Open IdentityServer Admin dashboard"
-    width="100%"
-  />
-</p>
+![Toralux Open IdentityServer Admin dashboard](https://raw.githubusercontent.com/toralux/Open.IdentityServer.Admin/main/docs/Images/light.png)
 
 > [!IMPORTANT]
 >
