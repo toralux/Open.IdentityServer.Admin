@@ -16,6 +16,7 @@ concurrency:
 
 permissions:
   contents: read
+  id-token: write  # OIDC: required for nuget.org trusted publishing
 
 jobs:
   publish:
@@ -74,9 +75,16 @@ jobs:
           (Get-Content $nuspec -Raw) -replace '<version>[^<]*</version>', "<version>$env:VERSION</version>" | Set-Content $nuspec
           nuget pack $nuspec -NoDefaultExcludes -OutputDirectory build/packages
 
+      - name: NuGet login (OIDC → short-lived API key, no stored secrets)
+        uses: NuGet/login@v1
+        id: nuget-login
+        with:
+          # nuget.org profile name (public info — shown on package pages), NOT an email
+          user: toralux-dev
+
       - name: Push all packages to NuGet.org
         shell: pwsh
-        run: dotnet nuget push 'build/packages/*.nupkg' --source https://api.nuget.org/v3/index.json --api-key *** secrets.NUGET_API_KEY }} --skip-duplicate
+        run: dotnet nuget push 'build/packages/*.nupkg' --source https://api.nuget.org/v3/index.json --api-key ${{ steps.nuget-login.outputs.NUGET_API_KEY }} --skip-duplicate
 
       - name: Summary
         shell: pwsh
