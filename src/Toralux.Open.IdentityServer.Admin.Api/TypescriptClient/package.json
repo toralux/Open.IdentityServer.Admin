@@ -1,6 +1,6 @@
 {
   "name": "@toralux/open.identityserver.admin.api.client",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Toralux Open IdentityServer Admin Api Client",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
