@@ -10,8 +10,6 @@
     <repository type="git" url="https://github.com/toralux/Open.IdentityServer.Admin" />
     <icon>nuget-icon.png</icon>
     <readme>README.md</readme>
-    <icon>nuget-icon.png</icon>
-    <readme>README.md</readme>
     <description>Templates for the administration of the Open IdentityServer and Asp.Net Core Identity</description>
     <language>en-US</language>
     <tags>Open IdentityServer, Admin, OpenIDConnect, OAuth2, Identity</tags>
