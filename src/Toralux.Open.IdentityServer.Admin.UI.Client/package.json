@@ -1,7 +1,7 @@
 {
   "name": "toralux-open-identityserver-admin",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Toralux Open IdentityServer Admin UI",
   "author": "Jan Skoruba <jan@skoruba.com>",
   "license": "Apache-2.0",
