@@ -817,6 +817,17 @@ For detailed release history and upcoming features, see [CHANGELOG.md](CHANGELOG
 
 ---
 
+## Releasing
+
+Publishing is fully tag-driven via the [`publish`](.github/workflows/publish.yml) workflow:
+
+- **Prerelease (beta):** push a tag like `v0.2.0-beta.1` — packages publish as prerelease versions (`0.2.0-beta.1`), visible on NuGet only with `--prerelease`.
+- **Stable:** push `v0.2.0` — same pipeline, standard visibility.
+- The tag is the single source of truth for the version — no manual version bumps.
+- Convention: beta tags for upstream-sync releases and anything not yet proven in the wild; stable tags after a beta has cooked (or for trivially safe fixes).
+
+Requires the `NUGET_API_KEY` repository secret (scoped, push-only).
+
 ## 📜 License
 
 This repository is licensed under [Apache License 2.0](LICENSE).
