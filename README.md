@@ -826,7 +826,7 @@ Publishing is fully tag-driven via the [`publish`](.github/workflows/publish.yml
 - The tag is the single source of truth for the version — no manual version bumps.
 - Convention: beta tags for upstream-sync releases and anything not yet proven in the wild; stable tags after a beta has cooked (or for trivially safe fixes).
 
-Requires the `NUGET_API_KEY` repository secret (scoped, push-only).
+Auth is **keyless** via nuget.org [trusted publishing](https://learn.microsoft.com/en-us/nuget/nuget-org/trusted-publishing): the workflow exchanges a GitHub OIDC token for a 1-hour API key — no `NUGET_API_KEY` secret to store or rotate. Requires a one-time policy on nuget.org (username → Trusted Publishing → this repo + `publish.yml`).
 
 ## 📜 License
 
