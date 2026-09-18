@@ -73,6 +73,10 @@ jobs:
           Copy-Item docs/Images/nuget-icon.png templates/template-publish/nuget-icon.png -Force
           $nuspec = 'templates/template-publish/Toralux.Open.IdentityServer.Admin.Templates.nuspec'
           (Get-Content $nuspec -Raw) -replace '<version>[^<]*</version>', "<version>$env:VERSION</version>" | Set-Content $nuspec
+          # Self-consistency: generated projects must reference the template's own version
+          Get-ChildItem -Recurse templates/template-publish/content -Filter *.csproj | ForEach-Object {
+            (Get-Content $_.FullName -Raw) -replace '(Include="Toralux[^"]*" Version=")[^"]*"', ('${1}' + $env:VERSION + '"') | Set-Content $_.FullName
+          }
           nuget pack $nuspec -NoDefaultExcludes -OutputDirectory build/packages
 
       - name: NuGet login (OIDC → short-lived API key, no stored secrets)
