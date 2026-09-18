@@ -4,10 +4,18 @@ on:
   push:
     tags: ['v*']
   workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to publish (e.g. 0.2.0 or 0.2.0-beta.1)'
+        required: true
+        default: '0.2.0-beta.1'
 
 concurrency:
-  group: publish
+  group: publish-${{ github.ref }}
   cancel-in-progress: false
+
+permissions:
+  contents: read
 
 jobs:
   publish:
@@ -27,23 +35,51 @@ jobs:
           cache: 'npm'
           cache-dependency-path: src/Toralux.Open.IdentityServer.Admin.UI.Client/package-lock.json
 
+      - name: Resolve version (tag is the single source of truth)
+        shell: pwsh
+        run: |
+          $v = '${{ inputs.version }}'
+          if ([string]::IsNullOrWhiteSpace($v)) { $v = '${{ github.ref_name }}'.TrimStart('v') }
+          if ($v -notmatch '^\d+\.\d+\.\d+(-[A-Za-z0-9.-]+)?$') { throw "Invalid semver (with optional prerelease): $v" }
+          "VERSION=$v" >> $env:GITHUB_ENV
+          echo "Publishing version: $v"
+
       - name: Build SPA (vite + copy to UI.Spa wwwroot)
         working-directory: src/Toralux.Open.IdentityServer.Admin.UI.Client
         run: |
           npm ci
           npm run build:spa
 
-      - name: Pack the 14 library packages
+      - name: Unit tests gate
+        run: dotnet test tests/Toralux.Open.IdentityServer.Admin.UnitTests -c Release --nologo -v minimal
+
+      - name: Pack the 14 library packages (version from tag)
         shell: pwsh
-        run: ./build/create-packages.ps1
+        run: |
+          $projects = Select-String -Path build/create-packages.ps1 -Pattern 'dotnet pack\s+(\S+\.csproj)' |
+            ForEach-Object { ($_.Matches[0].Groups[1].Value -replace '^\.\\', '' -replace '\\', '/') -replace '^\.\./', '' }
+          if ($projects.Count -ne 14) { throw "Expected 14 packable projects, found $($projects.Count)" }
+          New-Item -ItemType Directory -Force -Path build/packages | Out-Null
+          foreach ($p in $projects) {
+            dotnet pack $p -c Release -o build/packages -p:Version=$env:VERSION
+            if ($LASTEXITCODE -ne 0) { throw "pack failed: $p" }
+          }
 
       - name: Pack the dotnet new template package
         shell: pwsh
         run: |
           Copy-Item README.md templates/template-publish/README.md -Force
           Copy-Item docs/Images/nuget-icon.png templates/template-publish/nuget-icon.png -Force
-          nuget pack templates/template-publish/Toralux.Open.IdentityServer.Admin.Templates.nuspec -NoDefaultExcludes -OutputDirectory build/packages
+          $nuspec = 'templates/template-publish/Toralux.Open.IdentityServer.Admin.Templates.nuspec'
+          (Get-Content $nuspec -Raw) -replace '<version>[^<]*</version>', "<version>$env:VERSION</version>" | Set-Content $nuspec
+          nuget pack $nuspec -NoDefaultExcludes -OutputDirectory build/packages
 
       - name: Push all packages to NuGet.org
         shell: pwsh
-        run: dotnet nuget push 'build/packages/*.nupkg' --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }} --skip-duplicate
+        run: dotnet nuget push 'build/packages/*.nupkg' --source https://api.nuget.org/v3/index.json --api-key *** secrets.NUGET_API_KEY }} --skip-duplicate
+
+      - name: Summary
+        shell: pwsh
+        run: |
+          echo "## Published ${{ env.VERSION }}" >> $env:GITHUB_STEP_SUMMARY
+          Get-ChildItem build/packages/*.nupkg | ForEach-Object { echo "- $($_.Name)" } >> $env:GITHUB_STEP_SUMMARY
