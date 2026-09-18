@@ -84,7 +84,13 @@ jobs:
 
       - name: Push all packages to NuGet.org
         shell: pwsh
-        run: dotnet nuget push 'build/packages/*.nupkg' --source https://api.nuget.org/v3/index.json --api-key ${{ steps.nuget-login.outputs.NUGET_API_KEY }} --skip-duplicate
+        run: |
+          $failed = @()
+          Get-ChildItem build/packages/*.nupkg | ForEach-Object {
+            dotnet nuget push $_.FullName --source https://api.nuget.org/v3/index.json --api-key ${{ steps.nuget-login.outputs.NUGET_API_KEY }} --skip-duplicate
+            if ($LASTEXITCODE -ne 0) { $failed += $_.Name }
+          }
+          if ($failed.Count -gt 0) { throw "Push failed for: $($failed -join ', ')" }
 
       - name: Summary
         shell: pwsh
