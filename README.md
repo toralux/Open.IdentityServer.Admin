@@ -1,3 +1,5 @@
+![Toralux Open IdentityServer Admin](docs/Images/logo.png)
+
 # Toralux Open.IdentityServer Admin
 
 ### Modern administration UI for Open IdentityServer and ASP.NET Core Identity
@@ -8,13 +10,13 @@ configuration health, auditing, and security from one modern interface.
 [![.NET](https://img.shields.io/badge/.NET-10.0-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)](https://dotnet.microsoft.com/)
 [![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue?style=for-the-badge)](LICENSE)
-[![Discord](https://img.shields.io/badge/Discord-Skoruba-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/qTqQCSKWkX)
+[![Discord](https://img.shields.io/badge/Discord-Upstream-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/qTqQCSKWkX)
 
 [**Installation**](#-installation-via-dotnet-new-template) ·
 [**Local Development**](#-quick-start--local-development) ·
 [**Docker**](#-running-via-docker-optional) ·
 [**Roadmap**](#-roadmap--changelog) ·
-[**Discord**](https://discord.gg/qTqQCSKWkX)
+[**Upstream Discord**](https://discord.gg/qTqQCSKWkX)
 
 ![Toralux Open IdentityServer Admin dashboard](https://raw.githubusercontent.com/toralux/Open.IdentityServer.Admin/main/docs/Images/light.png)
 
@@ -794,26 +796,14 @@ The tests load credentials and expected client data from seed files:
 
 For detailed release history and upcoming features, see [CHANGELOG.md](CHANGELOG.md).
 
-**Upcoming releases:**
+**Fork roadmap:**
 
-### 3.1.0
+- Playwright E2E spec-sync (specs drifted from the SPA during the retarget)
+- Single-glyph package icon variant for better 32px legibility
+- Track upstream [skoruba releases](https://github.com/skoruba/Duende.IdentityServer.Admin/releases) — absorbed via the documented replay workflow in [CONTRIBUTING.md](CONTRIBUTING.md)
+- Track [Open.IdentityServer releases](https://github.com/RockSolidKnowledge/Open.IdentityServer/releases) (server-side sessions and PAR are on their roadmap)
 
-- Add support for importing/exporting IdentityServer data in JSON format ([20](https://github.com/skoruba/Duende.IdentityServer.Admin/issues/20))
-
-### 4.0.0
-
-- DTO refactoring
-- Removal of FluentAssertions
-- Additional translations for the Admin UI
-
-### 5.0.0
-
-- Claims management UI ([#22](https://github.com/skoruba/Duende.IdentityServer.Admin/issues/22))
-- Identity management improvements – added options for loading a custom Identity schema
-
-### 6.0.0
-
-- Minimal API rewrite (Vertical Slice Architecture)
+For the upstream project's own roadmap (3.x–6.x plans: DTO refactoring, claims management UI, Minimal API rewrite), see their [README](https://github.com/skoruba/Duende.IdentityServer.Admin#-roadmap--changelog).
 
 ---
 
@@ -832,39 +822,33 @@ Auth is **keyless** via nuget.org [trusted publishing](https://learn.microsoft.c
 
 This repository is licensed under [Apache License 2.0](LICENSE).
 
-### Open IdentityServer License
+**Open.IdentityServer** — the framework this admin UI targets — is likewise licensed under Apache 2.0. There is no commercial license, no RPL, and no production licensing requirement for either project.
 
-**Open IdentityServer** is available under both a FOSS (RPL) and commercial license.
-
-For production environments, you need a specific license. More info:  
-https://duendesoftware.com/products/identityserver#pricing
-
-This repository uses source code from:  
-https://github.com/DuendeSoftware/IdentityServer.Quickstart.UI  
-Licensed under: https://github.com/DuendeSoftware/IdentityServer.Quickstart.UI/blob/main/LICENSE
+This project includes code with deep lineage, originally derived from [DuendeSoftware/IdentityServer.Quickstart.UI](https://github.com/DuendeSoftware/IdentityServer.Quickstart.UI) (Apache 2.0) via the upstream admin project.
 
 ---
 
 ## 🙏 Acknowledgements
 
-Thanks to:
+This project is a community fork and would not exist without:
 
-- [Tomáš Hübelbauer](https://github.com/TomasHubelbauer) for initial code review
-- [Dominick Baier](https://github.com/leastprivilege) and [Brock Allen](https://github.com/brockallen) – creators of Open IdentityServer
-- All [contributors](https://github.com/skoruba/Duende.IdentityServer.Admin/graphs/contributors) 👍
+- **[Jan Škoruba](https://github.com/skoruba)** — author of [skoruba/Duende.IdentityServer.Admin](https://github.com/skoruba/Duende.IdentityServer.Admin) (v3.0.0), the direct upstream of this fork: its architecture, the React 18 + .NET 10 admin UI, and the vast majority of the code
+- **[Rock Solid Knowledge](https://github.com/RockSolidKnowledge)** — maintainers of [Open.IdentityServer](https://github.com/RockSolidKnowledge/Open.IdentityServer), the free Apache-2.0 continuation of the IdentityServer4 framework this fork targets
+- **[Dominick Baier](https://github.com/leastprivilege)** and **[Brock Allen](https://github.com/brockallen)** — creators of IdentityServer4 and Duende IdentityServer, the foundation beneath all of it
+- [Tomáš Hübelbauer](https://github.com/TomasHubelbauer) — initial code review (upstream)
+- All [upstream contributors](https://github.com/skoruba/Duende.IdentityServer.Admin/graphs/contributors) 👍
 
 ---
 
 ## 📧 Contact & Support
 
-**Author:** Jan Škoruba  
-**Email:** jan@skoruba.com
+**Maintainer:** Tor Anders Johansen ([@toralux](https://github.com/toralux))
 
-Feedback is welcome! Feel free to create an issue or send me an email. Thank you! ☺️
+Feedback is welcome — please [open an issue](https://github.com/toralux/Open.IdentityServer.Admin/issues) on this repository.
 
-### Support & Donations
+### Supporting the upstream
 
-If you like this project, you can support me:
+The original admin project is maintained by [Jan Škoruba](https://github.com/skoruba). If this fork saved you time, consider supporting him directly:
 
 - **GitHub Sponsors:** https://github.com/sponsors/skoruba
 - **PayPal:** https://www.paypal.me/skoruba
