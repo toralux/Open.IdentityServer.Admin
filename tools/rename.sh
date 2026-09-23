@@ -104,6 +104,7 @@ s|skoruba\.duende\.isadmin|toralux.open-isadmin|g
 s|skoruba\.local|toralux.local|g
 s|skoruba_identity_admin|toralux_identity_admin|g
 s|skoruba_admin_client_secret|toralux_admin_client_secret|g
+s|skoruba_admin\.txt|toralux_admin.txt|g
 s|skoruba-icon|toralux-icon|g
 s|"infoTitle": "Skoruba"|"infoTitle": "Toralux"|g
 # Seed admin login default (template defaultValue/replaces + identitydata.json).
@@ -122,7 +123,7 @@ SED
 
 # Grep alternation used to select only files that actually contain a token.
 read -r -d '' TOKEN_RE <<'GREP' || true
-skoruba/Duende\.IdentityServer\.Admin|SkorubaDuende\.IdentityServer|skorubaduende\.identityserveradmin|Skoruba\.Duende\.IdentityServer|Duende\.IdentityServer|SkorubaIdentityAdminAdministrator|Skoruba Duende IdentityServer|Skoruba Duende\.IdentityServer|Duende IdentityServer|@skoruba/duende\.identityserver|skoruba-duende-identity-server-admin|skoruba-duende-identityserver|skoruba\.duende\.identityserver|skoruba\.duende\.isadmin|skoruba\.local|skoruba_identity_admin|skoruba_admin_client_secret|skoruba-icon|admin@skoruba\.com|"infoTitle": "Skoruba"
+skoruba/Duende\.IdentityServer\.Admin|SkorubaDuende\.IdentityServer|skorubaduende\.identityserveradmin|Skoruba\.Duende\.IdentityServer|Duende\.IdentityServer|SkorubaIdentityAdminAdministrator|Skoruba Duende IdentityServer|Skoruba Duende\.IdentityServer|Duende IdentityServer|@skoruba/duende\.identityserver|skoruba-duende-identity-server-admin|skoruba-duende-identityserver|skoruba\.duende\.identityserver|skoruba\.duende\.isadmin|skoruba\.local|skoruba_identity_admin|skoruba_admin_client_secret|skoruba_admin\.txt|skoruba-icon|admin@skoruba\.com|"infoTitle": "Skoruba"
 GREP
 
 # Files never rewritten:
