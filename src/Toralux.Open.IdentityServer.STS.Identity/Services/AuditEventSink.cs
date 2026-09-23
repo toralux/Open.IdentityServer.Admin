@@ -1,7 +1,6 @@
 ﻿// Copyright (c) Jan Škoruba. All Rights Reserved.
 // Licensed under the Apache License, Version 2.0.
 
-using System.Threading;
 using System.Threading.Tasks;
 using Open.IdentityServer.Events;
 using Open.IdentityServer.Services;
@@ -15,9 +14,9 @@ namespace Toralux.Open.IdentityServer.STS.Identity.Services
         {
         }
 
-        public override Task PersistAsync(Event evt, CancellationToken cancellationToken = default)
+        public override Task PersistAsync(Event evt)
         {
-            return base.PersistAsync(evt, cancellationToken);
+            return base.PersistAsync(evt);
         }
     }
 }

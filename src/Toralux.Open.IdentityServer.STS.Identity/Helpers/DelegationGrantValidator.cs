@@ -1,5 +1,4 @@
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
 using Open.IdentityServer.Models;
 using Open.IdentityServer.Validation;
@@ -17,7 +16,7 @@ namespace Toralux.Open.IdentityServer.STS.Identity.Helpers
 
         public string GrantType => "delegation";
 
-        public async Task ValidateAsync(ExtensionGrantValidationContext context, CancellationToken cancellationToken = default)
+        public async Task ValidateAsync(ExtensionGrantValidationContext context)
         {
             var userToken = context.Request.Raw.Get("token");
 
@@ -27,7 +26,7 @@ namespace Toralux.Open.IdentityServer.STS.Identity.Helpers
                 return;
             }
 
-            var result = await _validator.ValidateAccessTokenAsync(userToken, expectedScope: null, cancellationToken);
+            var result = await _validator.ValidateAccessTokenAsync(userToken);
             if (result.IsError)
             {
                 context.Result = new GrantValidationResult(TokenRequestErrors.InvalidGrant);
