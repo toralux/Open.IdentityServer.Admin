@@ -58,22 +58,33 @@ fi
 # ── token map (single source of truth for content AND path renames) ────────
 #
 # Order matters: most-specific first. Attribution URLs are protected by
-# placeholder round-trip so history links keep pointing at upstream.
+# placeholder round-trip so history links keep pointing at upstream. The bare
+# upstream URL, the bare repo slug and the trademark sentence get the same
+# treatment: they name upstream and must survive every replay.
 #
 # Line-level protection (branch to end of script — no substitutions):
 #   * any line containing "Copyright"/"copyright"  → Apache 2.0 §4(c) notices
 #   * any line containing "originally Duende"      → fork provenance notes
+#   * any line containing "retargeted from"        → fork provenance notes
+#   * any line containing "Business Edition upstream" → upstream PAR notes
+#   * any line linking docs.duendesoftware.com     → upstream documentation
 #
 # The map below is plain sed (ERE). @@ATTR_*@@ placeholders are restored
 # verbatim at the end; they cannot occur in real source files.
 read -r -d '' MAP <<'SED' || true
 /[Cc]opyright/b
 /originally Duende/b
+/retargeted from/b
+/Business Edition upstream/b
+/docs\.duendesoftware\.com/b
 s|github\.com/skoruba/Duende\.IdentityServer\.Admin/issues|@@ATTR_ISSUES@@|g
 s|github\.com/skoruba/Duende\.IdentityServer\.Admin/pull|@@ATTR_PULL@@|g
 s|github\.com/skoruba/Duende\.IdentityServer\.Admin/graphs|@@ATTR_GRAPHS@@|g
 s|github\.com/skoruba/Duende\.IdentityServer\.Admin/blob|@@ATTR_BLOB@@|g
 s|github\.com/skoruba/Duende\.IdentityServer\.Admin/tree|@@ATTR_TREE@@|g
+s|github\.com/skoruba/Duende\.IdentityServer\.Admin|@@ATTR_REPO@@|g
+s|skoruba/Duende\.IdentityServer\.Admin|@@ATTR_SLUG@@|g
+s|"Duende IdentityServer" is a trademark of Duende Software|@@TRADEMARK_DUENDE@@|g
 s|skoruba/Duende\.IdentityServer\.Admin|toralux/Open.IdentityServer.Admin|g
 s|SkorubaDuende\.IdentityServerAdmin|ToraluxOpen.IdentityServerAdmin|g
 s|skorubaduende\.identityserveradmin|toraluxopen.identityserveradmin|g
@@ -104,6 +115,9 @@ s|@@ATTR_PULL@@|github.com/skoruba/Duende.IdentityServer.Admin/pull|g
 s|@@ATTR_GRAPHS@@|github.com/skoruba/Duende.IdentityServer.Admin/graphs|g
 s|@@ATTR_BLOB@@|github.com/skoruba/Duende.IdentityServer.Admin/blob|g
 s|@@ATTR_TREE@@|github.com/skoruba/Duende.IdentityServer.Admin/tree|g
+s|@@ATTR_REPO@@|github.com/skoruba/Duende.IdentityServer.Admin|g
+s|@@ATTR_SLUG@@|skoruba/Duende.IdentityServer.Admin|g
+s|@@TRADEMARK_DUENDE@@|"Duende IdentityServer" is a trademark of Duende Software|g
 SED
 
 # Grep alternation used to select only files that actually contain a token.
