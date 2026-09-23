@@ -332,9 +332,8 @@ describe("whitespace", () => {
           });
           const opts = options();
 
-            shapes.push(buildAuthorizationCodeSnippet(config, opts));
-            shapes.push(buildClientCredentialsSnippet(config, opts));
-          }
+          shapes.push(buildAuthorizationCodeSnippet(config, opts));
+          shapes.push(buildClientCredentialsSnippet(config, opts));
         }
       }
     }
