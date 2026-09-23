@@ -42,6 +42,20 @@ grep -rIE 'Skoruba\.Duende|skoruba-duende|@skoruba' . \
   --exclude-dir={.git,node_modules,bin,obj} \
   --exclude={CHANGELOG.md,rename.sh,CONTRIBUTING.md}   # only attribution matches may remain
 
+# 4b. TEMPLATE GATES (added after v0.2.0 shipped a non-compiling scaffold —
+#     a green src build proves nothing about the generated solution):
+tools/template-parity.sh                                    # Gate A: snapshot parity vs baseline (ratchet)
+#   On failure, mirror the drifted src file(s) into the template:
+#     python3 tools/mirror-to-template.py src/.../File.cs > templates/.../File.cs
+#   then re-run until only baselined inherited drift remains.
+dotnet new install templates/template-publish/content --force   # scaffold from THIS tree
+cd /tmp && dotnet new toralux.open-isadmin --name GateCheck <flags>
+#   rewrite the scaffold's Toralux refs to the version under test,
+#   dotnet restore  (any NU16xx = FAIL — Gate C: no downgrade conflicts),
+#   dotnet build GateCheck.Admin.sln  (0 errors — Gate B: the scaffold compiles).
+#   CI (.github/workflows/template-gates.yml) enforces A/B/C on PRs and adds
+#   Gate D (runtime ladder: seed, 401, discovery, SPA) on release tags.
+
 # 5. Squash-merge or fast-forward per preference; tag the sync point:
 git tag sync/upstream-<upstream-version>
 ```

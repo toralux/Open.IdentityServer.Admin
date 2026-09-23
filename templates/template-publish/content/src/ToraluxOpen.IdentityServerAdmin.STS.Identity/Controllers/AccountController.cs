@@ -1,4 +1,4 @@
-// Copyright (c) Duende Software. All rights reserved.
+﻿// Copyright (c) Duende Software. All rights reserved.
 // See LICENSE in the project root for license information.
 
 // Original file: https://github.com/DuendeSoftware/IdentityServer.Quickstart.UI
@@ -17,7 +17,6 @@ using Open.IdentityServer.Models;
 using Open.IdentityServer.Services;
 using Open.IdentityServer.Stores;
 using IdentityModel;
-
 // resolve to the IdentityModel package's constants (as before the Open.IdentityServer migration,
 // which vendors its own JwtClaimTypes that would otherwise be ambiguous with the one below)
 using JwtClaimTypes = IdentityModel.JwtClaimTypes;
@@ -114,7 +113,7 @@ namespace ToraluxOpen.IdentityServerAdmin.STS.Identity.Controllers
         public async Task<IActionResult> Login(LoginInputModel model, string button)
         {
             // check if we are in the context of an authorization request
-            var context = await _interaction.GetAuthorizationContextAsync(model.ReturnUrl, HttpContext.RequestAborted);
+            var context = await _interaction.GetAuthorizationContextAsync(model.ReturnUrl);
             var isPasskeySubmit = button == "__passkeySubmit";
             var hasPasskeyPayload = !string.IsNullOrEmpty(model.Passkey?.CredentialJson) || !string.IsNullOrEmpty(model.Passkey?.Error);
             if (!isPasskeySubmit && HttpContext.Request.HasFormContentType)
@@ -131,7 +130,7 @@ namespace ToraluxOpen.IdentityServerAdmin.STS.Identity.Controllers
                     // if the user cancels, send a result back into IdentityServer as if they 
                     // denied the consent (even if this client does not require consent).
                     // this will send back an access denied OIDC error response to the client.
-                    await _interaction.DenyAuthenticationAsync(context, InteractionError.AccessDenied, HttpContext.RequestAborted);
+                    await _interaction.DenyAuthorizationAsync(context, AuthorizationError.AccessDenied);
 
                     // we can trust model.ReturnUrl since GetAuthorizationContextAsync returned non-null
                     if (context.IsNativeClient())
@@ -192,7 +191,7 @@ namespace ToraluxOpen.IdentityServerAdmin.STS.Identity.Controllers
 
             if (result?.Succeeded == true && user != null)
             {
-                await _events.RaiseAsync(new UserLoginSuccessEvent(user.UserName, user.Id.ToString(), user.UserName), HttpContext.RequestAborted);
+                await _events.RaiseAsync(new UserLoginSuccessEvent(user.UserName, user.Id.ToString(), user.UserName));
 
                 if (context != null)
                 {
@@ -234,7 +233,7 @@ namespace ToraluxOpen.IdentityServerAdmin.STS.Identity.Controllers
 
             var loginFailureReason = isPasskeySubmit ? "invalid passkey" : "invalid credentials";
             var loginFailureMessage = isPasskeySubmit ? AccountOptions.InvalidPasskeyErrorMessage : AccountOptions.InvalidCredentialsErrorMessage;
-            await _events.RaiseAsync(new UserLoginFailureEvent(model.Username, loginFailureReason, clientId: context?.Client.ClientId), HttpContext.RequestAborted);
+            await _events.RaiseAsync(new UserLoginFailureEvent(model.Username, loginFailureReason, clientId: context?.Client.ClientId));
             ModelState.AddModelError(string.Empty, loginFailureMessage);
 
             // something went wrong, show form with error
@@ -279,7 +278,7 @@ namespace ToraluxOpen.IdentityServerAdmin.STS.Identity.Controllers
                 await _signInManager.SignOutAsync();
 
                 // raise the logout event
-                await _events.RaiseAsync(new UserLogoutSuccessEvent(User.GetSubjectId(), User.GetDisplayName()), HttpContext.RequestAborted);
+                await _events.RaiseAsync(new UserLogoutSuccessEvent(User.GetSubjectId(), User.GetDisplayName()));
             }
 
             // check if we need to trigger sign-out at an upstream identity provider
@@ -563,7 +562,7 @@ namespace ToraluxOpen.IdentityServerAdmin.STS.Identity.Controllers
 
             if (result.Succeeded)
             {
-                await _events.RaiseAsync(new UserLoginSuccessEvent(user.UserName, user.Id.ToString(), user.UserName), HttpContext.RequestAborted);
+                await _events.RaiseAsync(new UserLoginSuccessEvent(user.UserName, user.Id.ToString(), user.UserName));
                 return LocalRedirect(string.IsNullOrEmpty(model.ReturnUrl) ? "~/" : model.ReturnUrl);
             }
 
@@ -620,7 +619,7 @@ namespace ToraluxOpen.IdentityServerAdmin.STS.Identity.Controllers
 
             if (result.Succeeded)
             {
-                await _events.RaiseAsync(new UserLoginSuccessEvent(user.UserName, user.Id.ToString(), user.UserName), HttpContext.RequestAborted);
+                await _events.RaiseAsync(new UserLoginSuccessEvent(user.UserName, user.Id.ToString(), user.UserName));
                 return LocalRedirect(string.IsNullOrEmpty(model.ReturnUrl) ? "~/" : model.ReturnUrl);
             }
 
@@ -749,7 +748,7 @@ namespace ToraluxOpen.IdentityServerAdmin.STS.Identity.Controllers
 
         private async Task<LoginViewModel> BuildLoginViewModelAsync(string returnUrl)
         {
-            var context = await _interaction.GetAuthorizationContextAsync(returnUrl, HttpContext.RequestAborted);
+            var context = await _interaction.GetAuthorizationContextAsync(returnUrl);
             if (context?.IdP != null && await _schemeProvider.GetSchemeAsync(context.IdP) != null)
             {
                 var local = context.IdP == IdentityServerConstants.LocalIdentityProvider;
@@ -783,7 +782,7 @@ namespace ToraluxOpen.IdentityServerAdmin.STS.Identity.Controllers
             var allowLocal = true;
             if (context?.Client.ClientId != null)
             {
-                var client = await _clientStore.FindEnabledClientByIdAsync(context.Client.ClientId, HttpContext.RequestAborted);
+                var client = await _clientStore.FindEnabledClientByIdAsync(context.Client.ClientId);
                 if (client != null)
                 {
                     allowLocal = client.EnableLocalLogin;
@@ -824,7 +823,7 @@ namespace ToraluxOpen.IdentityServerAdmin.STS.Identity.Controllers
                 return vm;
             }
 
-            var context = await _interaction.GetLogoutContextAsync(logoutId, HttpContext.RequestAborted);
+            var context = await _interaction.GetLogoutContextAsync(logoutId);
             if (context?.ShowSignoutPrompt == false)
             {
                 // it's safe to automatically sign-out
@@ -840,7 +839,7 @@ namespace ToraluxOpen.IdentityServerAdmin.STS.Identity.Controllers
         private async Task<LoggedOutViewModel> BuildLoggedOutViewModelAsync(string logoutId)
         {
             // get context information (client name, post logout redirect URI and iframe for federated signout)
-            var logout = await _interaction.GetLogoutContextAsync(logoutId, HttpContext.RequestAborted);
+            var logout = await _interaction.GetLogoutContextAsync(logoutId);
 
             var vm = new LoggedOutViewModel
             {
@@ -866,7 +865,7 @@ namespace ToraluxOpen.IdentityServerAdmin.STS.Identity.Controllers
                             // if there's no current logout context, we need to create one
                             // this captures necessary info from the current logged in user
                             // before we signout and redirect away to the external IdP for signout
-                            vm.LogoutId = await _interaction.CreateLogoutContextAsync(HttpContext.RequestAborted);
+                            vm.LogoutId = await _interaction.CreateLogoutContextAsync();
                         }
 
                         vm.ExternalAuthenticationScheme = idp;

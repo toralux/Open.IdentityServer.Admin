@@ -1,4 +1,4 @@
-// Copyright (c) Duende Software. All rights reserved.
+﻿// Copyright (c) Duende Software. All rights reserved.
 // See LICENSE in the project root for license information.
 
 // Original file: https://github.com/DuendeSoftware/IdentityServer.Quickstart.UI
@@ -57,23 +57,23 @@ namespace ToraluxOpen.IdentityServerAdmin.STS.Identity.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Revoke(string clientId)
         {
-            await _interaction.RevokeUserConsentAsync(clientId, HttpContext.RequestAborted);
-            await _events.RaiseAsync(new GrantsRevokedEvent(User.GetSubjectId(), clientId), HttpContext.RequestAborted);
+            await _interaction.RevokeUserConsentAsync(clientId);
+            await _events.RaiseAsync(new GrantsRevokedEvent(User.GetSubjectId(), clientId));
 
             return RedirectToAction("Index");
         }
 
         private async Task<GrantsViewModel> BuildViewModelAsync()
         {
-            var grants = await _interaction.GetAllUserGrantsAsync(HttpContext.RequestAborted);
+            var grants = await _interaction.GetAllUserGrantsAsync();
 
             var list = new List<GrantViewModel>();
             foreach (var grant in grants)
             {
-                var client = await _clients.FindClientByIdAsync(grant.ClientId, HttpContext.RequestAborted);
+                var client = await _clients.FindClientByIdAsync(grant.ClientId);
                 if (client != null)
                 {
-                    var resources = await _resources.FindResourcesByScopeAsync(grant.Scopes, HttpContext.RequestAborted);
+                    var resources = await _resources.FindResourcesByScopeAsync(grant.Scopes);
 
                     var item = new GrantViewModel()
                     {
