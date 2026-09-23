@@ -1,4 +1,4 @@
-// Copyright (c) Duende Software. All rights reserved.
+﻿// Copyright (c) Duende Software. All rights reserved.
 // See LICENSE in the project root for license information.
 
 // Original file: https://github.com/DuendeSoftware/IdentityServer.Quickstart.UI
@@ -64,7 +64,7 @@ namespace ToraluxOpen.IdentityServerAdmin.STS.Identity.Controllers
             var vm = new ErrorViewModel();
 
             // retrieve error details from identityserver
-            var message = await _interaction.GetErrorContextAsync(errorId, HttpContext.RequestAborted);
+            var message = await _interaction.GetErrorContextAsync(errorId);
             if (message != null)
             {
                 vm.Error = message;

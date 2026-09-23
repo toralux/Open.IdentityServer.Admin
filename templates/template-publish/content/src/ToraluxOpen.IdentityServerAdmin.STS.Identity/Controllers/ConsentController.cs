@@ -1,4 +1,4 @@
-// Copyright (c) Duende Software. All rights reserved.
+﻿// Copyright (c) Duende Software. All rights reserved.
 // See LICENSE in the project root for license information.
 
 // Original file: https://github.com/DuendeSoftware/IdentityServer.Quickstart.UI
@@ -71,7 +71,7 @@ namespace ToraluxOpen.IdentityServerAdmin.STS.Identity.Controllers
 
             if (result.IsRedirect)
             {
-                var context = await _interaction.GetAuthorizationContextAsync(model.ReturnUrl, HttpContext.RequestAborted);
+                var context = await _interaction.GetAuthorizationContextAsync(model.ReturnUrl);
                 if (context?.IsNativeClient() == true)
                 {
                     // The client is native, so this change in how to
@@ -103,7 +103,7 @@ namespace ToraluxOpen.IdentityServerAdmin.STS.Identity.Controllers
             var result = new ProcessConsentResult();
 
             // validate return url is still valid
-            var request = await _interaction.GetAuthorizationContextAsync(model.ReturnUrl, HttpContext.RequestAborted);
+            var request = await _interaction.GetAuthorizationContextAsync(model.ReturnUrl);
             if (request == null) return result;
 
             ConsentResponse grantedConsent = null;
@@ -111,10 +111,10 @@ namespace ToraluxOpen.IdentityServerAdmin.STS.Identity.Controllers
             // user clicked 'no' - send back the standard 'access_denied' response
             if (model?.Button == "no")
             {
-                grantedConsent = new ConsentResponse { Error = InteractionError.AccessDenied };
+                grantedConsent = new ConsentResponse { Error = AuthorizationError.AccessDenied };
 
                 // emit event
-                await _events.RaiseAsync(new ConsentDeniedEvent(User.GetSubjectId(), request.Client.ClientId, request.ValidatedResources.RawScopeValues), HttpContext.RequestAborted);
+                await _events.RaiseAsync(new ConsentDeniedEvent(User.GetSubjectId(), request.Client.ClientId, request.ValidatedResources.RawScopeValues));
             }
             // user clicked 'yes' - validate the data
             else if (model?.Button == "yes")
@@ -136,7 +136,7 @@ namespace ToraluxOpen.IdentityServerAdmin.STS.Identity.Controllers
                     };
 
                     // emit event
-                    await _events.RaiseAsync(new ConsentGrantedEvent(User.GetSubjectId(), request.Client.ClientId, request.ValidatedResources.RawScopeValues, grantedConsent.ScopesValuesConsented, grantedConsent.RememberConsent), HttpContext.RequestAborted);
+                    await _events.RaiseAsync(new ConsentGrantedEvent(User.GetSubjectId(), request.Client.ClientId, request.ValidatedResources.RawScopeValues, grantedConsent.ScopesValuesConsented, grantedConsent.RememberConsent));
                 }
                 else
                 {
@@ -151,7 +151,7 @@ namespace ToraluxOpen.IdentityServerAdmin.STS.Identity.Controllers
             if (grantedConsent != null)
             {
                 // communicate outcome of consent back to identityserver
-                await _interaction.GrantConsentAsync(request, grantedConsent, HttpContext.RequestAborted);
+                await _interaction.GrantConsentAsync(request, grantedConsent);
 
                 // indicate that's it ok to redirect back to authorization endpoint
                 result.RedirectUri = model.ReturnUrl;
@@ -168,7 +168,7 @@ namespace ToraluxOpen.IdentityServerAdmin.STS.Identity.Controllers
 
         private async Task<ConsentViewModel> BuildViewModelAsync(string returnUrl, ConsentInputModel model = null)
         {
-            var request = await _interaction.GetAuthorizationContextAsync(returnUrl, HttpContext.RequestAborted);
+            var request = await _interaction.GetAuthorizationContextAsync(returnUrl);
             if (request != null)
             {
                 return CreateConsentViewModel(model, returnUrl, request);

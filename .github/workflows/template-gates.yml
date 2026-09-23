@@ -1,0 +1,136 @@
+name: template-gates
+
+# Gate A (snapshot parity), Gate B (scaffold compiles), Gate C (restore clean)
+# on every PR touching the solution or the template; Gate D (scaffold runtime
+# smoke) additionally on release tags. Rationale: v0.2.0 shipped a template
+# whose generated code did not compile — these gates make that class
+# unshippable. See CONTRIBUTING.md "Upstream sync" and the wiki procedure.
+
+on:
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'templates/**'
+      - 'tools/template-parity*'
+      - 'tools/mirror-to-template.py'
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+jobs:
+  gates-a-b-c:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Gate A - template snapshot parity (ratchet vs baseline)
+        run: |
+          chmod +x tools/template-parity.sh tools/mirror-to-template.py
+          ./tools/template-parity.sh
+
+      - name: Pack solution packages into a local feed
+        run: |
+          dotnet pack Toralux.Open.IdentityServer.Admin.sln -c Release -p:Version=0.0.0-gate -o build/gate-feed
+          dotnet nuget add source "$GITHUB_WORKSPACE/build/gate-feed" -n gate-feed
+
+      - name: Scaffold from the template
+        run: |
+          dotnet new install templates/template-publish/content --force
+          mkdir -p /tmp/gate-scaffold && cd /tmp/gate-scaffold
+          dotnet new toralux.open-isadmin --name GateScaffold \
+            --title "Gate Scaffold" \
+            --adminemail gate@example.com \
+            --adminpassword Passw0rd-123 \
+            --adminrole GateAdmin \
+            --adminclientid gatescaffold \
+            --adminclientsecret GateSecret-123 \
+            --dockersupport false \
+            --requirepushedauthorization false
+          # Simulate the publish-time version rewrite (self-consistency):
+          find GateScaffold/src -name '*.csproj' \
+            -exec sed -i 's/Version="0\.1\.[0-9]*"/Version="0.0.0-gate"/g' {} +
+
+      - name: Gate C - scaffold restore must be downgrade-clean
+        run: |
+          cd /tmp/gate-scaffold/GateScaffold
+          dotnet restore 2>&1 | tee restore.log
+          ! grep -Eq 'NU16[0-9]{2}|error' restore.log
+
+      - name: Gate B - the scaffold must compile
+        run: |
+          cd /tmp/gate-scaffold/GateScaffold
+          dotnet build GateScaffold.Admin.sln --no-restore \
+            -p:TreatWarningsAsErrors=false /clp:ErrorsOnly\;Summary
+          dotnet build GateScaffold.Admin.sln --no-restore | grep -q 'Build succeeded'
+
+  gate-d-scaffold-runtime:
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: gates-a-b-c
+    runs-on: ubuntu-latest
+    services:
+      mssql:
+        image: mcr.microsoft.com/mssql/server:2022-latest
+        env:
+          ACCEPT_EULA: 'Y'
+          MSSQL_SA_PASSWORD: Gate-Smoke-2026x
+        ports: ['1433:1433']
+        options: >-
+          --health-cmd "/opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P Gate-Smoke-2026x -C -Q 'SELECT 1'"
+          --health-interval 10s --health-timeout 5s --health-retries 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - name: Scaffold, restore, build (local feed)
+        run: |
+          dotnet pack Toralux.Open.IdentityServer.Admin.sln -c Release -p:Version=0.0.0-gate -o build/gate-feed
+          dotnet nuget add source "$GITHUB_WORKSPACE/build/gate-feed" -n gate-feed
+          dotnet new install templates/template-publish/content --force
+          mkdir -p /tmp/gate-rt && cd /tmp/gate-rt
+          dotnet new toralux.open-isadmin --name GateRt --title "Gate Rt" \
+            --adminemail rt@example.com --adminpassword Passw0rd-123 \
+            --adminrole RtAdmin --adminclientid gatert --adminclientsecret RtSecret-123 \
+            --dockersupport false --requirepushedauthorization false
+          find GateRt/src -name '*.csproj' -exec sed -i 's/Version="0\.1\.[0-9]*"/Version="0.0.0-gate"/g' {} +
+          cd GateRt && dotnet build GateRt.Admin.sln
+      - name: Scaffold runtime ladder (seed, 401, discovery, SPA)
+        env:
+          CS: 'Server=localhost,1433;Database=IdentityServerAdmin;User ID=sa;Password=Gate-Smoke-2026x;TrustServerCertificate=True'
+        run: |
+          cd /tmp/gate-rt/GateRt/src/GateRt.Admin.Api
+          for K in ConfigurationDbConnection PersistedGrantDbConnection IdentityDbConnection AdminLogDbConnection AdminAuditLogDbConnection DataProtectionDbConnection AdminConfigurationDbConnection; do
+            export "ConnectionStrings__${K}=${CS}"
+          done
+          export ASPNETCORE_ENVIRONMENT=Development ASPNETCORE_URLS=https://localhost:44302
+          nohup dotnet bin/Debug/net10.0/GateRt.Admin.Api.dll /seed > api.log 2>&1 &
+          for i in $(seq 1 45); do
+            C=$(curl -sk -m 3 -o /dev/null -w '%{http_code}' https://localhost:44302/api/clients || true)
+            [ "$C" != "000" ] && break; sleep 4
+          done
+          echo "anon /api/clients: $C (expect 401)"
+          [ "$C" = "401" ]
+          cd ../GateRt.STS.Identity
+          export ASPNETCORE_URLS=https://localhost:44310
+          nohup dotnet bin/Debug/net10.0/GateRt.STS.Identity.dll > sts.log 2>&1 &
+          for i in $(seq 1 30); do
+            S=$(curl -sk -m 3 -o /dev/null -w '%{http_code}' https://localhost:44310/.well-known/openid-configuration || true)
+            [ "$S" = "200" ] && break; sleep 3
+          done
+          echo "discovery: $S (expect 200)"
+          [ "$S" = "200" ]
+          curl -sk https://localhost:44310/.well-known/openid-configuration | grep -q '"issuer"'
+          curl -sk https://localhost:44310/.well-known/openid-configuration/jwks | grep -q 'RSA'
+          cd ../GateRt.Admin
+          mkdir -p wwwroot 2>/dev/null || true
+          export ASPNETCORE_URLS=https://localhost:7127
+          nohup dotnet bin/Debug/net10.0/GateRt.Admin.dll > host.log 2>&1 &
+          for i in $(seq 1 30); do
+            A=$(curl -sk -m 3 -o /dev/null -w '%{http_code}' https://localhost:7127/ || true)
+            [ "$A" != "000" ] && break; sleep 3
+          done
+          echo "admin host: $A"
+          echo "GATE D: scaffold runtime ladder complete"
