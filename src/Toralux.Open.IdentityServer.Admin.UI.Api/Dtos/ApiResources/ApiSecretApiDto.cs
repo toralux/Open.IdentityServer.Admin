@@ -2,13 +2,11 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using Toralux.Open.IdentityServer.Admin.UI.Api.Helpers;
 
 namespace Toralux.Open.IdentityServer.Admin.UI.Api.Dtos.ApiResources
 {
-    public class ApiSecretApiDto : IValidatableObject
+    public class ApiSecretApiDto
     {
         [Required]
         public string Type { get; set; } = "SharedSecret";
@@ -25,10 +23,5 @@ namespace Toralux.Open.IdentityServer.Admin.UI.Api.Dtos.ApiResources
         public DateTime? Expiration { get; set; }
         
         public DateTime Created { get; set; }
-
-        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
-        {
-            return JwkSecretValidator.Validate(Type, Value, nameof(Value));
-        }
     }
 }

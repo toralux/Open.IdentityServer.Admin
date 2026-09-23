@@ -85,7 +85,6 @@ export const GrantTypeIds = {
 /** Secret types as returned by the API - see ClientConsts.GetSecretTypes(). */
 export const SecretTypes = {
   SharedSecret: "SharedSecret",
-  Jwk: "JWK",
 } as const;
 
 export enum DPoPMode {

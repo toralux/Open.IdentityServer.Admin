@@ -15,7 +15,7 @@ describe("getAuditLogTarget", () => {
   });
 
   it("reports which entity a bare id belongs to", () => {
-    expect(getAuditLogTarget('{"Type":"JWK","ClientId":14}')).toEqual({
+    expect(getAuditLogTarget('{"Type":"SharedSecret","ClientId":14}')).toEqual({
       type: "entity",
       kind: "Client",
       id: 14,
@@ -29,7 +29,7 @@ describe("getAuditLogTarget", () => {
 
   it("reads the owner name that newer secret events record", () => {
     expect(
-      getAuditLogTarget('{"Type":"JWK","ClientId":14,"ClientName":"Web Portal"}'),
+      getAuditLogTarget('{"Type":"SharedSecret","ClientId":14,"ClientName":"Web Portal"}'),
     ).toEqual({ type: "name", name: "Web Portal" });
     expect(
       getAuditLogTarget('{"ApiResourceId":3,"ApiResourceName":"orders_api","ApiSecretId":9}'),
@@ -38,7 +38,7 @@ describe("getAuditLogTarget", () => {
 
   it("falls back to the id for records written before the name was stored", () => {
     // the audit log is immutable: old rows never get the name
-    expect(getAuditLogTarget('{"Type":"JWK","ClientId":14}')).toEqual({
+    expect(getAuditLogTarget('{"Type":"SharedSecret","ClientId":14}')).toEqual({
       type: "entity",
       kind: "Client",
       id: 14,
@@ -116,7 +116,7 @@ describe("getAuditLogRequestInfo", () => {
 
 describe("formatAuditLogData", () => {
   it("pretty prints JSON and hides empty payloads", () => {
-    expect(formatAuditLogData('{"Type":"JWK"}')).toBe('{\n  "Type": "JWK"\n}');
+    expect(formatAuditLogData('{"Type":"SharedSecret"}')).toBe('{\n  "Type": "SharedSecret"\n}');
     expect(formatAuditLogData("{}")).toBeUndefined();
     expect(formatAuditLogData(undefined)).toBeUndefined();
   });

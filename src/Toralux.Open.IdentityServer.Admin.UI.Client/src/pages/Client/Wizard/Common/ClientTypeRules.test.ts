@@ -59,19 +59,13 @@ describe("client type rules", () => {
     }
   });
 
-  it("starts a high security client with a JWK and everything else with a shared secret", () => {
-    // FAPI 2.0 allows private_key_jwt or mTLS only, so the wizard must not
-    // lead a high security client to a shared secret by default.
-    expect(clientTypeRules[ClientType.HighSecure].defaultSecretType).toBe(
-      SecretTypes.Jwk,
-    );
-
+  it("starts every client type with a shared secret", () => {
+    // JWK client secrets are out of the fork's scope, so the shared secret is
+    // the only secret type the wizard offers.
     for (const clientType of Object.values(ClientType)) {
-      if (clientType !== ClientType.HighSecure) {
-        expect(clientTypeRules[clientType].defaultSecretType).toBe(
-          SecretTypes.SharedSecret,
-        );
-      }
+      expect(clientTypeRules[clientType].defaultSecretType).toBe(
+        SecretTypes.SharedSecret,
+      );
     }
   });
 
@@ -112,13 +106,6 @@ describe("client type rules", () => {
 });
 
 describe("getSecretStepNotice", () => {
-  it("explains the preselected JWK to a high security client", () => {
-    expect(getSecretStepNotice(ClientType.HighSecure, SecretTypes.Jwk)).toEqual({
-      kind: "tip",
-      messageKey: "Client.Tips.HighSecureAuth",
-    });
-  });
-
   it("warns a high security client that switches to a shared secret", () => {
     expect(
       getSecretStepNotice(ClientType.HighSecure, SecretTypes.SharedSecret),

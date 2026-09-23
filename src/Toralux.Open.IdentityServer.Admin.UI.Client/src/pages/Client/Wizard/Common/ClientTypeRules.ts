@@ -139,7 +139,7 @@ export const clientTypeRules: Record<ClientType, ClientTypeRuleSet> = {
       "authorizationCodeLifetime",
       "dPoPClockSkew",
     ],
-    defaultSecretType: SecretTypes.Jwk,
+    defaultSecretType: SecretTypes.SharedSecret,
   },
   [ClientType.Machine]: {
     enforcedValues: {},
@@ -155,9 +155,9 @@ export type SecretStepNotice =
   | { kind: "warning"; messageKey: TranslationKey };
 
 /**
- * The high security type exists for FAPI 2.0 style clients, and the profile
- * allows private_key_jwt or mTLS only. A shared secret stays possible - the
- * edit form would allow it anyway - but not without saying what it costs.
+ * The high security type exists for FAPI 2.0 style clients. A shared secret
+ * stays possible - the edit form would allow it anyway - but not without
+ * saying what it costs.
  */
 export const getSecretStepNotice = (
   clientType: ClientType | undefined,
