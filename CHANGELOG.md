@@ -1,5 +1,40 @@
 # Changelog
 
+## [Unreleased] — upstream 3.1.0 sync
+
+Replays upstream 3.1.0 (tag `release/3.1.0`, commit `22c84428`) onto the fork
+through the scripted rename pass and the semantic series. Ported: the admin
+dashboard (service health, configuration issues, resource counts, audit
+activity, recent changes), the Ctrl+K / ⌘K command palette, the client
+Integration tab with generated .NET setup code (adapted to the fork's package
+set), the grant-type-aware client edit form with "Show all settings", the new
+configuration rules, audit secret-change entries naming client/API resource
+(with EF migration, TS client properties and the Vitest tests for snippet
+generation), and the device-flow consent replay, anti-forgery, dashboard query
+and wizard public-client fixes.
+
+### Divergence from upstream 3.1.0
+
+- **FAPI 2.0 security profile** — excluded. The server framework this fork
+  targets (Open.IdentityServer 2.0.0) does not provide the
+  `Fapi2SecurityProfile` surface: no profile configuration, no PS256/ES256
+  signing-credential overrides, no profile tests. The admin-side FAPI
+  signing-algorithm configuration rules stay (they are lint rules, not the
+  server profile).
+- **JWK client secrets** — excluded. No in-browser key generation, no JWK
+  secret registration or validation, no wizard JWK bits; the high secure
+  wizard type stays and starts with a shared secret. The Integration tab keeps
+  the shared secret flow and the DPoP proof key step (an application-owned
+  key, not a client secret).
+- **IdentityServer 8 SAML tables and migrations** — excluded. The
+  IdentityServer store schema stays at the fork's set (through
+  IdentityServerV7); the IdentityServerV8 migrations and model snapshots do
+  not carry over.
+- **Duende IdentityServer 8.0.8 package bumps** — excluded.
+  `Open.IdentityServer.*` packages stay pinned at 2.0.0.
+  `Duende.IdentityModel` and `Duende.AccessTokenManagement.*` remain as kept
+  external dependencies, per the fork's package policy.
+
 ## [0.1.0] - 2026-09-17
 
 ### Fork point
