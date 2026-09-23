@@ -5,7 +5,6 @@ import { useTranslation } from "react-i18next";
 import { LayoutGrid, Plus, Users } from "lucide-react";
 import { Card, CardContent } from "@/components/Card/Card";
 import { cn } from "@/lib/utils";
-import { formatCompactAge } from "@/lib/dates/compactAge";
 import {
   NavItem,
   clientsResourcesItems,

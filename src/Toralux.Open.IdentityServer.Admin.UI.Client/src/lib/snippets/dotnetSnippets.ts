@@ -164,7 +164,6 @@ const hasApiScope = (scopes: string[]): boolean =>
  */
 const needsTokenManagement = (
   clientConfig: SnippetClientConfig,
-  options: SnippetOptions,
   scopes: string[],
 ): boolean =>
   hasApiScope(scopes) ||
@@ -381,7 +380,7 @@ const buildAuthorizationCodeProgram = (
   // An API scope means there is something to call with the access token.
   const useApiHttpClient = hasApiScope(scopes);
 
-  const useTokenManagement = needsTokenManagement(clientConfig, options, scopes);
+  const useTokenManagement = needsTokenManagement(clientConfig, scopes);
 
   const duendeUsings: string[] = [];
 
@@ -548,7 +547,7 @@ export const buildAuthorizationCodeSnippet = (
 
   const packages = [PACKAGE_OIDC];
 
-  if (needsTokenManagement(clientConfig, options, scopes)) {
+  if (needsTokenManagement(clientConfig, scopes)) {
     packages.push(PACKAGE_ATM_OIDC);
   }
 
