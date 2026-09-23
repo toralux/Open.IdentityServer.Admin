@@ -17,6 +17,7 @@
 		<PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="9.0.0" />
 		<PackageReference Include="KubernetesClient" Version="19.0.2" />
 		<PackageReference Include="IdentityModel" Version="7.0.0" />
+		<PackageReference Include="Duende.IdentityModel" Version="8.1.0" />
 		<PackageReference Include="Microsoft.AspNetCore.DataProtection.EntityFrameworkCore" Version="10.0.12" />
 		<PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="10.0.12" />
 		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="10.0.12" />

@@ -21,6 +21,7 @@
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
+        <PackageReference Include="Duende.IdentityModel" Version="8.1.0" />
         <PackageReference Include="NSwag.CodeGeneration" Version="14.7.1" />
         <PackageReference Include="NSwag.CodeGeneration.TypeScript" Version="14.7.1" />
         <PackageReference Include="NSwag.Generation" Version="14.7.1" />
