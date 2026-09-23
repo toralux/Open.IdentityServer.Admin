@@ -1,4 +1,8 @@
+<<<<<<<< HEAD:src/Toralux.Open.IdentityServer.Admin.UI.Spa/wwwroot/assets/Tip-DcLROpsJ.js
 import{j as r}from"./ui-vendor-DCX2XAku.js";import{c as p,d as m}from"./Card-CsH5voxq.js";import{g as f,u as d}from"./i18n-vendor-myjn-ygD.js";import{c as x}from"./index-Bp1AyEGW.js";/**
+========
+import{j as r}from"./ui-vendor-Bf1Y3gUv.js";import{c as p,d as m}from"./Card-1X_9KBlN.js";import{g as f,u as d}from"./i18n-vendor-ffDkBlNu.js";import{c as x}from"./index-BPet6HBG.js";/**
+>>>>>>>> e26fc40e (fix: SPA gate repairs — restore dashboard keys model, rebuild tracked dist):src/Toralux.Open.IdentityServer.Admin.UI.Spa/wwwroot/assets/Tip-CoghGSmu.js
  * @license lucide-react v0.460.0 - ISC
  *
  * This source code is licensed under the ISC license.

@@ -1,4 +1,8 @@
+<<<<<<<< HEAD:src/Toralux.Open.IdentityServer.Admin.UI.Spa/wwwroot/assets/circle-check-big-C9sZxwd0.js
 import{c}from"./index-Bp1AyEGW.js";/**
+========
+import{c}from"./index-BPet6HBG.js";/**
+>>>>>>>> e26fc40e (fix: SPA gate repairs — restore dashboard keys model, rebuild tracked dist):src/Toralux.Open.IdentityServer.Admin.UI.Spa/wwwroot/assets/circle-check-big-C2qG2ikF.js
  * @license lucide-react v0.460.0 - ISC
  *
  * This source code is licensed under the ISC license.

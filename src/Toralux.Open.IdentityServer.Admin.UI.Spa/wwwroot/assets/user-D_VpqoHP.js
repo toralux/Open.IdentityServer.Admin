@@ -1,4 +1,8 @@
+<<<<<<<< HEAD:src/Toralux.Open.IdentityServer.Admin.UI.Spa/wwwroot/assets/user-D_VpqoHP.js
 import{c as e}from"./index-Bp1AyEGW.js";/**
+========
+import{c as e}from"./index-BPet6HBG.js";/**
+>>>>>>>> e26fc40e (fix: SPA gate repairs — restore dashboard keys model, rebuild tracked dist):src/Toralux.Open.IdentityServer.Admin.UI.Spa/wwwroot/assets/user-C5aHjNw8.js
  * @license lucide-react v0.460.0 - ISC
  *
  * This source code is licensed under the ISC license.
