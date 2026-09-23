@@ -31,8 +31,8 @@ export const SecretStep = () => {
 
   const { onValidation, clientType } = useClientWizard();
 
-  // The client type decides what the step starts with - JWK for a high security
-  // client. It is only a starting point: a value entered earlier still wins.
+  // The client type decides what the step starts with - the type's default
+  // secret. It is only a starting point: a value entered earlier still wins.
   const stepDefaultValues = useMemo(
     () => ({
       ...defaultValues,

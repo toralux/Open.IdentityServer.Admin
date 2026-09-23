@@ -1,8 +1,7 @@
-// C# spells acronyms as words ("ApiResource", "JwkSecret"); the UI writes them
+// C# spells acronyms as words ("ApiResource"); the UI writes them
 // in capitals everywhere else.
 const ACRONYMS: Record<string, string> = {
   api: "API",
-  jwk: "JWK",
   url: "URL",
   uri: "URI",
   id: "ID",

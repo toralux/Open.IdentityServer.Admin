@@ -129,7 +129,7 @@ Define and track configuration rules for clients, API resources, and identity re
 ## ✅ Prerequisites
 
 - .NET 10 SDK
-- Node.js 18+ and npm (required for the React client)
+- Node.js 22.12+ and npm (required for the React client)
 - SQL Server (default LocalDB) or PostgreSQL
 - Open IdentityServer 7.4.7
 

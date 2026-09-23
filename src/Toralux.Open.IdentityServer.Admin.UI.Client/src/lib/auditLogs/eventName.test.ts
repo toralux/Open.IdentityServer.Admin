@@ -12,8 +12,8 @@ describe("humanizeEventName", () => {
     expect(humanizeEventName("ApiResourceUpdatedEvent")).toBe(
       "API resource updated",
     );
-    expect(humanizeEventName("ClientJwkSecretAddedEvent")).toBe(
-      "Client JWK secret added",
+    expect(humanizeEventName("ApiSecretAddedEvent")).toBe(
+      "API secret added",
     );
     // "Identity" merely starts with "Id" and must stay a word.
     expect(humanizeEventName("IdentityProviderAddedEvent")).toBe(

@@ -55,90 +55,8 @@ export async function selectSecretType(
   await pickSelectOption(page, getSelectTrigger(dialog), optionLabel);
 }
 
-export async function openGenerateJwkDialog(page: Page): Promise<Locator> {
-  await page
-    .getByRole("button", { name: UI_TEXT.jwk.generateAction, exact: true })
-    .click();
-
-  const dialog = page.getByRole("dialog", { name: UI_TEXT.jwk.dialogTitle });
-  await expect(dialog).toBeVisible();
-  return dialog;
-}
-
-/**
- * Algorithm is the first select in the generate dialog, key size the second.
- * FAPI-permitted algorithms carry a badge inside the option, so the option's
- * name is longer than the label and cannot be matched exactly.
- */
-export async function selectJwkAlgorithm(
-  page: Page,
-  jwkDialog: Locator,
-  optionLabel: string,
-): Promise<void> {
-  await pickSelectOption(page, getSelectTrigger(jwkDialog), optionLabel, false);
-}
-
-/** Opens the algorithm select and hands back its options for inspection. */
-export async function openJwkAlgorithmOptions(
-  page: Page,
-  jwkDialog: Locator,
-): Promise<Locator> {
-  await getSelectTrigger(jwkDialog).click();
-
-  const listbox = page.getByRole("listbox");
-  await expect(listbox).toBeVisible();
-  return listbox.getByRole("option");
-}
-
-export async function generateJwkKeyPair(jwkDialog: Locator): Promise<void> {
-  await jwkDialog
-    .getByRole("button", { name: UI_TEXT.jwk.generate, exact: true })
-    .click();
-
-  await expect(jwkDialog.getByText(UI_TEXT.jwk.keyId, { exact: false })).toBeVisible();
-}
-
-export async function acknowledgeAndUsePublicKey(
-  jwkDialog: Locator,
-): Promise<void> {
-  const usePublicKeyButton = jwkDialog.getByRole("button", {
-    name: UI_TEXT.jwk.usePublicKey,
-    exact: true,
-  });
-
-  await expect(usePublicKeyButton).toBeDisabled();
-  await jwkDialog
-    .getByRole("switch", { name: UI_TEXT.jwk.acknowledge, exact: true })
-    .click();
-  await expect(usePublicKeyButton).toBeEnabled();
-  await usePublicKeyButton.click();
-  await expect(jwkDialog).toBeHidden();
-}
-
-export async function discardGeneratedKeyPair(
-  jwkDialog: Locator,
-): Promise<void> {
-  await jwkDialog.getByRole("button", { name: "Cancel", exact: true }).click();
-  await expect(jwkDialog.getByText(UI_TEXT.jwk.discardConfirm)).toBeVisible();
-  await jwkDialog
-    .getByRole("button", { name: UI_TEXT.jwk.discard, exact: true })
-    .click();
-  await expect(jwkDialog).toBeHidden();
-}
-
-export function getSecretValueTextarea(dialog: Locator): Locator {
-  return dialog.locator('textarea[name="secretValue"]');
-}
-
 export function getSecretValueInput(dialog: Locator): Locator {
   return dialog.locator('input[name="secretValue"]');
-}
-
-export async function readSecretValueAsJwk(
-  dialog: Locator,
-): Promise<Record<string, unknown>> {
-  const value = await getSecretValueTextarea(dialog).inputValue();
-  return JSON.parse(value) as Record<string, unknown>;
 }
 
 async function confirmSecretRowDelete(page: Page, row: Locator): Promise<void> {
@@ -153,8 +71,8 @@ async function confirmSecretRowDelete(page: Page, row: Locator): Promise<void> {
 }
 
 /**
- * Removes what an aborted run left behind. A test that depends on which secret
- * types the client has cannot start from a leftover JWK secret.
+ * Removes what an aborted run left behind, so a test that depends on which
+ * secret types the client has starts from a clean slate.
  */
 export async function deleteSecretRowsByDescriptionPrefix(
   page: Page,

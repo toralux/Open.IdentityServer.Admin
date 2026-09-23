@@ -182,7 +182,7 @@ namespace Toralux.Open.IdentityServer.Admin.Api.IntegrationTests.Tests
         {
             var secret = ClientDtoApiMock.GenerateRandomClientSecret(0);
             secret.Id = 0;
-            // The mock picks a random secret type - a JWK one would be rejected, its value has to be a JSON Web Key
+            // The mock picks a random secret type - pinned to a shared secret so the value passes validation
             secret.Type = SharedSecretType;
             secret.Value = UniqueValue(SecretValuePrefix);
 
@@ -586,7 +586,7 @@ namespace Toralux.Open.IdentityServer.Admin.Api.IntegrationTests.Tests
 
                 var createRequest = ClientDtoApiMock.GenerateRandomClientSecret(0);
                 createRequest.Id = NonDefaultEntityId;
-                // Pinned so the 400 comes from the id check, not from the JWK value validation
+                // Pinned so the 400 comes from the id check, not from value validation
                 createRequest.Type = SharedSecretType;
                 createRequest.Value = UniqueValue(SecretValuePrefix);
 

@@ -49,25 +49,6 @@ export function getIntegrationOptionInput(
     .locator("xpath=following-sibling::input[1]");
 }
 
-/** Client authentication is the only select on the tab. */
-export function getClientAuthenticationSelect(panel: Locator): Locator {
-  return panel.locator('button[role="combobox"]');
-}
-
-export async function selectClientAuthentication(
-  page: Page,
-  panel: Locator,
-  optionLabel: string,
-): Promise<void> {
-  const trigger = getClientAuthenticationSelect(panel);
-  await trigger.click();
-  await page
-    .getByRole("listbox")
-    .getByRole("option", { name: optionLabel, exact: true })
-    .click();
-  await expect(trigger).toContainText(optionLabel);
-}
-
 /** "Keep secrets out of the code" is the only switch inside the tab panel. */
 export function getUseUserSecretsSwitch(panel: Locator): Locator {
   return panel.getByRole("switch");

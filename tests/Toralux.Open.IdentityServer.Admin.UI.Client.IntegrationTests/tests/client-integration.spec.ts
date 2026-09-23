@@ -5,7 +5,6 @@ import { type LoginCredentials } from "./helpers/auth";
 import {
   expectSnippetNotToContain,
   expectSnippetToContain,
-  getClientAuthenticationSelect,
   getIntegrationOptionInput,
   getIntegrationSettingsTrigger,
   getScenarioTab,
@@ -14,22 +13,11 @@ import {
   getUseUserSecretsSwitch,
   openIntegrationSettings,
   openIntegrationTab,
-  selectClientAuthentication,
   setAllowedScopeSelected,
   setGrantTypeSelected,
 } from "./helpers/client-integration";
 import { openClientDetailFromClients } from "./helpers/client-list";
-import {
-  acknowledgeAndUsePublicKey,
-  deleteSecretRowByDescription,
-  deleteSecretRowsByDescriptionPrefix,
-  generateJwkKeyPair,
-  openAddSecretDialog,
-  openGenerateJwkDialog,
-  openSecretsTab,
-  selectJwkAlgorithm,
-  selectSecretType,
-} from "./helpers/client-secrets";
+import { openSecretsTab } from "./helpers/client-secrets";
 import { setSwitchByLabel } from "./helpers/form-controls";
 import { UI_TEXT } from "./helpers/ui-texts";
 
@@ -40,9 +28,6 @@ const credentials: LoginCredentials = {
 };
 
 const TEXT = UI_TEXT.integration;
-
-// Shares the prefix with the JWK secret tests, so one cleanup covers both.
-const jwkSecretDescriptionPrefix = "jwk_ui_test_";
 
 // The seeded client allows these API and identity scopes.
 const apiScope = "toralux_identity_admin_api";
@@ -303,89 +288,14 @@ test.describe("Client integration tab", () => {
   test("treats a client without a required secret as a public client", async ({
     page,
   }) => {
-    let panel = await openIntegrationTab(page);
-    await openIntegrationSettings(panel);
-    await expect(getClientAuthenticationSelect(panel)).toBeVisible();
-
     const secretsPanel = await openSecretsTab(page);
     await setSwitchByLabel(secretsPanel, "Require Client Secret", false);
 
-    panel = await openIntegrationTab(page);
+    const panel = await openIntegrationTab(page);
     await openIntegrationSettings(panel);
 
-    await expect(getClientAuthenticationSelect(panel)).toHaveCount(0);
     await expect(getSnippetStepHeading(panel, TEXT.steps.storeSecret)).toHaveCount(0);
     await expectSnippetNotToContain(panel, "ClientSecret");
     await expect(panel.getByText(TEXT.notes.publicClient)).toBeVisible();
-  });
-
-  test("preselects private key JWT once the client has a JWK secret", async ({
-    page,
-  }) => {
-    test.setTimeout(180_000);
-
-    const secretDescription = `${jwkSecretDescriptionPrefix}integration_${faker.string.alphanumeric(
-      { length: 10, casing: "lower" },
-    )}`;
-
-    let secretsPanel = await openSecretsTab(page);
-    await deleteSecretRowsByDescriptionPrefix(
-      page,
-      secretsPanel,
-      jwkSecretDescriptionPrefix,
-    );
-
-    let panel = await openIntegrationTab(page);
-    await openIntegrationSettings(panel);
-    await expect(getClientAuthenticationSelect(panel)).toContainText(TEXT.sharedSecret);
-    await expect(panel.getByText(TEXT.noJwkHint)).toBeVisible();
-
-    secretsPanel = await openSecretsTab(page);
-    const addSecretDialog = await openAddSecretDialog(page);
-    await selectSecretType(page, addSecretDialog, UI_TEXT.secrets.jwkType);
-
-    const jwkDialog = await openGenerateJwkDialog(page);
-    await selectJwkAlgorithm(page, jwkDialog, UI_TEXT.jwk.algorithms.es256);
-    await generateJwkKeyPair(jwkDialog);
-    await acknowledgeAndUsePublicKey(jwkDialog);
-
-    await addSecretDialog
-      .locator('textarea[name="secretDescription"]')
-      .fill(secretDescription);
-    await addSecretDialog.getByRole("button", { name: "Save", exact: true }).click();
-    await expect(addSecretDialog).toBeHidden();
-    await expect(
-      secretsPanel.locator("table tbody tr", { hasText: secretDescription }),
-    ).toBeVisible();
-
-    // The tab reads the secrets on its own, so it has to notice the new one.
-    panel = await openIntegrationTab(page);
-    await openIntegrationSettings(panel);
-    await expect(getClientAuthenticationSelect(panel)).toContainText(TEXT.privateKeyJwt);
-    await expect(panel.getByText(TEXT.jwkFoundHint)).toBeVisible();
-    await expect(getSnippetStepHeading(panel, TEXT.steps.storePrivateKey)).toBeVisible();
-    await expect(getSnippetStepHeading(panel, TEXT.steps.signAssertion)).toBeVisible();
-    await expectSnippetToContain(panel, 'dotnet user-secrets set "Oidc:SigningJwk"');
-    await expectSnippetToContain(panel, "class ClientAssertionService");
-    await expectSnippetNotToContain(panel, "options.ClientSecret");
-    // The package sends the assertion at sign-in by itself, but only a recent one.
-    await expect(panel.getByText(TEXT.notes.assertionSignInVersion)).toBeVisible();
-
-    // The preselection is a default - the user can still go back to the shared secret.
-    await selectClientAuthentication(page, panel, TEXT.sharedSecret);
-    await expect(getSnippetStepHeading(panel, TEXT.steps.storeSecret)).toBeVisible();
-    await expect(getSnippetStepHeading(panel, TEXT.steps.signAssertion)).toHaveCount(0);
-    await expectSnippetToContain(panel, 'dotnet user-secrets set "Oidc:ClientSecret"');
-    await expectSnippetNotToContain(panel, "Oidc:SigningJwk");
-    await expect(panel.getByText(TEXT.notes.assertionSignInVersion)).toHaveCount(0);
-    await expect(panel.getByText(TEXT.jwkFoundHint)).toBeVisible();
-
-    secretsPanel = await openSecretsTab(page);
-    await deleteSecretRowByDescription(page, secretsPanel, secretDescription);
-
-    panel = await openIntegrationTab(page);
-    await openIntegrationSettings(panel);
-    await expect(getClientAuthenticationSelect(panel)).toContainText(TEXT.sharedSecret);
-    await expect(panel.getByText(TEXT.noJwkHint)).toBeVisible();
   });
 });

@@ -5,22 +5,7 @@ import {
   ensureLoggedInAndOpenClients,
   type LoginCredentials,
 } from "./helpers/auth";
-import {
-  getClientAuthenticationSelect,
-  openIntegrationSettings,
-  openIntegrationTab,
-} from "./helpers/client-integration";
-import {
-  acknowledgeAndUsePublicKey,
-  generateJwkKeyPair,
-  getSecretValueInput,
-  getSecretValueTextarea,
-  openGenerateJwkDialog,
-  openSecretsTab,
-  readSecretValueAsJwk,
-  selectJwkAlgorithm,
-  selectSecretType,
-} from "./helpers/client-secrets";
+import { getSecretValueInput, openSecretsTab } from "./helpers/client-secrets";
 import {
   fillWizardUpToSecretStep,
   finishWizardFromSecretStep,
@@ -36,18 +21,18 @@ const credentials: LoginCredentials = {
 };
 
 /**
- * FAPI 2.0 allows private key JWT or mTLS only, so the wizard starts a high
- * security client with a JWK instead of merely recommending one.
+ * JWK client secrets are out of the fork's scope, so the high security type
+ * starts from a shared secret - while still enforcing its DPoP profile.
  */
 test.describe("Client wizard - high secure client", () => {
-  test("starts with a JWK, warns about a shared secret and creates a private key JWT client", async ({
+  test("starts with a shared secret, warns about it and creates the client", async ({
     page,
   }) => {
     test.setTimeout(240_000);
 
     const marker = faker.string.alphanumeric({ length: 10, casing: "lower" });
     const clientId = `high_secure_ui_test_${marker}`;
-    const secretDescription = `jwk_ui_test_wizard_${marker}`;
+    const secretDescription = `shared_ui_test_wizard_${marker}`;
 
     await ensureLoggedInAndOpenClients(page, credentials);
     await openClientWizard(page, UI_TEXT.wizard.highSecureClientType);
@@ -63,35 +48,14 @@ test.describe("Client wizard - high secure client", () => {
       has: page.locator('textarea[name="secretDescription"]'),
     });
     const secretTypeSelect = wizard.locator('button[role="combobox"]').first();
-    const jwkTip = wizard.getByText(UI_TEXT.wizard.jwkPreselectedTip);
     const sharedSecretWarning = wizard.getByText(
       UI_TEXT.wizard.sharedSecretWarning,
     );
 
-    // JWK is where the step starts - nobody had to pick it.
-    await expect(secretTypeSelect).toContainText(UI_TEXT.secrets.jwkType);
-    await expect(getSecretValueTextarea(wizard)).toBeVisible();
-    await expect(jwkTip).toBeVisible();
-    await expect(sharedSecretWarning).toHaveCount(0);
-
-    // A shared secret stays possible, but not without saying what it costs.
-    await selectSecretType(page, wizard, UI_TEXT.secrets.sharedSecretType);
-    await expect(sharedSecretWarning).toBeVisible();
-    await expect(jwkTip).toHaveCount(0);
+    // The shared secret is where the step starts - with a warning about the cost.
+    await expect(secretTypeSelect).toContainText(UI_TEXT.secrets.sharedSecretType);
     await expect(getSecretValueInput(wizard)).toBeVisible();
-
-    await selectSecretType(page, wizard, UI_TEXT.secrets.jwkType);
-    await expect(jwkTip).toBeVisible();
-    await expect(sharedSecretWarning).toHaveCount(0);
-
-    const jwkDialog = await openGenerateJwkDialog(page);
-    await selectJwkAlgorithm(page, jwkDialog, UI_TEXT.jwk.algorithms.es256);
-    await generateJwkKeyPair(jwkDialog);
-    await acknowledgeAndUsePublicKey(jwkDialog);
-
-    const publicJwk = await readSecretValueAsJwk(wizard);
-    expect(publicJwk.alg).toBe("ES256");
-    expect(publicJwk).not.toHaveProperty("d");
+    await expect(sharedSecretWarning).toBeVisible();
 
     await wizard
       .locator('textarea[name="secretDescription"]')
@@ -129,23 +93,19 @@ test.describe("Client wizard - high secure client", () => {
       UI_TEXT.wizard.highSecureDPoPClockSkewValue,
     );
 
-    // The key really is the client's secret, next to what the type enforces.
+    // The secret really is the client's, next to what the type enforces.
     const secretsPanel = await openSecretsTab(page);
     const secretRow = secretsPanel.locator("table tbody tr", {
       hasText: secretDescription,
     });
     await expect(secretRow).toBeVisible();
     await expect(
-      secretRow.getByRole("cell", { name: UI_TEXT.secrets.jwkType, exact: true }),
+      secretRow.getByRole("cell", {
+        name: UI_TEXT.secrets.sharedSecretType,
+        exact: true,
+      }),
     ).toBeVisible();
     await expectSwitchByLabel(secretsPanel, "Require Client Secret", true);
-
-    // And the rest of the admin picks it up: the setup code signs an assertion.
-    const integrationPanel = await openIntegrationTab(page);
-    await openIntegrationSettings(integrationPanel);
-    await expect(getClientAuthenticationSelect(integrationPanel)).toContainText(
-      UI_TEXT.integration.privateKeyJwt,
-    );
 
     await page.getByRole("button", { name: "Delete Client", exact: true }).click();
     const deleteDialog = page.getByRole("alertdialog");
@@ -177,7 +137,6 @@ test.describe("Client wizard - high secure client", () => {
       UI_TEXT.secrets.sharedSecretType,
     );
     await expect(getSecretValueInput(wizard)).toBeVisible();
-    await expect(wizard.getByText(UI_TEXT.wizard.jwkPreselectedTip)).toHaveCount(0);
     await expect(wizard.getByText(UI_TEXT.wizard.sharedSecretWarning)).toHaveCount(0);
   });
 });

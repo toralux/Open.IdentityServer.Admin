@@ -186,14 +186,13 @@ describe("buildAuthorizationCodeSnippet", () => {
   it("keeps the notes to the things the code does not already show", () => {
     const document = buildAuthorizationCodeSnippet(
       client({ requireDPoP: true }),
-      options({ clientAuthentication: "jwk" }),
+      options(),
     );
 
     // One per step at most, apart from the DPoP key which has two distinct
     // consequences - the restart and the API side.
     expect(noteKeys(document, "credential")).toHaveLength(1);
     expect(noteKeys(document, "dpop-key")).toHaveLength(2);
-    expect(noteKeys(document, "assertion")).toHaveLength(1);
     expect(noteKeys(document, "program")).toHaveLength(0);
   });
 
@@ -215,66 +214,9 @@ describe("buildAuthorizationCodeSnippet", () => {
     );
   });
 
-  it("replaces the secret with a signed assertion for private_key_jwt", () => {
-    const document = buildAuthorizationCodeSnippet(
-      client(),
-      options({ clientAuthentication: "jwk" }),
-    );
-
-    expect(stepIds(document)).toContain("assertion");
-    expect(codeOf(document, "program")).not.toContain("options.ClientSecret");
-    expect(codeOf(document, "program")).toContain(
-      "AddTransient<IClientAssertionService, ClientAssertionService>()",
-    );
-    expect(codeOf(document, "credential")).toContain("Oidc:SigningJwk");
-    // User secrets are development-only, and the tab has to say so.
-    expect(noteKeys(document, "credential")).toContain(
-      "Client.Integration.Notes.CredentialStorage",
-    );
-    // The algorithm is read from the key rather than hard-coded.
-    expect(codeOf(document, "assertion")).toContain(
-      "new SigningCredentials(key, key.Alg",
-    );
-
-    // Client assertions need turning on at the authorization server too.
-    expect(noteKeys(document, "assertion")).toContain(
-      "Client.Integration.Notes.AssertionServerSupport",
-    );
-  });
-
-  it("leaves the sign-in assertion to access token management and says which version does it", () => {
-    const document = buildAuthorizationCodeSnippet(
-      client({ requirePushedAuthorization: true }),
-      options({ clientAuthentication: "jwk" }),
-    );
-
-    // Duende.AccessTokenManagement.OpenIdConnect 4.2.0 puts the assertion into the
-    // pushed authorization request and the code exchange on its own. Events
-    // generated here would sign a second assertion for the same request.
-    expect(codeOf(document, "program")).not.toContain("OnPushAuthorization");
-    expect(codeOf(document, "program")).not.toContain(
-      "OnAuthorizationCodeReceived",
-    );
-    expect(noteKeys(document, "packages")).toContain(
-      "Client.Integration.Notes.AssertionSignInVersion",
-    );
-  });
-
   it("says nothing about the package version while a shared secret is used", () => {
     const document = buildAuthorizationCodeSnippet(client(), options());
 
-    expect(noteKeys(document, "packages")).toHaveLength(0);
-  });
-
-  it("keeps the sign-in note out of the worker, which never signs a user in", () => {
-    const document = buildClientCredentialsSnippet(
-      client(),
-      options({ clientAuthentication: "jwk" }),
-    );
-
-    expect(noteKeys(document, "assertion")).toContain(
-      "Client.Integration.Notes.AssertionServerSupport",
-    );
     expect(noteKeys(document, "packages")).toHaveLength(0);
   });
 
@@ -380,16 +322,15 @@ describe("whitespace", () => {
   const everyShape = (): SnippetDocument[] => {
     const shapes: SnippetDocument[] = [];
 
-    for (const clientAuthentication of ["shared_secret", "jwk"] as const) {
-      for (const requireDPoP of [false, true]) {
-        for (const requireClientSecret of [false, true]) {
-          for (const allowOfflineAccess of [false, true]) {
-            const config = client({
-              requireDPoP,
-              requireClientSecret,
-              allowOfflineAccess,
-            });
-            const opts = options({ clientAuthentication });
+    for (const requireDPoP of [false, true]) {
+      for (const requireClientSecret of [false, true]) {
+        for (const allowOfflineAccess of [false, true]) {
+          const config = client({
+            requireDPoP,
+            requireClientSecret,
+            allowOfflineAccess,
+          });
+          const opts = options();
 
             shapes.push(buildAuthorizationCodeSnippet(config, opts));
             shapes.push(buildClientCredentialsSnippet(config, opts));
@@ -423,11 +364,10 @@ describe("whitespace", () => {
 });
 
 describe("shell snippets", () => {
-  // A real JWK is full of double quotes, so the value cannot be double quoted.
-  it.each([
-    ["the client secret", options(), "credential"],
-    ["the signing key", options({ clientAuthentication: "jwk" }), "credential"],
-  ])("single quotes %s value", (_label, snippetOptions, stepId) => {
+  // A pasted secret value may contain double quotes of its own.
+  it.each([["the client secret", options(), "credential"]])(
+    "single quotes %s value",
+    (_label, snippetOptions, stepId) => {
     const code = codeOf(
       buildAuthorizationCodeSnippet(client(), snippetOptions),
       stepId,

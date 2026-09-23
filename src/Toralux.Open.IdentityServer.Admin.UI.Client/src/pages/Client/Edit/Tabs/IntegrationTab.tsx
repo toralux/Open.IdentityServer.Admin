@@ -6,17 +6,9 @@ import {
 } from "@/components/ui/collapsible";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { Switch } from "@/components/ui/switch";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CopyButton } from "@/components/CopyButton/CopyButton";
-import { hasUsableJwkSecret } from "@/lib/clients/clientSecrets";
 import { cn } from "@/lib/utils";
 import {
   ClientAuthentication,
@@ -28,14 +20,10 @@ import {
   toApplicationName,
 } from "@/lib/snippets/dotnetSnippets";
 import { GrantTypeIds } from "@/models/Clients/ClientModels";
-import { getClientSecrets } from "@/services/ClientServices";
-import { queryKeys } from "@/services/QueryKeys";
-import { useQuery } from "@tanstack/react-query";
 import { ChevronDown, Code2, Globe, Server } from "lucide-react";
 import { useEffect, useId, useMemo, useState } from "react";
 import { useFormContext, useWatch } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { useParams } from "react-router-dom";
 import { ClientEditFormData } from "../../ClientSchema";
 import { SnippetSteps } from "./Integration/SnippetSteps";
 
@@ -113,8 +101,6 @@ const OptionField = ({
 const IntegrationTab = () => {
   const { t } = useTranslation();
   const { control } = useFormContext<ClientEditFormData>();
-  const { clientId: resourceId } = useParams<{ clientId: string }>();
-  const clientAuthenticationId = useId();
   const useUserSecretsId = useId();
 
   const clientId = useWatch({ control, name: "clientId" });
@@ -147,9 +133,6 @@ const IntegrationTab = () => {
   );
   const [appNameOverride, setAppNameOverride] = useState("");
   const [useUserSecrets, setUseUserSecrets] = useState(true);
-  // Null until the user picks - the default comes from the registered secrets.
-  const [authenticationOverride, setAuthenticationOverride] =
-    useState<ClientAuthentication | null>(null);
   // Tracking the excluded scopes keeps newly added scopes selected by default.
   const [excludedScopes, setExcludedScopes] = useState<string[]>([]);
   const [selectedScenario, setSelectedScenario] = useState<Scenario | null>(
@@ -158,17 +141,9 @@ const IntegrationTab = () => {
   // The values persist, so the panel is worth its space only while editing them.
   const [areOptionsOpen, setOptionsOpen] = useState(false);
 
-  // A usable JWK secret means the client authenticates with private_key_jwt.
-  const clientSecrets = useQuery({
-    queryKey: [queryKeys.clientSecrets, "integration", resourceId],
-    queryFn: () => getClientSecrets(Number(resourceId), 0, 100),
-    enabled: !!resourceId,
-  });
-
-  const hasJwkSecret = hasUsableJwkSecret(clientSecrets.data?.items ?? []);
-
-  const clientAuthentication: ClientAuthentication =
-    authenticationOverride ?? (hasJwkSecret ? "jwk" : "shared_secret");
+  // JWK client secrets are out of the fork's scope, so the shared secret is
+  // the only supported client authentication.
+  const clientAuthentication: ClientAuthentication = "shared_secret";
 
   const grantTypeIds = useMemo(
     () => new Set((allowedGrantTypes ?? []).map((grantType) => grantType.id)),
@@ -323,42 +298,6 @@ const IntegrationTab = () => {
                 onChange={setAppNameOverride}
               />
             </div>
-
-            {requireClientSecret && (
-              <div className="mt-4 space-y-1.5 border-t pt-4">
-                <Label htmlFor={clientAuthenticationId}>
-                  {t("Client.Integration.Options.ClientAuthentication")}
-                </Label>
-                <Select
-                  value={clientAuthentication}
-                  onValueChange={(value) =>
-                    setAuthenticationOverride(value as ClientAuthentication)
-                  }
-                >
-                  <SelectTrigger
-                    id={clientAuthenticationId}
-                    className="md:w-1/3"
-                  >
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="shared_secret">
-                      {t("Client.Integration.Options.SharedSecret")}
-                    </SelectItem>
-                    <SelectItem value="jwk">
-                      {t("Client.Integration.Options.PrivateKeyJwt")}
-                    </SelectItem>
-                  </SelectContent>
-                </Select>
-                <p className="text-xs text-muted-foreground">
-                  {hasJwkSecret
-                    ? t(
-                        "Client.Integration.Options.ClientAuthenticationJwkFound",
-                      )
-                    : t("Client.Integration.Options.ClientAuthenticationInfo")}
-                </p>
-              </div>
-            )}
 
             <div className="mt-4 flex items-center justify-between gap-4 border-t pt-4">
               <div>

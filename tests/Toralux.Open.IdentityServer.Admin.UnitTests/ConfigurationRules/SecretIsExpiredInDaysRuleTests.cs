@@ -50,7 +50,7 @@ namespace Toralux.Open.IdentityServer.Admin.UnitTests.ConfigurationRules
         [Fact]
         public void ExpiringSecretIsDescribedInTheIssue()
         {
-            var secret = SecretExpiringIn(10, description: "Production key", type: "JWK");
+            var secret = SecretExpiringIn(10, description: "Production key", type: "SharedSecret");
 
             var issues = new SecretIsExpiredInDaysRule().Validate(CreateContext(secret));
 
@@ -60,7 +60,7 @@ namespace Toralux.Open.IdentityServer.Admin.UnitTests.ConfigurationRules
             issues[0].MessageParameters["status"].Should().Be("EXPIRING");
             issues[0].MessageParameters["isExpired"].Should().Be("False");
             issues[0].MessageParameters["daysUntilExpiry"].Should().Be("10");
-            issues[0].MessageParameters["secretType"].Should().Be("JWK");
+            issues[0].MessageParameters["secretType"].Should().Be("SharedSecret");
             issues[0].MessageParameters["secretDescription"].Should().Be("Production key");
             issues[0].MessageParameters["clientId"].Should().Be("client_under_test");
             issues[0].MessageParameters["expirationDate"].Should().Be(secret.Expiration!.Value.ToString("yyyy-MM-dd HH:mm"));
