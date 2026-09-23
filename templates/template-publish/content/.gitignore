@@ -1,0 +1,37 @@
+# Build results
+[Bb]in/
+[Oo]bj/
+bin\Debug/
+artifacts/
+TestResults/
+*.binlog
+
+# IDE
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.DotSettings.user
+
+# Publish
+*.pubxml.user
+
+# Logs & keys
+Log/
+logs/
+tempkey.jwk
+*.jwk
+
+# Node
+node_modules/
+dist/
+npm-debug.log*
+yarn-error.log
+
+# NSwag-generated TypeScript client (regenerated on every Debug build of the API host)
+**/TypescriptClient/src/client.ts
+
+# OS
+.DS_Store
