@@ -89,7 +89,7 @@ namespace Toralux.Open.IdentityServer.STS.Identity.Helpers
     
                         builder.AddSigningCredential(cert);
                     }
-                    catch (Exception e)
+                    catch (Exception e) when (e is not InvalidOperationException)
                     {
                         throw new Exception("There was an error adding the key file - during the creation of the signing key", e);
                     }
@@ -171,7 +171,7 @@ namespace Toralux.Open.IdentityServer.STS.Identity.Helpers
 
                         builder.AddValidationKey(validationCertificate);
                     }
-                    catch (Exception e)
+                    catch (Exception e) when (e is not InvalidOperationException)
                     {
                         throw new Exception("There was an error adding the key file - during the creation of the validation key", e);
                     }
