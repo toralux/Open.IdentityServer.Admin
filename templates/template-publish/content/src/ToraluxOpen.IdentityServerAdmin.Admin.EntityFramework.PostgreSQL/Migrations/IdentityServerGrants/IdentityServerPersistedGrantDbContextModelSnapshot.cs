@@ -17,7 +17,7 @@ namespace ToraluxOpen.IdentityServerAdmin.Admin.EntityFramework.PostgreSQL.Migra
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "10.0.10")
+                .HasAnnotation("ProductVersion", "8.0.1")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -50,7 +50,8 @@ namespace ToraluxOpen.IdentityServerAdmin.Admin.EntityFramework.PostgreSQL.Migra
                         .HasMaxLength(200)
                         .HasColumnType("character varying(200)");
 
-                    b.Property<DateTime>("Expiration")
+                    b.Property<DateTime?>("Expiration")
+                        .IsRequired()
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("SessionId")
@@ -201,99 +202,6 @@ namespace ToraluxOpen.IdentityServerAdmin.Admin.EntityFramework.PostgreSQL.Migra
                     b.ToTable("PushedAuthorizationRequests", (string)null);
                 });
 
-            modelBuilder.Entity("Open.IdentityServer.EntityFramework.Entities.SamlLogoutSession", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
-
-                    b.Property<DateTime>("ExpiresAtUtc")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<string>("LogoutId")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("character varying(200)");
-
-                    b.Property<string>("SerializedSession")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<long>("Version")
-                        .IsConcurrencyToken()
-                        .HasColumnType("bigint");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ExpiresAtUtc");
-
-                    b.HasIndex("LogoutId")
-                        .IsUnique();
-
-                    b.ToTable("SamlLogoutSessions", (string)null);
-                });
-
-            modelBuilder.Entity("Open.IdentityServer.EntityFramework.Entities.SamlLogoutSessionRequestIndex", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
-
-                    b.Property<string>("RequestId")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("character varying(200)");
-
-                    b.Property<long>("SamlLogoutSessionId")
-                        .HasColumnType("bigint");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("RequestId")
-                        .IsUnique();
-
-                    b.HasIndex("SamlLogoutSessionId");
-
-                    b.ToTable("SamlLogoutSessionRequestIndices", (string)null);
-                });
-
-            modelBuilder.Entity("Open.IdentityServer.EntityFramework.Entities.SamlSigninState", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
-
-                    b.Property<DateTime>("ExpiresAtUtc")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<string>("SerializedState")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("ServiceProviderEntityId")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("character varying(200)");
-
-                    b.Property<Guid>("StateId")
-                        .HasColumnType("uuid");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ExpiresAtUtc");
-
-                    b.HasIndex("StateId")
-                        .IsUnique();
-
-                    b.ToTable("SamlSigninStates", (string)null);
-                });
-
             modelBuilder.Entity("Open.IdentityServer.EntityFramework.Entities.ServerSideSession", b =>
                 {
                     b.Property<long>("Id")
@@ -352,22 +260,6 @@ namespace ToraluxOpen.IdentityServerAdmin.Admin.EntityFramework.PostgreSQL.Migra
                     b.HasIndex("SubjectId");
 
                     b.ToTable("ServerSideSessions", (string)null);
-                });
-
-            modelBuilder.Entity("Open.IdentityServer.EntityFramework.Entities.SamlLogoutSessionRequestIndex", b =>
-                {
-                    b.HasOne("Open.IdentityServer.EntityFramework.Entities.SamlLogoutSession", "SamlLogoutSession")
-                        .WithMany("RequestIndices")
-                        .HasForeignKey("SamlLogoutSessionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("SamlLogoutSession");
-                });
-
-            modelBuilder.Entity("Open.IdentityServer.EntityFramework.Entities.SamlLogoutSession", b =>
-                {
-                    b.Navigation("RequestIndices");
                 });
 #pragma warning restore 612, 618
         }
