@@ -8,16 +8,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
-<<<<<<< HEAD
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Toralux.Open.IdentityServer.Admin.UI.Api.Configuration;
 using Toralux.Open.IdentityServer.Admin.UI.Api.Configuration.Constants;
 using Toralux.Open.IdentityServer.Admin.UI.Api.Dtos.Info;
-=======
-using Toralux.Open.IdentityServer.Admin.UI.Api.Configuration;
-using Toralux.Open.IdentityServer.Admin.UI.Api.Configuration.Constants;
->>>>>>> 9c995bd0 (fix: repair namespaces mangled by swap-before-rename ordering)
 using Toralux.Open.IdentityServer.Admin.UI.Api.ExceptionHandling;
 using Toralux.Open.IdentityServer.Admin.UI.Api.Helpers;
 
