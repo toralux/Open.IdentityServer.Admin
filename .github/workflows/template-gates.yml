@@ -31,9 +31,27 @@ jobs:
           chmod +x tools/template-parity.sh tools/mirror-to-template.py
           ./tools/template-parity.sh
 
-      - name: Pack solution packages into a local feed
+      - name: Build the SPA (packages carry the client dist)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: src/Toralux.Open.IdentityServer.Admin.UI.Client/package-lock.json
+      - run: |
+          cd src/Toralux.Open.IdentityServer.Admin.UI.Client
+          npm ci
+          npm run build
+
+      - name: Pack library packages into a local feed (never pack the solution — dcproj has no Pack target)
         run: |
-          dotnet pack Toralux.Open.IdentityServer.Admin.sln -c Release -p:Version=0.0.0-gate -o build/gate-feed
+          mapfile -t PROJECTS < <(grep -oE 'dotnet pack[[:space:]]+[^ ]+\.csproj' build/create-packages.ps1 \
+            | awk '{print $3}' | sed 's|^\.\\||; s|\\|/|g; s|^\.\./||')
+          echo "packable projects: ${#PROJECTS[@]} (expect 14)"
+          [ "${#PROJECTS[@]}" -eq 14 ]
+          mkdir -p build/gate-feed
+          for p in "${PROJECTS[@]}"; do
+            dotnet pack "$p" -c Release -o build/gate-feed -p:Version=0.0.0-gate
+          done
           dotnet nuget add source "$GITHUB_WORKSPACE/build/gate-feed" -n gate-feed
 
       - name: Scaffold from the template
@@ -87,7 +105,12 @@ jobs:
           dotnet-version: '10.0.x'
       - name: Scaffold, restore, build (local feed)
         run: |
-          dotnet pack Toralux.Open.IdentityServer.Admin.sln -c Release -p:Version=0.0.0-gate -o build/gate-feed
+          mapfile -t PROJECTS < <(grep -oE 'dotnet pack[[:space:]]+[^ ]+\.csproj' build/create-packages.ps1 \
+            | awk '{print $3}' | sed 's|^\.\\||; s|\\|/|g; s|^\.\./||')
+          mkdir -p build/gate-feed
+          for p in "${PROJECTS[@]}"; do
+            dotnet pack "$p" -c Release -o build/gate-feed -p:Version=0.0.0-gate
+          done
           dotnet nuget add source "$GITHUB_WORKSPACE/build/gate-feed" -n gate-feed
           dotnet new install templates/template-publish/content --force
           mkdir -p /tmp/gate-rt && cd /tmp/gate-rt
