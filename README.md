@@ -22,14 +22,15 @@ configuration health, auditing, and security from one modern interface.
 
 > [!IMPORTANT]
 >
-> ## Toralux fork — v0.1.0
+> ## Toralux fork — synced to upstream 3.1.0
 >
 > **Toralux Open IdentityServer Admin** is a fork of
 > [skoruba/Duende.IdentityServer.Admin](https://github.com/skoruba/Duende.IdentityServer.Admin)
-> at **v3.0.0** (commit `45da4dc4`), retargeted from Duende IdentityServer to
-> **Open IdentityServer**. Packages ship as `Toralux.Open.IdentityServer.Admin.*`
-> starting at **0.1.0**; upstream lineage is documented in
-> [CHANGELOG.md](CHANGELOG.md) and [NOTICE](NOTICE).
+> — forked at **v3.0.0** (commit `45da4dc4`), synced to upstream **3.1.0**
+> (commit `22c84428`) — retargeted from Duende IdentityServer to
+> **Open IdentityServer**. Packages ship as `Toralux.Open.IdentityServer.Admin.*`;
+> upstream lineage and the divergences this fork intentionally keeps are
+> documented in [CHANGELOG.md](CHANGELOG.md) and [NOTICE](NOTICE).
 >
 > **Not affiliated with or endorsed by Rock Solid Knowledge / IdentityServer.com.**
 > "Duende IdentityServer" is a trademark of Duende Software; "IdentityServer" is a
