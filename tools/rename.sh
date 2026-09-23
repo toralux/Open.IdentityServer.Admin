@@ -68,6 +68,7 @@ fi
 #   * any line containing "retargeted from"        → fork provenance notes
 #   * any line containing "Business Edition upstream" → upstream PAR notes
 #   * any line linking docs.duendesoftware.com     → upstream documentation
+#   * any line containing "creators of IdentityServer4" → the IS4/Duende credits
 #
 # The map below is plain sed (ERE). @@ATTR_*@@ placeholders are restored
 # verbatim at the end; they cannot occur in real source files.
@@ -77,6 +78,7 @@ read -r -d '' MAP <<'SED' || true
 /retargeted from/b
 /Business Edition upstream/b
 /docs\.duendesoftware\.com/b
+/creators of IdentityServer4/b
 s|github\.com/skoruba/Duende\.IdentityServer\.Admin/issues|@@ATTR_ISSUES@@|g
 s|github\.com/skoruba/Duende\.IdentityServer\.Admin/pull|@@ATTR_PULL@@|g
 s|github\.com/skoruba/Duende\.IdentityServer\.Admin/graphs|@@ATTR_GRAPHS@@|g
