@@ -16,6 +16,6 @@ docker buildx create --use
 cd ..
 
 # Build and push docker images with platforms specified
-docker buildx build --platform $platforms -t skoruba/duende-identityserver-admin:latest -t skoruba/duende-identityserver-admin:$version --push --no-cache -f src/Skoruba.Duende.IdentityServer.Admin/Dockerfile .
-docker buildx build --platform $platforms -t skoruba/duende-identityserver-admin-api:latest -t skoruba/duende-identityserver-admin-api:$version --push --no-cache -f src/Skoruba.Duende.IdentityServer.Admin.Api/Dockerfile .
-docker buildx build --platform $platforms -t skoruba/duende-identityserver-sts-identity:latest -t skoruba/duende-identityserver-sts-identity:$version --push --no-cache -f src/Skoruba.Duende.IdentityServer.STS.Identity/Dockerfile .
+docker buildx build --platform $platforms -t skoruba/duende-identityserver-admin:latest -t skoruba/duende-identityserver-admin:$version --push --no-cache -f src/Toralux.Open.IdentityServer.Admin/Dockerfile .
+docker buildx build --platform $platforms -t skoruba/duende-identityserver-admin-api:latest -t skoruba/duende-identityserver-admin-api:$version --push --no-cache -f src/Toralux.Open.IdentityServer.Admin.Api/Dockerfile .
+docker buildx build --platform $platforms -t skoruba/duende-identityserver-sts-identity:latest -t skoruba/duende-identityserver-sts-identity:$version --push --no-cache -f src/Toralux.Open.IdentityServer.STS.Identity/Dockerfile .

@@ -14,23 +14,23 @@ services:
       proxy: null
       identityserverui:
         aliases:
-          - sts.skoruba.local
-          - admin.skoruba.local
-          - admin-api.skoruba.local
+          - sts.toralux.local
+          - admin.toralux.local
+          - admin-api.toralux.local
     restart: always
-  skorubaduende.identityserveradmin.admin:
-    image: '${DOCKER_REGISTRY-}skoruba-duende-identityserver-admin'
+  toraluxopen.identityserveradmin.admin:
+    image: '${DOCKER_REGISTRY-}toralux-open-identityserver-admin'
     build:
       context: .
-      dockerfile: src/SkorubaDuende.IdentityServerAdmin.Admin/Dockerfile
-    container_name: skoruba-duende-identityserver-admin
+      dockerfile: src/ToraluxOpen.IdentityServerAdmin.Admin/Dockerfile
+    container_name: toralux-open-identityserver-admin
     environment:
       - VIRTUAL_PORT=8080
-      - VIRTUAL_HOST=admin.skoruba.local
+      - VIRTUAL_HOST=admin.toralux.local
       - 'ConnectionStrings__DataProtectionDbConnection=Server=db;Database=IdentityServerAdmin;User Id=sa;Password=${DB_PASSWORD:-Password_123};MultipleActiveResultSets=true;TrustServerCertificate=True'
-      - 'AdminConfiguration__AuthenticationConfiguration__Authority=https://sts.skoruba.local'
-      - 'AdminConfiguration__ApiConfiguration__ApiRemoteConfiguration__RemoteUrl=https://admin-api.skoruba.local'
-      - 'AdminConfiguration__BasicConfiguration__Title=Skoruba Duende IdentityServer Admin'
+      - 'AdminConfiguration__AuthenticationConfiguration__Authority=https://sts.toralux.local'
+      - 'AdminConfiguration__ApiConfiguration__ApiRemoteConfiguration__RemoteUrl=https://admin-api.toralux.local'
+      - 'AdminConfiguration__BasicConfiguration__Title=Toralux Open IdentityServer Admin'
       - 'AdminConfiguration__BasicConfiguration__BasePath=/'
       - ForwardedHeadersConfiguration__Enabled=true
       - ForwardedHeadersConfiguration__AllowAll=true
@@ -39,25 +39,25 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
     depends_on:
       - db
-      - skorubaduende.identityserveradmin.sts.identity
+      - toraluxopen.identityserveradmin.sts.identity
     volumes:
       - './shared/serilog.json:/app/serilog.json'
       - './shared/nginx/certs/cacerts.crt:/usr/local/share/ca-certificates/cacerts.crt'
     networks:
       identityserverui: null
-  skorubaduende.identityserveradmin.admin.api:
-    image: '${DOCKER_REGISTRY-}skoruba-duende-identityserver-admin-api'
+  toraluxopen.identityserveradmin.admin.api:
+    image: '${DOCKER_REGISTRY-}toralux-open-identityserver-admin-api'
     build:
       context: .
-      dockerfile: src/SkorubaDuende.IdentityServerAdmin.Admin.Api/Dockerfile
-    container_name: skoruba-duende-identityserver-admin-api
+      dockerfile: src/ToraluxOpen.IdentityServerAdmin.Admin.Api/Dockerfile
+    container_name: toralux-open-identityserver-admin-api
     environment:
       - VIRTUAL_PORT=8080
-      - VIRTUAL_HOST=admin-api.skoruba.local
+      - VIRTUAL_HOST=admin-api.toralux.local
       - AdminApiConfiguration__RequireHttpsMetadata=false
-      - 'AdminApiConfiguration__ApplicationName=Skoruba Duende IdentityServer Admin UI'
-      - 'AdminApiConfiguration__ApiBaseUrl=https://admin-api.skoruba.local'
-      - 'AdminApiConfiguration__IdentityServerBaseUrl=https://sts.skoruba.local'
+      - 'AdminApiConfiguration__ApplicationName=Toralux Open IdentityServer Admin UI'
+      - 'AdminApiConfiguration__ApiBaseUrl=https://admin-api.toralux.local'
+      - 'AdminApiConfiguration__IdentityServerBaseUrl=https://sts.toralux.local'
       - 'ConnectionStrings__ConfigurationDbConnection=Server=db;Database=IdentityServerAdmin;User Id=sa;Password=${DB_PASSWORD:-Password_123};MultipleActiveResultSets=true;TrustServerCertificate=True'
       - 'ConnectionStrings__PersistedGrantDbConnection=Server=db;Database=IdentityServerAdmin;User Id=sa;Password=${DB_PASSWORD:-Password_123};MultipleActiveResultSets=true;TrustServerCertificate=True'
       - 'ConnectionStrings__IdentityDbConnection=Server=db;Database=IdentityServerAdmin;User Id=sa;Password=${DB_PASSWORD:-Password_123};MultipleActiveResultSets=true;TrustServerCertificate=True'
@@ -65,12 +65,12 @@ services:
       - 'ConnectionStrings__AdminAuditLogDbConnection=Server=db;Database=IdentityServerAdmin;User Id=sa;Password=${DB_PASSWORD:-Password_123};MultipleActiveResultSets=true;TrustServerCertificate=True'
       - 'ConnectionStrings__AdminConfigurationDbConnection=Server=db;Database=IdentityServerAdmin;User Id=sa;Password=${DB_PASSWORD:-Password_123};MultipleActiveResultSets=true;TrustServerCertificate=True'
       - 'ConnectionStrings__DataProtectionDbConnection=Server=db;Database=IdentityServerAdmin;User Id=sa;Password=${DB_PASSWORD:-Password_123};MultipleActiveResultSets=true;TrustServerCertificate=True'
-      - 'IdentityServerData__Clients__0__ClientUri=https://admin.skoruba.local'
-      - 'IdentityServerData__Clients__0__RedirectUris__0=https://admin.skoruba.local/signin-oidc'
-      - 'IdentityServerData__Clients__0__FrontChannelLogoutUri=https://admin.skoruba.local/signin-oidc'
-      - 'IdentityServerData__Clients__0__PostLogoutRedirectUris__0=https://admin.skoruba.local/signout-callback-oidc'
-      - 'IdentityServerData__Clients__0__AllowedCorsOrigins__0=https://admin.skoruba.local'
-      - 'IdentityServerData__Clients__1__RedirectUris__0=https://admin-api.skoruba.local/swagger/oauth2-redirect.html'
+      - 'IdentityServerData__Clients__0__ClientUri=https://admin.toralux.local'
+      - 'IdentityServerData__Clients__0__RedirectUris__0=https://admin.toralux.local/signin-oidc'
+      - 'IdentityServerData__Clients__0__FrontChannelLogoutUri=https://admin.toralux.local/signin-oidc'
+      - 'IdentityServerData__Clients__0__PostLogoutRedirectUris__0=https://admin.toralux.local/signout-callback-oidc'
+      - 'IdentityServerData__Clients__0__AllowedCorsOrigins__0=https://admin.toralux.local'
+      - 'IdentityServerData__Clients__1__RedirectUris__0=https://admin-api.toralux.local/swagger/oauth2-redirect.html'
       - 'SeedConfiguration__ApplySeed=true'
       - 'DatabaseMigrationsConfiguration__ApplyDatabaseMigrations=true'
       - ForwardedHeadersConfiguration__Enabled=true
@@ -85,21 +85,21 @@ services:
       - './shared/nginx/certs/cacerts.crt:/usr/local/share/ca-certificates/cacerts.crt'
     networks:
       identityserverui: null
-  skorubaduende.identityserveradmin.sts.identity:
-    image: '${DOCKER_REGISTRY-}skoruba-duende-identityserver-sts-identity'
+  toraluxopen.identityserveradmin.sts.identity:
+    image: '${DOCKER_REGISTRY-}toralux-open-identityserver-sts-identity'
     build:
       context: .
-      dockerfile: src/SkorubaDuende.IdentityServerAdmin.STS.Identity/Dockerfile
-    container_name: skoruba-duende-identityserver-sts-identity
+      dockerfile: src/ToraluxOpen.IdentityServerAdmin.STS.Identity/Dockerfile
+    container_name: toralux-open-identityserver-sts-identity
     environment:
       - VIRTUAL_PORT=8080
-      - VIRTUAL_HOST=sts.skoruba.local
+      - VIRTUAL_HOST=sts.toralux.local
       - 'ConnectionStrings__ConfigurationDbConnection=Server=db;Database=IdentityServerAdmin;User Id=sa;Password=${DB_PASSWORD:-Password_123};MultipleActiveResultSets=true;TrustServerCertificate=True'
       - 'ConnectionStrings__PersistedGrantDbConnection=Server=db;Database=IdentityServerAdmin;User Id=sa;Password=${DB_PASSWORD:-Password_123};MultipleActiveResultSets=true;TrustServerCertificate=True'
       - 'ConnectionStrings__IdentityDbConnection=Server=db;Database=IdentityServerAdmin;User Id=sa;Password=${DB_PASSWORD:-Password_123};MultipleActiveResultSets=true;TrustServerCertificate=True'
       - 'ConnectionStrings__DataProtectionDbConnection=Server=db;Database=IdentityServerAdmin;User Id=sa;Password=${DB_PASSWORD:-Password_123};MultipleActiveResultSets=true;TrustServerCertificate=True'
-      - 'AdminConfiguration__IdentityAdminBaseUrl=https://admin.skoruba.local'
-      - 'IdentityServerOptions__IssuerUri=https://sts.skoruba.local'
+      - 'AdminConfiguration__IdentityAdminBaseUrl=https://admin.toralux.local'
+      - 'IdentityServerOptions__IssuerUri=https://sts.toralux.local'
       - IdentityServerOptions__KeyManagement__Enabled=true
       - IdentityServerOptions__Events__RaiseErrorEvents=true
       - IdentityServerOptions__Events__RaiseInformationEvents=true
@@ -119,12 +119,12 @@ services:
     networks:
       identityserverui:
         aliases:
-          - sts.skoruba.local
+          - sts.toralux.local
   db:
     image: 'mcr.microsoft.com/mssql/server:2017-CU20-ubuntu-16.04'
     ports:
       - '7900:1433'
-    container_name: skoruba-duende-identityserver-db
+    container_name: toralux-open-identityserver-db
     environment:
       SA_PASSWORD: '${DB_PASSWORD:-Password_123}'
       ACCEPT_EULA: 'Y'

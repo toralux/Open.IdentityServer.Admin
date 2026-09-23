@@ -1,0 +1,63 @@
+// Copyright (c) Jan Škoruba. All Rights Reserved.
+// Licensed under the Apache License, Version 2.0.
+
+using System.Collections.Generic;
+using System.Linq;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.ConfigurationRules;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Entities;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.Interfaces;
+
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.ConfigurationRules.ApiScopeRules;
+
+public class ApiScopeNameMustNotContainRule : ConfigurationRuleValidatorBase, IConfigurationRuleValidator
+{
+    public List<ConfigurationIssueView> ValidateWithContext(ValidationContext context, string configuration, string messageTemplate, string fixDescriptionTemplate, ConfigurationIssueTypeView issueType)
+    {
+        var config = DeserializeConfiguration<ForbiddenConfig>(configuration);
+
+        var forbiddenStrings = GetConfiguredValues(config.ForbiddenStrings);
+
+        if (!forbiddenStrings.Any())
+        {
+            return new List<ConfigurationIssueView>();
+        }
+
+        var scopes = context.ApiScopes;
+        var issues = new List<ConfigurationIssueView>();
+
+        foreach (var scope in scopes)
+        {
+            var foundForbiddenStrings = forbiddenStrings
+                .Where(forbidden => scope.Name.Contains(forbidden, System.StringComparison.OrdinalIgnoreCase))
+                .ToList();
+
+            if (foundForbiddenStrings.Any())
+            {
+                var parameters = new Dictionary<string, string>
+                {
+                    ["scopeName"] = scope.Name,
+                    ["forbiddenStrings"] = string.Join(", ", foundForbiddenStrings),
+                    ["allForbiddenStrings"] = string.Join(", ", forbiddenStrings)
+                };
+
+                issues.Add(new ConfigurationIssueView
+                {
+                    ResourceId = scope.Id,
+                    ResourceName = scope.Name,
+                    Message = FormatMessage(messageTemplate, parameters),
+                    FixDescription = FormatMessage(fixDescriptionTemplate, parameters),
+                    IssueType = issueType,
+                    ResourceType = ConfigurationResourceType.ApiScope,
+                    MessageParameters = parameters
+                });
+            }
+        }
+
+        return issues;
+    }
+
+    private class ForbiddenConfig
+    {
+        public List<string> ForbiddenStrings { get; set; }
+    }
+}

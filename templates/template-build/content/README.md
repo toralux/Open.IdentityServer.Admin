@@ -1,10 +1,10 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/skoruba/Duende.IdentityServer.Admin/main/docs/Images/logo.svg" alt="Skoruba Duende IdentityServer Admin" width="150" />
+<img src="https://raw.githubusercontent.com/toralux/Open.IdentityServer.Admin/main/docs/Images/logo.svg" alt="Toralux Open IdentityServer Admin" width="150" />
 
-# Skoruba Duende IdentityServer Admin
+# Toralux Open IdentityServer Admin
 
-### Modern administration UI for Duende IdentityServer and ASP.NET Core Identity
+### Modern administration UI for Open IdentityServer and ASP.NET Core Identity
 
 Manage IdentityServer clients and resources, ASP.NET Core Identity users and roles,
 configuration health, auditing, and security from one modern interface.
@@ -30,8 +30,8 @@ configuration health, auditing, and security from one modern interface.
 
 <p align="center">
   <img
-    src="https://raw.githubusercontent.com/skoruba/Duende.IdentityServer.Admin/main/docs/Images/light.png"
-    alt="Skoruba Duende IdentityServer Admin dashboard"
+    src="https://raw.githubusercontent.com/toralux/Open.IdentityServer.Admin/main/docs/Images/light.png"
+    alt="Toralux Open IdentityServer Admin dashboard"
     width="100%"
   />
 </p>
@@ -40,7 +40,7 @@ configuration health, auditing, and security from one modern interface.
 >
 > ## Version 3.1.0 is here 🚀
 >
-> **Version 3.1.0** moves the solution to **Duende IdentityServer 8** and adds an
+> **Version 3.1.0** moves the solution to **Open IdentityServer 8** and adds an
 > **Integration tab** that turns a configured client into ready-to-use .NET 10
 > setup code.
 > The STS can also apply an optional [FAPI 2.0 security profile](#-fapi-20-security-profile).
@@ -56,7 +56,7 @@ configuration health, auditing, and security from one modern interface.
 |     | Area                  | Highlights                                                                  |
 | --- | --------------------- | --------------------------------------------------------------------------- |
 | 🧭  | **New Admin UI**      | React, TypeScript, Tailwind CSS, and shadcn/ui                              |
-| ⚙️  | **Modern backend**    | .NET 10 and Duende IdentityServer 8.0.8                                     |
+| ⚙️  | **Modern backend**    | .NET 10 and Open IdentityServer 8.0.8                                     |
 | 📊  | **Monitoring**        | Dashboards, configuration rules, and issue tracking                         |
 | 🧙  | **Client management** | Improved workflows and guided client creation wizard                        |
 | 🧾  | **Integration code**  | Generated .NET 10 setup for the client you are editing                      |
@@ -101,15 +101,15 @@ Explore the redesigned administration experience, built with **Tailwind CSS** an
 
 ### 🌙 Dashboard (Dark)
 
-![Admin-preview](https://raw.githubusercontent.com/skoruba/Duende.IdentityServer.Admin/main/docs/Images/dark.png)
+![Admin-preview](https://raw.githubusercontent.com/toralux/Open.IdentityServer.Admin/main/docs/Images/dark.png)
 
 ### 🧙‍♂️ Client Creation – Wizard Flow
 
-![Admin-Client-Wizard](https://raw.githubusercontent.com/skoruba/Duende.IdentityServer.Admin/main/docs/Images/client-wizard.png)
+![Admin-Client-Wizard](https://raw.githubusercontent.com/toralux/Open.IdentityServer.Admin/main/docs/Images/client-wizard.png)
 
 ### 💼 Client Management
 
-![Admin-Client-Edit](https://raw.githubusercontent.com/skoruba/Duende.IdentityServer.Admin/main/docs/Images/client-edit.png)
+![Admin-Client-Edit](https://raw.githubusercontent.com/toralux/Open.IdentityServer.Admin/main/docs/Images/client-edit.png)
 
 The client detail shows only the tabs a client's grant types make relevant, and the
 **Integration** tab generates the .NET 10 setup code for that client.
@@ -126,15 +126,15 @@ Define and track configuration rules for clients, API resources, and identity re
 
 #### 🧱 Configuration Rules
 
-![Configuration-Rules](https://raw.githubusercontent.com/skoruba/Duende.IdentityServer.Admin/main/docs/Images/configuration-rules.png)
+![Configuration-Rules](https://raw.githubusercontent.com/toralux/Open.IdentityServer.Admin/main/docs/Images/configuration-rules.png)
 
 #### 🧩 Configuration Issues
 
-![Configuration-Issues](https://raw.githubusercontent.com/skoruba/Duende.IdentityServer.Admin/main/docs/Images/configuration-issues.png)
+![Configuration-Issues](https://raw.githubusercontent.com/toralux/Open.IdentityServer.Admin/main/docs/Images/configuration-issues.png)
 
 ### Solution Structure
 
-![Project structure](https://raw.githubusercontent.com/skoruba/Duende.IdentityServer.Admin/main/docs/Images/project-structure.png)
+![Project structure](https://raw.githubusercontent.com/toralux/Open.IdentityServer.Admin/main/docs/Images/project-structure.png)
 
 ---
 
@@ -143,7 +143,7 @@ Define and track configuration rules for clients, API resources, and identity re
 - .NET 10 SDK
 - Node.js 22.12+ and npm (required for the React client)
 - SQL Server (default LocalDB) or PostgreSQL
-- Duende IdentityServer 8.0.8
+- Open IdentityServer 8.0.8
 
 > **Note:** Using older .NET versions may cause 502.5 errors on IIS or application startup failures.
 
@@ -160,13 +160,13 @@ Define and track configuration rules for clients, API resources, and identity re
 ### 1. Install the template
 
 ```sh
-dotnet new install Skoruba.Duende.IdentityServer.Admin.Templates::3.1.0
+dotnet new install Toralux.Open.IdentityServer.Admin.Templates::3.1.0
 ```
 
 ### 2. Create a new project
 
 ```sh
-dotnet new skoruba.duende.isadmin \
+dotnet new toralux.open-isadmin \
   --name MyProject \
   --title MyProject \
   --adminemail "admin@example.com" \
@@ -190,7 +190,7 @@ dotnet new skoruba.duende.isadmin \
 | `--adminclientid`              | Client ID for the Admin UI OIDC client                                                                                                                                                                            |
 | `--adminclientsecret`          | Client secret for the Admin UI OIDC client                                                                                                                                                                        |
 | `--dockersupport`              | Include Docker support (`true` / `false`)                                                                                                                                                                         |
-| `--requirepushedauthorization` | Require PAR for admin client (`true` / `false`, default `true`). **Note:** PAR requires Duende IdentityServer Business Edition or higher. [More info](https://docs.duendesoftware.com/identityserver/tokens/par/) |
+| `--requirepushedauthorization` | Require PAR for admin client (`true` / `false`, default `true`). **Note:** PAR requires Open IdentityServer Business Edition or higher. [More info](https://docs.duendesoftware.com/identityserver/tokens/par/) |
 
 ---
 
@@ -202,21 +202,21 @@ The solution contains **three runnable services**:
 
 | Service       | Project                                      | Purpose                         |
 | ------------- | -------------------------------------------- | ------------------------------- |
-| **STS**       | `Skoruba.Duende.IdentityServer.STS.Identity` | IdentityServer + authentication |
-| **Admin API** | `Skoruba.Duende.IdentityServer.Admin.Api`    | REST API backend                |
-| **Admin UI**  | `Skoruba.Duende.IdentityServer.Admin`        | SPA host                        |
+| **STS**       | `Toralux.Open.IdentityServer.STS.Identity` | IdentityServer + authentication |
+| **Admin API** | `Toralux.Open.IdentityServer.Admin.Api`    | REST API backend                |
+| **Admin UI**  | `Toralux.Open.IdentityServer.Admin`        | SPA host                        |
 
 ### 1. Clone the repository
 
 ```sh
-git clone https://github.com/skoruba/Duende.IdentityServer.Admin
-cd Duende.IdentityServer.Admin
+git clone https://github.com/toralux/Open.IdentityServer.Admin
+cd Open.IdentityServer.Admin
 ```
 
 ### 2. Install React dependencies (first run only)
 
 ```sh
-cd src/Skoruba.Duende.IdentityServer.Admin.UI.Client
+cd src/Toralux.Open.IdentityServer.Admin.UI.Client
 npm install
 cd ../..
 ```
@@ -227,15 +227,15 @@ Open three terminals and run:
 
 ```sh
 # Terminal 1: STS (IdentityServer)
-cd src/Skoruba.Duende.IdentityServer.STS.Identity
+cd src/Toralux.Open.IdentityServer.STS.Identity
 dotnet run
 
 # Terminal 2: Admin API
-cd src/Skoruba.Duende.IdentityServer.Admin.Api
+cd src/Toralux.Open.IdentityServer.Admin.Api
 dotnet run
 
 # Terminal 3: Admin UI Host
-cd src/Skoruba.Duende.IdentityServer.Admin
+cd src/Toralux.Open.IdentityServer.Admin
 dotnet run
 ```
 
@@ -257,13 +257,13 @@ dotnet run
 
 ### DNS Configuration
 
-Update your hosts file to resolve `skoruba.local`:
+Update your hosts file to resolve `toralux.local`:
 
 **Windows:** `C:\Windows\System32\drivers\etc\hosts`  
 **Linux / macOS:** `/etc/hosts`
 
 ```text
-127.0.0.1 skoruba.local sts.skoruba.local admin.skoruba.local admin-api.skoruba.local
+127.0.0.1 toralux.local sts.toralux.local admin.toralux.local admin-api.toralux.local
 ```
 
 ### Certificates Setup
@@ -278,9 +278,9 @@ mkcert --install
 copy $env:LOCALAPPDATA\mkcert\rootCA-key.pem ./cacerts.pem
 copy $env:LOCALAPPDATA\mkcert\rootCA.pem ./cacerts.crt
 
-# Generate skoruba.local certificates
-mkcert -cert-file skoruba.local.crt -key-file skoruba.local.key skoruba.local *.skoruba.local
-mkcert -pkcs12 skoruba.local.pfx skoruba.local *.skoruba.local
+# Generate toralux.local certificates
+mkcert -cert-file toralux.local.crt -key-file toralux.local.key toralux.local *.toralux.local
+mkcert -pkcs12 toralux.local.pfx toralux.local *.toralux.local
 ```
 
 #### macOS / Linux
@@ -295,9 +295,9 @@ mkcert -install
 cp "$(mkcert -CAROOT)/rootCA-key.pem" ./cacerts.pem
 cp "$(mkcert -CAROOT)/rootCA.pem" ./cacerts.crt
 
-# Generate skoruba.local certificates
-mkcert -cert-file skoruba.local.crt -key-file skoruba.local.key skoruba.local *.skoruba.local
-mkcert -pkcs12 skoruba.local.pfx skoruba.local *.skoruba.local
+# Generate toralux.local certificates
+mkcert -cert-file toralux.local.crt -key-file toralux.local.key toralux.local *.toralux.local
+mkcert -pkcs12 toralux.local.pfx toralux.local *.toralux.local
 ```
 
 ### Run Docker Compose
@@ -411,7 +411,7 @@ dotnet run /seed
 **Configuration in `appsettings.json`:**
 
 ```json
-"AdministrationRole": "SkorubaIdentityAdminAdministrator"
+"AdministrationRole": "ToraluxIdentityAdminAdministrator"
 ```
 
 ---
@@ -655,8 +655,8 @@ https://localhost:44302/swagger
 ```json
 "AdminApiConfiguration": {
   "IdentityServerBaseUrl": "https://localhost:44310",
-  "OidcSwaggerUIClientId": "skoruba_identity_admin_api_swaggerui",
-  "OidcApiName": "skoruba_identity_admin_api"
+  "OidcSwaggerUIClientId": "toralux_identity_admin_api_swaggerui",
+  "OidcApiName": "toralux_identity_admin_api"
 }
 ```
 
@@ -692,7 +692,7 @@ Enable or disable user registration:
 
 ## 🧩 Identity Mapping Customization
 
-Identity DTO/entity mapping in `Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity` is handled by `IdentityDataMapper`.
+Identity DTO/entity mapping in `Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity` is handled by `IdentityDataMapper`.
 
 By default:
 
@@ -742,54 +742,54 @@ The solution contains **unit and integration tests** for all major components.
 
 ### STS
 
-`Skoruba.Duende.IdentityServer.STS.Identity` – IdentityServer with ASP.NET Core Identity
+`Toralux.Open.IdentityServer.STS.Identity` – IdentityServer with ASP.NET Core Identity
 
 ### Admin API
 
-`Skoruba.Duende.IdentityServer.Admin.Api` – REST API with Swagger
+`Toralux.Open.IdentityServer.Admin.Api` – REST API with Swagger
 
 ### Admin UI
 
-- `Skoruba.Duende.IdentityServer.Admin` – .NET host
-- `Skoruba.Duende.IdentityServer.Admin.UI` – UI services
-- `Skoruba.Duende.IdentityServer.Admin.UI.Spa` – Precompiled React assets
-- `Skoruba.Duende.IdentityServer.Admin.UI.Client` – React source code
+- `Toralux.Open.IdentityServer.Admin` – .NET host
+- `Toralux.Open.IdentityServer.Admin.UI` – UI services
+- `Toralux.Open.IdentityServer.Admin.UI.Spa` – Precompiled React assets
+- `Toralux.Open.IdentityServer.Admin.UI.Client` – React source code
 
 ### Business Logic
 
-- `Skoruba.Duende.IdentityServer.Admin.BusinessLogic` – IdentityServer DTOs, services, repositories
-- `Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity` – Identity DTOs, services, repositories
-- `Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Shared` – Shared logic
+- `Toralux.Open.IdentityServer.Admin.BusinessLogic` – IdentityServer DTOs, services, repositories
+- `Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity` – Identity DTOs, services, repositories
+- `Toralux.Open.IdentityServer.Admin.BusinessLogic.Shared` – Shared logic
 
 ### Entity Framework
 
-- `Skoruba.Duende.IdentityServer.Admin.EntityFramework` – Core EF entities
-- `Skoruba.Duende.IdentityServer.Admin.EntityFramework.Configuration` – Entity configurations
-- `Skoruba.Duende.IdentityServer.Admin.EntityFramework.Extensions` – EF extensions
-- `Skoruba.Duende.IdentityServer.Admin.EntityFramework.Identity` – Identity repositories
-- `Skoruba.Duende.IdentityServer.Admin.EntityFramework.Shared` – DbContexts
-- `Skoruba.Duende.IdentityServer.Admin.EntityFramework.SqlServer` – SQL Server migrations
-- `Skoruba.Duende.IdentityServer.Admin.EntityFramework.PostgreSQL` – PostgreSQL migrations
+- `Toralux.Open.IdentityServer.Admin.EntityFramework` – Core EF entities
+- `Toralux.Open.IdentityServer.Admin.EntityFramework.Configuration` – Entity configurations
+- `Toralux.Open.IdentityServer.Admin.EntityFramework.Extensions` – EF extensions
+- `Toralux.Open.IdentityServer.Admin.EntityFramework.Identity` – Identity repositories
+- `Toralux.Open.IdentityServer.Admin.EntityFramework.Shared` – DbContexts
+- `Toralux.Open.IdentityServer.Admin.EntityFramework.SqlServer` – SQL Server migrations
+- `Toralux.Open.IdentityServer.Admin.EntityFramework.PostgreSQL` – PostgreSQL migrations
 
 ### Shared
 
-- `Skoruba.Duende.IdentityServer.Shared` – Shared DTOs
-- `Skoruba.Duende.IdentityServer.Shared.Configuration` – Shared configuration
+- `Toralux.Open.IdentityServer.Shared` – Shared DTOs
+- `Toralux.Open.IdentityServer.Shared.Configuration` – Shared configuration
 
 ### Tests
 
-- `Skoruba.Duende.IdentityServer.Admin.UnitTests` – Unit tests
-- `Skoruba.Duende.IdentityServer.Admin.Api.IntegrationTests` – API integration tests
-- `Skoruba.Duende.IdentityServer.STS.IntegrationTests` – STS integration tests
-- `Skoruba.Duende.IdentityServer.Admin.UI.Client.IntegrationTests` – Playwright UI integration tests (OIDC login flow + Admin UI assertions)
-- `Skoruba.Duende.IdentityServer.Admin.UI.Client` – Vitest unit tests for the Admin UI's pure logic (client capabilities, snippet generation, syntax highlighting)
+- `Toralux.Open.IdentityServer.Admin.UnitTests` – Unit tests
+- `Toralux.Open.IdentityServer.Admin.Api.IntegrationTests` – API integration tests
+- `Toralux.Open.IdentityServer.STS.IntegrationTests` – STS integration tests
+- `Toralux.Open.IdentityServer.Admin.UI.Client.IntegrationTests` – Playwright UI integration tests (OIDC login flow + Admin UI assertions)
+- `Toralux.Open.IdentityServer.Admin.UI.Client` – Vitest unit tests for the Admin UI's pure logic (client capabilities, snippet generation, syntax highlighting)
 
 ### UI Unit Tests (Vitest)
 
 These need no running services:
 
 ```sh
-cd src/Skoruba.Duende.IdentityServer.Admin.UI.Client
+cd src/Toralux.Open.IdentityServer.Admin.UI.Client
 npm install
 npm test
 ```
@@ -798,12 +798,12 @@ npm test
 
 The UI E2E test project is located in:
 
-- `tests/Skoruba.Duende.IdentityServer.Admin.UI.Client.IntegrationTests`
+- `tests/Toralux.Open.IdentityServer.Admin.UI.Client.IntegrationTests`
 
 To run it:
 
 ```sh
-cd tests/Skoruba.Duende.IdentityServer.Admin.UI.Client.IntegrationTests
+cd tests/Toralux.Open.IdentityServer.Admin.UI.Client.IntegrationTests
 npm install
 npx playwright install chromium
 npm test
@@ -818,7 +818,7 @@ Default expected runtime services:
   - Vite dev server / default `E2E_ADMIN_URL` for Playwright: `https://localhost:50445`
 
 > **Important:** The seeded OIDC client redirect URIs and CORS origins in
-> `src/Skoruba.Duende.IdentityServer.Admin.Api/identityserverdata.json` use
+> `src/Toralux.Open.IdentityServer.Admin.Api/identityserverdata.json` use
 > `https://localhost:50445` by default. If you run the Admin UI on
 > `https://localhost:7127` instead, update the client configuration (or the
 > Playwright `E2E_ADMIN_URL`) so redirects and CORS validation continue to
@@ -826,8 +826,8 @@ Default expected runtime services:
 
 The tests load credentials and expected client data from seed files:
 
-- `src/Skoruba.Duende.IdentityServer.Admin.Api/identitydata.json`
-- `src/Skoruba.Duende.IdentityServer.Admin.Api/identityserverdata.json`
+- `src/Toralux.Open.IdentityServer.Admin.Api/identitydata.json`
+- `src/Toralux.Open.IdentityServer.Admin.Api/identityserverdata.json`
 
 ---
 
@@ -863,9 +863,9 @@ For detailed release history and upcoming features, see [CHANGELOG.md](https://g
 
 This repository is licensed under [Apache License 2.0](https://github.com/skoruba/Duende.IdentityServer.Admin/blob/main/LICENSE).
 
-### Duende IdentityServer License
+### Open IdentityServer License
 
-**Duende IdentityServer** is available under both a FOSS (RPL) and commercial license.
+**Open IdentityServer** is available under both a FOSS (RPL) and commercial license.
 
 For production environments, you need a specific license. More info:  
 https://duendesoftware.com/products/identityserver#pricing
@@ -881,7 +881,7 @@ Licensed under: https://github.com/DuendeSoftware/IdentityServer.Quickstart.UI/b
 Thanks to:
 
 - [Tomáš Hübelbauer](https://github.com/TomasHubelbauer) for initial code review
-- [Dominick Baier](https://github.com/leastprivilege) and [Brock Allen](https://github.com/brockallen) – creators of Duende IdentityServer
+- [Dominick Baier](https://github.com/leastprivilege) and [Brock Allen](https://github.com/brockallen) – creators of Open IdentityServer
 - All [contributors](https://github.com/skoruba/Duende.IdentityServer.Admin/graphs/contributors) 👍
 
 ---

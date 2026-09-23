@@ -1,0 +1,41 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Admin UI",
+      "type": "shell",
+      "command": "dotnet run --project ../Toralux.Open.IdentityServer.Admin.UI/Toralux.Open.IdentityServer.Admin.UI.csproj",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always"
+      }
+    },
+    {
+      "label": "Admin UI API",
+      "type": "shell",
+      "command": "dotnet run --project ../../../Open.IdentityServer.Admin/src/Toralux.Open.IdentityServer.Admin.Api/Toralux.Open.IdentityServer.Admin.Api.csproj",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always"
+      }
+    },
+    {
+      "label": "STS",
+      "type": "shell",
+      "command": "dotnet run --project ../../../Open.IdentityServer.Admin/src/Toralux.Open.IdentityServer.STS.Identity/Toralux.Open.IdentityServer.STS.Identity.csproj",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always"
+      }
+    },
+    {
+      "label": "Admin UI MVC",
+      "type": "shell",
+      "command": "dotnet run --project ../../../Open.IdentityServer.Admin/src/Toralux.Open.IdentityServer.Admin/Toralux.Open.IdentityServer.Admin.csproj",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always"
+      }
+    }
+  ]
+}

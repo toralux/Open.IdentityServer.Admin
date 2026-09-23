@@ -1,14 +1,14 @@
 param([string] $packagesVersions)
 
 # This script contains following steps:
-# - Download latest version of Skoruba.Duende.IdentityServer.Admin from git repository
+# - Download latest version of Toralux.Open.IdentityServer.Admin from git repository
 # - Use folders src and tests for project template
 
-$gitProjectFolder = "Skoruba.Duende.IdentityServer.Admin"
+$gitProjectFolder = "Toralux.Open.IdentityServer.Admin"
 $templateSrc = "template-build/content/src"
 $templateRoot = "template-build/content"
 $templateTests = "template-build/content/tests"
-$templateAdminProject = "template-build/content/src/Skoruba.Duende.IdentityServer.Admin"
+$templateAdminProject = "template-build/content/src/Toralux.Open.IdentityServer.Admin"
 
 Get-Location
 
@@ -93,76 +93,76 @@ CleanBinObjFolders
 # Remove references
 
 # API
-dotnet remove ./$templateSrc/Skoruba.Duende.IdentityServer.Admin.Api/Skoruba.Duende.IdentityServer.Admin.Api.csproj reference ..\Skoruba.Duende.IdentityServer.Admin.UI.Api\Skoruba.Duende.IdentityServer.Admin.UI.Api.csproj
+dotnet remove ./$templateSrc/Toralux.Open.IdentityServer.Admin.Api/Toralux.Open.IdentityServer.Admin.Api.csproj reference ..\Toralux.Open.IdentityServer.Admin.UI.Api\Toralux.Open.IdentityServer.Admin.UI.Api.csproj
 
 # Admin
-dotnet remove ./$templateSrc/Skoruba.Duende.IdentityServer.Admin/Skoruba.Duende.IdentityServer.Admin.csproj reference ..\Skoruba.Duende.IdentityServer.Admin.UI\Skoruba.Duende.IdentityServer.Admin.UI.csproj
-dotnet remove ./$templateSrc/Skoruba.Duende.IdentityServer.Admin/Skoruba.Duende.IdentityServer.Admin.csproj reference ..\Skoruba.Duende.IdentityServer.Shared.Configuration\Skoruba.Duende.IdentityServer.Shared.Configuration.csproj
+dotnet remove ./$templateSrc/Toralux.Open.IdentityServer.Admin/Toralux.Open.IdentityServer.Admin.csproj reference ..\Toralux.Open.IdentityServer.Admin.UI\Toralux.Open.IdentityServer.Admin.UI.csproj
+dotnet remove ./$templateSrc/Toralux.Open.IdentityServer.Admin/Toralux.Open.IdentityServer.Admin.csproj reference ..\Toralux.Open.IdentityServer.Shared.Configuration\Toralux.Open.IdentityServer.Shared.Configuration.csproj
 
 # STS
-dotnet remove ./$templateSrc/Skoruba.Duende.IdentityServer.STS.Identity/Skoruba.Duende.IdentityServer.STS.Identity.csproj reference ..\Skoruba.Duende.IdentityServer.Shared.Configuration\Skoruba.Duende.IdentityServer.Shared.Configuration.csproj
-dotnet remove ./$templateSrc/Skoruba.Duende.IdentityServer.STS.Identity/Skoruba.Duende.IdentityServer.STS.Identity.csproj reference ..\Skoruba.Duende.IdentityServer.Admin.EntityFramework.Configuration\Skoruba.Duende.IdentityServer.Admin.EntityFramework.Configuration.csproj
+dotnet remove ./$templateSrc/Toralux.Open.IdentityServer.STS.Identity/Toralux.Open.IdentityServer.STS.Identity.csproj reference ..\Toralux.Open.IdentityServer.Shared.Configuration\Toralux.Open.IdentityServer.Shared.Configuration.csproj
+dotnet remove ./$templateSrc/Toralux.Open.IdentityServer.STS.Identity/Toralux.Open.IdentityServer.STS.Identity.csproj reference ..\Toralux.Open.IdentityServer.Admin.EntityFramework.Configuration\Toralux.Open.IdentityServer.Admin.EntityFramework.Configuration.csproj
 
 # EF Shared
-dotnet remove ./$templateSrc/Skoruba.Duende.IdentityServer.Admin.EntityFramework.Shared/Skoruba.Duende.IdentityServer.Admin.EntityFramework.Shared.csproj reference ..\Skoruba.Duende.IdentityServer.Admin.EntityFramework.Configuration\Skoruba.Duende.IdentityServer.Admin.EntityFramework.Configuration.csproj
+dotnet remove ./$templateSrc/Toralux.Open.IdentityServer.Admin.EntityFramework.Shared/Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.csproj reference ..\Toralux.Open.IdentityServer.Admin.EntityFramework.Configuration\Toralux.Open.IdentityServer.Admin.EntityFramework.Configuration.csproj
 
 # Shared
-dotnet remove ./$templateSrc/Skoruba.Duende.IdentityServer.Shared/Skoruba.Duende.IdentityServer.Shared.csproj reference ..\Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity\Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.csproj
+dotnet remove ./$templateSrc/Toralux.Open.IdentityServer.Shared/Toralux.Open.IdentityServer.Shared.csproj reference ..\Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity\Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.csproj
 
 # EF Shared - remove Admin Storage reference (only Admin Storage is used in template projects)
-dotnet remove ./$templateSrc/Skoruba.Duende.IdentityServer.Admin.EntityFramework.Shared/Skoruba.Duende.IdentityServer.Admin.EntityFramework.Shared.csproj reference ..\Skoruba.Duende.IdentityServer.Admin.EntityFramework.Admin.Storage\Skoruba.Duende.IdentityServer.Admin.EntityFramework.Admin.Storage.csproj
+dotnet remove ./$templateSrc/Toralux.Open.IdentityServer.Admin.EntityFramework.Shared/Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.csproj reference ..\Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage\Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.csproj
 
 # DB specific projects - remove Admin Storage project references
-dotnet remove ./$templateSrc/Skoruba.Duende.IdentityServer.Admin.EntityFramework.SqlServer/Skoruba.Duende.IdentityServer.Admin.EntityFramework.SqlServer.csproj reference ..\Skoruba.Duende.IdentityServer.Admin.EntityFramework.Admin.Storage\Skoruba.Duende.IdentityServer.Admin.EntityFramework.Admin.Storage.csproj
-dotnet remove ./$templateSrc/Skoruba.Duende.IdentityServer.Admin.EntityFramework.PostgreSQL/Skoruba.Duende.IdentityServer.Admin.EntityFramework.PostgreSQL.csproj reference ..\Skoruba.Duende.IdentityServer.Admin.EntityFramework.Admin.Storage\Skoruba.Duende.IdentityServer.Admin.EntityFramework.Admin.Storage.csproj
+dotnet remove ./$templateSrc/Toralux.Open.IdentityServer.Admin.EntityFramework.SqlServer/Toralux.Open.IdentityServer.Admin.EntityFramework.SqlServer.csproj reference ..\Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage\Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.csproj
+dotnet remove ./$templateSrc/Toralux.Open.IdentityServer.Admin.EntityFramework.PostgreSQL/Toralux.Open.IdentityServer.Admin.EntityFramework.PostgreSQL.csproj reference ..\Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage\Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.csproj
 
 # Add nuget packages
 # Admin
-dotnet add ./$templateSrc/Skoruba.Duende.IdentityServer.Admin/Skoruba.Duende.IdentityServer.Admin.csproj package Skoruba.Duende.IdentityServer.Admin.UI -v $packagesVersions
-dotnet add ./$templateSrc/Skoruba.Duende.IdentityServer.Admin/Skoruba.Duende.IdentityServer.Admin.csproj package Skoruba.Duende.IdentityServer.Admin.UI.Spa -v $packagesVersions
-dotnet add ./$templateSrc/Skoruba.Duende.IdentityServer.Admin/Skoruba.Duende.IdentityServer.Admin.csproj package Skoruba.Duende.IdentityServer.Shared.Configuration -v $packagesVersions
+dotnet add ./$templateSrc/Toralux.Open.IdentityServer.Admin/Toralux.Open.IdentityServer.Admin.csproj package Toralux.Open.IdentityServer.Admin.UI -v $packagesVersions
+dotnet add ./$templateSrc/Toralux.Open.IdentityServer.Admin/Toralux.Open.IdentityServer.Admin.csproj package Toralux.Open.IdentityServer.Admin.UI.Spa -v $packagesVersions
+dotnet add ./$templateSrc/Toralux.Open.IdentityServer.Admin/Toralux.Open.IdentityServer.Admin.csproj package Toralux.Open.IdentityServer.Shared.Configuration -v $packagesVersions
 
 # STS
-dotnet add ./$templateSrc/Skoruba.Duende.IdentityServer.STS.Identity/Skoruba.Duende.IdentityServer.STS.Identity.csproj package Skoruba.Duende.IdentityServer.Shared.Configuration -v $packagesVersions
-dotnet add ./$templateSrc/Skoruba.Duende.IdentityServer.STS.Identity/Skoruba.Duende.IdentityServer.STS.Identity.csproj package Skoruba.Duende.IdentityServer.Admin.EntityFramework.Configuration -v $packagesVersions
+dotnet add ./$templateSrc/Toralux.Open.IdentityServer.STS.Identity/Toralux.Open.IdentityServer.STS.Identity.csproj package Toralux.Open.IdentityServer.Shared.Configuration -v $packagesVersions
+dotnet add ./$templateSrc/Toralux.Open.IdentityServer.STS.Identity/Toralux.Open.IdentityServer.STS.Identity.csproj package Toralux.Open.IdentityServer.Admin.EntityFramework.Configuration -v $packagesVersions
 
 # API
-dotnet add ./$templateSrc/Skoruba.Duende.IdentityServer.Admin.Api/Skoruba.Duende.IdentityServer.Admin.Api.csproj package Skoruba.Duende.IdentityServer.Admin.UI.Api -v $packagesVersions
+dotnet add ./$templateSrc/Toralux.Open.IdentityServer.Admin.Api/Toralux.Open.IdentityServer.Admin.Api.csproj package Toralux.Open.IdentityServer.Admin.UI.Api -v $packagesVersions
 
 # EF Shared
-dotnet add ./$templateSrc/Skoruba.Duende.IdentityServer.Admin.EntityFramework.Shared/Skoruba.Duende.IdentityServer.Admin.EntityFramework.Shared.csproj package Skoruba.Duende.IdentityServer.Admin.EntityFramework.Configuration -v $packagesVersions
+dotnet add ./$templateSrc/Toralux.Open.IdentityServer.Admin.EntityFramework.Shared/Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.csproj package Toralux.Open.IdentityServer.Admin.EntityFramework.Configuration -v $packagesVersions
 
 # Shared
-dotnet add ./$templateSrc/Skoruba.Duende.IdentityServer.Shared/Skoruba.Duende.IdentityServer.Shared.csproj package Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity -v $packagesVersions
+dotnet add ./$templateSrc/Toralux.Open.IdentityServer.Shared/Toralux.Open.IdentityServer.Shared.csproj package Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity -v $packagesVersions
 
 # EF Shared - add Admin Storage package (only Admin Storage is used in template projects)
-dotnet add ./$templateSrc/Skoruba.Duende.IdentityServer.Admin.EntityFramework.Shared/Skoruba.Duende.IdentityServer.Admin.EntityFramework.Shared.csproj package Skoruba.Duende.IdentityServer.Admin.EntityFramework.Admin.Storage -v $packagesVersions
+dotnet add ./$templateSrc/Toralux.Open.IdentityServer.Admin.EntityFramework.Shared/Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.csproj package Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage -v $packagesVersions
 
 # DB specific projects - add Admin Storage NuGet package
-dotnet add ./$templateSrc/Skoruba.Duende.IdentityServer.Admin.EntityFramework.SqlServer/Skoruba.Duende.IdentityServer.Admin.EntityFramework.SqlServer.csproj package Skoruba.Duende.IdentityServer.Admin.EntityFramework.Admin.Storage -v $packagesVersions
-dotnet add ./$templateSrc/Skoruba.Duende.IdentityServer.Admin.EntityFramework.PostgreSQL/Skoruba.Duende.IdentityServer.Admin.EntityFramework.PostgreSQL.csproj package Skoruba.Duende.IdentityServer.Admin.EntityFramework.Admin.Storage -v $packagesVersions
+dotnet add ./$templateSrc/Toralux.Open.IdentityServer.Admin.EntityFramework.SqlServer/Toralux.Open.IdentityServer.Admin.EntityFramework.SqlServer.csproj package Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage -v $packagesVersions
+dotnet add ./$templateSrc/Toralux.Open.IdentityServer.Admin.EntityFramework.PostgreSQL/Toralux.Open.IdentityServer.Admin.EntityFramework.PostgreSQL.csproj package Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage -v $packagesVersions
 
 # Clean solution and folders bin, obj
 CleanBinObjFolders
 
 # Clean up projects which will be installed via nuget packages
-Remove-Item ./$templateSrc/Skoruba.Duende.IdentityServer.Admin.BusinessLogic -Force -recurse
-Remove-Item ./$templateSrc/Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity -Force -recurse
-Remove-Item ./$templateSrc/Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Shared -Force -recurse
-Remove-Item ./$templateSrc/Skoruba.Duende.IdentityServer.Admin.EntityFramework -Force -recurse
-Remove-Item ./$templateSrc/Skoruba.Duende.IdentityServer.Admin.EntityFramework.Identity -Force -recurse
-Remove-Item ./$templateSrc/Skoruba.Duende.IdentityServer.Admin.EntityFramework.Extensions -Force -recurse
-Remove-Item ./$templateSrc/Skoruba.Duende.IdentityServer.Admin.EntityFramework.Configuration -Force -recurse
-Remove-Item ./$templateSrc/Skoruba.Duende.IdentityServer.Shared.Configuration -Force -recurse
-Remove-Item ./$templateSrc/Skoruba.Duende.IdentityServer.Admin.UI -Force -recurse
-Remove-Item ./$templateSrc/Skoruba.Duende.IdentityServer.Admin.UI.Spa -Force -recurse
-Remove-Item ./$templateSrc/Skoruba.Duende.IdentityServer.Admin.UI.Client -Force -recurse
-Remove-Item ./$templateSrc/Skoruba.Duende.IdentityServer.Admin.UI.Api -Force -recurse
-Remove-Item ./$templateSrc/Skoruba.Duende.IdentityServer.Admin.EntityFramework.Admin -Force -recurse
-Remove-Item ./$templateSrc/Skoruba.Duende.IdentityServer.Admin.EntityFramework.Admin.Storage -Force -recurse
+Remove-Item ./$templateSrc/Toralux.Open.IdentityServer.Admin.BusinessLogic -Force -recurse
+Remove-Item ./$templateSrc/Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity -Force -recurse
+Remove-Item ./$templateSrc/Toralux.Open.IdentityServer.Admin.BusinessLogic.Shared -Force -recurse
+Remove-Item ./$templateSrc/Toralux.Open.IdentityServer.Admin.EntityFramework -Force -recurse
+Remove-Item ./$templateSrc/Toralux.Open.IdentityServer.Admin.EntityFramework.Identity -Force -recurse
+Remove-Item ./$templateSrc/Toralux.Open.IdentityServer.Admin.EntityFramework.Extensions -Force -recurse
+Remove-Item ./$templateSrc/Toralux.Open.IdentityServer.Admin.EntityFramework.Configuration -Force -recurse
+Remove-Item ./$templateSrc/Toralux.Open.IdentityServer.Shared.Configuration -Force -recurse
+Remove-Item ./$templateSrc/Toralux.Open.IdentityServer.Admin.UI -Force -recurse
+Remove-Item ./$templateSrc/Toralux.Open.IdentityServer.Admin.UI.Spa -Force -recurse
+Remove-Item ./$templateSrc/Toralux.Open.IdentityServer.Admin.UI.Client -Force -recurse
+Remove-Item ./$templateSrc/Toralux.Open.IdentityServer.Admin.UI.Api -Force -recurse
+Remove-Item ./$templateSrc/Toralux.Open.IdentityServer.Admin.EntityFramework.Admin -Force -recurse
+Remove-Item ./$templateSrc/Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage -Force -recurse
 Remove-Item ./$templateTests -Force -recurse
 
-$csprojPath = "$templateSrc/Skoruba.Duende.IdentityServer.Admin/Skoruba.Duende.IdentityServer.Admin.csproj"
+$csprojPath = "$templateSrc/Toralux.Open.IdentityServer.Admin/Toralux.Open.IdentityServer.Admin.csproj"
 
 # Remove <SpaRoot>, <SpaProxyLaunchCommand>, <SpaProxyServerUrl> from .csproj
 if (Test-Path $csprojPath) {
@@ -205,7 +205,7 @@ if (Test-Path $csprojPath) {
 }
 
 # Remove ASPNETCORE_HOSTINGSTARTUPASSEMBLIES from launchSettings.json environmentVariables
-$launchSettingsPath = "$templateSrc/Skoruba.Duende.IdentityServer.Admin/Properties/launchSettings.json"
+$launchSettingsPath = "$templateSrc/Toralux.Open.IdentityServer.Admin/Properties/launchSettings.json"
 if (Test-Path $launchSettingsPath) {
     $json = Get-Content $launchSettingsPath -Raw | ConvertFrom-Json
     foreach ($profileName in $json.profiles.PSObject.Properties.Name) {
@@ -221,20 +221,20 @@ if (Test-Path $launchSettingsPath) {
 ######################################
 
 # Step 2
-$templateNuspecPath = "template-build/Skoruba.Duende.IdentityServer.Admin.Templates.nuspec"
+$templateNuspecPath = "template-build/Toralux.Open.IdentityServer.Admin.Templates.nuspec"
 nuget pack ./$templateNuspecPath -NoDefaultExcludes
 
 ######################################
 # Step 3
-$templateLocalName = "Skoruba.Duende.IdentityServer.Admin.Templates.$packagesVersions.nupkg"
+$templateLocalName = "Toralux.Open.IdentityServer.Admin.Templates.$packagesVersions.nupkg"
 
-dotnet new --uninstall Skoruba.Duende.IdentityServer.Admin.Templates
+dotnet new --uninstall Toralux.Open.IdentityServer.Admin.Templates
 dotnet new -i ./$templateLocalName
 
 ######################################
 # Step 4
 # Create template for fixing project name
-dotnet new skoruba.duende.isadmin --name SkorubaDuende.IdentityServerAdmin --title "Skoruba Duende IdentityServer Admin" --adminrole SkorubaIdentityAdminAdministrator --adminclientid skoruba_identity_admin_v3 --adminclientsecret skoruba_admin_client_secret --requirepushedauthorization false
+dotnet new toralux.open-isadmin --name ToraluxOpen.IdentityServerAdmin --title "Toralux Open IdentityServer Admin" --adminrole ToraluxIdentityAdminAdministrator --adminclientid toralux_identity_admin_v3 --adminclientsecret toralux_admin_client_secret --requirepushedauthorization false
 
 ######################################
 # Step 5
@@ -242,40 +242,40 @@ dotnet new skoruba.duende.isadmin --name SkorubaDuende.IdentityServerAdmin --tit
 
 CleanBinObjFolders
 
-$templateFiles = Get-ChildItem ./SkorubaDuende.IdentityServerAdmin/src -include *.cs, *.csproj, *.cshtml -Recurse
+$templateFiles = Get-ChildItem ./ToraluxOpen.IdentityServerAdmin/src -include *.cs, *.csproj, *.cshtml -Recurse
 foreach ($file in $templateFiles) {
     Write-Host $file.PSPath
 
     (Get-Content $file.PSPath -raw -Encoding UTF8) |
-    Foreach-Object { $_ -replace "SkorubaDuende.IdentityServerAdmin.Shared.Configuration", "Skoruba.Duende.IdentityServer.Shared.Configuration" } |
+    Foreach-Object { $_ -replace "ToraluxOpen.IdentityServerAdmin.Shared.Configuration", "Toralux.Open.IdentityServer.Shared.Configuration" } |
     Out-File $file.PSPath -Encoding UTF8 -NoNewline
 
     (Get-Content $file.PSPath -raw -Encoding UTF8) |
-    Foreach-Object { $_ -replace "SkorubaDuende.IdentityServerAdmin.Admin.UI", "Skoruba.Duende.IdentityServer.Admin.UI" } |
+    Foreach-Object { $_ -replace "ToraluxOpen.IdentityServerAdmin.Admin.UI", "Toralux.Open.IdentityServer.Admin.UI" } |
     Out-File $file.PSPath -Encoding UTF8 -NoNewline
 
     (Get-Content $file.PSPath -raw -Encoding UTF8) |
-    Foreach-Object { $_ -replace "SkorubaDuende.IdentityServerAdmin.Admin.UI.Api", "Skoruba.Duende.IdentityServer.Admin.UI.Api" } |
+    Foreach-Object { $_ -replace "ToraluxOpen.IdentityServerAdmin.Admin.UI.Api", "Toralux.Open.IdentityServer.Admin.UI.Api" } |
     Out-File $file.PSPath -Encoding UTF8 -NoNewline
 
     (Get-Content $file.PSPath -raw -Encoding UTF8) |
-    Foreach-Object { $_ -replace "SkorubaDuende.IdentityServerAdmin.Admin.BusinessLogic", "Skoruba.Duende.IdentityServer.Admin.BusinessLogic" } |
+    Foreach-Object { $_ -replace "ToraluxOpen.IdentityServerAdmin.Admin.BusinessLogic", "Toralux.Open.IdentityServer.Admin.BusinessLogic" } |
     Out-File $file.PSPath -Encoding UTF8 -NoNewline
 
     (Get-Content $file.PSPath -raw -Encoding UTF8) |
-    Foreach-Object { $_ -replace "SkorubaDuende.IdentityServerAdmin.Admin.EntityFramework", "Skoruba.Duende.IdentityServer.Admin.EntityFramework" } |
+    Foreach-Object { $_ -replace "ToraluxOpen.IdentityServerAdmin.Admin.EntityFramework", "Toralux.Open.IdentityServer.Admin.EntityFramework" } |
     Out-File $file.PSPath -Encoding UTF8 -NoNewline
 
     (Get-Content $file.PSPath -raw -Encoding UTF8) |
-    Foreach-Object { $_ -replace "Skoruba.Duende.IdentityServer.Admin.EntityFramework.Shared", "SkorubaDuende.IdentityServerAdmin.Admin.EntityFramework.Shared" } |
+    Foreach-Object { $_ -replace "Toralux.Open.IdentityServer.Admin.EntityFramework.Shared", "ToraluxOpen.IdentityServerAdmin.Admin.EntityFramework.Shared" } |
     Out-File $file.PSPath -Encoding UTF8 -NoNewline
 
     (Get-Content $file.PSPath -raw -Encoding UTF8) |
-    Foreach-Object { $_ -replace "Skoruba.Duende.IdentityServer.Admin.EntityFramework.PostgreSQL", "SkorubaDuende.IdentityServerAdmin.Admin.EntityFramework.PostgreSQL" } |
+    Foreach-Object { $_ -replace "Toralux.Open.IdentityServer.Admin.EntityFramework.PostgreSQL", "ToraluxOpen.IdentityServerAdmin.Admin.EntityFramework.PostgreSQL" } |
     Out-File $file.PSPath -Encoding UTF8 -NoNewline
 
     (Get-Content $file.PSPath -raw -Encoding UTF8) |
-    Foreach-Object { $_ -replace "Skoruba.Duende.IdentityServer.Admin.EntityFramework.SqlServer", "SkorubaDuende.IdentityServerAdmin.Admin.EntityFramework.SqlServer" } |
+    Foreach-Object { $_ -replace "Toralux.Open.IdentityServer.Admin.EntityFramework.SqlServer", "ToraluxOpen.IdentityServerAdmin.Admin.EntityFramework.SqlServer" } |
     Out-File $file.PSPath -Encoding UTF8 -NoNewline
 }
 

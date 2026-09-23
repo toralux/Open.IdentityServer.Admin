@@ -274,16 +274,16 @@ __pycache__/
 
 # Cake - Uncomment if you are using it
 # tools/
-/src/Skoruba.Duende.IdentityServer.Admin/appsettings.production.json
-/src/Skoruba.Duende.IdentityServer.Admin/Scripts/Libs/
-/src/Skoruba.Duende.IdentityServer.Admin/Data/Migrations/
+/src/Toralux.Open.IdentityServer.Admin/appsettings.production.json
+/src/Toralux.Open.IdentityServer.Admin/Scripts/Libs/
+/src/Toralux.Open.IdentityServer.Admin/Data/Migrations/
 
 # Don't ignore these log folders
-!/src/Skoruba.Duende.IdentityServer.Admin.UI/Resources/Views/Log/
-!/src/Skoruba.Duende.IdentityServer.Admin.BusinessLogic/Dtos/Log/
+!/src/Toralux.Open.IdentityServer.Admin.UI/Resources/Views/Log/
+!/src/Toralux.Open.IdentityServer.Admin.BusinessLogic/Dtos/Log/
 !**/Views/Log/
-!/src/Skoruba.Duende.IdentityServer.Admin.BusinessLogic/Events/Log/
-/src/Skoruba.Duende.IdentityServer.Admin.Api/appsettings.Production.json
+!/src/Toralux.Open.IdentityServer.Admin.BusinessLogic/Events/Log/
+/src/Toralux.Open.IdentityServer.Admin.Api/appsettings.Production.json
 
 appsettings.*.json
 

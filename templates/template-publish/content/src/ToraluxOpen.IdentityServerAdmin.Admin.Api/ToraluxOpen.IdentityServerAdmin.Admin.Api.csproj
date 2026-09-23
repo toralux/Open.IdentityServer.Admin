@@ -1,0 +1,65 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+	    <TargetFramework>net10.0</TargetFramework>
+		<AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+        <UserSecretsId>1cc472a2-4e4b-48ce-846b-5219f71fc643</UserSecretsId>
+        <DockerComposeProjectPath>..\..\docker-compose.dcproj</DockerComposeProjectPath>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+        <DockerfileContext>..\..</DockerfileContext>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ToraluxOpen.IdentityServerAdmin.Admin.EntityFramework.PostgreSQL\ToraluxOpen.IdentityServerAdmin.Admin.EntityFramework.PostgreSQL.csproj" />
+      <ProjectReference Include="..\ToraluxOpen.IdentityServerAdmin.Admin.EntityFramework.SqlServer\ToraluxOpen.IdentityServerAdmin.Admin.EntityFramework.SqlServer.csproj" />
+      <ProjectReference Include="..\ToraluxOpen.IdentityServerAdmin.Shared\ToraluxOpen.IdentityServerAdmin.Shared.csproj" />
+    </ItemGroup>
+
+    
+    <ItemGroup>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.12">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="NSwag.CodeGeneration" Version="14.7.1" />
+        <PackageReference Include="NSwag.CodeGeneration.TypeScript" Version="14.7.1" />
+        <PackageReference Include="NSwag.Generation" Version="14.7.1" />
+        <PackageReference Include="NSwag.Generation.AspNetCore" Version="14.7.1" />
+        <PackageReference Include="NSwag.Generation.WebApi" Version="14.7.1" />
+        <PackageReference Include="NSwag.AspNetCore" Version="14.7.1" />
+        <PackageReference Include="NSwag.MSBuild" Version="14.7.1">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Toralux.Open.IdentityServer.Admin.UI.Api" Version="3.1.0" />
+    </ItemGroup>
+
+    
+    <ItemGroup>
+      <Content Include="..\..\.dockerignore">
+        <Link>.dockerignore</Link>
+      </Content>
+    </ItemGroup>
+    
+    <Target Name="NSwag" BeforeTargets="AfterBuild" Condition="'$(Configuration)'=='Debug'">
+        <Exec ContinueOnError="true" Command="$(NSwagExe_Net100) run nswag.json /variables:Configuration=$(Configuration)">
+            <Output TaskParameter="ExitCode" PropertyName="NSwagExitCode" />
+            <Output TaskParameter="ConsoleOutput" PropertyName="NSwagOutput" />
+        </Exec>
+
+        <Message Text="$(NSwagOutput)" Condition="'$(NSwagExitCode)' == '0'" Importance="low" />
+        <Error Text="$(NSwagOutput)" Condition="'$(NSwagExitCode)' != '0'" />
+    </Target>
+    
+
+</Project>
+
+
+
+
+
+
+
+
+
+

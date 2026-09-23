@@ -1,0 +1,45 @@
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.Dashboard;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.Log;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Services.Interfaces;
+using Toralux.Open.IdentityServer.Admin.EntityFramework.Repositories.Interfaces;
+
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Services;
+
+public class DashboardService : IDashboardService
+{
+    protected readonly IDashboardRepository DashboardRepository;
+    protected readonly IAuditLogService AuditLogService;
+
+    public DashboardService(IDashboardRepository dashboardRepository, IAuditLogService auditLogService)
+    {
+        DashboardRepository = dashboardRepository;
+        AuditLogService = auditLogService;
+    }
+
+    public async Task<DashboardDto> GetDashboardIdentityServerAsync(int auditLogsLastNumberOfDays, CancellationToken cancellationToken = default)
+    {
+       var dashBoardData = await DashboardRepository.GetDashboardIdentityServerAsync(auditLogsLastNumberOfDays, cancellationToken);
+       var auditLogs = await AuditLogService.GetDashboardAuditLogsAsync(auditLogsLastNumberOfDays, cancellationToken);
+       var auditLogsAverage = await AuditLogService.GetDashboardAuditLogsAverageAsync(auditLogsLastNumberOfDays, cancellationToken);
+       
+       return new DashboardDto
+       {
+            ClientsTotal = dashBoardData.ClientsTotal,
+            ApiResourcesTotal = dashBoardData.ApiResourcesTotal,
+            ApiScopesTotal = dashBoardData.ApiScopesTotal,
+            IdentityResourcesTotal = dashBoardData.IdentityResourcesTotal,
+            AuditLogsAvg = auditLogsAverage,
+            AuditLogsPerDaysTotal = auditLogs,
+            IdentityProvidersTotal = dashBoardData.IdentityProvidersTotal
+       };
+    }
+
+    public virtual Task<List<AuditLogDto>> GetRecentAuditChangesAsync(int count, int scanLimit, CancellationToken cancellationToken = default)
+    {
+        return AuditLogService.GetRecentChangesAsync(count, scanLimit, cancellationToken);
+    }
+}

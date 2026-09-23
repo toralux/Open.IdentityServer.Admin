@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+	    <TargetFramework>net10.0</TargetFramework>
+		<Description>Entity Framework layer for the administration of the Open IdentityServer and Asp.Net Core Identity with PostrgreSQL support</Description>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.3" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.12" PrivateAssets="All" />
+        <PackageReference Include="Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage" Version="3.1.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+	    <ProjectReference Include="..\ToraluxOpen.IdentityServerAdmin.Admin.EntityFramework.Shared\ToraluxOpen.IdentityServerAdmin.Admin.EntityFramework.Shared.csproj" />
+    </ItemGroup>
+
+</Project>
+
+
+
+
+
+
+
+
+
+
+
+
+

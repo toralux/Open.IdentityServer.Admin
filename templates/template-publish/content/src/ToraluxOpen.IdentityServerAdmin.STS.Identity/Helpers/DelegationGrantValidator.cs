@@ -1,0 +1,49 @@
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+using Open.IdentityServer.Models;
+using Open.IdentityServer.Validation;
+
+namespace ToraluxOpen.IdentityServerAdmin.STS.Identity.Helpers
+{
+    public class DelegationGrantValidator : IExtensionGrantValidator
+    {
+        private readonly ITokenValidator _validator;
+
+        public DelegationGrantValidator(ITokenValidator validator)
+        {
+            _validator = validator;
+        }
+
+        public string GrantType => "delegation";
+
+        public async Task ValidateAsync(ExtensionGrantValidationContext context, CancellationToken cancellationToken = default)
+        {
+            var userToken = context.Request.Raw.Get("token");
+
+            if (string.IsNullOrEmpty(userToken))
+            {
+                context.Result = new GrantValidationResult(TokenRequestErrors.InvalidGrant);
+                return;
+            }
+
+            var result = await _validator.ValidateAccessTokenAsync(userToken, expectedScope: null, cancellationToken);
+            if (result.IsError)
+            {
+                context.Result = new GrantValidationResult(TokenRequestErrors.InvalidGrant);
+                return;
+            }
+
+            // get user's identity - a token issued without a user, such as a client credentials one, has no subject to delegate
+            var sub = result.Claims.FirstOrDefault(c => c.Type == "sub")?.Value;
+            if (string.IsNullOrEmpty(sub))
+            {
+                context.Result = new GrantValidationResult(TokenRequestErrors.InvalidGrant);
+                return;
+            }
+
+            context.Result = new GrantValidationResult(sub, GrantType);
+            return;
+        }
+    }
+}

@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net10.0</TargetFramework>
+		<Description>Entity Framework layer for the administration of the Open IdentityServer</Description>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Open.IdentityServer.EntityFramework" Version="8.0.8" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="10.0.12" />
+		<PackageReference Include="Skoruba.AuditLogging.EntityFramework" Version="3.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Toralux.Open.IdentityServer.Admin.EntityFramework.Extensions\Toralux.Open.IdentityServer.Admin.EntityFramework.Extensions.csproj" />
+	</ItemGroup>
+</Project>
+
+
+
+
+
+
+
+
+
+
+
+
+

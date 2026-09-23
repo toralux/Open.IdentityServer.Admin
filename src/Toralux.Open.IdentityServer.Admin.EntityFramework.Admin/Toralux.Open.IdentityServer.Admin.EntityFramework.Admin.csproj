@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Description>Entity Framework layer for admin features</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="10.0.12" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Toralux.Open.IdentityServer.Admin.EntityFramework\Toralux.Open.IdentityServer.Admin.EntityFramework.csproj" />
+    <ProjectReference Include="..\Toralux.Open.IdentityServer.Admin.EntityFramework.Shared\Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.csproj" />
+    <ProjectReference Include="..\Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage\Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.csproj" />
+  </ItemGroup>
+
+</Project>

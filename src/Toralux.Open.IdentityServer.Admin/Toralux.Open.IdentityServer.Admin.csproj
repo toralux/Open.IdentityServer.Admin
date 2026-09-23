@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <SpaRoot>..\Toralux.Open.IdentityServer.Admin.UI.Client</SpaRoot>
+        <SpaProxyLaunchCommand>npm run dev</SpaProxyLaunchCommand>
+        <SpaProxyServerUrl>https://localhost:50445</SpaProxyServerUrl>
+        <UserSecretsId>f4677efe-bc9a-4778-b625-4f0be700881a</UserSecretsId>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="10.0.12" />
+        <PackageReference Include="Microsoft.AspNetCore.SpaProxy" Version="10.0.12" />
+        <PackageReference Include="Serilog.AspNetCore" Version="10.0.0"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Toralux.Open.IdentityServer.Admin.EntityFramework.Shared\Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.csproj" />
+        <ProjectReference Include="..\Toralux.Open.IdentityServer.Admin.UI\Toralux.Open.IdentityServer.Admin.UI.csproj"/>
+        <ProjectReference Include="..\Toralux.Open.IdentityServer.Shared.Configuration\Toralux.Open.IdentityServer.Shared.Configuration.csproj" />
+        <ProjectReference Include="..\Toralux.Open.IdentityServer.Admin.EntityFramework.PostgreSQL\Toralux.Open.IdentityServer.Admin.EntityFramework.PostgreSQL.csproj" />
+        <ProjectReference Include="..\Toralux.Open.IdentityServer.Admin.EntityFramework.SqlServer\Toralux.Open.IdentityServer.Admin.EntityFramework.SqlServer.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Include="..\..\.dockerignore">
+            <Link>.dockerignore</Link>
+        </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Toralux.Open.IdentityServer.Admin.UI.Client\Toralux.Open.IdentityServer.Admin.UI.Client.esproj">
+            <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+        </ProjectReference>
+    </ItemGroup>
+
+</Project>

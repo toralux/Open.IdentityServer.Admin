@@ -1,0 +1,31 @@
+﻿// Copyright (c) Jan Škoruba. All Rights Reserved.
+// Licensed under the Apache License, Version 2.0.
+
+using System;
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.Dashboard;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Dtos.Log;
+
+namespace Toralux.Open.IdentityServer.Admin.BusinessLogic.Services.Interfaces
+{
+    public interface IAuditLogService
+    {
+        Task<AuditLogsDto> GetAsync(AuditLogFilterDto filters);
+
+        Task DeleteLogsOlderThanAsync(DateTime deleteOlderThan);
+
+        Task<int> GetDashboardAuditLogsAverageAsync(int lastNumberOfDays,
+            CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// The newest audit entries that record a change, newest first, found among the
+        /// <paramref name="scanLimit"/> newest entries.
+        /// </summary>
+        Task<List<AuditLogDto>> GetRecentChangesAsync(int count, int scanLimit, CancellationToken cancellationToken = default);
+
+        Task<List<DashboardAuditLogDto>> GetDashboardAuditLogsAsync(int lastNumberOfDays,
+            CancellationToken cancellationToken = default);
+    }
+}
