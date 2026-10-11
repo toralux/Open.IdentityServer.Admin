@@ -45,7 +45,10 @@ grep -rIE 'Skoruba\.Duende|skoruba-duende|@skoruba' . \
 #     are self-consistency gates and cannot see stale references (added after the
 #     3.2.0 sync passed every gate while README said "7.4.7", the install example
 #     ::0.1.0 and template content pins 0.1.0 against nuspec 0.1.1):
-#     - grep the superseded version strings repo-wide — zero inconsistent hits
+#     - grep the superseded version strings repo-wide (INCLUDING .github/workflows
+#       and tools/ — hardcoded version regexes in CI break on every version bump,
+#       verified 3.2.0: the gate sed was pinned to 0.1.x and no-op'd at 0.3.0) —
+#       zero inconsistent hits
 #     - README badge / backend pin / install example match the actual pins
 #     - template content pins == nuspec <version> == Directory.Build.props <Version>
 

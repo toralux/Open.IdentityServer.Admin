@@ -69,7 +69,7 @@ jobs:
             --requirepushedauthorization false
           # Simulate the publish-time version rewrite (self-consistency):
           find GateScaffold/src -name '*.csproj' \
-            -exec sed -i 's/Version="0\.1\.[0-9]*"/Version="0.0.0-gate"/g' {} +
+            -exec sed -i 's/\(Include="Toralux[^"]*" Version="\)[^"]*"/\10.0.0-gate"/g' {} +
 
       - name: Gate C - scaffold restore must be downgrade-clean
         run: |
@@ -118,7 +118,7 @@ jobs:
             --adminemail rt@example.com --adminpassword Passw0rd-123 \
             --adminrole RtAdmin --adminclientid gatert --adminclientsecret RtSecret-123 \
             --dockersupport false --requirepushedauthorization false
-          find GateRt/src -name '*.csproj' -exec sed -i 's/Version="0\.1\.[0-9]*"/Version="0.0.0-gate"/g' {} +
+          find GateRt/src -name '*.csproj' -exec sed -i 's/\(Include="Toralux[^"]*" Version="\)[^"]*"/\10.0.0-gate"/g' {} +
           cd GateRt && dotnet build GateRt.Admin.sln
       - name: Scaffold runtime ladder (seed, 401, discovery, SPA)
         env:
