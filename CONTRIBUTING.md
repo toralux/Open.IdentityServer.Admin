@@ -41,10 +41,14 @@ tools/rename.sh && git status --porcelain                   # re-run must yield 
 grep -rIE 'Skoruba\.Duende|skoruba-duende|@skoruba' . \
   --exclude-dir={.git,node_modules,bin,obj} \
   --exclude={CHANGELOG.md,rename.sh,CONTRIBUTING.md}   # only attribution matches may remain
-# 4c. VERSION-REFERENCE SWEEP — docs/pins must tell the truth; the gates above
+# 4c. VERSION-REFERENCE SWEEP — TRANSITION-DRIVEN, not a checklist: for EVERY version — docs/pins must tell the truth; the gates above
 #     are self-consistency gates and cannot see stale references (added after the
 #     3.2.0 sync passed every gate while README said "7.4.7", the install example
 #     ::0.1.0 and template content pins 0.1.0 against nuspec 0.1.1):
+#     transition this sync performs (upstream X->Y, fork A->B), git grep -nE the OLD
+#     string repo-wide; every hit must be updated or explicitly protected
+#     (CHANGELOG history, NOTICE/attribution, third-party dep versions, EF
+#     ProductVersion annotations). Known spots are scar tissue, not the gate:
 #     - grep the superseded version strings repo-wide (INCLUDING .github/workflows
 #       and tools/ — hardcoded version regexes in CI break on every version bump,
 #       verified 3.2.0: the gate sed was pinned to 0.1.x and no-op'd at 0.3.0) —
