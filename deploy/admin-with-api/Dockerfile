@@ -3,7 +3,7 @@
 # The Admin UI (BFF) listens on port 8080 and proxies /identity-server-admin-api/* to the Admin API,
 # which listens on 127.0.0.1:5000 only and is never reachable from outside the container.
 # Meant for hosting platforms that charge per container, such as DigitalOcean App Platform.
-# The STS (Skoruba.Duende.IdentityServer.STS.Identity) still runs as a separate container.
+# The STS (Toralux.Open.IdentityServer.STS.Identity) still runs as a separate container.
 #
 # Build from the repository root:
 #   docker build -f deploy/admin-with-api/Dockerfile -t skoruba/duende-identityserver-admin-with-api .
@@ -28,8 +28,8 @@ RUN ln -s /usr/local/lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npm \
 
 COPY . .
 
-RUN dotnet publish -a $TARGETARCH "src/Skoruba.Duende.IdentityServer.Admin.Api/Skoruba.Duende.IdentityServer.Admin.Api.csproj" -c Release -o /app/publish/api
-RUN dotnet publish -a $TARGETARCH "src/Skoruba.Duende.IdentityServer.Admin/Skoruba.Duende.IdentityServer.Admin.csproj" -c Release -o /app/publish/admin
+RUN dotnet publish -a $TARGETARCH "src/Toralux.Open.IdentityServer.Admin.Api/Toralux.Open.IdentityServer.Admin.Api.csproj" -c Release -o /app/publish/api
+RUN dotnet publish -a $TARGETARCH "src/Toralux.Open.IdentityServer.Admin/Toralux.Open.IdentityServer.Admin.csproj" -c Release -o /app/publish/admin
 
 FROM base AS final
 WORKDIR /app

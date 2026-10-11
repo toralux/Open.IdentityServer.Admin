@@ -1,0 +1,301 @@
+﻿// Copyright (c) Jan Škoruba. All Rights Reserved.
+// Licensed under the Apache License, Version 2.0.
+
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using IdentityModel;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity;
+using Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.Services.Interfaces;
+using Toralux.Open.IdentityServer.Admin.UI.Api.Configuration.Constants;
+using Toralux.Open.IdentityServer.Admin.UI.Api.Dtos.Roles;
+using Toralux.Open.IdentityServer.Admin.UI.Api.Dtos.Users;
+using Toralux.Open.IdentityServer.Admin.UI.Api.ExceptionHandling;
+using Toralux.Open.IdentityServer.Admin.UI.Api.Helpers.Localization;
+using Toralux.Open.IdentityServer.Admin.UI.Api.Mappers;
+using Toralux.Open.IdentityServer.Admin.UI.Api.Resources;
+
+namespace Toralux.Open.IdentityServer.Admin.UI.Api.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    [TypeFilter(typeof(ControllerExceptionFilterAttribute))]
+    [Produces("application/json", "application/problem+json")]
+    [Authorize(Policy = AuthorizationConsts.AdministrationPolicy)]
+    public class UsersController<TUserDto, TRoleDto, TUser, TRole, TKey, TUserClaim, TUserRole, TUserLogin, TRoleClaim, TUserToken,
+            TUsersDto, TRolesDto, TUserRolesDto, TUserClaimsDto,
+            TUserProviderDto, TUserProvidersDto, TUserChangePasswordDto, TRoleClaimsDto, TUserClaimDto, TRoleClaimDto> : ControllerBase
+        where TUserDto : UserDto<TKey>, new()
+        where TRoleDto : RoleDto<TKey>, new()
+        where TUser : IdentityUser<TKey>
+        where TRole : IdentityRole<TKey>
+        where TKey : IEquatable<TKey>
+        where TUserClaim : IdentityUserClaim<TKey>
+        where TUserRole : IdentityUserRole<TKey>
+        where TUserLogin : IdentityUserLogin<TKey>
+        where TRoleClaim : IdentityRoleClaim<TKey>
+        where TUserToken : IdentityUserToken<TKey>
+        where TUsersDto : UsersDto<TUserDto, TKey>
+        where TRolesDto : RolesDto<TRoleDto, TKey>
+        where TUserRolesDto : UserRolesDto<TRoleDto, TKey>
+        where TUserClaimsDto : UserClaimsDto<TUserClaimDto, TKey>, new()
+        where TUserProviderDto : UserProviderDto<TKey>
+        where TUserProvidersDto : UserProvidersDto<TUserProviderDto, TKey>
+        where TUserChangePasswordDto : UserChangePasswordDto<TKey>
+        where TRoleClaimsDto : RoleClaimsDto<TRoleClaimDto, TKey>
+        where TUserClaimDto : UserClaimDto<TKey>
+        where TRoleClaimDto : RoleClaimDto<TKey>
+    {
+        private readonly IIdentityService<TUserDto, TRoleDto, TUser, TRole, TKey, TUserClaim, TUserRole, TUserLogin, TRoleClaim, TUserToken,
+            TUsersDto, TRolesDto, TUserRolesDto, TUserClaimsDto,
+            TUserProviderDto, TUserProvidersDto, TUserChangePasswordDto, TRoleClaimsDto, TUserClaimDto, TRoleClaimDto> _identityService;
+        private readonly IGenericControllerLocalizer<UsersController<TUserDto, TRoleDto, TUser, TRole, TKey, TUserClaim, TUserRole, TUserLogin, TRoleClaim, TUserToken,
+            TUsersDto, TRolesDto, TUserRolesDto, TUserClaimsDto,
+            TUserProviderDto, TUserProvidersDto, TUserChangePasswordDto, TRoleClaimsDto, TUserClaimDto, TRoleClaimDto>> _localizer;
+
+        private readonly IApiErrorResources _errorResources;
+
+        public UsersController(IIdentityService<TUserDto, TRoleDto, TUser, TRole, TKey, TUserClaim, TUserRole, TUserLogin, TRoleClaim, TUserToken,
+                TUsersDto, TRolesDto, TUserRolesDto, TUserClaimsDto,
+                TUserProviderDto, TUserProvidersDto, TUserChangePasswordDto, TRoleClaimsDto, TUserClaimDto, TRoleClaimDto> identityService,
+            IGenericControllerLocalizer<UsersController<TUserDto, TRoleDto, TUser, TRole, TKey, TUserClaim, TUserRole, TUserLogin, TRoleClaim, TUserToken,
+                TUsersDto, TRolesDto, TUserRolesDto, TUserClaimsDto,
+                TUserProviderDto, TUserProvidersDto, TUserChangePasswordDto, TRoleClaimsDto, TUserClaimDto, TRoleClaimDto>> localizer, IApiErrorResources errorResources)
+        {
+            _identityService = identityService;
+            _localizer = localizer;
+            _errorResources = errorResources;
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<TUserDto>> Get(TKey id)
+        {
+            var user = await _identityService.GetUserAsync(id.ToString());
+
+            return Ok(user);
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<TUsersDto>> Get(string searchText, int page = 1, int pageSize = 10)
+        {
+            var usersDto = await _identityService.GetUsersAsync(searchText, page, pageSize);
+
+            return Ok(usersDto);
+        }
+
+        [HttpPost]
+        [ProducesResponseType(201)]
+        [ProducesResponseType(400)]
+        public async Task<ActionResult<TUserDto>> Post([FromBody] TUserDto user)
+        {
+            if (!EqualityComparer<TKey>.Default.Equals(user.Id, default))
+            {
+                return BadRequest(_errorResources.CannotSetId());
+            }
+
+            var (identityResult, userId) = await _identityService.CreateUserAsync(user);
+            var createdUser = await _identityService.GetUserAsync(userId.ToString());
+
+            return CreatedAtAction(nameof(Get), new { id = createdUser.Id }, createdUser);
+        }
+
+        [HttpPut]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(404)]
+        public async Task<IActionResult> Put([FromBody] TUserDto user)
+        {
+            await _identityService.GetUserAsync(user.Id.ToString());
+            await _identityService.UpdateUserAsync(user);
+
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(403)]
+        [ProducesResponseType(404)]
+        public async Task<IActionResult> Delete(TKey id)
+        {
+            if (IsDeleteForbidden(id))
+                return StatusCode((int)System.Net.HttpStatusCode.Forbidden);
+
+            var user = new TUserDto { Id = id };
+
+            await _identityService.GetUserAsync(user.Id.ToString());
+            await _identityService.DeleteUserAsync(user.Id.ToString(), user);
+
+            return NoContent();
+        }
+
+        private bool IsDeleteForbidden(TKey id)
+        {
+            var userId = User.FindFirst(JwtClaimTypes.Subject);
+
+            return userId == null ? false : userId.Value == id.ToString();
+        }
+
+        [HttpGet("{id}/Roles")]
+        public async Task<ActionResult<UserRolesApiDto<TRoleDto>>> GetUserRoles(TKey id, int page = 1, int pageSize = 10)
+        {
+            var userRoles = await _identityService.GetUserRolesAsync(id.ToString(), page, pageSize);
+            var userRolesApiDto = userRoles.ToUserRolesApiDto<TRoleDto, TKey>();
+
+            return Ok(userRolesApiDto);
+        }
+
+        [HttpPost("Roles")]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(404)]
+        public async Task<IActionResult> PostUserRoles([FromBody] UserRoleApiDto<TKey> role)
+        {
+            var userRolesDto = role.ToUserRolesDto<TUserRolesDto, TKey>();
+
+            await _identityService.GetUserAsync(userRolesDto.UserId.ToString());
+            await _identityService.GetRoleAsync(userRolesDto.RoleId.ToString());
+
+            await _identityService.CreateUserRoleAsync(userRolesDto);
+
+            return NoContent();
+        }
+
+        [HttpDelete("Roles")]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(404)]
+        public async Task<IActionResult> DeleteUserRoles([FromBody] UserRoleApiDto<TKey> role)
+        {
+            var userRolesDto = role.ToUserRolesDto<TUserRolesDto, TKey>();
+
+            await _identityService.GetUserAsync(userRolesDto.UserId.ToString());
+            await _identityService.GetRoleAsync(userRolesDto.RoleId.ToString());
+
+            await _identityService.DeleteUserRoleAsync(userRolesDto);
+
+            return NoContent();
+        }
+
+        [HttpGet("{id}/Claims")]
+        public async Task<ActionResult<UserClaimsApiDto<TKey>>> GetUserClaims(TKey id, int page = 1, int pageSize = 10)
+        {
+            var claims = await _identityService.GetUserClaimsAsync(id.ToString(), page, pageSize);
+
+            var userClaimsApiDto = claims.ToUserClaimsApiDto<TUserClaimDto, TKey>();
+
+            return Ok(userClaimsApiDto);
+        }
+
+        [HttpPost("Claims")]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        public async Task<IActionResult> PostUserClaims([FromBody] UserClaimApiDto<TKey> claim)
+        {
+            var userClaimDto = claim.ToUserClaimsDto<TUserClaimsDto, TKey>();
+
+            if (!userClaimDto.ClaimId.Equals(default))
+            {
+                return BadRequest(_errorResources.CannotSetId());
+            }
+
+            await _identityService.CreateUserClaimsAsync(userClaimDto);
+
+            return NoContent();
+        }
+
+        [HttpPut("Claims")]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(404)]
+        public async Task<IActionResult> PutUserClaims([FromBody] UserClaimApiDto<TKey> claim)
+        {
+            var userClaimDto = claim.ToUserClaimsDto<TUserClaimsDto, TKey>();
+
+            if (userClaimDto.ClaimId.Equals(default))
+            {
+                return BadRequest(_errorResources.IdRequiredForUpdate());
+            }
+
+            await _identityService.UpdateUserClaimsAsync(userClaimDto);
+
+            return NoContent();
+        }
+
+        [HttpDelete("{id}/Claims")]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(404)]
+        public async Task<IActionResult> DeleteUserClaims([FromRoute] TKey id, int claimId)
+        {
+            var userClaimsDto = new TUserClaimsDto
+            {
+                ClaimId = claimId,
+                UserId = id
+            };
+
+            await _identityService.GetUserClaimAsync(id.ToString(), claimId);
+            await _identityService.DeleteUserClaimAsync(userClaimsDto);
+
+            return NoContent();
+        }
+
+        [HttpGet("{id}/Providers")]
+        public async Task<ActionResult<UserProvidersApiDto<TKey>>> GetUserProviders(TKey id)
+        {
+            var userProvidersDto = await _identityService.GetUserProvidersAsync(id.ToString());
+            var userProvidersApiDto = userProvidersDto.ToUserProvidersApiDto<TUserProviderDto, TKey>();
+
+            return Ok(userProvidersApiDto);
+        }
+
+        [HttpDelete("Providers")]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(404)]
+        public async Task<IActionResult> DeleteUserProviders([FromBody] UserProviderDeleteApiDto<TKey> provider)
+        {
+            var providerDto = provider.ToUserProviderDto<TUserProviderDto, TKey>();
+
+            await _identityService.GetUserProviderAsync(providerDto.UserId.ToString(), providerDto.ProviderKey);
+            await _identityService.DeleteUserProvidersAsync(providerDto);
+
+            return NoContent();
+        }
+
+        [HttpPost("ChangePassword")]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        public async Task<IActionResult> PostChangePassword([FromBody] UserChangePasswordApiDto<TKey> password)
+        {
+            var userChangePasswordDto = password.ToUserChangePasswordDto<TUserChangePasswordDto, TKey>();
+
+            await _identityService.UserChangePasswordAsync(userChangePasswordDto);
+
+            return NoContent();
+        }
+
+        [HttpGet("{id}/RoleClaims")]
+        public async Task<ActionResult<RoleClaimsApiDto<TKey>>> GetRoleClaims(TKey id, string claimSearchText, int page = 1, int pageSize = 10)
+        {
+            var roleClaimsDto = await _identityService.GetUserRoleClaimsAsync(id.ToString(), claimSearchText, page, pageSize);
+            var roleClaimsApiDto = roleClaimsDto.ToRoleClaimsApiDto<TRoleClaimDto, TKey>();
+
+            return Ok(roleClaimsApiDto);
+        }
+
+        [HttpGet("ClaimType/{claimType}/ClaimValue/{claimValue}")]
+        public async Task<ActionResult<TUsersDto>> GetClaimUsers(string claimType, string claimValue, int page = 1, int pageSize = 10)
+        {
+            var usersDto = await _identityService.GetClaimUsersAsync(claimType, claimValue, page, pageSize);
+
+            return Ok(usersDto);
+        }
+
+        [HttpGet("ClaimType/{claimType}")]
+        public async Task<ActionResult<TUsersDto>> GetClaimUsers(string claimType, int page = 1, int pageSize = 10)
+        {
+            var usersDto = await _identityService.GetClaimUsersAsync(claimType, null, page, pageSize);
+
+            return Ok(usersDto);
+        }
+    }
+}

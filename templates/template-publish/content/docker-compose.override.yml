@@ -1,19 +1,19 @@
 version: '3.4'
 
 services:
-  skorubaduende.identityserveradmin.admin:
+  toraluxopen.identityserveradmin.admin:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     volumes:
       - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
   
-  skorubaduende.identityserveradmin.admin.api:
+  toraluxopen.identityserveradmin.admin.api:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     volumes:
       - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
 
-  skorubaduende.identityserveradmin.sts.identity:
+  toraluxopen.identityserveradmin.sts.identity:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     volumes:

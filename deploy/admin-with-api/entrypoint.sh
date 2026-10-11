@@ -13,7 +13,7 @@ trap shutdown TERM INT
 # Each application reads appsettings.json from its working directory. The API drops ASPNETCORE_HTTP_PORTS
 # so that Kestrel does not warn about ASPNETCORE_URLS overriding it.
 (cd /app/api && exec env -u ASPNETCORE_HTTP_PORTS ASPNETCORE_URLS=http://127.0.0.1:5000 \
-    dotnet Skoruba.Duende.IdentityServer.Admin.Api.dll) &
+    dotnet Toralux.Open.IdentityServer.Admin.Api.dll) &
 API_PID=$!
 
 until (exec 3<>/dev/tcp/127.0.0.1/5000) 2>/dev/null; do
@@ -27,7 +27,7 @@ until (exec 3<>/dev/tcp/127.0.0.1/5000) 2>/dev/null; do
     sleep 1
 done
 
-(cd /app/admin && exec dotnet Skoruba.Duende.IdentityServer.Admin.dll) &
+(cd /app/admin && exec dotnet Toralux.Open.IdentityServer.Admin.dll) &
 ADMIN_PID=$!
 
 wait -n "$API_PID" "$ADMIN_PID"

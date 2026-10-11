@@ -8,20 +8,20 @@ param(
 # The template (templates/0-build-template.ps1) restores these packages from nuget.org,
 # so all of them have to be downloadable before the template can be built.
 $packages = @(
-    "Skoruba.Duende.IdentityServer.Admin.BusinessLogic",
-    "Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity",
-    "Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Shared",
-    "Skoruba.Duende.IdentityServer.Admin.EntityFramework",
-    "Skoruba.Duende.IdentityServer.Admin.EntityFramework.Admin",
-    "Skoruba.Duende.IdentityServer.Admin.EntityFramework.Admin.Storage",
-    "Skoruba.Duende.IdentityServer.Admin.EntityFramework.Extensions",
-    "Skoruba.Duende.IdentityServer.Admin.EntityFramework.Identity",
-    "Skoruba.Duende.IdentityServer.Admin.EntityFramework.Shared",
-    "Skoruba.Duende.IdentityServer.Admin.EntityFramework.Configuration",
-    "Skoruba.Duende.IdentityServer.Shared.Configuration",
-    "Skoruba.Duende.IdentityServer.Admin.UI",
-    "Skoruba.Duende.IdentityServer.Admin.UI.Spa",
-    "Skoruba.Duende.IdentityServer.Admin.UI.Api"
+    "Toralux.Open.IdentityServer.Admin.BusinessLogic",
+    "Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity",
+    "Toralux.Open.IdentityServer.Admin.BusinessLogic.Shared",
+    "Toralux.Open.IdentityServer.Admin.EntityFramework",
+    "Toralux.Open.IdentityServer.Admin.EntityFramework.Admin",
+    "Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage",
+    "Toralux.Open.IdentityServer.Admin.EntityFramework.Extensions",
+    "Toralux.Open.IdentityServer.Admin.EntityFramework.Identity",
+    "Toralux.Open.IdentityServer.Admin.EntityFramework.Shared",
+    "Toralux.Open.IdentityServer.Admin.EntityFramework.Configuration",
+    "Toralux.Open.IdentityServer.Shared.Configuration",
+    "Toralux.Open.IdentityServer.Admin.UI",
+    "Toralux.Open.IdentityServer.Admin.UI.Spa",
+    "Toralux.Open.IdentityServer.Admin.UI.Api"
 )
 
 $flatContainer = "https://api.nuget.org/v3-flatcontainer"

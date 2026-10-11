@@ -6,7 +6,7 @@ if (Test-Path $packagesOutput) {
 }
 
 # Build SPA assets for client before packing
-$clientPath = ".\..\src\Skoruba.Duende.IdentityServer.Admin.UI.Client"
+$clientPath = ".\..\src\Toralux.Open.IdentityServer.Admin.UI.Client"
 if (Test-Path $clientPath) {
     Push-Location $clientPath
     npm run build:spa
@@ -21,23 +21,23 @@ else {
 }
 
 # Business Logic
-dotnet pack .\..\src\Skoruba.Duende.IdentityServer.Admin.BusinessLogic\Skoruba.Duende.IdentityServer.Admin.BusinessLogic.csproj -c Release -o $packagesOutput
-dotnet pack .\..\src\Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity\Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.csproj -c Release -o $packagesOutput
-dotnet pack .\..\src\Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Shared\Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Shared.csproj -c Release -o $packagesOutput
-dotnet pack .\..\src\Skoruba.Duende.IdentityServer.Shared.Configuration\Skoruba.Duende.IdentityServer.Shared.Configuration.csproj -c Release -o $packagesOutput
+dotnet pack .\..\src\Toralux.Open.IdentityServer.Admin.BusinessLogic\Toralux.Open.IdentityServer.Admin.BusinessLogic.csproj -c Release -o $packagesOutput
+dotnet pack .\..\src\Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity\Toralux.Open.IdentityServer.Admin.BusinessLogic.Identity.csproj -c Release -o $packagesOutput
+dotnet pack .\..\src\Toralux.Open.IdentityServer.Admin.BusinessLogic.Shared\Toralux.Open.IdentityServer.Admin.BusinessLogic.Shared.csproj -c Release -o $packagesOutput
+dotnet pack .\..\src\Toralux.Open.IdentityServer.Shared.Configuration\Toralux.Open.IdentityServer.Shared.Configuration.csproj -c Release -o $packagesOutput
 
 # EF
-dotnet pack .\..\src\Skoruba.Duende.IdentityServer.Admin.EntityFramework\Skoruba.Duende.IdentityServer.Admin.EntityFramework.csproj -c Release -o $packagesOutput
-dotnet pack .\..\src\Skoruba.Duende.IdentityServer.Admin.EntityFramework.Extensions\Skoruba.Duende.IdentityServer.Admin.EntityFramework.Extensions.csproj -c Release -o $packagesOutput
-dotnet pack .\..\src\Skoruba.Duende.IdentityServer.Admin.EntityFramework.Identity\Skoruba.Duende.IdentityServer.Admin.EntityFramework.Identity.csproj -c Release -o $packagesOutput
-dotnet pack .\..\src\Skoruba.Duende.IdentityServer.Admin.EntityFramework.Shared\Skoruba.Duende.IdentityServer.Admin.EntityFramework.Shared.csproj -c Release -o $packagesOutput
-dotnet pack .\..\src\Skoruba.Duende.IdentityServer.Admin.EntityFramework.Configuration\Skoruba.Duende.IdentityServer.Admin.EntityFramework.Configuration.csproj -c Release -o $packagesOutput
-dotnet pack .\..\src\Skoruba.Duende.IdentityServer.Admin.EntityFramework.Admin\Skoruba.Duende.IdentityServer.Admin.EntityFramework.Admin.csproj -c Release -o $packagesOutput
-dotnet pack .\..\src\Skoruba.Duende.IdentityServer.Admin.EntityFramework.Admin.Storage\Skoruba.Duende.IdentityServer.Admin.EntityFramework.Admin.Storage.csproj -c Release -o $packagesOutput
+dotnet pack .\..\src\Toralux.Open.IdentityServer.Admin.EntityFramework\Toralux.Open.IdentityServer.Admin.EntityFramework.csproj -c Release -o $packagesOutput
+dotnet pack .\..\src\Toralux.Open.IdentityServer.Admin.EntityFramework.Extensions\Toralux.Open.IdentityServer.Admin.EntityFramework.Extensions.csproj -c Release -o $packagesOutput
+dotnet pack .\..\src\Toralux.Open.IdentityServer.Admin.EntityFramework.Identity\Toralux.Open.IdentityServer.Admin.EntityFramework.Identity.csproj -c Release -o $packagesOutput
+dotnet pack .\..\src\Toralux.Open.IdentityServer.Admin.EntityFramework.Shared\Toralux.Open.IdentityServer.Admin.EntityFramework.Shared.csproj -c Release -o $packagesOutput
+dotnet pack .\..\src\Toralux.Open.IdentityServer.Admin.EntityFramework.Configuration\Toralux.Open.IdentityServer.Admin.EntityFramework.Configuration.csproj -c Release -o $packagesOutput
+dotnet pack .\..\src\Toralux.Open.IdentityServer.Admin.EntityFramework.Admin\Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.csproj -c Release -o $packagesOutput
+dotnet pack .\..\src\Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage\Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage.csproj -c Release -o $packagesOutput
 
 # UI
-dotnet pack .\..\src\Skoruba.Duende.IdentityServer.Admin.UI\Skoruba.Duende.IdentityServer.Admin.UI.csproj -c Release -o $packagesOutput
-dotnet pack .\..\src\Skoruba.Duende.IdentityServer.Admin.UI.Spa\Skoruba.Duende.IdentityServer.Admin.UI.Spa.csproj -c Release -o $packagesOutput
+dotnet pack .\..\src\Toralux.Open.IdentityServer.Admin.UI\Toralux.Open.IdentityServer.Admin.UI.csproj -c Release -o $packagesOutput
+dotnet pack .\..\src\Toralux.Open.IdentityServer.Admin.UI.Spa\Toralux.Open.IdentityServer.Admin.UI.Spa.csproj -c Release -o $packagesOutput
 
 # API
-dotnet pack .\..\src\Skoruba.Duende.IdentityServer.Admin.UI.Api\Skoruba.Duende.IdentityServer.Admin.UI.Api.csproj -c Release -o $packagesOutput
+dotnet pack .\..\src\Toralux.Open.IdentityServer.Admin.UI.Api\Toralux.Open.IdentityServer.Admin.UI.Api.csproj -c Release -o $packagesOutput

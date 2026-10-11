@@ -1,0 +1,47 @@
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@model ToraluxOpen.IdentityServerAdmin.STS.Identity.ViewModels.Manage.RenamePasskeyViewModel
+@{
+    ViewData["Title"] = Localizer["Title"];
+}
+
+<partial name="_StatusMessage" model="@Model.StatusMessage" />
+
+<h3 class="text-2xl font-bold mb-6">@ViewData["Title"]</h3>
+
+<div class="card">
+    <div class="card-content py-6">
+        @if (!string.IsNullOrEmpty(Model.Name))
+        {
+            <p class="text-muted-foreground mb-4">@Localizer["RenameDescription", Model.Name]</p>
+        }
+        else
+        {
+            <p class="text-muted-foreground mb-4">@Localizer["NameDescription"]</p>
+        }
+
+        <form asp-action="RenamePasskey" method="post" class="space-y-4">
+            <input type="hidden" asp-for="CredentialId" />
+
+            <div class="form-item">
+                <label class="form-label" for="Name">
+                    <lucideicon name="tag" class="inline-block h-4 w-4 mr-1" />
+                    @Localizer["Name"]
+                </label>
+                <input id="Name" class="input" asp-for="Name" autofocus autocomplete="off" />
+                <span asp-validation-for="Name" class="text-destructive text-sm"></span>
+            </div>
+
+            <div class="flex gap-2">
+                <button type="submit" class="btn-default">
+                    <lucideicon name="check" class="inline-block h-4 w-4 mr-2" />
+                    @Localizer["Save"]
+                </button>
+                <a asp-action="Passkeys" class="btn-outline">
+                    <lucideicon name="x" class="inline-block h-4 w-4 mr-2" />
+                    @Localizer["Cancel"]
+                </a>
+            </div>
+        </form>
+    </div>
+</div>

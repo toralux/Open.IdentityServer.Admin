@@ -1,0 +1,32 @@
+﻿// Copyright (c) Jan Škoruba. All Rights Reserved.
+// Licensed under the Apache License, Version 2.0.
+
+using System;
+using System.IdentityModel.Tokens.Jwt;
+using System.Net.Http;
+using System.Security.Claims;
+using IdentityModel;
+using Toralux.Open.IdentityServer.Admin.Api.Configuration;
+using Toralux.Open.IdentityServer.Admin.UI.Api.Configuration;
+using Toralux.Open.IdentityServer.Admin.UI.Api.Middlewares;
+
+namespace Toralux.Open.IdentityServer.Admin.Api.IntegrationTests.Common
+{
+    public static class HttpClientExtensions
+    {
+        public static void SetAdminClaimsViaHeaders(this HttpClient client, AdminApiConfiguration adminConfiguration)
+        {
+            var claims = new[]
+            {
+                new Claim(JwtClaimTypes.Subject, Guid.NewGuid().ToString()),
+                new Claim(JwtClaimTypes.Name, Guid.NewGuid().ToString()),
+                new Claim(JwtClaimTypes.Role, adminConfiguration.AdministrationRole),
+                new Claim(JwtClaimTypes.Scope, adminConfiguration.OidcApiName)
+            };
+
+            var token = new JwtSecurityToken(claims: claims);
+            var t = new JwtSecurityTokenHandler().WriteToken(token);
+            client.DefaultRequestHeaders.Add(AuthenticatedTestRequestMiddleware.TestAuthorizationHeader, t);
+        }
+    }
+}
