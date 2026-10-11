@@ -1,6 +1,6 @@
 # Changelog
 
-## [Unreleased]
+## [0.3.0] - 2026-10-11
 
 ### Upstream 3.2.0 sync (tag `release/3.2.0`, commit `06386cc7`)
 
