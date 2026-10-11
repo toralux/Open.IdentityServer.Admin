@@ -41,6 +41,13 @@ tools/rename.sh && git status --porcelain                   # re-run must yield 
 grep -rIE 'Skoruba\.Duende|skoruba-duende|@skoruba' . \
   --exclude-dir={.git,node_modules,bin,obj} \
   --exclude={CHANGELOG.md,rename.sh,CONTRIBUTING.md}   # only attribution matches may remain
+# 4c. VERSION-REFERENCE SWEEP — docs/pins must tell the truth; the gates above
+#     are self-consistency gates and cannot see stale references (added after the
+#     3.2.0 sync passed every gate while README said "7.4.7", the install example
+#     ::0.1.0 and template content pins 0.1.0 against nuspec 0.1.1):
+#     - grep the superseded version strings repo-wide — zero inconsistent hits
+#     - README badge / backend pin / install example match the actual pins
+#     - template content pins == nuspec <version> == Directory.Build.props <Version>
 
 # 4b. TEMPLATE GATES (added after v0.2.0 shipped a non-compiling scaffold —
 #     a green src build proves nothing about the generated solution):
@@ -58,6 +65,10 @@ cd /tmp && dotnet new toralux.open-isadmin --name GateCheck <flags>
 
 # 5. Squash-merge or fast-forward per preference; tag the sync point:
 git tag sync/upstream-<upstream-version>
+# 5b. BRANCH CHECKPOINT — after ANY branch surgery (sync branch pointer, main
+#     reset), verify `git branch --show-current` and HEAD's content before any
+#     further diagnosis or edits; diagnosing against the reset main working tree
+#     invents regressions that don't exist.
 ```
 
 ### What `tools/rename.sh` protects (never rewritten)
@@ -87,6 +98,11 @@ The script deliberately does not decide semantics. After replaying it, check:
    `toralux.open-isadmin` short name; validate with `dotnet new install` + build (Phase 2b pipeline).
 5. **Seed defaults** — fork seeds use `toralux_identity_admin_*` client ids and
    `admin@example.com`; confirm upstream seed changes didn't reintroduce old defaults.
+6. **Dependency-delta report** — diff the SPA `package.json` (deps + devDeps) and
+   every csproj `PackageReference` version against the mechanical base commit
+   (the upstream tree in fork identity). Every delta must classify as fork pin
+   (`Open.IdentityServer.*` 2.0.0, `Toralux.*` versions, the `file:` api-client
+   spec), kept external, or upstream bump absorbed — zero unexplained deltas.
 
 ## Local development
 

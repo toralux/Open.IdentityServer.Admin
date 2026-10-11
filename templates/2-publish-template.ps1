@@ -24,6 +24,17 @@ else {
 }
 
 $templateNuspecPath = "template-publish/Toralux.Open.IdentityServer.Admin.Templates.nuspec"
+
+# Publish-time version rewrite (same as CI publish.yml): the nuspec version and
+# every template content csproj Toralux pin must match the version being published,
+# so generated projects reference exactly this release.
+if ($packagesVersions) {
+    (Get-Content $templateNuspecPath -Raw) -replace '<version>[^<]*</version>', "<version>$packagesVersions</version>" | Set-Content $templateNuspecPath
+    Get-ChildItem -Recurse "template-publish/content" -Filter *.csproj | ForEach-Object {
+        (Get-Content $_.FullName -Raw) -replace '(Include="Toralux[^"]*" Version=")[^"]*"', ('${1}' + $packagesVersions + '"') | Set-Content $_.FullName
+    }
+}
+
 nuget pack $templateNuspecPath -NoDefaultExcludes
 
 dotnet new --uninstall Toralux.Open.IdentityServer.Admin.Templates
