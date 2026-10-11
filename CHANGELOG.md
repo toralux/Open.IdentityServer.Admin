@@ -1,6 +1,35 @@
 # Changelog
 
-## [Unreleased] — upstream 3.1.0 sync
+## [Unreleased]
+
+### Upstream 3.2.0 sync (tag `release/3.2.0`, commit `06386cc7`)
+
+Replays upstream 3.2.0 (33 commits since 3.1.0) through the scripted rename
+pass and the semantic series. Ported: the React 19 SPA migration, dashboard
+audit-log statistics, the `AuditLog` created-index EF migrations (PostgreSQL
+and SqlServer — upgrading an installation applies new admin migrations), the
+identity-management on/off switch (navigation, dashboard, command palette,
+integration test), snippet environment info and client-authentication lines in
+the client Integration tab, the `deploy/admin-with-api` composition, and the
+`check-nuget-packages.ps1` build tooling.
+
+#### Divergence from upstream 3.2.0
+
+- **FAPI 2.0 security profile** — still excluded (unchanged from the 3.1.0
+  port); the admin-side FAPI signing-algorithm lint rules stay.
+- **JWK client secrets** — still excluded (unchanged from the 3.1.0 port);
+  the high secure wizard type keeps its shared-secret start and the DPoP
+  proof-key step.
+- **Duende IdentityServer 8.0.9 bumps / PAR security fix** — excluded.
+  `Open.IdentityServer.*` packages stay pinned at 2.0.0 and the fork's PAR
+  stance is unchanged (not used by Open IdentityServer;
+  `--requirepushedauthorization` stays default-false).
+- Fork versions stay on the 0.1.x line; the identity replay is idempotent
+  (`tools/rename.sh` re-runs yield zero diff) and template Gates A/B/C pass
+  against the local gate feed (scaffold restore is downgrade-clean and the
+  generated solution compiles).
+
+### Upstream 3.1.0 sync (tag `release/3.1.0`, commit `22c84428`)
 
 Replays upstream 3.1.0 (tag `release/3.1.0`, commit `22c84428`) onto the fork
 through the scripted rename pass and the semantic series. Ported: the admin
@@ -13,7 +42,7 @@ configuration rules, audit secret-change entries naming client/API resource
 generation), and the device-flow consent replay, anti-forgery, dashboard query
 and wizard public-client fixes.
 
-### Divergence from upstream 3.1.0
+#### Divergence from upstream 3.1.0
 
 - **FAPI 2.0 security profile** — excluded. The server framework this fork
   targets (Open.IdentityServer 2.0.0) does not provide the
