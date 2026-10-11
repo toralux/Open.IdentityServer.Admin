@@ -49,7 +49,9 @@ grep -rIE 'Skoruba\.Duende|skoruba-duende|@skoruba' . \
 #       and tools/ — hardcoded version regexes in CI break on every version bump,
 #       verified 3.2.0: the gate sed was pinned to 0.1.x and no-op'd at 0.3.0) —
 #       zero inconsistent hits
-#     - README badge / backend pin / install example match the actual pins
+#     - README badge / backend pin / install example match the actual pins,
+#       and the fork-lineage banner (synced to upstream X.Y.Z) names the last
+#       absorbed release (verified stale at 3.2.0: banner still said 3.1.0)
 #     - template content pins == nuspec <version> == Directory.Build.props <Version>
 
 # 4b. TEMPLATE GATES (added after v0.2.0 shipped a non-compiling scaffold —
