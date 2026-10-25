@@ -1,5 +1,20 @@
 # Changelog
 
+## [Unreleased]
+
+### Security: Microsoft 10.0 patch-train pins 10.0.12 -> 10.0.13
+
+The 10.0.12 pins resolved `System.Security.Cryptography.Xml`/`Pkcs` 10.0.12
+transitively (via `Microsoft.AspNetCore.DataProtection.EntityFrameworkCore`
+and `Microsoft.Data.SqlClient`), which carry known high/moderate advisories
+(GHSA-r955-8q5j-3h83, GHSA-846f-f764-76mx, GHSA-2fmv-rv2c-59x7 — all fixed in
+10.0.13 on the 10.0 train). The whole Microsoft/EF/ASP.NET 10.0 pin train
+moves to 10.0.13 across the solution, tests, and the template content — a
+partial bump trips NU1605 (Relational floor 10.0.12 vs SqlServer 10.0.13), so
+the train moves as one.
+`dotnet list package --vulnerable --include-transitive` is clean
+solution-wide and the build carries no NU1902/NU1903 audit warnings.
+
 ## [0.4.0] - 2026-10-25
 
 ### Open.IdentityServer pin bump (2.0.0 → 3.1.1)
