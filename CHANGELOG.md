@@ -1,6 +1,6 @@
 # Changelog
 
-## [Unreleased]
+## [0.4.1] - 2026-10-25
 
 ### Security: Microsoft 10.0 patch-train pins 10.0.12 -> 10.0.13
 
