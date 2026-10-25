@@ -1,5 +1,45 @@
 # Changelog
 
+## [Unreleased]
+
+### Open.IdentityServer pin bump (2.0.0 → 3.1.1)
+
+Standalone bump (`sync/open-2026-10-25`) — no skoruba delta involved; the
+identity-server pin moves one major + two minors for the first time since the
+0.1.0 rebrand.
+
+#### Open.IdentityServer pin 2.0.0 → 3.1.1
+
+- **Build compatibility: clean.** Solution builds with 0 errors, restore
+  resolves 3.1.1 in all 25 projects with zero NU16xx floor warnings, 615 + 41
+  unit tests green, SPA build + vitest green, and the tracked dist rebuilds
+  byte-identical (no API-surface change reached the SPA).
+- **PAR — exclusion void.** 3.1.1 ships pushed-authorization support
+  (`IPushedAuthorizationRequestService/Store/Validator/ResponseGenerator` plus
+  `Client.RequirePushedAuthorization`; all absent at 2.0.0). The
+  "PAR enforcement in generated projects" exclusion lapses: the templates'
+  upstream-style `--requirepushedauthorization` default (`true`) now runs
+  against a server that implements PAR. Under the 2.0.0 pin that same default
+  was a latent footgun; the bump resolves it.
+- **Server-side sessions — exclusion stays.** 3.1.1 adds the session *store*
+  interface only; no session service/admin surface yet. Returns when Open
+  ships the service layer.
+- **IdentityProvider / Keys admin pages — exclusion stays.** No
+  `IIdentityProviderStore` / keys-management surface in 3.1.1.
+- **Admin store migrations — none required.** `dotnet ef migrations
+  has-pending-model-changes` is clean for IdentityServerConfigurationDbContext
+  and IdentityServerPersistedGrantDbContext on both SqlServer and PostgreSQL.
+- **Dependency-delta report — green.** The only delta vs main is the 9
+  `Open.IdentityServer.*` pin references across 7 csproj files, classified as
+  fork-pin bump absorbed; SPA package.json untouched.
+
+#### Divergence from upstream 3.2.0 (unchanged)
+
+- FAPI 2.0 security profile — still excluded.
+- JWK client secrets — still excluded.
+- Duende IdentityServer 8.0.9 bumps — still excluded (the PAR capability now
+  arrives via the Open pin instead).
+
 ## [0.3.0] - 2026-10-11
 
 ### Upstream 3.2.0 sync (tag `release/3.2.0`, commit `06386cc7`)

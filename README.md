@@ -51,7 +51,7 @@ configuration health, auditing, and security from one modern interface.
 |     | Area                  | Highlights                                                                  |
 | --- | --------------------- | --------------------------------------------------------------------------- |
 | 🧭  | **New Admin UI**      | React, TypeScript, Tailwind CSS, and shadcn/ui                              |
-| ⚙️  | **Modern backend**    | .NET 10 and Open IdentityServer 2.0.0                                     |
+| ⚙️  | **Modern backend**    | .NET 10 and Open IdentityServer 3.1.1                                     |
 | 📊  | **Monitoring**        | Dashboards, configuration rules, and issue tracking                         |
 | 🧙  | **Client management** | Improved workflows and guided client creation wizard                        |
 | 🔐  | **Authentication**    | Passkey support in STS Identity                                             |
@@ -133,7 +133,7 @@ Define and track configuration rules for clients, API resources, and identity re
 - .NET 10 SDK
 - Node.js 22.12+ and npm (required for the React client)
 - SQL Server (default LocalDB) or PostgreSQL
-- Open IdentityServer 2.0.0
+- Open IdentityServer 3.1.1
 
 > **Note:** Using older .NET versions may cause 502.5 errors on IIS or application startup failures.
 

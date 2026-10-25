@@ -110,8 +110,9 @@ The script deliberately does not decide semantics. After replaying it, check:
 6. **Dependency-delta report** — diff the SPA `package.json` (deps + devDeps) and
    every csproj `PackageReference` version against the mechanical base commit
    (the upstream tree in fork identity). Every delta must classify as fork pin
-   (`Open.IdentityServer.*` 2.0.0, `Toralux.*` versions, the `file:` api-client
-   spec), kept external, or upstream bump absorbed — zero unexplained deltas.
+   (`Toralux.*` versions, the `file:` api-client spec), fork-pin bump absorbed
+   (`Open.IdentityServer.*` old→target pin), kept external, or upstream bump
+   absorbed — zero unexplained deltas.
 
 ## Local development
 
