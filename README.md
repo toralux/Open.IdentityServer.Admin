@@ -29,8 +29,8 @@ configuration health, auditing, and security from one modern interface.
 > — forked at **v3.0.0** (commit `45da4dc4`), synced to upstream **3.2.0**
 > (commit `22c84428`) — retargeted from Duende IdentityServer to
 > **Open IdentityServer**. The server pin is
-> **Open.IdentityServer 3.1.3** (bumped 2.0.0 -> 3.1.1 in v0.4.0 and
-> 3.1.1 -> 3.1.3 in v0.4.2; pin history in [CHANGELOG.md](CHANGELOG.md)).
+> **Open.IdentityServer 3.1.3** (bumped 3.1.1 -> 3.1.3 in v0.4.2; full
+> pin history in [CHANGELOG.md](CHANGELOG.md)).
 > Packages ship as `Toralux.Open.IdentityServer.Admin.*`;
 > upstream lineage and the divergences this fork intentionally keeps are
 > documented in [CHANGELOG.md](CHANGELOG.md) and [NOTICE](NOTICE).
