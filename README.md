@@ -28,7 +28,10 @@ configuration health, auditing, and security from one modern interface.
 > [skoruba/Duende.IdentityServer.Admin](https://github.com/skoruba/Duende.IdentityServer.Admin)
 > — forked at **v3.0.0** (commit `45da4dc4`), synced to upstream **3.2.0**
 > (commit `22c84428`) — retargeted from Duende IdentityServer to
-> **Open IdentityServer**. Packages ship as `Toralux.Open.IdentityServer.Admin.*`;
+> **Open IdentityServer**. The server pin is
+> **Open.IdentityServer 3.1.3** (bumped 2.0.0 -> 3.1.1 in v0.4.0 and
+> 3.1.1 -> 3.1.3 in v0.4.2; pin history in [CHANGELOG.md](CHANGELOG.md)).
+> Packages ship as `Toralux.Open.IdentityServer.Admin.*`;
 > upstream lineage and the divergences this fork intentionally keeps are
 > documented in [CHANGELOG.md](CHANGELOG.md) and [NOTICE](NOTICE).
 >
@@ -180,7 +183,7 @@ dotnet new toralux.open-isadmin \
 | `--adminclientid`              | Client ID for the Admin UI OIDC client                                                                                                                                                                            |
 | `--adminclientsecret`          | Client secret for the Admin UI OIDC client                                                                                                                                                                        |
 | `--dockersupport`              | Include Docker support (`true` / `false`)                                                                                                                                                                         |
-| `--requirepushedauthorization` | Require PAR for admin client (`true` / `false`, default `false`). **Note:** Pushed Authorization Requests require Duende IdentityServer Business Edition upstream and are not used by Open IdentityServer. [More info](https://docs.duendesoftware.com/identityserver/tokens/par/) |
+| `--requirepushedauthorization` | Require PAR for admin client (`true` / `false`, **default `true`**). **Note:** Open IdentityServer implements Pushed Authorization Requests natively (unlike upstream, where PAR requires the Duende IdentityServer Business Edition), so requiring it for the admin client works out of the box. |
 
 ---
 
