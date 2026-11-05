@@ -6,7 +6,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.AspNetCore.DataProtection.EntityFrameworkCore" Version="10.0.13" />
+		<PackageReference Include="Microsoft.AspNetCore.DataProtection.EntityFrameworkCore" Version="10.0.14" />
 		<PackageReference Include="Skoruba.AuditLogging.EntityFramework" Version="3.0.0" />
 		<PackageReference Include="Toralux.Open.IdentityServer.Admin.EntityFramework.Admin.Storage" Version="0.3.0" />
 		<PackageReference Include="Toralux.Open.IdentityServer.Admin.EntityFramework.Configuration" Version="0.3.0" />
