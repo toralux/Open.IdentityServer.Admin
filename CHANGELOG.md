@@ -1,5 +1,61 @@
 # Changelog
 
+## [0.4.2] - 2026-11-05
+
+### Open.IdentityServer pin bump (3.1.1 → 3.1.3)
+
+Standalone bump (`sync/open-2026-11-05`) — no skoruba delta; the
+identity-server pin moves two patch releases (3.1.2, 3.1.3).
+
+#### Open.IdentityServer pin 3.1.1 → 3.1.3
+
+- **Build compatibility: clean** — green first build after the floors were
+  absorbed, zero code changes; no drift reclassification needed.
+- Absorbed fixes: PAR requests no longer leak sensitive data to application
+  logs (3.1.2 — relevant since PAR enforcement re-enabled at 0.4.0),
+  server-side session token validation returns 400 instead of a server error
+  (3.1.2), session ids no longer regenerate for subjects with a current
+  session, backchannel logouts are sent during expired-session cleanup,
+  compatibility key stores accept multiple configured algorithms
+  (`CompatabilityKeyStoreOptions.SupportedAlgorithms`, default `RS256`), and
+  the ES512 naming fix (3.1.3).
+- **Capability sweep — no lifts.** `IIdentityProviderStore` is still absent;
+  keys/session surfaces remain store-only with no management service; FAPI 2.0
+  and JWK client secrets stay excluded (Duende-only).
+- **Admin store migrations — none required.**
+  `dotnet ef migrations has-pending-model-changes` is clean for
+  `IdentityServerConfigurationDbContext` and
+  `IdentityServerPersistedGrantDbContext` on both SqlServer and PostgreSQL.
+- The pin bump was repo-wide with zero-proof: template content csprojs carry
+  3.1.3 (`grep Version="3.1.1"` → 0 hits outside CHANGELOG history).
+
+#### Microsoft 10.0 train bump (10.0.13 → 10.0.14)
+
+- Open.IdentityServer 3.1.3 raises the floors: OpenIdConnect ≥ 10.0.14 (via
+  `Open.IdentityServer`) and EFCore.Relational ≥ 10.0.14 (via
+  `Open.IdentityServer.EntityFramework.Storage`). The whole 10.0.x train
+  moves as ONE bump (16 Microsoft package ids across src, tests and template
+  content), and the 0.4.1 `System.Security.Cryptography.Pkcs` direct-pin
+  floor overrides move 10.0.13 → 10.0.14 with it (DataProtection chain;
+  the advisories stay patched at 10.0.14).
+- Restore is NU1605-clean solution-wide; `dotnet list package --vulnerable
+  --include-transitive` lists zero vulnerable packages (docker-compose dcproj
+  packages.config exit quirk excepted, judged by log per gate notes).
+
+#### Gates
+
+- Solution build, SPA build + vitest (148/148), unit tests (615/615), template
+  parity Gate A (278 files, 0 new drift), scaffold Gates B/C (template install
+  → generate → restore NU16-clean → build 0 errors; generated pins ==
+  3.1.3).
+- Dependency-delta report: green — every delta classifies as fork-pin bump
+  absorbed (`Open.IdentityServer.*` 3.1.1→3.1.3) or train bump absorbed
+  (16 `Microsoft.*` 10.0.13→10.0.14 plus the Pkcs floor); SPA
+  `package.json` untouched.
+- Version-reference sweep: `3.1.1` hits are all protected (EF ProductVersion
+  annotations, npm d3-types, CHANGELOG history); `10.0.13` → 0 hits outside
+  CHANGELOG history; README pin claims updated 3.1.1 → 3.1.3.
+
 ## [0.4.1] - 2026-10-25
 
 ### Security: Microsoft 10.0 patch-train pins 10.0.12 -> 10.0.13
